@@ -69,8 +69,10 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dao\ClienteDAO.vb" />
     <Compile Include="dao\ProductoDAO.vb" />
     <Compile Include="dao\UsuarioDAO.vb" />
+    <Compile Include="modelos\Cliente.vb" />
     <Compile Include="modelos\Producto.vb" />
     <Compile Include="modelos\Usuario.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -93,6 +95,7 @@
     <Compile Include="util\Acceso.vb" />
     <Compile Include="util\Funciones.vb" />
     <Compile Include="util\Sesion.vb" />
+    <Compile Include="util\VariablesUtiles.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

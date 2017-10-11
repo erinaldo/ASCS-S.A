@@ -2,15 +2,16 @@
 Public Class AgregarProducto
 
     Private Sub AgregarProducto_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+     
+    End Sub
+
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
+        Me.DialogResult = Windows.Forms.DialogResult.Cancel
+
 
     End Sub
 
-    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
-        Me.Close()
-
-    End Sub
-
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+    Private Sub guardarProducto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar.Click
 
         If validarParametros() Then
             Dim modelo As New Producto
@@ -20,32 +21,26 @@ Public Class AgregarProducto
             modelo.alto = txtAlto.Text
             modelo.largo = txtLargo.Text
             modelo.m2 = txtM2.Text
-            'Double.TryParse(txtEspesor.Text, modelo.espesor)
-            modelo.color = txtColor.Text
+            modelo.color = cbColor.SelectedItem
+            modelo.stock = txtStock.Text
+            modelo.venta = txtPrecio.Text
+
+
             'Double.TryParse(txtAlto.Text, modelo.alto)
             ' Double.TryParse(txtLargo.Text, modelo.largo)
             ' Double.TryParse(txtM2.Text, modelo.m2)
-            modelo.tipo = txtTipo.Text
-
+            modelo.tipo = cbTipo.SelectedItem
             Dim daoProducto As New ProductoDAO
             daoProducto.agregarProducto(modelo)
             MsgBox("Producto agregado con éxito!")
-            Me.Close()
+            Me.DialogResult = Windows.Forms.DialogResult.OK
+
 
         Else
             MsgBox("Debe completar todos lo campos", MsgBoxStyle.Exclamation, "Atención")
+            Me.DialogResult = Windows.Forms.DialogResult.None
+
         End If
-
-
-
-
-
-
-
-
-
-
-
     End Sub
 
     Private Function validarParametros()
@@ -55,7 +50,7 @@ Public Class AgregarProducto
             Return False
         ElseIf txtCod.Text = "" Then
             Return False
-        ElseIf txtColor.Text = "" Then
+        ElseIf cbColor.SelectedItem = "" Then
             Return False
         ElseIf txtDesc.Text = "" Then
             Return False
@@ -65,7 +60,7 @@ Public Class AgregarProducto
             Return False
         ElseIf txtM2.Text = "" Then
             Return False
-        ElseIf txtTipo.Text = "" Then
+        ElseIf cbTipo.SelectedItem = "" Then
             Return False
         End If
 
@@ -77,8 +72,43 @@ Public Class AgregarProducto
 
     
 
-    Private Sub txtEspesor_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtEspesor.KeyPress
+    Private Sub txtEspesor_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtAlto.KeyPress
         ' soloNumeros(e)
 
     End Sub
+
+    Private Sub txtCod_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtCod.TextChanged, txtStock.TextChanged
+
+    End Sub
+
+    Private Sub GroupBox1_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+    
+    Private Sub Panel1_Paint1(ByVal sender As Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles Panel1.Paint
+        Panel1.BorderStyle = BorderStyle.None
+
+        e.Graphics.DrawRectangle(Pens.White,
+                                 e.ClipRectangle.Left,
+                                 e.ClipRectangle.Top,
+                                 e.ClipRectangle.Width - 1,
+                                 e.ClipRectangle.Height - 1)
+    End Sub
+
+
+    Private Sub cbColor_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbColor.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub btnRefresh_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRefresh.Click
+        txtAlto.Text = ""
+        txtCod.Text = ""
+        txtDesc.Text = ""
+        txtEspesor.Text = ""
+        txtLargo.Text = ""
+        txtM2.Text = ""
+        txtPrecio.Text = ""
+        txtStock.Text = ""
+        End Sub
 End Class

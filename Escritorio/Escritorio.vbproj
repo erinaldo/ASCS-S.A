@@ -72,10 +72,28 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ABM\clientes\AgregarCliente.Designer.vb">
+      <DependentUpon>AgregarCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABM\clientes\AgregarCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABM\clientes\ModificarCliente.Designer.vb">
+      <DependentUpon>ModificarCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABM\clientes\ModificarCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ABM\producto\AgregarProducto.Designer.vb">
       <DependentUpon>AgregarProducto.vb</DependentUpon>
     </Compile>
     <Compile Include="ABM\producto\AgregarProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABM\producto\ModificarProducto.Designer.vb">
+      <DependentUpon>ModificarProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABM\producto\ModificarProducto.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Funciones.vb" />
@@ -109,8 +127,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ABM\clientes\AgregarCliente.resx">
+      <DependentUpon>AgregarCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABM\clientes\ModificarCliente.resx">
+      <DependentUpon>ModificarCliente.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ABM\producto\AgregarProducto.resx">
       <DependentUpon>AgregarProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABM\producto\ModificarProducto.resx">
+      <DependentUpon>ModificarProducto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.vb</DependentUpon>

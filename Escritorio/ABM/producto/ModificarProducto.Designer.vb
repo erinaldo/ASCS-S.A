@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class AgregarProducto
+Partial Class ModificarProducto
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -23,15 +23,6 @@ Partial Class AgregarProducto
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtCod = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtDesc = New System.Windows.Forms.TextBox()
-        Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.btnRefresh = New System.Windows.Forms.Button()
-        Me.btnCancelar = New System.Windows.Forms.Button()
-        Me.gbDatos = New System.Windows.Forms.GroupBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtStock = New System.Windows.Forms.TextBox()
         Me.txtPrecio = New System.Windows.Forms.TextBox()
@@ -52,9 +43,18 @@ Partial Class AgregarProducto
         Me.txtEspesor = New System.Windows.Forms.TextBox()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.gbDatos = New System.Windows.Forms.GroupBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtCod = New System.Windows.Forms.TextBox()
+        Me.txtDesc = New System.Windows.Forms.TextBox()
+        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnRefresh = New System.Windows.Forms.Button()
+        Me.btnGuardar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.gbDatos.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
+        Me.gbDatos.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -67,106 +67,6 @@ Partial Class AgregarProducto
         Me.Label1.Size = New System.Drawing.Size(60, 22)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Código"
-        '
-        'txtCod
-        '
-        Me.txtCod.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCod.Location = New System.Drawing.Point(99, 36)
-        Me.txtCod.Name = "txtCod"
-        Me.txtCod.Size = New System.Drawing.Size(174, 26)
-        Me.txtCod.TabIndex = 0
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label2.Location = New System.Drawing.Point(229, 9)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(408, 39)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "AGREGAR NUEVO PRODUCTO"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(341, 42)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(93, 22)
-        Me.Label3.TabIndex = 0
-        Me.Label3.Text = "Descripción"
-        '
-        'txtDesc
-        '
-        Me.txtDesc.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDesc.Location = New System.Drawing.Point(443, 36)
-        Me.txtDesc.Name = "txtDesc"
-        Me.txtDesc.Size = New System.Drawing.Size(174, 26)
-        Me.txtDesc.TabIndex = 2
-        '
-        'btnGuardar
-        '
-        Me.btnGuardar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnGuardar.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardar.Location = New System.Drawing.Point(81, 8)
-        Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(97, 32)
-        Me.btnGuardar.TabIndex = 3
-        Me.btnGuardar.Text = "Guardar"
-        Me.btnGuardar.UseVisualStyleBackColor = True
-        '
-        'btnRefresh
-        '
-        Me.btnRefresh.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRefresh.Location = New System.Drawing.Point(302, 8)
-        Me.btnRefresh.Name = "btnRefresh"
-        Me.btnRefresh.Size = New System.Drawing.Size(96, 32)
-        Me.btnRefresh.TabIndex = 4
-        Me.btnRefresh.Text = "Refrescar"
-        Me.btnRefresh.UseVisualStyleBackColor = True
-        '
-        'btnCancelar
-        '
-        Me.btnCancelar.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelar.Location = New System.Drawing.Point(511, 8)
-        Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(96, 32)
-        Me.btnCancelar.TabIndex = 5
-        Me.btnCancelar.Text = "Cancelar"
-        Me.btnCancelar.UseVisualStyleBackColor = True
-        '
-        'gbDatos
-        '
-        Me.gbDatos.BackColor = System.Drawing.SystemColors.ControlDark
-        Me.gbDatos.Controls.Add(Me.Label5)
-        Me.gbDatos.Controls.Add(Me.Label1)
-        Me.gbDatos.Controls.Add(Me.Label6)
-        Me.gbDatos.Controls.Add(Me.Label3)
-        Me.gbDatos.Controls.Add(Me.txtStock)
-        Me.gbDatos.Controls.Add(Me.txtCod)
-        Me.gbDatos.Controls.Add(Me.txtPrecio)
-        Me.gbDatos.Controls.Add(Me.txtDesc)
-        Me.gbDatos.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.gbDatos.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbDatos.Location = New System.Drawing.Point(68, 74)
-        Me.gbDatos.Name = "gbDatos"
-        Me.gbDatos.Size = New System.Drawing.Size(696, 134)
-        Me.gbDatos.TabIndex = 2
-        Me.gbDatos.TabStop = False
-        Me.gbDatos.Text = "Datos del producto"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(38, 86)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(49, 22)
-        Me.Label5.TabIndex = 0
-        Me.Label5.Text = "Stock"
         '
         'Label6
         '
@@ -213,16 +113,15 @@ Partial Class AgregarProducto
         Me.GroupBox4.Controls.Add(Me.Label20)
         Me.GroupBox4.Controls.Add(Me.Label21)
         Me.GroupBox4.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox4.Location = New System.Drawing.Point(68, 236)
+        Me.GroupBox4.Location = New System.Drawing.Point(92, 280)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(696, 138)
-        Me.GroupBox4.TabIndex = 3
+        Me.GroupBox4.TabIndex = 9
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Propiedades del producto"
         '
         'cbTipo
         '
-        Me.cbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbTipo.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbTipo.FormattingEnabled = True
         Me.cbTipo.Items.AddRange(New Object() {"Herrajes", "Perfiles"})
@@ -233,9 +132,9 @@ Partial Class AgregarProducto
         '
         'cbColor
         '
+        Me.cbColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbColor.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbColor.FormattingEnabled = True
-        Me.cbColor.Items.AddRange(New Object() {"Gris", "Incoloro", "Bronce", "Dorado", "Cromado", "Fosco", "Pintado", "Azul"})
         Me.cbColor.Location = New System.Drawing.Point(326, 83)
         Me.cbColor.Name = "cbColor"
         Me.cbColor.Size = New System.Drawing.Size(104, 30)
@@ -373,50 +272,144 @@ Partial Class AgregarProducto
         Me.Label21.TabIndex = 0
         Me.Label21.Text = "Alto"
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(38, 86)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(49, 22)
+        Me.Label5.TabIndex = 0
+        Me.Label5.Text = "Stock"
+        '
+        'gbDatos
+        '
+        Me.gbDatos.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.gbDatos.Controls.Add(Me.Label5)
+        Me.gbDatos.Controls.Add(Me.Label1)
+        Me.gbDatos.Controls.Add(Me.Label6)
+        Me.gbDatos.Controls.Add(Me.Label3)
+        Me.gbDatos.Controls.Add(Me.txtStock)
+        Me.gbDatos.Controls.Add(Me.txtCod)
+        Me.gbDatos.Controls.Add(Me.txtPrecio)
+        Me.gbDatos.Controls.Add(Me.txtDesc)
+        Me.gbDatos.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.gbDatos.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbDatos.Location = New System.Drawing.Point(92, 118)
+        Me.gbDatos.Name = "gbDatos"
+        Me.gbDatos.Size = New System.Drawing.Size(696, 134)
+        Me.gbDatos.TabIndex = 8
+        Me.gbDatos.TabStop = False
+        Me.gbDatos.Text = "Datos del producto"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(341, 42)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(93, 22)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = "Descripción"
+        '
+        'txtCod
+        '
+        Me.txtCod.Enabled = False
+        Me.txtCod.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCod.Location = New System.Drawing.Point(99, 36)
+        Me.txtCod.Name = "txtCod"
+        Me.txtCod.ReadOnly = True
+        Me.txtCod.Size = New System.Drawing.Size(174, 26)
+        Me.txtCod.TabIndex = 1
+        '
+        'txtDesc
+        '
+        Me.txtDesc.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDesc.Location = New System.Drawing.Point(443, 36)
+        Me.txtDesc.Name = "txtDesc"
+        Me.txtDesc.Size = New System.Drawing.Size(174, 26)
+        Me.txtDesc.TabIndex = 2
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancelar.Location = New System.Drawing.Point(518, 14)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(143, 32)
+        Me.btnCancelar.TabIndex = 13
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label2.Location = New System.Drawing.Point(253, 53)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(327, 39)
+        Me.Label2.TabIndex = 7
+        Me.Label2.Text = "MODIFICAR PRODUCTO"
+        '
+        'btnRefresh
+        '
+        Me.btnRefresh.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRefresh.Location = New System.Drawing.Point(276, 14)
+        Me.btnRefresh.Name = "btnRefresh"
+        Me.btnRefresh.Size = New System.Drawing.Size(143, 32)
+        Me.btnRefresh.TabIndex = 12
+        Me.btnRefresh.Text = "Reset Valores"
+        Me.btnRefresh.UseVisualStyleBackColor = True
+        '
+        'btnGuardar
+        '
+        Me.btnGuardar.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnGuardar.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGuardar.Location = New System.Drawing.Point(54, 14)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(143, 32)
+        Me.btnGuardar.TabIndex = 11
+        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.UseVisualStyleBackColor = True
+        '
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.btnGuardar)
         Me.Panel1.Controls.Add(Me.btnRefresh)
         Me.Panel1.Controls.Add(Me.btnCancelar)
-        Me.Panel1.Location = New System.Drawing.Point(68, 416)
+        Me.Panel1.Location = New System.Drawing.Point(92, 460)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(696, 49)
         Me.Panel1.TabIndex = 10
         '
-        'AgregarProducto
+        'ModificarProducto
         '
-        Me.AcceptButton = Me.btnGuardar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlDark
-        Me.ClientSize = New System.Drawing.Size(862, 475)
-        Me.Controls.Add(Me.Panel1)
+        Me.ClientSize = New System.Drawing.Size(881, 563)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.gbDatos)
         Me.Controls.Add(Me.Label2)
-        Me.MaximizeBox = False
-        Me.MinimizeBox = False
-        Me.Name = "AgregarProducto"
+        Me.Controls.Add(Me.Panel1)
+        Me.Name = "ModificarProducto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "AgregarProducto"
-        Me.TopMost = True
-        Me.gbDatos.ResumeLayout(False)
-        Me.gbDatos.PerformLayout()
+        Me.Text = "ModificarProducto"
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
+        Me.gbDatos.ResumeLayout(False)
+        Me.gbDatos.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents txtCod As System.Windows.Forms.TextBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents txtDesc As System.Windows.Forms.TextBox
-    Friend WithEvents btnGuardar As System.Windows.Forms.Button
-    Friend WithEvents btnRefresh As System.Windows.Forms.Button
-    Friend WithEvents btnCancelar As System.Windows.Forms.Button
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents txtStock As System.Windows.Forms.TextBox
+    Friend WithEvents txtPrecio As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
     Friend WithEvents cbTipo As System.Windows.Forms.ComboBox
     Friend WithEvents cbColor As System.Windows.Forms.ComboBox
@@ -434,10 +427,14 @@ Partial Class AgregarProducto
     Friend WithEvents txtEspesor As System.Windows.Forms.TextBox
     Friend WithEvents Label20 As System.Windows.Forms.Label
     Friend WithEvents Label21 As System.Windows.Forms.Label
-    Friend WithEvents gbDatos As System.Windows.Forms.GroupBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents txtStock As System.Windows.Forms.TextBox
-    Friend WithEvents txtPrecio As System.Windows.Forms.TextBox
+    Friend WithEvents gbDatos As System.Windows.Forms.GroupBox
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents txtCod As System.Windows.Forms.TextBox
+    Friend WithEvents txtDesc As System.Windows.Forms.TextBox
+    Friend WithEvents btnCancelar As System.Windows.Forms.Button
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents btnRefresh As System.Windows.Forms.Button
+    Friend WithEvents btnGuardar As System.Windows.Forms.Button
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
 End Class

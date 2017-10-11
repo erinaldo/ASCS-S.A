@@ -6,7 +6,7 @@ Public Class Acceso
         Try
             Dim con As New MySqlConnection(ConexionDB.cadenaConexionBD(user, passwd))
             con.Open()
-            MsgBox("Conexión exitosa!")
+
             con.Close()
             Sesion.Usuario = user
             Sesion.Password = passwd
