@@ -1,21 +1,21 @@
-﻿Public Class Cliente
-    Private _codigo As Integer
-    Public Property codigo() As Integer
+﻿Public Class Proveedor
+    Private _codigo As String
+    Public Property codigo() As String
         Get
             Return _codigo
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As String)
             _codigo = value
         End Set
     End Property
 
-    Private _nombre As String
-    Public Property nombre() As String
+    Private _descripcion As String
+    Public Property descripcion() As String
         Get
-            Return _nombre
+            Return _descripcion
         End Get
         Set(ByVal value As String)
-            _nombre = value
+            _descripcion = value
         End Set
     End Property
 
@@ -46,6 +46,26 @@
         End Get
         Set(ByVal value As String)
             _contacto = value
+        End Set
+    End Property
+
+    Private _usuarioP As String
+    Public Property usuarioP() As String
+        Get
+            Return _usuarioP
+        End Get
+        Set(ByVal value As String)
+            _usuarioP = value
+        End Set
+    End Property
+
+    Private _fecha As Date
+    Public Property fecha() As Date
+        Get
+            Return _fecha
+        End Get
+        Set(ByVal value As Date)
+            _fecha = value
         End Set
     End Property
 End Class

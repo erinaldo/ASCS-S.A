@@ -184,4 +184,30 @@ Public Class ProductoDAO
             Throw New DAOException(ex.ToString)
         End Try
     End Sub
+
+    Sub eliminar(ByVal eliminar As Windows.Forms.DataGridViewSelectedRowCollection, ByVal seleccionados As Integer)
+
+        Try
+            Dim con As New MySqlConnection(ConexionDB.cadenaConexionBD(Sesion.Usuario, Sesion.Password))
+            con.Open()
+            Dim query = "DELETE FROM stproductos WHERE prodCodigo = @codigo"
+            Dim cmd As New MySqlCommand(query, con)
+            Dim cod As String
+
+
+            For i As Integer = 0 To seleccionados - 1
+
+                cod = eliminar(i).DataBoundItem(0)
+                cmd.Parameters.AddWithValue("@codigo", cod)
+                cmd.ExecuteNonQuery()
+                cmd.Parameters.Clear()
+
+            Next
+            con.Close()
+            MsgBox("Se han eliminado " + seleccionados.ToString + " producto/s correctamente", MsgBoxStyle.Information, "Notificación")
+        Catch ex As Exception
+            Throw New DAOException(ex.ToString)
+        End Try
+    End Sub
+
 End Class

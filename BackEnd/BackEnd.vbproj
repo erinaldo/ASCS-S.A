@@ -70,11 +70,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dao\ClienteDAO.vb" />
+    <Compile Include="dao\CompraDAO.vb" />
     <Compile Include="dao\ProductoDAO.vb" />
+    <Compile Include="dao\ProveedorDAO.vb" />
     <Compile Include="dao\UsuarioDAO.vb" />
+    <Compile Include="dao\VendedorDAO.vb" />
     <Compile Include="modelos\Cliente.vb" />
     <Compile Include="modelos\Producto.vb" />
+    <Compile Include="modelos\Proveedor.vb" />
     <Compile Include="modelos\Usuario.vb" />
+    <Compile Include="modelos\Vendedor.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

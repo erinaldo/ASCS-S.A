@@ -1,8 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
-Public Class ClienteDAO
+Public Class VendedorDAO
     Public Function cargar() As DataSet
-        Dim clientes As New Collection
         Dim ds As New DataSet
         Dim da As New MySqlDataAdapter
         Dim dt As New DataTable
@@ -11,7 +10,7 @@ Public Class ClienteDAO
             con.Open()
 
 
-            Dim mysql = "SELECT `clieCod` as `Código`, `clieNombre` as Nombre,`clieRuc` as RUC, clieTelef as Teléfono,clieContacto as Contacto FROM stockcapiata.`stclientes`"
+            Dim mysql = "SELECT venCod as Código, venNombreApellido as Nombre, venTelefono as Teléfono,venEstado as Estado, venPorcentaje as Porcentaje FROM stockcapiata.stvendedores"
 
             Dim cmd As New MySqlCommand(mysql, con)
             Dim adp As New MySqlDataAdapter(mysql, con)
@@ -46,19 +45,18 @@ Public Class ClienteDAO
         Return ds
     End Function
 
-    Public Sub agregar(ByVal modelo As Cliente)
+    Public Sub agregar(ByVal modelo As Vendedor)
         Try
             Dim con As New MySqlConnection(ConexionDB.cadenaConexionBD(Sesion.Usuario, Sesion.Password))
             con.Open()
-
-            Dim query As String = "INSERT INTO stclientes(clieNombre,clieRuc,clieTelef,clieContacto)" & vbCrLf & _
-                            "VALUES (@nombre,@ruc,@tel,@contacto)"
+            Dim porcentaje = If(modelo.porcentaje = 0, 1, 0.5)
+            Dim query As String = "INSERT INTO stvendedores(venNombreApellido,venPorcentaje,venTelefono,venEstado)" _
+                            & "VALUES (@nombre,@porcentaje,@tel,@estado)"
             Dim sqlcmd As New MySqlCommand(query, con)
             sqlcmd.Parameters.AddWithValue("@nombre", modelo.nombre)
-            sqlcmd.Parameters.AddWithValue("@ruc", modelo.ruc)
+            sqlcmd.Parameters.AddWithValue("@porcentaje", porcentaje)
             sqlcmd.Parameters.AddWithValue("@tel", modelo.tel)
-            sqlcmd.Parameters.AddWithValue("@contacto", modelo.contacto)
-
+            sqlcmd.Parameters.AddWithValue("@estado", modelo.estado)
             sqlcmd.ExecuteNonQuery()
             con.Close()
         Catch ex As Exception
@@ -66,12 +64,12 @@ Public Class ClienteDAO
         End Try
     End Sub
 
-    Public Function obtenerCliente(ByVal codigo As String) As Cliente
-        Dim modelo As New Cliente
+    Public Function obtenerVendedor(ByVal codigo As String) As Vendedor
+        Dim modelo As New Vendedor
         Try
             Dim con As New MySqlConnection(ConexionDB.cadenaConexionBD(Sesion.Usuario, Sesion.Password))
             con.Open()
-            Dim query = "Select * from stClientes where clieCod = @codigo"
+            Dim query = "Select * from stvendedores where venCod = @codigo"
             Dim cmd As New MySqlCommand(query, con)
             cmd.Parameters.AddWithValue("@codigo", codigo)
             Dim reader = cmd.ExecuteReader()
@@ -79,9 +77,9 @@ Public Class ClienteDAO
             While reader.Read
                 modelo.codigo = reader.GetInt16(0)
                 modelo.nombre = reader.GetString(1)
-                modelo.ruc = reader.GetString(2)
+                modelo.porcentaje = reader.GetString(2)
                 modelo.tel = reader.GetString(3)
-                modelo.contacto = reader.GetString(4)
+                modelo.estado = reader.GetString(4)
             End While
 
             reader.Close()
@@ -93,21 +91,21 @@ Public Class ClienteDAO
         Return modelo
     End Function
 
-    Sub actualizarCliente(ByVal modelo As Cliente)
+    Sub actualizarVendedor(ByVal modelo As Vendedor)
         Try
             Dim con As New MySqlConnection(ConexionDB.cadenaConexionBD(Sesion.Usuario, Sesion.Password))
             con.Open()
-            Dim query = "UPDATE stClientes set clieCod = @codigo, clieNombre = @nombre, clieRuc = @ruc, " _
-                        & "clieTelef = @tel, clieContacto = @contacto where clieCod = @codigo"
+            Dim query = "UPDATE stvendedores set venNombreApellido = @nombre, venTelefono = @tel, " _
+                        & "venEstado = @Estado, venPorcentaje = @porcentaje where venCod = @codigo"
             Dim cmd As New MySqlCommand(query, con)
             cmd.Parameters.AddWithValue("@codigo", modelo.codigo)
             cmd.Parameters.AddWithValue("@nombre", modelo.nombre)
-            cmd.Parameters.AddWithValue("@ruc", modelo.ruc)
+            cmd.Parameters.AddWithValue("@porcentaje", modelo.porcentaje)
             cmd.Parameters.AddWithValue("@tel", modelo.tel)
-            cmd.Parameters.AddWithValue("@contacto", modelo.contacto)
+            cmd.Parameters.AddWithValue("@estado", modelo.estado)
 
             cmd.ExecuteNonQuery()
-
+            MsgBox(VariablesUtiles.porcentaje(modelo.porcentaje.ToString))
             con.Close()
 
         Catch ex As Exception
@@ -116,8 +114,6 @@ Public Class ClienteDAO
     End Sub
 
     Public Function cargarBusqueda(ByVal criterio As Integer, ByVal regla As String) As DataSet
-        Dim clientes As New Collection
-        Dim modelo As New Cliente
         Dim ds As New DataSet
         Dim da As New MySqlDataAdapter
         Dim dt As New DataTable
@@ -130,21 +126,24 @@ Public Class ClienteDAO
 
             Dim dbcomm As New MySqlCommand
             If criterio = 0 Then
-                query = "SELECT clieCod as Código, clieNombre as Nombre,clieRuc as RUC,clieTelef as Teléfono, " _
-                            & "clieContacto as Contacto from stclientes where clieNombre LIKE CONCAT('%',@nombre,'%') "
+
+                query = "SELECT venCod as Código, venNombreApellido as Nombre, venTelefono as Teléfono,venEstado as Estado, venPorcentaje as Porcentaje " _
+                            & "from stvendedores where venNombreApellido LIKE CONCAT('%',@nombre,'%') "
                 dbcomm = New MySqlCommand(query, con)
                 dbcomm.Parameters.AddWithValue("@nombre", regla)
 
             ElseIf criterio = 1 Then
-                query = "SELECT clieCod as Código, clieNombre as Nombre,clieRuc as RUC,clieTelef as Teléfono, " _
-                            & "clieContacto as Contacto from stclientes where clieRuc = @ruc "
+                query = "SELECT venCod as Código, venNombreApellido as Nombre, venTelefono as Teléfono,venEstado as Estado, venPorcentaje as Porcentaje " _
+                             & "from stvendedores where venEstado = @estado"
+
                 dbcomm = New MySqlCommand(query, con)
-                dbcomm.Parameters.AddWithValue("@ruc", regla)
+                dbcomm.Parameters.AddWithValue("@estado", regla)
             ElseIf criterio = 2 Then
-                query = "SELECT clieCod as Código, clieNombre as Nombre,clieRuc as RUC,clieTelef as Teléfono, " _
-                            & "clieContacto as Contacto from stclientes where clieContacto LIKE CONCAT('%',@contacto,'%') "
+                query = "SELECT venCod as Código, venNombreApellido as Nombre, venTelefono as Teléfono,venEstado as Estado, venPorcentaje as Porcentaje " _
+                             & "from stvendedores where venPorcentaje = @porcentaje"
+                Dim porcentaje = Convert.ToInt16(regla)
                 dbcomm = New MySqlCommand(query, con)
-                dbcomm.Parameters.AddWithValue("@contacto", regla)
+                dbcomm.Parameters.AddWithValue("@porcentaje", porcentaje + 1)
 
             End If
 
@@ -158,29 +157,4 @@ Public Class ClienteDAO
         End Try
         Return ds
     End Function
-
-    Sub eliminar(ByVal eliminar As Windows.Forms.DataGridViewSelectedRowCollection, ByVal seleccionados As Integer)
-
-        Try
-            Dim con As New MySqlConnection(ConexionDB.cadenaConexionBD(Sesion.Usuario, Sesion.Password))
-            con.Open()
-            Dim query = "DELETE FROM stclientes WHERE clieCod = @codigo"
-            Dim cmd As New MySqlCommand(query, con)
-            Dim cod As String
-
-
-            For i As Integer = 0 To seleccionados - 1
-
-                cod = eliminar(i).DataBoundItem(0)
-                cmd.Parameters.AddWithValue("@codigo", cod)
-                cmd.ExecuteNonQuery()
-                cmd.Parameters.Clear()
-
-            Next
-            con.Close()
-            MsgBox("Se han eliminado " + seleccionados.ToString + " cliente/s correctamente", MsgBoxStyle.Information, "Notificación")
-        Catch ex As Exception
-            Throw New DAOException(ex.ToString)
-        End Try
-    End Sub
 End Class

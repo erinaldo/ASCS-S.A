@@ -84,6 +84,12 @@
     <Compile Include="ABM\clientes\ModificarCliente.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ABM\contraseña\CambiarContra.Designer.vb">
+      <DependentUpon>CambiarContra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABM\contraseña\CambiarContra.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ABM\producto\AgregarProducto.Designer.vb">
       <DependentUpon>AgregarProducto.vb</DependentUpon>
     </Compile>
@@ -94,6 +100,30 @@
       <DependentUpon>ModificarProducto.vb</DependentUpon>
     </Compile>
     <Compile Include="ABM\producto\ModificarProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABM\proveedor\AgregarProveedor.Designer.vb">
+      <DependentUpon>AgregarProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABM\proveedor\AgregarProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABM\proveedor\ModificarProveedor.Designer.vb">
+      <DependentUpon>ModificarProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABM\proveedor\ModificarProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABM\vendedor\AgregarVendedor.Designer.vb">
+      <DependentUpon>AgregarVendedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABM\vendedor\AgregarVendedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABM\vendedor\ModificarVendedor.Designer.vb">
+      <DependentUpon>ModificarVendedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABM\vendedor\ModificarVendedor.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Funciones.vb" />
@@ -108,6 +138,12 @@
       <DependentUpon>Inicio.vb</DependentUpon>
     </Compile>
     <Compile Include="Inicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimientos\GenerarCompras.Designer.vb">
+      <DependentUpon>GenerarCompras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Movimientos\GenerarCompras.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -133,17 +169,35 @@
     <EmbeddedResource Include="ABM\clientes\ModificarCliente.resx">
       <DependentUpon>ModificarCliente.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ABM\contraseña\CambiarContra.resx">
+      <DependentUpon>CambiarContra.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ABM\producto\AgregarProducto.resx">
       <DependentUpon>AgregarProducto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ABM\producto\ModificarProducto.resx">
       <DependentUpon>ModificarProducto.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ABM\proveedor\AgregarProveedor.resx">
+      <DependentUpon>AgregarProveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABM\proveedor\ModificarProveedor.resx">
+      <DependentUpon>ModificarProveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABM\vendedor\AgregarVendedor.resx">
+      <DependentUpon>AgregarVendedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABM\vendedor\ModificarVendedor.resx">
+      <DependentUpon>ModificarVendedor.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimientos\GenerarCompras.resx">
+      <DependentUpon>GenerarCompras.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

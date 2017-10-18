@@ -1,4 +1,4 @@
-﻿Public Class Cliente
+﻿Public Class Vendedor
     Private _codigo As Integer
     Public Property codigo() As Integer
         Get
@@ -19,13 +19,13 @@
         End Set
     End Property
 
-    Private _ruc As String
-    Public Property ruc() As String
+    Private _porcentaje As Integer
+    Public Property porcentaje() As Integer
         Get
-            Return _ruc
+            Return _porcentaje
         End Get
-        Set(ByVal value As String)
-            _ruc = value
+        Set(ByVal value As Integer)
+            _porcentaje = value
         End Set
     End Property
 
@@ -39,13 +39,13 @@
         End Set
     End Property
 
-    Private _contacto As String
-    Public Property contacto() As String
+    Private _estado As String
+    Public Property estado() As String
         Get
-            Return _contacto
+            Return _estado
         End Get
         Set(ByVal value As String)
-            _contacto = value
+            _estado = value
         End Set
     End Property
 End Class
