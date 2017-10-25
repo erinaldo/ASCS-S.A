@@ -23,7 +23,10 @@ Partial Class Inicio
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.dgvDatos = New System.Windows.Forms.DataGridView()
+        Me.PanelTitulo = New System.Windows.Forms.Panel()
+        Me.lblTitulo = New System.Windows.Forms.Label()
+        Me.pnlControles = New System.Windows.Forms.Panel()
         Me.panelBuscar = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -38,6 +41,7 @@ Partial Class Inicio
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.miSesion = New System.Windows.Forms.ToolStripMenuItem()
+        Me.miCambiarContra = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.miProductos = New System.Windows.Forms.ToolStripMenuItem()
         Me.miProductosList = New System.Windows.Forms.ToolStripMenuItem()
@@ -67,22 +71,65 @@ Partial Class Inicio
         Me.miCompras = New System.Windows.Forms.ToolStripMenuItem()
         Me.miGenerarCompra = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.dgvDatos = New System.Windows.Forms.DataGridView()
-        Me.pnlControles = New System.Windows.Forms.Panel()
-        Me.PanelTitulo = New System.Windows.Forms.Panel()
-        Me.lblTitulo = New System.Windows.Forms.Label()
-        Me.CambiarContraseñaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        CType(Me.dgvDatos, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelTitulo.SuspendLayout()
+        Me.pnlControles.SuspendLayout()
         Me.panelBuscar.SuspendLayout()
         Me.panelOperaciones.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
-        CType(Me.dgvDatos, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pnlControles.SuspendLayout()
-        Me.PanelTitulo.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'dgvDatos
+        '
+        Me.dgvDatos.AllowUserToAddRows = False
+        Me.dgvDatos.AllowUserToDeleteRows = False
+        Me.dgvDatos.AllowUserToOrderColumns = True
+        Me.dgvDatos.AllowUserToResizeColumns = False
+        Me.dgvDatos.AllowUserToResizeRows = False
+        Me.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvDatos.Location = New System.Drawing.Point(90, 269)
+        Me.dgvDatos.Name = "dgvDatos"
+        Me.dgvDatos.ReadOnly = True
+        Me.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvDatos.Size = New System.Drawing.Size(812, 251)
+        Me.dgvDatos.TabIndex = 34
+        Me.dgvDatos.Visible = False
+        '
+        'PanelTitulo
+        '
+        Me.PanelTitulo.BackColor = System.Drawing.Color.SteelBlue
+        Me.PanelTitulo.BackgroundImage = Global.Escritorio.My.Resources.Resources._4_bg_top
+        Me.PanelTitulo.Controls.Add(Me.lblTitulo)
+        Me.PanelTitulo.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PanelTitulo.Location = New System.Drawing.Point(90, 173)
+        Me.PanelTitulo.Name = "PanelTitulo"
+        Me.PanelTitulo.Size = New System.Drawing.Size(812, 72)
+        Me.PanelTitulo.TabIndex = 33
+        '
+        'lblTitulo
+        '
+        Me.lblTitulo.AutoSize = True
+        Me.lblTitulo.Location = New System.Drawing.Point(347, 24)
+        Me.lblTitulo.Name = "lblTitulo"
+        Me.lblTitulo.Size = New System.Drawing.Size(70, 24)
+        Me.lblTitulo.TabIndex = 0
+        Me.lblTitulo.Text = "Label4"
+        '
+        'pnlControles
+        '
+        Me.pnlControles.BackColor = System.Drawing.Color.SteelBlue
+        Me.pnlControles.BackgroundImage = Global.Escritorio.My.Resources.Resources.fondo_06
+        Me.pnlControles.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.pnlControles.Controls.Add(Me.panelBuscar)
+        Me.pnlControles.Controls.Add(Me.panelOperaciones)
+        Me.pnlControles.Location = New System.Drawing.Point(90, 36)
+        Me.pnlControles.Name = "pnlControles"
+        Me.pnlControles.Size = New System.Drawing.Size(812, 105)
+        Me.pnlControles.TabIndex = 31
         '
         'panelBuscar
         '
-        Me.panelBuscar.BackColor = System.Drawing.SystemColors.Control
+        Me.panelBuscar.BackColor = System.Drawing.Color.Transparent
         Me.panelBuscar.Controls.Add(Me.Label3)
         Me.panelBuscar.Controls.Add(Me.Label1)
         Me.panelBuscar.Controls.Add(Me.cbTipoBusqueda)
@@ -154,7 +201,7 @@ Partial Class Inicio
         '
         'panelOperaciones
         '
-        Me.panelOperaciones.BackColor = System.Drawing.SystemColors.Control
+        Me.panelOperaciones.BackColor = System.Drawing.Color.Transparent
         Me.panelOperaciones.Controls.Add(Me.Label2)
         Me.panelOperaciones.Controls.Add(Me.btnAgregar)
         Me.panelOperaciones.Controls.Add(Me.btnEliminar)
@@ -205,268 +252,245 @@ Partial Class Inicio
         '
         'MenuStrip1
         '
+        Me.MenuStrip1.BackColor = System.Drawing.Color.Transparent
+        Me.MenuStrip1.BackgroundImage = Global.Escritorio.My.Resources.Resources.fondo_06
+        Me.MenuStrip1.GripMargin = New System.Windows.Forms.Padding(2)
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miSesion, Me.miProductos, Me.miClientes, Me.miProveedores, Me.miVendedores, Me.miMovimientos, Me.ReportesToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(963, 24)
+        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(6, 2, 0, 3)
+        Me.MenuStrip1.Size = New System.Drawing.Size(963, 33)
         Me.MenuStrip1.TabIndex = 27
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'miSesion
         '
-        Me.miSesion.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CambiarContraseñaToolStripMenuItem, Me.CerrarToolStripMenuItem})
+        Me.miSesion.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miCambiarContra, Me.CerrarToolStripMenuItem})
+        Me.miSesion.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.miSesion.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.miSesion.Margin = New System.Windows.Forms.Padding(0, 10, 0, 0)
         Me.miSesion.Name = "miSesion"
-        Me.miSesion.Size = New System.Drawing.Size(53, 20)
+        Me.miSesion.Size = New System.Drawing.Size(54, 18)
         Me.miSesion.Text = "Sesión"
+        '
+        'miCambiarContra
+        '
+        Me.miCambiarContra.Name = "miCambiarContra"
+        Me.miCambiarContra.Size = New System.Drawing.Size(181, 22)
+        Me.miCambiarContra.Text = "Cambiar Contraseña"
         '
         'CerrarToolStripMenuItem
         '
         Me.CerrarToolStripMenuItem.Name = "CerrarToolStripMenuItem"
-        Me.CerrarToolStripMenuItem.Size = New System.Drawing.Size(106, 22)
+        Me.CerrarToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
         Me.CerrarToolStripMenuItem.Text = "Cerrar"
         '
         'miProductos
         '
         Me.miProductos.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miProductosList, Me.miProductosOper})
+        Me.miProductos.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.miProductos.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.miProductos.Margin = New System.Windows.Forms.Padding(0, 10, 0, 0)
         Me.miProductos.Name = "miProductos"
-        Me.miProductos.Size = New System.Drawing.Size(73, 20)
+        Me.miProductos.Size = New System.Drawing.Size(74, 18)
         Me.miProductos.Text = "Productos"
         '
         'miProductosList
         '
         Me.miProductosList.Name = "miProductosList"
-        Me.miProductosList.Size = New System.Drawing.Size(140, 22)
+        Me.miProductosList.Size = New System.Drawing.Size(141, 22)
         Me.miProductosList.Text = "Listado"
         '
         'miProductosOper
         '
         Me.miProductosOper.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miProductoAgregar, Me.miModificarProducto, Me.EliminarToolStripMenuItem})
         Me.miProductosOper.Name = "miProductosOper"
-        Me.miProductosOper.Size = New System.Drawing.Size(140, 22)
+        Me.miProductosOper.Size = New System.Drawing.Size(141, 22)
         Me.miProductosOper.Text = "Operaciones"
         '
         'miProductoAgregar
         '
         Me.miProductoAgregar.Name = "miProductoAgregar"
-        Me.miProductoAgregar.Size = New System.Drawing.Size(125, 22)
+        Me.miProductoAgregar.Size = New System.Drawing.Size(121, 22)
         Me.miProductoAgregar.Text = "Agregar"
         '
         'miModificarProducto
         '
         Me.miModificarProducto.Name = "miModificarProducto"
-        Me.miModificarProducto.Size = New System.Drawing.Size(125, 22)
+        Me.miModificarProducto.Size = New System.Drawing.Size(121, 22)
         Me.miModificarProducto.Text = "Modificar"
         '
         'EliminarToolStripMenuItem
         '
         Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
-        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(121, 22)
         Me.EliminarToolStripMenuItem.Text = "Eliminar"
         '
         'miClientes
         '
         Me.miClientes.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miClientesListado, Me.miClientesOper})
+        Me.miClientes.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.miClientes.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.miClientes.Margin = New System.Windows.Forms.Padding(0, 10, 0, 0)
         Me.miClientes.Name = "miClientes"
-        Me.miClientes.Size = New System.Drawing.Size(61, 20)
+        Me.miClientes.Size = New System.Drawing.Size(61, 18)
         Me.miClientes.Text = "Clientes"
         '
         'miClientesListado
         '
         Me.miClientesListado.Name = "miClientesListado"
-        Me.miClientesListado.Size = New System.Drawing.Size(140, 22)
+        Me.miClientesListado.Size = New System.Drawing.Size(141, 22)
         Me.miClientesListado.Text = "Listado"
         '
         'miClientesOper
         '
         Me.miClientesOper.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miClienteAgregar, Me.ModificarToolStripMenuItem1, Me.ElimiarToolStripMenuItem})
         Me.miClientesOper.Name = "miClientesOper"
-        Me.miClientesOper.Size = New System.Drawing.Size(140, 22)
+        Me.miClientesOper.Size = New System.Drawing.Size(141, 22)
         Me.miClientesOper.Text = "Operaciones"
         '
         'miClienteAgregar
         '
         Me.miClienteAgregar.Name = "miClienteAgregar"
-        Me.miClienteAgregar.Size = New System.Drawing.Size(125, 22)
+        Me.miClienteAgregar.Size = New System.Drawing.Size(121, 22)
         Me.miClienteAgregar.Text = "Agregar"
         '
         'ModificarToolStripMenuItem1
         '
         Me.ModificarToolStripMenuItem1.Name = "ModificarToolStripMenuItem1"
-        Me.ModificarToolStripMenuItem1.Size = New System.Drawing.Size(125, 22)
+        Me.ModificarToolStripMenuItem1.Size = New System.Drawing.Size(121, 22)
         Me.ModificarToolStripMenuItem1.Text = "Modificar"
         '
         'ElimiarToolStripMenuItem
         '
         Me.ElimiarToolStripMenuItem.Name = "ElimiarToolStripMenuItem"
-        Me.ElimiarToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
+        Me.ElimiarToolStripMenuItem.Size = New System.Drawing.Size(121, 22)
         Me.ElimiarToolStripMenuItem.Text = "Eliminar"
         '
         'miProveedores
         '
         Me.miProveedores.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miProveedoresListado, Me.miProveedoresOper})
+        Me.miProveedores.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.miProveedores.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.miProveedores.Margin = New System.Windows.Forms.Padding(0, 10, 0, 0)
         Me.miProveedores.Name = "miProveedores"
-        Me.miProveedores.Size = New System.Drawing.Size(84, 20)
+        Me.miProveedores.Size = New System.Drawing.Size(87, 18)
         Me.miProveedores.Text = "Proveedores"
         '
         'miProveedoresListado
         '
         Me.miProveedoresListado.Name = "miProveedoresListado"
-        Me.miProveedoresListado.Size = New System.Drawing.Size(140, 22)
+        Me.miProveedoresListado.Size = New System.Drawing.Size(141, 22)
         Me.miProveedoresListado.Text = "Listado"
         '
         'miProveedoresOper
         '
         Me.miProveedoresOper.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miProvAgregar, Me.miProvModificar, Me.miProvEliminar})
         Me.miProveedoresOper.Name = "miProveedoresOper"
-        Me.miProveedoresOper.Size = New System.Drawing.Size(140, 22)
+        Me.miProveedoresOper.Size = New System.Drawing.Size(141, 22)
         Me.miProveedoresOper.Text = "Operaciones"
         '
         'miProvAgregar
         '
         Me.miProvAgregar.Name = "miProvAgregar"
-        Me.miProvAgregar.Size = New System.Drawing.Size(125, 22)
+        Me.miProvAgregar.Size = New System.Drawing.Size(121, 22)
         Me.miProvAgregar.Text = "Agregar"
         '
         'miProvModificar
         '
         Me.miProvModificar.Name = "miProvModificar"
-        Me.miProvModificar.Size = New System.Drawing.Size(125, 22)
+        Me.miProvModificar.Size = New System.Drawing.Size(121, 22)
         Me.miProvModificar.Text = "Modificar"
         '
         'miProvEliminar
         '
         Me.miProvEliminar.Name = "miProvEliminar"
-        Me.miProvEliminar.Size = New System.Drawing.Size(125, 22)
+        Me.miProvEliminar.Size = New System.Drawing.Size(121, 22)
         Me.miProvEliminar.Text = "Eliminar"
         '
         'miVendedores
         '
         Me.miVendedores.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miVendedoresListado, Me.miVendOperaciones})
+        Me.miVendedores.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.miVendedores.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.miVendedores.Margin = New System.Windows.Forms.Padding(0, 10, 0, 0)
         Me.miVendedores.Name = "miVendedores"
-        Me.miVendedores.Size = New System.Drawing.Size(81, 20)
+        Me.miVendedores.Size = New System.Drawing.Size(85, 18)
         Me.miVendedores.Text = "Vendedores"
         '
         'miVendedoresListado
         '
         Me.miVendedoresListado.Name = "miVendedoresListado"
-        Me.miVendedoresListado.Size = New System.Drawing.Size(140, 22)
+        Me.miVendedoresListado.Size = New System.Drawing.Size(141, 22)
         Me.miVendedoresListado.Text = "Listado"
         '
         'miVendOperaciones
         '
         Me.miVendOperaciones.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miVendAgregar, Me.miVendModificar, Me.miVendEliminar})
         Me.miVendOperaciones.Name = "miVendOperaciones"
-        Me.miVendOperaciones.Size = New System.Drawing.Size(140, 22)
+        Me.miVendOperaciones.Size = New System.Drawing.Size(141, 22)
         Me.miVendOperaciones.Text = "Operaciones"
         '
         'miVendAgregar
         '
         Me.miVendAgregar.Name = "miVendAgregar"
-        Me.miVendAgregar.Size = New System.Drawing.Size(125, 22)
+        Me.miVendAgregar.Size = New System.Drawing.Size(121, 22)
         Me.miVendAgregar.Text = "Agregar"
         '
         'miVendModificar
         '
         Me.miVendModificar.Name = "miVendModificar"
-        Me.miVendModificar.Size = New System.Drawing.Size(125, 22)
+        Me.miVendModificar.Size = New System.Drawing.Size(121, 22)
         Me.miVendModificar.Text = "Modificar"
         '
         'miVendEliminar
         '
         Me.miVendEliminar.Name = "miVendEliminar"
-        Me.miVendEliminar.Size = New System.Drawing.Size(125, 22)
+        Me.miVendEliminar.Size = New System.Drawing.Size(121, 22)
         Me.miVendEliminar.Text = "Eliminar"
         '
         'miMovimientos
         '
         Me.miMovimientos.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miCompras})
+        Me.miMovimientos.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.miMovimientos.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.miMovimientos.Margin = New System.Windows.Forms.Padding(0, 10, 0, 0)
         Me.miMovimientos.Name = "miMovimientos"
-        Me.miMovimientos.Size = New System.Drawing.Size(89, 20)
+        Me.miMovimientos.Size = New System.Drawing.Size(86, 18)
         Me.miMovimientos.Text = "Movimientos"
         '
         'miCompras
         '
         Me.miCompras.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miGenerarCompra})
         Me.miCompras.Name = "miCompras"
-        Me.miCompras.Size = New System.Drawing.Size(152, 22)
+        Me.miCompras.Size = New System.Drawing.Size(120, 22)
         Me.miCompras.Text = "Compras"
         '
         'miGenerarCompra
         '
         Me.miGenerarCompra.Name = "miGenerarCompra"
-        Me.miGenerarCompra.Size = New System.Drawing.Size(161, 22)
+        Me.miGenerarCompra.Size = New System.Drawing.Size(162, 22)
         Me.miGenerarCompra.Text = "Generar Compra"
         '
         'ReportesToolStripMenuItem
         '
+        Me.ReportesToolStripMenuItem.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ReportesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.ReportesToolStripMenuItem.Margin = New System.Windows.Forms.Padding(0, 10, 0, 0)
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
-        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
+        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(68, 18)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
-        '
-        'dgvDatos
-        '
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvDatos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvDatos.GridColor = System.Drawing.Color.CadetBlue
-        Me.dgvDatos.Location = New System.Drawing.Point(90, 321)
-        Me.dgvDatos.Name = "dgvDatos"
-        Me.dgvDatos.ReadOnly = True
-        Me.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvDatos.Size = New System.Drawing.Size(812, 247)
-        Me.dgvDatos.TabIndex = 29
-        Me.dgvDatos.Visible = False
-        '
-        'pnlControles
-        '
-        Me.pnlControles.BackColor = System.Drawing.Color.Transparent
-        Me.pnlControles.Controls.Add(Me.panelBuscar)
-        Me.pnlControles.Controls.Add(Me.panelOperaciones)
-        Me.pnlControles.Location = New System.Drawing.Point(90, 40)
-        Me.pnlControles.Name = "pnlControles"
-        Me.pnlControles.Size = New System.Drawing.Size(812, 100)
-        Me.pnlControles.TabIndex = 31
-        '
-        'PanelTitulo
-        '
-        Me.PanelTitulo.Controls.Add(Me.lblTitulo)
-        Me.PanelTitulo.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PanelTitulo.Location = New System.Drawing.Point(90, 173)
-        Me.PanelTitulo.Name = "PanelTitulo"
-        Me.PanelTitulo.Size = New System.Drawing.Size(812, 100)
-        Me.PanelTitulo.TabIndex = 33
-        '
-        'lblTitulo
-        '
-        Me.lblTitulo.AutoSize = True
-        Me.lblTitulo.Location = New System.Drawing.Point(347, 36)
-        Me.lblTitulo.Name = "lblTitulo"
-        Me.lblTitulo.Size = New System.Drawing.Size(70, 24)
-        Me.lblTitulo.TabIndex = 0
-        Me.lblTitulo.Text = "Label4"
-        '
-        'CambiarContraseñaToolStripMenuItem
-        '
-        Me.CambiarContraseñaToolStripMenuItem.Name = "CambiarContraseñaToolStripMenuItem"
-        Me.CambiarContraseñaToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
-        Me.CambiarContraseñaToolStripMenuItem.Text = "Cambiar Contraseña"
         '
         'Inicio
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.BackColor = System.Drawing.Color.CornflowerBlue
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(963, 617)
         Me.ControlBox = False
+        Me.Controls.Add(Me.dgvDatos)
         Me.Controls.Add(Me.PanelTitulo)
         Me.Controls.Add(Me.pnlControles)
-        Me.Controls.Add(Me.dgvDatos)
         Me.Controls.Add(Me.MenuStrip1)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
@@ -476,18 +500,17 @@ Partial Class Inicio
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Casa Marco"
-        Me.TransparencyKey = System.Drawing.Color.Transparent
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
+        CType(Me.dgvDatos, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelTitulo.ResumeLayout(False)
+        Me.PanelTitulo.PerformLayout()
+        Me.pnlControles.ResumeLayout(False)
         Me.panelBuscar.ResumeLayout(False)
         Me.panelBuscar.PerformLayout()
         Me.panelOperaciones.ResumeLayout(False)
         Me.panelOperaciones.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.dgvDatos, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.pnlControles.ResumeLayout(False)
-        Me.PanelTitulo.ResumeLayout(False)
-        Me.PanelTitulo.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -521,7 +544,6 @@ Partial Class Inicio
     Friend WithEvents miClienteAgregar As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ModificarToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ElimiarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents dgvDatos As System.Windows.Forms.DataGridView
     Friend WithEvents btnAgregar As System.Windows.Forms.Button
     Friend WithEvents pnlControles As System.Windows.Forms.Panel
     Friend WithEvents Label1 As System.Windows.Forms.Label
@@ -546,6 +568,6 @@ Partial Class Inicio
     Friend WithEvents lblTitulo As System.Windows.Forms.Label
     Friend WithEvents miCompras As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents miGenerarCompra As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents CambiarContraseñaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-
+    Friend WithEvents miCambiarContra As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents dgvDatos As DataGridView
 End Class

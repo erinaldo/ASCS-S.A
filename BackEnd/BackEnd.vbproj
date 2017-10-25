@@ -76,6 +76,7 @@
     <Compile Include="dao\UsuarioDAO.vb" />
     <Compile Include="dao\VendedorDAO.vb" />
     <Compile Include="modelos\Cliente.vb" />
+    <Compile Include="modelos\Compra.vb" />
     <Compile Include="modelos\Producto.vb" />
     <Compile Include="modelos\Proveedor.vb" />
     <Compile Include="modelos\Usuario.vb" />
@@ -95,6 +96,14 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="stockcapiataDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stockcapiataDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="stockcapiataDataSet.vb">
+      <DependentUpon>stockcapiataDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="util\ConexionDB.vb" />
     <Compile Include="util\DAOException.vb" />
     <Compile Include="util\Acceso.vb" />
@@ -111,6 +120,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -119,6 +129,17 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="stockcapiataDataSet.xsc">
+      <DependentUpon>stockcapiataDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="stockcapiataDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>stockcapiataDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="stockcapiataDataSet.xss">
+      <DependentUpon>stockcapiataDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

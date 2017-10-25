@@ -52,6 +52,7 @@ Partial Class AgregarCliente
         '
         'GroupBox1
         '
+        Me.GroupBox1.BackColor = System.Drawing.Color.SteelBlue
         Me.GroupBox1.Controls.Add(Me.txtContacto)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.txtTel)
@@ -185,7 +186,7 @@ Partial Class AgregarCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.BackColor = System.Drawing.Color.SteelBlue
         Me.ClientSize = New System.Drawing.Size(563, 415)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox1)

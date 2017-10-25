@@ -9,7 +9,7 @@ Public Class Inicio
    
     'Carga del Formulario de Inicio
     Private Sub Inicio_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
+        cambiarFondo()
         panelBuscar.Visible = False
         panelOperaciones.Visible = False
         PanelTitulo.Visible = False
@@ -22,13 +22,27 @@ Public Class Inicio
         'panelOperaciones.Left = (Me.ClientSize.Width / 2) - (panelBuscar.Width / 2)
 
     End Sub
+
+    Private Sub cambiarFondo()
+
+        For Each ctl As Control In Me.Controls
+            If TypeOf ctl Is MdiClient Then
+                'Set properties of ctl here, e.g.
+                ctl.BackColor = Color.SteelBlue
+            End If
+        Next ctl
+
+
+    End Sub
     ' Operaciones de Sesion
     ' Salir
     Private Sub CerrarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CerrarToolStripMenuItem.Click
-        Application.Exit()
+        Me.Close()
+        Dim lg As New login
+        lg.Show()
     End Sub
 
-    
+
     'Private Sub pbProductos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
     '    Dim prod As New ProductoDAO
     '    DT.Clear()
@@ -494,7 +508,10 @@ Public Class Inicio
         agregarProv.ShowDialog(Me)
     End Sub
 
-    Private Sub CambiarContraseñaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CambiarContraseñaToolStripMenuItem.Click
+    Private Sub CambiarContra(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles miCambiarContra.Click
+        Dim cont As New CambiarContra
+        cont.FormBorderStyle = FormBorderStyle.FixedDialog
+        cont.ShowDialog(Me)
 
     End Sub
 End Class

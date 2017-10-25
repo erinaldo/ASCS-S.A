@@ -140,7 +140,8 @@ Partial Class AgregarProducto
         '
         'gbDatos
         '
-        Me.gbDatos.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.gbDatos.BackColor = System.Drawing.Color.SteelBlue
+        Me.gbDatos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.gbDatos.Controls.Add(Me.Label5)
         Me.gbDatos.Controls.Add(Me.Label1)
         Me.gbDatos.Controls.Add(Me.Label6)
@@ -388,7 +389,7 @@ Partial Class AgregarProducto
         Me.AcceptButton = Me.btnGuardar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.BackColor = System.Drawing.Color.CornflowerBlue
         Me.ClientSize = New System.Drawing.Size(862, 475)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox4)

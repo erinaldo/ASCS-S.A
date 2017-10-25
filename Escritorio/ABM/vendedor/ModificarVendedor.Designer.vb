@@ -189,6 +189,7 @@ Partial Class ModificarVendedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.SteelBlue
         Me.ClientSize = New System.Drawing.Size(672, 463)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)

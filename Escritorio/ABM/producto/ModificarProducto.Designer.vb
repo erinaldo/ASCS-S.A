@@ -284,7 +284,7 @@ Partial Class ModificarProducto
         '
         'gbDatos
         '
-        Me.gbDatos.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.gbDatos.BackColor = System.Drawing.Color.SteelBlue
         Me.gbDatos.Controls.Add(Me.Label5)
         Me.gbDatos.Controls.Add(Me.Label1)
         Me.gbDatos.Controls.Add(Me.Label6)
@@ -388,7 +388,7 @@ Partial Class ModificarProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.BackColor = System.Drawing.Color.SteelBlue
         Me.ClientSize = New System.Drawing.Size(881, 563)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.gbDatos)

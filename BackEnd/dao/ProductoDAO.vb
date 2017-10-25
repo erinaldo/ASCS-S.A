@@ -12,9 +12,9 @@ Public Class ProductoDAO
         Try
             Dim con As New MySqlConnection(ConexionDB.cadenaConexionBD(Sesion.Usuario, Sesion.Password))
             con.Open()
-           
 
-            Dim mysql = "SELECT `prodCodigo` as `Código`,`prodDescripcion` as `Descripción`,`prodStockMinimo` as `Stock`,`prodTipo` as `Tipo` FROM `stockcapiata`.`stproductos`"
+
+            Dim mysql = "Select * from productosviewCarga"
             Dim cmd As New MySqlCommand(mysql, con)
             Dim adp As New MySqlDataAdapter(mysql, con)
 

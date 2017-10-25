@@ -30,8 +30,8 @@ Partial Class CambiarContra
         Me.txtNueva2 = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -48,10 +48,11 @@ Partial Class CambiarContra
         '
         'txtActual
         '
-        Me.txtActual.Location = New System.Drawing.Point(235, 77)
+        Me.txtActual.Location = New System.Drawing.Point(235, 80)
         Me.txtActual.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.txtActual.Name = "txtActual"
-        Me.txtActual.Size = New System.Drawing.Size(414, 30)
+        Me.txtActual.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtActual.Size = New System.Drawing.Size(263, 30)
         Me.txtActual.TabIndex = 1
         '
         'Label2
@@ -67,17 +68,18 @@ Partial Class CambiarContra
         '
         'txtNueva
         '
-        Me.txtNueva.Location = New System.Drawing.Point(235, 155)
+        Me.txtNueva.Location = New System.Drawing.Point(235, 151)
         Me.txtNueva.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.txtNueva.Name = "txtNueva"
-        Me.txtNueva.Size = New System.Drawing.Size(414, 30)
-        Me.txtNueva.TabIndex = 1
+        Me.txtNueva.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtNueva.Size = New System.Drawing.Size(263, 30)
+        Me.txtNueva.TabIndex = 2
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(29, 227)
+        Me.Label3.Location = New System.Drawing.Point(25, 227)
         Me.Label3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(194, 23)
@@ -86,20 +88,21 @@ Partial Class CambiarContra
         '
         'txtNueva2
         '
-        Me.txtNueva2.Location = New System.Drawing.Point(235, 227)
+        Me.txtNueva2.Location = New System.Drawing.Point(235, 220)
         Me.txtNueva2.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.txtNueva2.Name = "txtNueva2"
-        Me.txtNueva2.Size = New System.Drawing.Size(414, 30)
-        Me.txtNueva2.TabIndex = 1
+        Me.txtNueva2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtNueva2.Size = New System.Drawing.Size(263, 30)
+        Me.txtNueva2.TabIndex = 3
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(315, 44)
+        Me.Label4.Font = New System.Drawing.Font("Tahoma", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(242, 26)
         Me.Label4.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(203, 23)
+        Me.Label4.Size = New System.Drawing.Size(226, 25)
         Me.Label4.TabIndex = 2
         Me.Label4.Text = "Cambiar Contraseña"
         '
@@ -113,41 +116,46 @@ Partial Class CambiarContra
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.txtNueva)
-        Me.GroupBox1.Location = New System.Drawing.Point(84, 88)
+        Me.GroupBox1.Location = New System.Drawing.Point(67, 54)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(679, 347)
+        Me.GroupBox1.Size = New System.Drawing.Size(564, 347)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(180, 298)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(122, 36)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Aceptar"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(383, 298)
+        Me.Button2.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(310, 305)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(120, 36)
-        Me.Button2.TabIndex = 3
+        Me.Button2.TabIndex = 5
         Me.Button2.Text = "Cancelar"
         Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(117, 305)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(122, 36)
+        Me.Button1.TabIndex = 4
+        Me.Button1.Text = "Aceptar"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'CambiarContra
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 23.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlDark
-        Me.ClientSize = New System.Drawing.Size(819, 460)
+        Me.ClientSize = New System.Drawing.Size(710, 460)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label4)
         Me.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "CambiarContra"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cambiar Contraseña"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

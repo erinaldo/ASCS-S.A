@@ -6,10 +6,12 @@ Public Class CambiarContra
         If validarDatos() Then
             Dim daoUsu As New UsuarioDAO
             Dim resultado = daoUsu.cambiarContra(txtActual.Text, txtNueva.Text, txtNueva2.Text)
-
+            MsgBox(resultado)
+            Me.DialogResult = DialogResult.OK
+        Else
+            MsgBox("Debe llenar todos los campos!", MsgBoxStyle.Critical, "Atención")
 
         End If
-
 
     End Sub
 
