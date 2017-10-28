@@ -28,7 +28,8 @@ Public Class Inicio
         For Each ctl As Control In Me.Controls
             If TypeOf ctl Is MdiClient Then
                 'Set properties of ctl here, e.g.
-                ctl.BackColor = Color.SteelBlue
+                'ctl.BackColor = Color.SteelBlue
+                ctl.BackgroundImage = My.Resources.Panther1
             End If
         Next ctl
 
@@ -117,6 +118,7 @@ Public Class Inicio
         agregarProd.ShowDialog(Me)
         listadoProductos(sender, e)
         dgvDatos.Visible = True
+        agregarProd.Dispose()
     End Sub
 
     ' ------------------- Manejo Modificar Producto/Carga de listado/Carga de formulario
@@ -130,7 +132,7 @@ Public Class Inicio
             Dim modificarForm As New ModificarProducto(codigo)
             modificarForm.ShowDialog()
             listadoProductos(sender, e)
-
+            modificarForm.Dispose()
         End If
     End Sub
 
@@ -208,6 +210,7 @@ Public Class Inicio
         agregarCliente.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
         agregarCliente.ShowDialog(Me)
         dgvDatos.Visible = True
+        agregarCliente.Dispose()
     End Sub
     '  ---------------------------- Carga de formulario de modificar Cliente   ----------------------------
     Private Sub modificarCliente_click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ModificarToolStripMenuItem1.Click
@@ -221,6 +224,7 @@ Public Class Inicio
                 Dim modificarForm As New ModificarCliente(codigo)
                 modificarForm.ShowDialog()
                 listadoClientes(sender, e)
+                modificarForm.Dispose()
             Catch ex As Exception
                 Throw New DAOException(ex.ToString)
             End Try
@@ -297,6 +301,7 @@ Public Class Inicio
         agregarProv.ShowDialog(Me)
         listadoProveedores(sender, e)
         dgvDatos.Visible = True
+        agregarProv.Dispose()
     End Sub
 
 
@@ -312,6 +317,7 @@ Public Class Inicio
                 Dim modificarForm As New ModificarProveedor(codigo)
                 modificarForm.ShowDialog()
                 listadoProveedores(sender, e)
+                modificarForm.Dispose()
             Catch ex As Exception
                 Throw New DAOException(ex.ToString)
             End Try
@@ -354,12 +360,13 @@ Public Class Inicio
     '  ---------------------------- Agregar Vendedor nuevo   ----------------------------
 
     Private Sub agregarVendedor_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles miVendAgregar.Click
-        Dim agregarProv As New AgregarVendedor
+        Dim agregarVend As New AgregarVendedor
         'dgvDatos.Visible = False
-        agregarProv.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
-        agregarProv.ShowDialog(Me)
+        agregarVend.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
+        agregarVend.ShowDialog(Me)
         listadoVendedores(sender, e)
         dgvDatos.Visible = True
+        agregarVend.Dispose()
     End Sub
 
     '  ---------------------------- Modificar Vendedor Seleccionado   ----------------------------
@@ -374,6 +381,7 @@ Public Class Inicio
                 Dim modificarForm As New ModificarVendedor(codigo)
                 modificarForm.ShowDialog()
                 listadoVendedores(sender, e)
+                modificarForm.Dispose()
             Catch ex As Exception
                 Throw New DAOException(ex.ToString)
             End Try

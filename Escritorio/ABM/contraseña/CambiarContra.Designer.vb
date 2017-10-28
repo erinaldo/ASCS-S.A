@@ -99,7 +99,7 @@ Partial Class CambiarContra
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Tahoma", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(242, 26)
+        Me.Label4.Location = New System.Drawing.Point(232, 26)
         Me.Label4.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(226, 25)
@@ -118,14 +118,14 @@ Partial Class CambiarContra
         Me.GroupBox1.Controls.Add(Me.txtNueva)
         Me.GroupBox1.Location = New System.Drawing.Point(67, 54)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(564, 347)
+        Me.GroupBox1.Size = New System.Drawing.Size(564, 358)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         '
         'Button2
         '
         Me.Button2.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(310, 305)
+        Me.Button2.Location = New System.Drawing.Point(317, 305)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(120, 36)
         Me.Button2.TabIndex = 5
@@ -135,7 +135,7 @@ Partial Class CambiarContra
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(117, 305)
+        Me.Button1.Location = New System.Drawing.Point(126, 305)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(122, 36)
         Me.Button1.TabIndex = 4
@@ -146,7 +146,7 @@ Partial Class CambiarContra
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 23.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.BackColor = System.Drawing.Color.SteelBlue
         Me.ClientSize = New System.Drawing.Size(710, 460)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label4)

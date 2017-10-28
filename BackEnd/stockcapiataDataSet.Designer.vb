@@ -1400,7 +1400,15 @@ Partial Public Class stockcapiataDataSet
         
         Private columnPrecio As Global.System.Data.DataColumn
         
+        Private columnIva As Global.System.Data.DataColumn
+        
+        Private _columnSub_Total As Global.System.Data.DataColumn
+        
         Private columnTotal As Global.System.Data.DataColumn
+        
+        Private columnDepoCod As Global.System.Data.DataColumn
+        
+        Private columnImpuesto As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -1479,9 +1487,41 @@ Partial Public Class stockcapiataDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property IvaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIva
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property _Sub_TotalColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me._columnSub_Total
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property TotalColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnTotal
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property DepoCodColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDepoCod
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property ImpuestoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnImpuesto
             End Get
         End Property
         
@@ -1522,9 +1562,9 @@ Partial Public Class stockcapiataDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddproductosCompraRow(ByVal Código As String, ByVal Descripción As String, ByVal Depósito As String, ByVal Cantidad As String, ByVal Precio As String, ByVal Total As String) As productosCompraRow
+        Public Overloads Function AddproductosCompraRow(ByVal Código As String, ByVal Descripción As String, ByVal Depósito As String, ByVal Cantidad As String, ByVal Precio As String, ByVal Iva As String, ByVal _Sub_Total As String, ByVal Total As String, ByVal DepoCod As String, ByVal Impuesto As String) As productosCompraRow
             Dim rowproductosCompraRow As productosCompraRow = CType(Me.NewRow,productosCompraRow)
-            Dim columnValuesArray() As Object = New Object() {Código, Descripción, Depósito, Cantidad, Precio, Total}
+            Dim columnValuesArray() As Object = New Object() {Código, Descripción, Depósito, Cantidad, Precio, Iva, _Sub_Total, Total, DepoCod, Impuesto}
             rowproductosCompraRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowproductosCompraRow)
             Return rowproductosCompraRow
@@ -1552,7 +1592,11 @@ Partial Public Class stockcapiataDataSet
             Me.columnDepósito = MyBase.Columns("Depósito")
             Me.columnCantidad = MyBase.Columns("Cantidad")
             Me.columnPrecio = MyBase.Columns("Precio")
+            Me.columnIva = MyBase.Columns("Iva")
+            Me._columnSub_Total = MyBase.Columns("Sub-Total")
             Me.columnTotal = MyBase.Columns("Total")
+            Me.columnDepoCod = MyBase.Columns("DepoCod")
+            Me.columnImpuesto = MyBase.Columns("Impuesto")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1568,8 +1612,18 @@ Partial Public Class stockcapiataDataSet
             MyBase.Columns.Add(Me.columnCantidad)
             Me.columnPrecio = New Global.System.Data.DataColumn("Precio", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnPrecio)
+            Me.columnIva = New Global.System.Data.DataColumn("Iva", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIva)
+            Me._columnSub_Total = New Global.System.Data.DataColumn("Sub-Total", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me._columnSub_Total.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnSub_Total")
+            Me._columnSub_Total.ExtendedProperties.Add("Generator_UserColumnName", "Sub-Total")
+            MyBase.Columns.Add(Me._columnSub_Total)
             Me.columnTotal = New Global.System.Data.DataColumn("Total", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnTotal)
+            Me.columnDepoCod = New Global.System.Data.DataColumn("DepoCod", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDepoCod)
+            Me.columnImpuesto = New Global.System.Data.DataColumn("Impuesto", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnImpuesto)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2272,6 +2326,36 @@ Partial Public Class stockcapiataDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Iva() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableproductosCompra.IvaColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Iva' de la tabla 'productosCompra' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableproductosCompra.IvaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property _Sub_Total() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableproductosCompra._Sub_TotalColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Sub-Total' de la tabla 'productosCompra' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableproductosCompra._Sub_TotalColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Total() As String
             Get
                 Try 
@@ -2282,6 +2366,36 @@ Partial Public Class stockcapiataDataSet
             End Get
             Set
                 Me(Me.tableproductosCompra.TotalColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property DepoCod() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableproductosCompra.DepoCodColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'DepoCod' de la tabla 'productosCompra' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableproductosCompra.DepoCodColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Impuesto() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableproductosCompra.ImpuestoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Impuesto' de la tabla 'productosCompra' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableproductosCompra.ImpuestoColumn) = value
             End Set
         End Property
         
@@ -2347,6 +2461,30 @@ Partial Public Class stockcapiataDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsIvaNull() As Boolean
+            Return Me.IsNull(Me.tableproductosCompra.IvaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetIvaNull()
+            Me(Me.tableproductosCompra.IvaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Is_Sub_TotalNull() As Boolean
+            Return Me.IsNull(Me.tableproductosCompra._Sub_TotalColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Set_Sub_TotalNull()
+            Me(Me.tableproductosCompra._Sub_TotalColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsTotalNull() As Boolean
             Return Me.IsNull(Me.tableproductosCompra.TotalColumn)
         End Function
@@ -2355,6 +2493,30 @@ Partial Public Class stockcapiataDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetTotalNull()
             Me(Me.tableproductosCompra.TotalColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsDepoCodNull() As Boolean
+            Return Me.IsNull(Me.tableproductosCompra.DepoCodColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetDepoCodNull()
+            Me(Me.tableproductosCompra.DepoCodColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsImpuestoNull() As Boolean
+            Return Me.IsNull(Me.tableproductosCompra.ImpuestoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetImpuestoNull()
+            Me(Me.tableproductosCompra.ImpuestoColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

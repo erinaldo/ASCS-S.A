@@ -39,4 +39,17 @@ Public Class login
     Private Sub PictureBox1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBox1.Click
 
     End Sub
+
+    Private Sub login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.SuspendLayout()
+        pnlBienvenida.BackColor = Color.FromArgb(80, Color.Black)
+
+        lbbienvenida.BackColor = Color.FromArgb(50, Color.Black)
+        Me.ResumeLayout()
+
+    End Sub
+
+
+
+
 End Class

@@ -9,9 +9,10 @@ Public Class GenerarCompras
 
         'TODO: esta línea de código carga datos en la tabla 'StockcapiataDataSet.cargacompras' Puede moverla o quitarla según sea necesario.
         'Me.CargacomprasTableAdapter.Fill(Me.StockcapiataDataSet.cargacompras)
+        Me.SuspendLayout()
         centrarElementos()
         generarCompraElementos()
-
+        Me.ResumeLayout()
     End Sub
 
     Private Sub buscarCompraFecha_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscarCompra.Click
@@ -21,7 +22,7 @@ Public Class GenerarCompras
         Dim inicio = datepInicio.Value.Date
         Dim fin = datepFin.Value.Date
         Dim listadoCompras = compraDao.carga(inicio, fin)
-
+        dgvCompras.DataSource = listadoCompras.Tables("tabla")
 
     End Sub
 
@@ -43,10 +44,23 @@ Public Class GenerarCompras
         'gbTipoPago.Controls.OfType(Of RadioButton).FirstOrDefault(rbContado)
         rbContado.Checked = True
         ' Dim interes = compraDato.cargaInteres()
-        txtImpuesto.Text = "10%"
+        Dim impuesto = compraDao.cargaImpuesto()
+        cbImpuesto.DataSource = impuesto.Tables("tabla")
+        cbImpuesto.DisplayMember = "Impuesto"
+        cbImpuesto.ValueMember = "Código"
 
         dgvProductos.DataSource = New stockcapiataDataSet.productosCompraDataTable
+        'dgvProductos.Columns("Impuesto").Visible = False
+        dgvProductos.Columns("DepoCod").Visible = False
+        cbBuscarCompra.DataSource = VariablesUtiles.busquedaCompras
 
+        gbBusquedaCompra.BackColor = Color.FromArgb(80, Color.Black)
+
+        pnlComentario.BackColor = Color.FromArgb(80, Color.Black)
+        pnlTotales.BackColor = Color.FromArgb(80, Color.Black)
+        pnlOperadores.BackColor = Color.FromArgb(80, Color.Black)
+        pnlDatosCompra.BackColor = Color.FromArgb(80, Color.Black)
+        pnlDatosProducto.BackColor = Color.FromArgb(80, Color.Black)
     End Sub
 
 
@@ -69,6 +83,18 @@ Public Class GenerarCompras
         End Try
     End Sub
 
+    Private Function calcularIva(ByVal total As Double, ByVal cod As String) As Double
+        Dim resultado As Double
+        If cod = "10%" Then
+            resultado = CDbl((total * 10) / 100)
+        ElseIf cod = "5%" Then
+            resultado = CDbl((total * 5) / 100)
+        Else
+            resultado = 0
+        End If
+        Return resultado
+    End Function
+
     Private Sub btnInsertarProd_Click(sender As Object, e As EventArgs) Handles btnInsertarProd.Click
         If validarProducto() Then
             Dim row2 As DataTable = dgvProductos.DataSource
@@ -78,19 +104,38 @@ Public Class GenerarCompras
             row("Cantidad") = txtCantidad.Text
             row("Precio") = txtPrecioProd.Text
             row("Depósito") = cbDeposito.SelectedItem.item("Descripción")
+            row("DepoCod") = cbDeposito.SelectedItem.item("Código")
             Dim total = CDbl(txtPrecioProd.Text) * CDbl(txtCantidad.Text)
-            row("Total") = total
-            If txtTotalCompra.Text <> "" Then
-                txtTotalCompra.Text = CDbl(txtTotalCompra.Text) + total
+            Dim iva = calcularIva(total, cbImpuesto.SelectedItem("Impuesto"))
+            row("Impuesto") = cbImpuesto.SelectedItem("Impuesto")
+            row("Iva") = iva
+            row("Sub-Total") = total
+            row("Total") = total + iva
+
+            If txtSub.Text = "" Then
+                txtSub.Text = total
             Else
-                txtTotalCompra.Text = total
+                txtSub.Text = CDbl(txtSub.Text) + total
             End If
+            If txtTotalCompra.Text <> "" Then
+                txtTotalCompra.Text = CDbl(txtTotalCompra.Text) + total + iva
+            Else
+                txtTotalCompra.Text = total + iva
+            End If
+
+            If txtIva.Text <> "" Then
+                txtIva.Text = CDbl(txtIva.Text) + iva
+            Else
+                txtIva.Text = iva
+            End If
+
             'Dim agregar As New DataGridViewRow
             'dgvProductos.Rows.Add(txtCodProd)
             'Dim dt As DataTable = DirectCast(dgvProductos.DataSource, DataTable)
             'dt.Rows.Add(row)
             row2.Rows.Add(row)
             dgvProductos.DataSource = row2
+
         End If
     End Sub
 
@@ -104,11 +149,12 @@ Public Class GenerarCompras
         txtTituloBusqueda.Left = (Me.ClientSize.Width / 2) - (txtTituloBusqueda.Width / 2)
         gbBusquedaCompra.Left = (Me.ClientSize.Width / 2) - (gbBusquedaCompra.Width / 2)
         dgvCompras.Left = (Me.ClientSize.Width / 2) - (dgvCompras.Width / 2)
-        gbDatosCompra.Left = (Me.ClientSize.Width / 2) - (gbDatosCompra.Width / 2)
-        gbDatosProducto.Left = (Me.ClientSize.Width / 2) - (gbDatosProducto.Width / 2)
-        gbComentario.Left = gbDatosCompra.Left
-        dgvProductos.Left = gbDatosCompra.Left
-        gbOperadores.Left = gbDatosCompra.Right - gbOperadores.Width
+        pnlDatosCompra.Left = (Me.ClientSize.Width / 2) - (pnlDatosCompra.Width / 2)
+        pnlDatosProducto.Left = (Me.ClientSize.Width / 2) - (pnlDatosProducto.Width / 2)
+        pnlComentario.Left = pnlDatosCompra.Left
+        dgvProductos.Left = pnlDatosCompra.Left
+        pnlOperadores.Left = pnlDatosCompra.Right - pnlOperadores.Width
+        pnlTotales.Left = pnlDatosCompra.Right - pnlTotales.Width
     End Sub
 
     Private Sub TabPage2_Click(sender As Object, e As EventArgs) Handles TabPage2.Click
@@ -122,8 +168,12 @@ Public Class GenerarCompras
     Private Sub btnEliminarProd_Click(sender As Object, e As EventArgs) Handles btnEliminarProd.Click
         If dgvProductos.SelectedRows.Count > 0 Then
             For Each row As DataGridViewRow In dgvProductos.SelectedRows
-                Dim restar = row.Cells("Total").Value
-                txtTotalCompra.Text = CDbl(txtTotalCompra.Text) - CDbl(restar)
+                Dim restarSub = row.Cells("Sub-Total").Value
+                Dim restarIva = row.Cells("Iva").Value
+                Dim restarTotal = row.Cells("Total").Value
+                txtTotalCompra.Text = CDbl(txtTotalCompra.Text) - CDbl(restarTotal)
+                txtIva.Text = CDbl(txtIva.Text) - CDbl(restarIva)
+                txtSub.Text = CDbl(txtSub.Text) - CDbl(restarSub)
                 dgvProductos.Rows.Remove(row)
             Next
         End If
@@ -141,15 +191,25 @@ Public Class GenerarCompras
                 compra.proveedor = cbProveedores.SelectedItem.item("Código")
                 If rbContado.Checked = True Then
                     compra.tipo = "Contado"
+                    compra.saldo = CDbl(0)
                 Else
                     compra.tipo = "Crédito"
+                    compra.saldo = CDbl(txtTotalCompra.Text)
                 End If
 
-                compra.saldo = CDbl(txtTotalCompra.Text)
-                compraDao.guardarCompra(compra)
+
+                Dim productos As New Collection
+                'For Each row As DataGridViewRow In dgvProductos.Rows
+                '    Dim codigo = dgvProductos.Item(0, row.Index).Value
+                '    Dim cantidad = dgvProductos.Item(3, row.Index).Value
+
+                '    productos.Add(cantidad, codigo)
+                'Next
+
+                compraDao.guardarCompra(compra, dgvProductos.Rows)
                 MsgBox("!Compra registrada con éxito!", MsgBoxStyle.Information, "Notificación")
             Catch ex As Exception
-
+                Throw New DAOException(ex.ToString)
             End Try
         End If
     End Sub
