@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Inicio
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -21,7 +21,7 @@ Partial Class Inicio
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.dgvDatos = New System.Windows.Forms.DataGridView()
         Me.PanelTitulo = New System.Windows.Forms.Panel()
@@ -39,7 +39,7 @@ Partial Class Inicio
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.msInicio = New System.Windows.Forms.MenuStrip()
         Me.miSesion = New System.Windows.Forms.ToolStripMenuItem()
         Me.miCambiarContra = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -70,13 +70,16 @@ Partial Class Inicio
         Me.miMovimientos = New System.Windows.Forms.ToolStripMenuItem()
         Me.miCompras = New System.Windows.Forms.ToolStripMenuItem()
         Me.miGenerarCompra = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.pbInicio = New System.Windows.Forms.PictureBox()
         CType(Me.dgvDatos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelTitulo.SuspendLayout()
         Me.pnlControles.SuspendLayout()
         Me.panelBuscar.SuspendLayout()
         Me.panelOperaciones.SuspendLayout()
-        Me.MenuStrip1.SuspendLayout()
+        Me.msInicio.SuspendLayout()
+        CType(Me.pbInicio, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dgvDatos
@@ -86,19 +89,19 @@ Partial Class Inicio
         Me.dgvDatos.AllowUserToOrderColumns = True
         Me.dgvDatos.AllowUserToResizeColumns = False
         Me.dgvDatos.AllowUserToResizeRows = False
+        Me.dgvDatos.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         Me.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvDatos.Location = New System.Drawing.Point(90, 269)
         Me.dgvDatos.Name = "dgvDatos"
         Me.dgvDatos.ReadOnly = True
         Me.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvDatos.Size = New System.Drawing.Size(812, 303)
+        Me.dgvDatos.Size = New System.Drawing.Size(812, 322)
         Me.dgvDatos.TabIndex = 34
         Me.dgvDatos.Visible = False
         '
         'PanelTitulo
         '
         Me.PanelTitulo.BackColor = System.Drawing.Color.SteelBlue
-        Me.PanelTitulo.BackgroundImage = Global.Escritorio.My.Resources.Resources.naranja
         Me.PanelTitulo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PanelTitulo.Controls.Add(Me.lblTitulo)
         Me.PanelTitulo.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -111,6 +114,7 @@ Partial Class Inicio
         '
         Me.lblTitulo.AutoSize = True
         Me.lblTitulo.BackColor = System.Drawing.Color.Transparent
+        Me.lblTitulo.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.lblTitulo.Location = New System.Drawing.Point(347, 24)
         Me.lblTitulo.Name = "lblTitulo"
         Me.lblTitulo.Size = New System.Drawing.Size(70, 24)
@@ -120,7 +124,6 @@ Partial Class Inicio
         'pnlControles
         '
         Me.pnlControles.BackColor = System.Drawing.Color.Transparent
-        Me.pnlControles.BackgroundImage = Global.Escritorio.My.Resources.Resources.naranja
         Me.pnlControles.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlControles.Controls.Add(Me.panelBuscar)
         Me.pnlControles.Controls.Add(Me.panelOperaciones)
@@ -131,7 +134,7 @@ Partial Class Inicio
         '
         'panelBuscar
         '
-        Me.panelBuscar.BackColor = System.Drawing.Color.Transparent
+        Me.panelBuscar.BackColor = System.Drawing.Color.SteelBlue
         Me.panelBuscar.Controls.Add(Me.Label3)
         Me.panelBuscar.Controls.Add(Me.Label1)
         Me.panelBuscar.Controls.Add(Me.cbTipoBusqueda)
@@ -210,7 +213,7 @@ Partial Class Inicio
         '
         'panelOperaciones
         '
-        Me.panelOperaciones.BackColor = System.Drawing.Color.Transparent
+        Me.panelOperaciones.BackColor = System.Drawing.Color.SteelBlue
         Me.panelOperaciones.Controls.Add(Me.Label2)
         Me.panelOperaciones.Controls.Add(Me.btnAgregar)
         Me.panelOperaciones.Controls.Add(Me.btnEliminar)
@@ -263,18 +266,17 @@ Partial Class Inicio
         Me.btnModificar.Text = "Modificar"
         Me.btnModificar.UseVisualStyleBackColor = True
         '
-        'MenuStrip1
+        'msInicio
         '
-        Me.MenuStrip1.BackColor = System.Drawing.Color.Transparent
-        Me.MenuStrip1.BackgroundImage = Global.Escritorio.My.Resources.Resources.naranja
-        Me.MenuStrip1.GripMargin = New System.Windows.Forms.Padding(2)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miSesion, Me.miProductos, Me.miClientes, Me.miProveedores, Me.miVendedores, Me.miMovimientos, Me.ReportesToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(6, 2, 0, 3)
-        Me.MenuStrip1.Size = New System.Drawing.Size(963, 38)
-        Me.MenuStrip1.TabIndex = 27
-        Me.MenuStrip1.Text = "MenuStrip1"
+        Me.msInicio.BackColor = System.Drawing.Color.Transparent
+        Me.msInicio.GripMargin = New System.Windows.Forms.Padding(2)
+        Me.msInicio.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miSesion, Me.miProductos, Me.miClientes, Me.miProveedores, Me.miVendedores, Me.miMovimientos, Me.ReportesToolStripMenuItem})
+        Me.msInicio.Location = New System.Drawing.Point(0, 0)
+        Me.msInicio.Name = "msInicio"
+        Me.msInicio.Padding = New System.Windows.Forms.Padding(6, 2, 0, 3)
+        Me.msInicio.Size = New System.Drawing.Size(963, 38)
+        Me.msInicio.TabIndex = 27
+        Me.msInicio.Text = "msInicio"
         '
         'miSesion
         '
@@ -464,7 +466,7 @@ Partial Class Inicio
         '
         'miMovimientos
         '
-        Me.miMovimientos.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miCompras})
+        Me.miMovimientos.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miCompras, Me.VentasToolStripMenuItem})
         Me.miMovimientos.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.miMovimientos.ForeColor = System.Drawing.SystemColors.ControlText
         Me.miMovimientos.Margin = New System.Windows.Forms.Padding(0, 10, 0, 0)
@@ -485,6 +487,12 @@ Partial Class Inicio
         Me.miGenerarCompra.Size = New System.Drawing.Size(195, 24)
         Me.miGenerarCompra.Text = "Generar Compra"
         '
+        'VentasToolStripMenuItem
+        '
+        Me.VentasToolStripMenuItem.Name = "VentasToolStripMenuItem"
+        Me.VentasToolStripMenuItem.Size = New System.Drawing.Size(141, 24)
+        Me.VentasToolStripMenuItem.Text = "Ventas"
+        '
         'ReportesToolStripMenuItem
         '
         Me.ReportesToolStripMenuItem.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -494,21 +502,32 @@ Partial Class Inicio
         Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(83, 23)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
         '
+        'pbInicio
+        '
+        Me.pbInicio.BackgroundImage = Global.Escritorio.My.Resources.Resources.Panther1
+        Me.pbInicio.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbInicio.Location = New System.Drawing.Point(0, 0)
+        Me.pbInicio.Name = "pbInicio"
+        Me.pbInicio.Size = New System.Drawing.Size(963, 617)
+        Me.pbInicio.TabIndex = 36
+        Me.pbInicio.TabStop = False
+        '
         'Inicio
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.BackColor = System.Drawing.Color.SteelBlue
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(963, 617)
         Me.ControlBox = False
         Me.Controls.Add(Me.dgvDatos)
         Me.Controls.Add(Me.PanelTitulo)
         Me.Controls.Add(Me.pnlControles)
-        Me.Controls.Add(Me.MenuStrip1)
+        Me.Controls.Add(Me.msInicio)
+        Me.Controls.Add(Me.pbInicio)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.IsMdiContainer = True
-        Me.MainMenuStrip = Me.MenuStrip1
+        Me.MainMenuStrip = Me.msInicio
         Me.Name = "Inicio"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -522,8 +541,9 @@ Partial Class Inicio
         Me.panelBuscar.PerformLayout()
         Me.panelOperaciones.ResumeLayout(False)
         Me.panelOperaciones.PerformLayout()
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
+        Me.msInicio.ResumeLayout(False)
+        Me.msInicio.PerformLayout()
+        CType(Me.pbInicio, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -540,7 +560,7 @@ Partial Class Inicio
     Friend WithEvents ArchivoToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ArchivoToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
+    Friend WithEvents msInicio As System.Windows.Forms.MenuStrip
     Friend WithEvents miSesion As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CerrarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents miProductos As System.Windows.Forms.ToolStripMenuItem
@@ -583,4 +603,6 @@ Partial Class Inicio
     Friend WithEvents miGenerarCompra As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents miCambiarContra As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents dgvDatos As DataGridView
+    Friend WithEvents VentasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents pbInicio As PictureBox
 End Class

@@ -1,48 +1,100 @@
-﻿Imports System.Windows.Forms
+﻿Imports System.Drawing.Drawing2D
+Imports System.Windows.Forms
 Imports BackEnd
 
 Public Class Inicio
 
     Dim DT As New DataTable
     Dim target As String = ""
+    Dim padre As Control
 
-   
     'Carga del Formulario de Inicio
     Private Sub Inicio_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        cambiarFondo()
+
+        Me.SuspendLayout()
+        ' Se establece el background y se cambia el padre de los paneles al picture box
+        pbInicio.BackgroundImageLayout = ImageLayout.Center
         panelBuscar.Visible = False
         panelOperaciones.Visible = False
         PanelTitulo.Visible = False
+        pnlControles.Visible = False
+        pnlControles.Parent = pbInicio
 
+        PanelTitulo.Parent = pbInicio
+
+        'Centrado de elementos
         pnlControles.Left = (Me.ClientSize.Width / 2) - (pnlControles.Width / 2)
-
         dgvDatos.Left = pnlControles.Left
         PanelTitulo.Left = pnlControles.Left
 
-        'panelOperaciones.Left = (Me.ClientSize.Width / 2) - (panelBuscar.Width / 2)
-
+        ' Estilo a paneles
+        PanelTitulo.BackColor = Color.FromArgb(80, Color.Black)
+        panelBuscar.BackColor = Color.FromArgb(80, Color.Black)
+        panelOperaciones.BackColor = Color.FromArgb(80, Color.Black)
+        msInicio.BackColor = Color.DarkOrange
+        Me.SuspendLayout()
     End Sub
 
-    Private Sub cambiarFondo()
-
-        For Each ctl As Control In Me.Controls
-            If TypeOf ctl Is MdiClient Then
-                'Set properties of ctl here, e.g.
-                'ctl.BackColor = Color.SteelBlue
-                ctl.BackgroundImage = My.Resources.Panther1
-            End If
-        Next ctl
 
 
-    End Sub
+
+    'Private Sub cambiarFondo()
+
+    '    For Each ctl As Control In Me.Controls
+    '        If TypeOf ctl Is MdiClient Then
+    '            'Set properties of ctl here, e.g.
+
+    '            'Create a New brush. Make Is a Gradient style brush.
+
+
+
+    '            ctl.BackgroundImage = My.Resources.Panther1
+    '            ctl.BackgroundImageLayout = ImageLayout.Center
+
+
+    '            padre = ctl
+    '        End If
+    '    Next ctl
+
+    'For Each c As Control In Me.Controls
+    '    If TypeOf c Is MdiClient Then
+    '        AddHandler c.Paint, AddressOf myMdiControlPaint
+    '        AddHandler c.SizeChanged, AddressOf myMdiControlResize
+    '        Exit For
+    '    End If
+    'Next
+
+    'End Sub
+
+
+
+
+
+    'Private Sub myMdiControlPaint(ByVal sender As Object, ByVal e As System.Windows.Forms.PaintEventArgs)
+    '    e.Graphics.DrawImage(My.Resources.Panther1, 0, 0, Me.Width, Me.Height)
+    'End Sub
+
+    'Private Sub myMdiControlResize(ByVal sender As Object, ByVal e As System.EventArgs)
+    '    CType(sender, MdiClient).Invalidate()
+    'End Sub
+
+
     ' Operaciones de Sesion
     ' Salir
+
     Private Sub CerrarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CerrarToolStripMenuItem.Click
         Me.Close()
         Dim lg As New login
         lg.Show()
     End Sub
 
+    ' Cambiar Contraseña
+    Private Sub CambiarContra(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles miCambiarContra.Click
+        Dim cont As New CambiarContra
+        cont.FormBorderStyle = FormBorderStyle.FixedDialog
+        cont.ShowDialog(Me)
+
+    End Sub
 
     'Private Sub pbProductos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
     '    Dim prod As New ProductoDAO
@@ -82,6 +134,7 @@ Public Class Inicio
     Private Sub listadoProductos(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles miProductosList.Click
         Dim prod As New ProductoDAO
         'dgvDatos.DataSource = prod
+        pnlControles.Visible = True
         dgvDatos.DataSource = ""
         If target = "" Then
             'dgvDatos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
@@ -102,6 +155,7 @@ Public Class Inicio
             PanelTitulo.Visible = True
             txtBusqueda.Text = ""
             dgvDatos.Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCellsExceptHeader
+
             target = "productos"
             lblTitulo.Text = "LISTADO DE PRODUCTOS"
             lblTitulo.Left = (PanelTitulo.Width / 2) - (lblTitulo.Width / 2)
@@ -159,7 +213,7 @@ Public Class Inicio
             Catch ex As Exception
                 Throw New DAOException(ex.ToString)
             End Try
-        
+
         End If
     End Sub
 
@@ -170,7 +224,7 @@ Public Class Inicio
     '  ---------------------------- Carga de listado de Clientes   ----------------------------
     Private Sub listadoClientes(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles miClientesListado.Click
         dgvDatos.DataSource = ""
-
+        pnlControles.Visible = True
         Dim client As New ClienteDAO
         If target = "" Then
             'dgvDatos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
@@ -189,7 +243,7 @@ Public Class Inicio
             'dgvDatos.Visible = True            'dgvDatos.EditMode = False
 
             cbTipoBusqueda.Visible = False
-            txtBusqueda.Visible = True 
+            txtBusqueda.Visible = True
             cboxBuscar.DataSource = VariablesUtiles.busquedaCliente
             panelBuscar.Visible = True
             panelOperaciones.Visible = True
@@ -266,7 +320,7 @@ Public Class Inicio
     Private Sub listadoProveedores(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles miProveedoresListado.Click
         Dim prov As New ProveedorDAO
         dgvDatos.DataSource = ""
-
+        pnlControles.Visible = True
         If target = "" Then
             'dgvDatos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
             dgvDatos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
@@ -330,6 +384,7 @@ Public Class Inicio
     Private Sub listadoVendedores(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles miVendedoresListado.Click
         dgvDatos.DataSource = ""
         Dim vend As New VendedorDAO
+        pnlControles.Visible = True
         If target = "" Then
             'dgvDatos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
             dgvDatos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
@@ -465,10 +520,10 @@ Public Class Inicio
         End If
     End Sub
 
-   
-   
 
-  
+
+
+
     Private Sub btnAgregar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAgregar.Click
         If target = "productos" Then
             agregarProducto_Click(sender, e)
@@ -493,7 +548,7 @@ Public Class Inicio
         End If
     End Sub
 
-   
+
     Private Sub btnEliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminar.Click
         If target = "productos" Then
             eliminarProducto(sender, e)
@@ -504,11 +559,11 @@ Public Class Inicio
 
     End Sub
 
-   
 
-   
-    
-   
+
+
+
+
     Private Sub miGenerarCompra_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles miGenerarCompra.Click
         Dim agregarProv As New GenerarCompras
         'dgvDatos.Visible = False
@@ -516,10 +571,9 @@ Public Class Inicio
         agregarProv.ShowDialog(Me)
     End Sub
 
-    Private Sub CambiarContra(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles miCambiarContra.Click
-        Dim cont As New CambiarContra
-        cont.FormBorderStyle = FormBorderStyle.FixedDialog
-        cont.ShowDialog(Me)
+
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles pbInicio.Click
 
     End Sub
 End Class

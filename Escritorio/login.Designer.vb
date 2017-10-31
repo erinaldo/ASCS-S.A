@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class login
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class login
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.lbbienvenida = New System.Windows.Forms.Label()
         Me.lbUsuario = New System.Windows.Forms.Label()
@@ -42,7 +42,7 @@ Partial Class login
         Me.lbbienvenida.BackColor = System.Drawing.Color.Transparent
         Me.lbbienvenida.Font = New System.Drawing.Font("Arial Black", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbbienvenida.ForeColor = System.Drawing.Color.White
-        Me.lbbienvenida.Location = New System.Drawing.Point(153, 9)
+        Me.lbbienvenida.Location = New System.Drawing.Point(166, 9)
         Me.lbbienvenida.Name = "lbbienvenida"
         Me.lbbienvenida.Size = New System.Drawing.Size(268, 30)
         Me.lbbienvenida.TabIndex = 0
@@ -94,7 +94,7 @@ Partial Class login
         '
         'btnIngresar
         '
-        Me.btnIngresar.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnIngresar.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnIngresar.Location = New System.Drawing.Point(41, 184)
         Me.btnIngresar.Name = "btnIngresar"
         Me.btnIngresar.Size = New System.Drawing.Size(94, 32)
@@ -117,7 +117,7 @@ Partial Class login
         '
         'btnSalir
         '
-        Me.btnSalir.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSalir.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSalir.Location = New System.Drawing.Point(165, 184)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(94, 32)
@@ -130,7 +130,7 @@ Partial Class login
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox1.Image = Global.Escritorio.My.Resources.Resources.logo
-        Me.PictureBox1.Location = New System.Drawing.Point(-9, 37)
+        Me.PictureBox1.Location = New System.Drawing.Point(-9, 60)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(260, 239)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -147,7 +147,7 @@ Partial Class login
         Me.pnlBienvenida.Controls.Add(Me.lbUsuario)
         Me.pnlBienvenida.Controls.Add(Me.txtPasswd)
         Me.pnlBienvenida.Controls.Add(Me.lbPasswd)
-        Me.pnlBienvenida.Location = New System.Drawing.Point(240, 50)
+        Me.pnlBienvenida.Location = New System.Drawing.Point(257, 60)
         Me.pnlBienvenida.Name = "pnlBienvenida"
         Me.pnlBienvenida.Size = New System.Drawing.Size(305, 239)
         Me.pnlBienvenida.TabIndex = 10
@@ -157,9 +157,8 @@ Partial Class login
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SteelBlue
-        Me.BackgroundImage = Global.Escritorio.My.Resources.Resources.Panther1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(557, 301)
+        Me.ClientSize = New System.Drawing.Size(591, 329)
         Me.Controls.Add(Me.pnlBienvenida)
         Me.Controls.Add(Me.lbbienvenida)
         Me.Controls.Add(Me.PictureBox1)

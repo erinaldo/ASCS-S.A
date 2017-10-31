@@ -1,4 +1,5 @@
-﻿Imports BackEnd
+﻿Imports System.Reflection
+Imports BackEnd
 Public Class login
 
     Private Sub btnSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.Click
@@ -6,7 +7,7 @@ Public Class login
 
     End Sub
 
-    
+
     Private Sub btnIngresar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnIngresar.Click
         conexion()
     End Sub
@@ -29,7 +30,7 @@ Public Class login
         End Try
     End Sub
 
-   
+
     Private Sub txtPasswd_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtPasswd.KeyDown
         If e.KeyCode = Keys.Enter Then
             conexion()
@@ -43,12 +44,13 @@ Public Class login
     Private Sub login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.SuspendLayout()
         pnlBienvenida.BackColor = Color.FromArgb(80, Color.Black)
+        lbbienvenida.BackColor = Color.FromArgb(80, Color.Black)
 
-        lbbienvenida.BackColor = Color.FromArgb(50, Color.Black)
+        'Dim image As New Bitmap(My.Resources.Panther1)
+        Me.BackgroundImage = My.Resources.Panther1
+        Me.BackgroundImageLayout = ImageLayout.Center
         Me.ResumeLayout()
-
     End Sub
-
 
 
 

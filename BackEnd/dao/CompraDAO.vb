@@ -40,6 +40,49 @@ Public Class CompraDAO
         Return ds
     End Function
 
+    Function buscarCompra(ByVal filtro As String, ByVal tipo As Integer) As DataSet
+        Dim ds As New DataSet
+        Try
+            Dim con As New MySqlConnection(ConexionDB.cadenaConexionBD(Sesion.Usuario, Sesion.Password))
+            con.Open()
+
+            Dim mysql As String = ""
+
+            If tipo = 0 Then
+                mysql = "SELECT * from cargacomprasview2 WHERE (`Nro. Factura` = '" & filtro & "')"
+                MsgBox(mysql)
+            ElseIf tipo = 2 Then
+                mysql = "SELECT * from cargacomprasview2 WHERE (Proveedor = '" & filtro & "')"
+                MsgBox(mysql)
+            End If
+
+
+            Dim cmd As New MySqlCommand(mysql, con)
+
+
+
+            Dim adp As New MySqlDataAdapter(cmd)
+
+            ds.Tables.Add("tabla")
+            adp.Fill(ds.Tables("tabla"))
+
+            con.Close()
+
+
+            ' a += 1
+            '  End While
+            ' MsgBox(a)
+
+            ' dr.Close()
+            'con.Close()
+
+
+        Catch ex As Exception
+            Throw New DAOException(ex.ToString)
+        End Try
+        Return ds
+    End Function
+
     Public Function cargaDeposito() As DataSet
         Dim ds As New DataSet
         Dim da As New MySqlDataAdapter
