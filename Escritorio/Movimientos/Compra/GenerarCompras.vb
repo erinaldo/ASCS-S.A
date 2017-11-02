@@ -16,7 +16,21 @@ Public Class GenerarCompras
         Me.ResumeLayout()
     End Sub
 
+    Private Sub centrarElementos()
+        txtTituloBusqueda.Left = (Me.ClientSize.Width / 2) - (txtTituloBusqueda.Width / 2)
+        gbBusquedaCompra.Left = (Me.ClientSize.Width / 2) - (gbBusquedaCompra.Width / 2)
+        dgvCompras.Left = (Me.ClientSize.Width / 2) - (dgvCompras.Width / 2)
+        pnlDatosCompra.Left = (Me.ClientSize.Width / 2) - (pnlDatosCompra.Width / 2)
+        pnlDatosProducto.Left = (Me.ClientSize.Width / 2) - (pnlDatosProducto.Width / 2)
+        pnlComentario.Left = pnlDatosCompra.Left
+        dgvProductos.Left = pnlDatosCompra.Left
+        pnlOperadores.Left = pnlDatosCompra.Right - pnlOperadores.Width
+        pnlTotales.Left = pnlDatosCompra.Right - pnlTotales.Width
 
+        ' Anular Compra
+        pnlAnular.Left = (Me.ClientSize.Width / 2) - (pnlAnular.Width / 2)
+        txtTituloAnular.Left = (Me.ClientSize.Width / 2) - (txtTituloAnular.Width / 2)
+    End Sub
     Private Sub generarCompraElementos()
         dgvCompras.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
@@ -319,19 +333,16 @@ Public Class GenerarCompras
 
 
     ' --------------------------------------------- LOAD - METODOS ---------------------------------------------
-    Private Sub centrarElementos()
-        txtTituloBusqueda.Left = (Me.ClientSize.Width / 2) - (txtTituloBusqueda.Width / 2)
-        gbBusquedaCompra.Left = (Me.ClientSize.Width / 2) - (gbBusquedaCompra.Width / 2)
-        dgvCompras.Left = (Me.ClientSize.Width / 2) - (dgvCompras.Width / 2)
-        pnlDatosCompra.Left = (Me.ClientSize.Width / 2) - (pnlDatosCompra.Width / 2)
-        pnlDatosProducto.Left = (Me.ClientSize.Width / 2) - (pnlDatosProducto.Width / 2)
-        pnlComentario.Left = pnlDatosCompra.Left
-        dgvProductos.Left = pnlDatosCompra.Left
-        pnlOperadores.Left = pnlDatosCompra.Right - pnlOperadores.Width
-        pnlTotales.Left = pnlDatosCompra.Right - pnlTotales.Width
 
-        ' Anular Compra
-        pnlAnular.Left = (Me.ClientSize.Width / 2) - (pnlAnular.Width / 2)
-        txtTituloAnular.Left = (Me.ClientSize.Width / 2) - (txtTituloAnular.Width / 2)
+
+    Private Sub btnDetalle_Click(sender As Object, e As EventArgs) Handles btnDetalle.Click
+        If dgvCompras.SelectedRows.Count > 0 Then
+            Dim row = dgvCompras.CurrentRow.Index
+            Dim codigo = dgvCompras.Item(0, row).Value
+            Dim detalleForm As New DetalleCompra(codigo)
+            detalleForm.ShowDialog()
+
+            detalleForm.Dispose()
+        End If
     End Sub
 End Class

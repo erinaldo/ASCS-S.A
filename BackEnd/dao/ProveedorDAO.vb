@@ -81,13 +81,16 @@ Public Class ProveedorDAO
             Dim reader = cmd.ExecuteReader()
 
             While reader.Read
-                modelo.codigo = reader.GetInt16(0)
-                modelo.descripcion = reader.GetString(1)
-                modelo.ruc = reader.GetString(6)
-                modelo.tel = reader.GetString(2)
-                modelo.contacto = reader.GetString(3)
-                modelo.usuarioP = reader.GetString(4)
-                modelo.fecha = reader.GetDateTime(5)
+                modelo.codigo = SafeGetInt(reader, 0)
+                modelo.descripcion = SafeGetString(reader, 1)
+                modelo.ruc = SafeGetString(reader, 6)
+                modelo.tel = SafeGetString(reader, 2)
+                modelo.contacto = SafeGetString(reader, 3)
+                modelo.usuarioP = SafeGetString(reader, 4)
+                Dim tmp = SafeGetDate(reader, 5)
+
+                modelo.fecha = tmp
+
             End While
 
             reader.Close()
@@ -98,6 +101,8 @@ Public Class ProveedorDAO
         End Try
         Return modelo
     End Function
+
+
 
     Sub actualizarProveedor(ByVal modelo As Proveedor)
         Try

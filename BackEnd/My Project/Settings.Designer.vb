@@ -78,11 +78,22 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=samuel;persistsecurityinfo=True;database=stockcapiata;al"& _ 
-            "lowuservariables=True")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=samuel;password=system;persistsecurityinfo=True;database"& _ 
+            "=stockcapiata;allowuservariables=True")>  _
         Public ReadOnly Property stockcapiataConnectionString1() As String
             Get
                 Return CType(Me("stockcapiataConnectionString1"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=samuel;persistsecurityinfo=True;database=stockcapiata;al"& _ 
+            "lowuservariables=True")>  _
+        Public ReadOnly Property stockcapiataConnectionString2() As String
+            Get
+                Return CType(Me("stockcapiataConnectionString2"),String)
             End Get
         End Property
     End Class

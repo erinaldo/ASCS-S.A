@@ -40,6 +40,91 @@ Public Class CompraDAO
         Return ds
     End Function
 
+    Public Function cargarPoductosCompra(codigo As String) As stockcapiataDataSet.detalleproductocompraviewDataTable
+        Dim ds As New stockcapiataDataSet.detalleproductocompraviewDataTable
+        Dim dt As New DataTable
+        Try
+            Dim tabla = New stockcapiataDataSetTableAdapters.detalleproductocompraviewTableAdapter
+            Dim con As New MySqlConnection(ConexionDB.cadenaConexionBD(Sesion.Usuario, Sesion.Password))
+            con.Open()
+            Dim mysql As String = "Select   *   FROM `detalleproductocompraview` WHERE Compra = " & codigo & ""
+            Dim cmd As New MySqlCommand(mysql, con)
+            Dim adp As New MySqlDataAdapter(cmd)
+            tabla.Connection = con
+
+            ds = tabla.GetDataByCompra(codigo)
+
+            'tabla.Fill(ds)
+
+            con.Close()
+        Catch ex As Exception
+            Throw New DAOException(ex.ToString)
+        End Try
+        Return ds
+    End Function
+
+    Public Function obtenerCompraDatos(codigo As String) As Compra
+        Dim compra As New Compra
+        Try
+            Dim con As New MySqlConnection(ConexionDB.cadenaConexionBD(Sesion.Usuario, Sesion.Password))
+            con.Open()
+
+            Dim mysql As String = "SELECT * FROM cargacompraparadetalleview WHERE `Código` = " & codigo & ""
+            Dim cmd As New MySqlCommand(mysql, con)
+            Dim reader = cmd.ExecuteReader()
+
+            If reader.Read Then
+                compra.codigo = SafeGetString(reader, 0)
+                compra.fechaFactura = SafeGetDate(reader, 1)
+                compra.nroFactura = SafeGetString(reader, 2)
+                compra.comentario = SafeGetString(reader, 3)
+                compra.fechaAnulacion = SafeGetDate(reader, 4)
+                compra.fechaPagado = SafeGetDate(reader, 5)
+                compra.saldo = SafeGetInteger(reader, 6)
+                compra.tipo = SafeGetString(reader, 7)
+                compra.proveedor = SafeGetString(reader, 8)
+                compra.usuario = SafeGetString(reader, 9)
+                compra.fechaActualizacion = SafeGetDate(reader, 10)
+                compra.fechaInsFactura = SafeGetDate(reader, 11)
+            End If
+            reader.Close()
+            con.Close()
+
+        Catch ex As Exception
+            Throw New DAOException(ex.ToString)
+        End Try
+        Return compra
+    End Function
+
+    Private Function SafeGetDouble(ByRef reader As MySqlDataReader, ByVal Index As Integer) As Double
+        If Not reader.IsDBNull(Index) Then
+            Return reader.GetDouble(Index)
+        End If
+        Return 0
+    End Function
+
+    Private Function SafeGetString(ByRef reader As MySqlDataReader, ByVal Index As Integer) As String
+        If Not reader.IsDBNull(Index) Then
+            Return reader.GetString(Index)
+        End If
+        Return String.Empty
+    End Function
+
+    Private Function SafeGetDate(ByRef reader As MySqlDataReader, ByVal Index As Integer) As Date
+        If Not reader.IsDBNull(Index) Then
+            Return reader.GetDateTime(Index)
+        End If
+
+        Return Nothing
+    End Function
+
+    Private Function SafeGetInteger(ByRef reader As MySqlDataReader, ByVal Index As Integer) As Integer
+        If Not reader.IsDBNull(Index) Then
+            Return reader.GetInt16(Index)
+        End If
+        Return 0
+    End Function
+
     Function buscarCompra(ByVal filtro As String, ByVal tipo As Integer) As DataSet
         Dim ds As New DataSet
         Try
@@ -50,10 +135,10 @@ Public Class CompraDAO
 
             If tipo = 0 Then
                 mysql = "SELECT * from cargacomprasview2 WHERE (`Nro. Factura` = '" & filtro & "')"
-                MsgBox(mysql)
+
             ElseIf tipo = 2 Then
                 mysql = "SELECT * from cargacomprasview2 WHERE (Proveedor = '" & filtro & "')"
-                MsgBox(mysql)
+
             End If
 
 
@@ -254,9 +339,9 @@ Public Class CompraDAO
                                 & "VALUE(@cod,@codBase,@costo,@impEx,@imp5,@imp10,@cant)"
             Dim sqldetalle As New MySqlCommand(queryDetalle, con)
 
-            Dim queryCheckExistencia = "SELECT * from stexistencia WHERE codigo_base = @cod AND depoCod = @depo AND `exisNroOt`= @ot"
-            con2.Open()
-            Dim sqlCheck As New MySqlCommand(queryCheckExistencia, con2)
+            'Dim queryCheckExistencia = "SELECT * from stexistencia WHERE codigo_base = @cod AND depoCod = @depo AND `exisNroOt`= @ot"
+            'con2.Open()
+            'Dim sqlCheck As New MySqlCommand(queryCheckExistencia, con2)
 
 
             For Each row As Windows.Forms.DataGridViewRow In productos
@@ -285,7 +370,7 @@ Public Class CompraDAO
                 Else
                     sqldetalle.Parameters.AddWithValue("@imp10", 0)
                     sqldetalle.Parameters.AddWithValue("@imp5", 0)
-                    sqldetalle.Parameters.AddWithValue("@impEx", 0)
+                    sqldetalle.Parameters.AddWithValue("@impEx", iva)
 
                 End If
                 sqldetalle.Parameters.AddWithValue("@cant", cantidad)
@@ -295,42 +380,42 @@ Public Class CompraDAO
 
                 ' Existencia
 
-                sqlCheck.Parameters.AddWithValue("@cod", codigo)
-                sqlCheck.Parameters.AddWithValue("@depo", deposito)
+                'sqlCheck.Parameters.AddWithValue("@cod", codigo)
+                'sqlCheck.Parameters.AddWithValue("@depo", deposito)
 
-                sqlCheck.Parameters.AddWithValue("@ot", compra.nroFactura)
-                Dim reader As MySqlDataReader = sqlCheck.ExecuteReader
-                If reader.Read Then
-                    Dim cantActual = reader.GetInt16(2)
-                    Dim nuevaCant = cantActual + cantidad
-                    Dim queryExistencia = "UPDATE `stockcapiata`.`stexistencia` SET `exisCantidad` =  @cantidad, `exisUsrIns` = @user, `exisFchIns` = @fecha " _
-                                     & "WHERE `codigo_base` = @cod AND `depoCod` = @depo AND `exisNroOt`= @ot"
+                'sqlCheck.Parameters.AddWithValue("@ot", compra.nroFactura)
+                'Dim reader As MySqlDataReader = sqlCheck.ExecuteReader
+                'If reader.Read Then
+                '    Dim cantActual = reader.GetInt16(2)
+                '    Dim nuevaCant = cantActual + cantidad
+                '    Dim queryExistencia = "UPDATE `stockcapiata`.`stexistencia` SET `exisCantidad` =  @cantidad, `exisUsrIns` = @user, `exisFchIns` = @fecha " _
+                '                     & "WHERE `codigo_base` = @cod AND `depoCod` = @depo AND `exisNroOt`= @ot"
 
-                    Dim sqlExistencia As New MySqlCommand(queryExistencia, con)
-                    sqlExistencia.Parameters.AddWithValue("@cod", codigo)
-                    sqlExistencia.Parameters.AddWithValue("@depo", deposito)
-                    sqlExistencia.Parameters.AddWithValue("@cantidad", nuevaCant)
-                    sqlExistencia.Parameters.AddWithValue("@user", compra.userInsert)
-                    sqlExistencia.Parameters.AddWithValue("@fecha", compra.fechaInsFactura)
-                    sqlExistencia.Parameters.AddWithValue("@ot", compra.nroFactura)
-                    Dim a = sqlExistencia.ExecuteNonQuery()
+                '    Dim sqlExistencia As New MySqlCommand(queryExistencia, con)
+                '    sqlExistencia.Parameters.AddWithValue("@cod", codigo)
+                '    sqlExistencia.Parameters.AddWithValue("@depo", deposito)
+                '    sqlExistencia.Parameters.AddWithValue("@cantidad", nuevaCant)
+                '    sqlExistencia.Parameters.AddWithValue("@user", compra.userInsert)
+                '    sqlExistencia.Parameters.AddWithValue("@fecha", compra.fechaInsFactura)
+                '    sqlExistencia.Parameters.AddWithValue("@ot", compra.nroFactura)
+                '    Dim a = sqlExistencia.ExecuteNonQuery()
 
-                    sqlExistencia.Parameters.Clear()
-                Else
-                    Dim queryExistencia = "INSERT INTO `stockcapiata`.`stexistencia` (`codigo_base`, `depoCod`, `exisCantidad`, `exisUsrIns`, `exisFchIns`,`exisNroOt`) " _
+                '    sqlExistencia.Parameters.Clear()
+                'Else
+                Dim queryExistencia = "INSERT INTO `stockcapiata`.`stexistencia` (`codigo_base`, `depoCod`, `exisCantidad`, `exisUsrIns`, `exisFchIns`,`exisNroOt`) " _
                                      & "VALUES(@cod,@depo,@cantidad,@user,@fecha,@Ot) "
-                    Dim sqlExistencia As New MySqlCommand(queryExistencia, con)
-                    sqlExistencia.Parameters.AddWithValue("@cod", codigo)
-                    sqlExistencia.Parameters.AddWithValue("@depo", deposito)
-                    sqlExistencia.Parameters.AddWithValue("@cantidad", cantidad)
-                    sqlExistencia.Parameters.AddWithValue("@user", compra.userInsert)
-                    sqlExistencia.Parameters.AddWithValue("@fecha", compra.fechaInsFactura)
-                    sqlExistencia.Parameters.AddWithValue("@Ot", compra.nroFactura)
-                    sqlExistencia.ExecuteNonQuery()
-                    sqlExistencia.Parameters.Clear()
-                End If
-                reader.Close()
-                sqlCheck.Parameters.Clear()
+                Dim sqlExistencia As New MySqlCommand(queryExistencia, con)
+                sqlExistencia.Parameters.AddWithValue("@cod", codigo)
+                sqlExistencia.Parameters.AddWithValue("@depo", deposito)
+                sqlExistencia.Parameters.AddWithValue("@cantidad", cantidad)
+                sqlExistencia.Parameters.AddWithValue("@user", compra.userInsert)
+                sqlExistencia.Parameters.AddWithValue("@fecha", compra.fechaInsFactura)
+                sqlExistencia.Parameters.AddWithValue("@Ot", compra.nroFactura)
+                sqlExistencia.ExecuteNonQuery()
+                sqlExistencia.Parameters.Clear()
+                'End If
+                'reader.Close()
+                'sqlCheck.Parameters.Clear()
             Next
             con.Close()
             con2.Close()

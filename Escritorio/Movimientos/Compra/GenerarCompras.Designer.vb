@@ -27,11 +27,12 @@ Partial Class GenerarCompras
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.tbcCompra = New System.Windows.Forms.TabControl()
         Me.tpListado = New System.Windows.Forms.TabPage()
         Me.dgvCompras = New System.Windows.Forms.DataGridView()
         Me.gbBusquedaCompra = New System.Windows.Forms.GroupBox()
+        Me.btnDetalle = New System.Windows.Forms.Button()
+        Me.lblBusqTxt = New System.Windows.Forms.Label()
         Me.cbProveedor1 = New System.Windows.Forms.ComboBox()
         Me.txtNroFacturaListado = New System.Windows.Forms.TextBox()
         Me.pnlRangoFecha = New System.Windows.Forms.Panel()
@@ -100,8 +101,6 @@ Partial Class GenerarCompras
         Me.cbProveedor3 = New System.Windows.Forms.ComboBox()
         Me.cbAnularFiltro = New System.Windows.Forms.ComboBox()
         Me.ttCompra = New System.Windows.Forms.ToolTip(Me.components)
-        Me.lblBusqTxt = New System.Windows.Forms.Label()
-        Me.btnDetalle = New System.Windows.Forms.Button()
         Me.tbcCompra.SuspendLayout()
         Me.tpListado.SuspendLayout()
         CType(Me.dgvCompras, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -153,14 +152,6 @@ Partial Class GenerarCompras
         Me.dgvCompras.AllowUserToDeleteRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver
         Me.dgvCompras.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCompras.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvCompras.Location = New System.Drawing.Point(51, 298)
         Me.dgvCompras.Name = "dgvCompras"
@@ -189,6 +180,29 @@ Partial Class GenerarCompras
         Me.gbBusquedaCompra.TabIndex = 3
         Me.gbBusquedaCompra.TabStop = False
         Me.gbBusquedaCompra.Text = "Rango de Compra"
+        '
+        'btnDetalle
+        '
+        Me.btnDetalle.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDetalle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btnDetalle.Location = New System.Drawing.Point(619, 117)
+        Me.btnDetalle.Name = "btnDetalle"
+        Me.btnDetalle.Size = New System.Drawing.Size(111, 30)
+        Me.btnDetalle.TabIndex = 11
+        Me.btnDetalle.Text = "Ver Detalle"
+        Me.btnDetalle.UseVisualStyleBackColor = True
+        Me.btnDetalle.Visible = False
+        '
+        'lblBusqTxt
+        '
+        Me.lblBusqTxt.AutoSize = True
+        Me.lblBusqTxt.BackColor = System.Drawing.Color.Transparent
+        Me.lblBusqTxt.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lblBusqTxt.Location = New System.Drawing.Point(378, 14)
+        Me.lblBusqTxt.Name = "lblBusqTxt"
+        Me.lblBusqTxt.Size = New System.Drawing.Size(203, 23)
+        Me.lblBusqTxt.TabIndex = 10
+        Me.lblBusqTxt.Text = "Inserte Nro. Factura"
         '
         'cbProveedor1
         '
@@ -829,14 +843,14 @@ Partial Class GenerarCompras
         Me.dgvProductos.AllowUserToAddRows = False
         Me.dgvProductos.AllowUserToOrderColumns = True
         Me.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvProductos.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvProductos.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgvProductos.Location = New System.Drawing.Point(32, 385)
         Me.dgvProductos.MultiSelect = False
         Me.dgvProductos.Name = "dgvProductos"
@@ -942,29 +956,6 @@ Partial Class GenerarCompras
         Me.cbAnularFiltro.Name = "cbAnularFiltro"
         Me.cbAnularFiltro.Size = New System.Drawing.Size(146, 26)
         Me.cbAnularFiltro.TabIndex = 2
-        '
-        'lblBusqTxt
-        '
-        Me.lblBusqTxt.AutoSize = True
-        Me.lblBusqTxt.BackColor = System.Drawing.Color.Transparent
-        Me.lblBusqTxt.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblBusqTxt.Location = New System.Drawing.Point(378, 14)
-        Me.lblBusqTxt.Name = "lblBusqTxt"
-        Me.lblBusqTxt.Size = New System.Drawing.Size(203, 23)
-        Me.lblBusqTxt.TabIndex = 10
-        Me.lblBusqTxt.Text = "Inserte Nro. Factura"
-        '
-        'btnDetalle
-        '
-        Me.btnDetalle.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDetalle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnDetalle.Location = New System.Drawing.Point(619, 117)
-        Me.btnDetalle.Name = "btnDetalle"
-        Me.btnDetalle.Size = New System.Drawing.Size(111, 30)
-        Me.btnDetalle.TabIndex = 11
-        Me.btnDetalle.Text = "Ver Detalle"
-        Me.btnDetalle.UseVisualStyleBackColor = True
-        Me.btnDetalle.Visible = False
         '
         'GenerarCompras
         '

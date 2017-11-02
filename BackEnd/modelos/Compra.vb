@@ -19,6 +19,37 @@
         End Set
     End Property
 
+    Private _fechaAnulacion As Date
+    Public Property fechaAnulacion() As Date
+        Get
+            Return _fechaAnulacion
+        End Get
+        Set(ByVal value As Date)
+            _fechaAnulacion = value
+        End Set
+    End Property
+
+
+    Private _fechaPagado As Date
+    Public Property fechaPagado() As Date
+        Get
+            Return _fechaPagado
+        End Get
+        Set(ByVal value As Date)
+            _fechaPagado = value
+        End Set
+    End Property
+
+    Private _fechaActualizacion As Date
+    Public Property fechaActualizacion() As Date
+        Get
+            Return _fechaActualizacion
+        End Get
+        Set(ByVal value As Date)
+            _fechaActualizacion = value
+        End Set
+    End Property
+
     Private _nroFactura As String
     Public Property nroFactura() As String
         Get
@@ -36,6 +67,16 @@
         End Get
         Set(ByVal value As String)
             _comentario = value
+        End Set
+    End Property
+
+    Private _usuario As String
+    Public Property usuario() As String
+        Get
+            Return _usuario
+        End Get
+        Set(ByVal value As String)
+            _usuario = value
         End Set
     End Property
 
