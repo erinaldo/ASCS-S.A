@@ -10,7 +10,7 @@ Public Class VendedorDAO
             con.Open()
 
 
-            Dim mysql = "SELECT venCod as Código, venNombreApellido as Nombre, venTelefono as Teléfono,venEstado as Estado, venPorcentaje as Porcentaje FROM stockcapiata.stvendedores"
+            Dim mysql = "SELECT venCod as Código, venNombreApellido as Nombre, venTelefono as Teléfono,venEstado as Estado, venPorcentaje as Porcentaje FROM stvendedores"
 
             Dim cmd As New MySqlCommand(mysql, con)
             Dim adp As New MySqlDataAdapter(mysql, con)

@@ -11,7 +11,7 @@ Public Class ClienteDAO
             con.Open()
 
 
-            Dim mysql = "SELECT `clieCod` as `Código`, `clieNombre` as Nombre,`clieRuc` as RUC, clieTelef as Teléfono,clieContacto as Contacto FROM stockcapiata.`stclientes`"
+            Dim mysql = "SELECT `clieCod` as `Código`, `clieNombre` as Nombre,`clieRuc` as RUC, clieTelef as Teléfono,clieContacto as Contacto FROM `stclientes`"
 
             Dim cmd As New MySqlCommand(mysql, con)
             Dim adp As New MySqlDataAdapter(mysql, con)

@@ -35,7 +35,7 @@ Public Class MovInternoDAO
 
 
             Dim mysql = "SELECT `provCodigo` as `Código`, `provDescripcion` as Descripción " _
-                        & "FROM stockcapiata.`stproveedor`"
+                        & "FROM `stproveedor`"
             Dim cmd As New MySqlCommand(mysql, con)
             Dim adp As New MySqlDataAdapter(mysql, con)
             ds.Tables.Add("tabla")

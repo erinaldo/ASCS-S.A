@@ -5454,8 +5454,8 @@ Namespace stockcapiataDataSetTableAdapters
             Me._commandCollection(1) = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
             Me._commandCollection(1).CommandText = "SELECT        Código, Compra, Descripción, Depósito, Cantidad, `Iva Excedente`, `"& _ 
-                "Iva 5%`, `Iva 10%`, `Precio Total`"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            detalleproductocompraview"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"W"& _ 
-                "HERE        (Compra = @codigo)"
+                "Iva 5%`, `Iva 10%`, `Precio Total`"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            detalleproductocompraview"&Global.Microsoft.VisualBasic.ChrW(10)&"WHE"& _ 
+                "RE        (Compra = @codigo)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Dim param As Global.MySql.Data.MySqlClient.MySqlParameter = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@codigo"

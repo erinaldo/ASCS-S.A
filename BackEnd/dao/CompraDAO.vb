@@ -196,7 +196,7 @@ Public Class CompraDAO
             con.Open()
 
             ' Actualizando compra
-            Dim query = "UPDATE `stockcapiata`.`stcompras`  SET `comprasEstado`= @estado, comprasFechaAnulacion= @fechaAnul, comprasUsrUpd = @usuario, `comprasFechaUpd` = @fechaUpd where comprasCod = @codigo"
+            Dim query = "UPDATE `stcompras`  SET `comprasEstado`= @estado, comprasFechaAnulacion= @fechaAnul, comprasUsrUpd = @usuario, `comprasFechaUpd` = @fechaUpd where comprasCod = @codigo"
             Dim cmd As New MySqlCommand(query, con)
             cmd.Parameters.AddWithValue("@codigo", codigo)
             cmd.Parameters.AddWithValue("@estado", "Anul")
@@ -226,7 +226,7 @@ Public Class CompraDAO
 
 
             Dim mysql = "SELECT `provCodigo` as `Código`, `provDescripcion` as Descripción " _
-                        & "FROM stockcapiata.`stproveedor`"
+                        & "FROM `stproveedor`"
 
             Dim cmd As New MySqlCommand(mysql, con)
             Dim adp As New MySqlDataAdapter(mysql, con)
@@ -271,7 +271,7 @@ Public Class CompraDAO
 
 
             Dim mysql = "SELECT `impCod` AS `Código`, `impPorcentaje` AS `Porcentaje`, impDesc AS `Impuesto` " _
-                        & "FROM stockcapiata.`stimpuesto`"
+                        & "FROM `stimpuesto`"
 
             Dim cmd As New MySqlCommand(mysql, con)
             Dim adp As New MySqlDataAdapter(mysql, con)
@@ -313,11 +313,11 @@ Public Class CompraDAO
             Dim mysql As String = ""
             If compra.tipo = "Contado" Then
 
-                mysql = "INSERT INTO `stockcapiata`.`stcompras` ( `comprasCod`, `comprasFechaFact`, `comprasNroFactura`, `comprasObs`, `comprasSaldo`, `comprasTipoFact`, `provCodigo`, `comprasUsrIns`, `comprasFechaIns`,`comprasFechaPagado`,`comprasEstado` ) " _
+                mysql = "INSERT INTO `stcompras` ( `comprasCod`, `comprasFechaFact`, `comprasNroFactura`, `comprasObs`, `comprasSaldo`, `comprasTipoFact`, `provCodigo`, `comprasUsrIns`, `comprasFechaIns`,`comprasFechaPagado`,`comprasEstado` ) " _
                        & "VALUES (@cod,@fechaFact,@nroFact,@obs,@saldo,@tipo,@prov,@userIns,@fechaIns,@fechaPago,@estado)"
 
             Else
-                mysql = "INSERT INTO `stockcapiata`.`stcompras` ( `comprasCod`, `comprasFechaFact`, `comprasNroFactura`, `comprasObs`, `comprasSaldo`, `comprasTipoFact`, `provCodigo`, `comprasUsrIns`, `comprasFechaIns`,`comprasEstado` ) " _
+                mysql = "INSERT INTO `stcompras` ( `comprasCod`, `comprasFechaFact`, `comprasNroFactura`, `comprasObs`, `comprasSaldo`, `comprasTipoFact`, `provCodigo`, `comprasUsrIns`, `comprasFechaIns`,`comprasEstado` ) " _
                        & "VALUES (@cod,@fechaFact,@nroFact,@obs,@saldo,@tipo,@prov,@userIns,@fechaIns,@estado)"
 
             End If
@@ -359,7 +359,7 @@ Public Class CompraDAO
             sqlcmd.ExecuteNonQuery()
 
 
-            Dim queryDetalle = "INSERT INTO `stockcapiata`.`stcomprasdet` ( `comprasCod`, `codigo_base`, `comprasCosto`, `comprasImpExcente`, `comprasImp5`, `comprasImp10`, `comprasCanitad` )" _
+            Dim queryDetalle = "INSERT INTO `stcomprasdet` ( `comprasCod`, `codigo_base`, `comprasCosto`, `comprasImpExcente`, `comprasImp5`, `comprasImp10`, `comprasCanitad` )" _
                                 & "VALUE(@cod,@codBase,@costo,@impEx,@imp5,@imp10,@cant)"
             Dim sqldetalle As New MySqlCommand(queryDetalle, con)
 
@@ -426,7 +426,7 @@ Public Class CompraDAO
 
                 '    sqlExistencia.Parameters.Clear()
                 'Else
-                Dim queryExistencia = "INSERT INTO `stockcapiata`.`stexistencia` (`codigo_base`, `depoCod`, `exisCantidad`, `exisUsrIns`, `exisFchIns`,`exisNroOt`) " _
+                Dim queryExistencia = "INSERT INTO `stexistencia` (`codigo_base`, `depoCod`, `exisCantidad`, `exisUsrIns`, `exisFchIns`,`exisNroOt`) " _
                                      & "VALUES(@cod,@depo,@cantidad,@user,@fecha,@Ot) "
                 Dim sqlExistencia As New MySqlCommand(queryExistencia, con)
                 sqlExistencia.Parameters.AddWithValue("@cod", codigo)

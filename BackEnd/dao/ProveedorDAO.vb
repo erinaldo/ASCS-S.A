@@ -12,7 +12,7 @@ Public Class ProveedorDAO
 
 
             Dim mysql = "SELECT `provCodigo` as `Código`, `provDescripcion` as Descripción,`provRuc` as RUC, provTelef as Teléfono, " _
-                        & "provContacto as Contacto,provUsuario as Usuario, provFechaIns as Fecha FROM stockcapiata.`stproveedor`"
+                        & "provContacto as Contacto,provUsuario as Usuario, provFechaIns as Fecha FROM  stproveedor"
 
             Dim cmd As New MySqlCommand(mysql, con)
             Dim adp As New MySqlDataAdapter(mysql, con)
@@ -142,20 +142,20 @@ Public Class ProveedorDAO
             Dim dbcomm As New MySqlCommand
             If criterio = 0 Then
                 query = "SELECT `provCodigo` as `Código`, `provDescripcion` as Descripción,`provRuc` as RUC, provTelef as Teléfono, " _
-                            & "provContacto as Contacto,provUsuario as Usuario, provFechaIns as Fecha FROM stockcapiata.`stproveedor` " _
+                            & "provContacto as Contacto,provUsuario as Usuario, provFechaIns as Fecha FROM  stproveedor " _
                             & "where provDescripcion LIKE CONCAT('%',@nombre,'%')"
                 dbcomm = New MySqlCommand(query, con)
                 dbcomm.Parameters.AddWithValue("@nombre", regla)
 
             ElseIf criterio = 1 Then
                 query = "SELECT `provCodigo` as `Código`, `provDescripcion` as Descripción,`provRuc` as RUC, provTelef as Teléfono, " _
-                            & "provContacto as Contacto,provUsuario as Usuario, provFechaIns as Fecha FROM stockcapiata.`stproveedor` " _
+                            & "provContacto as Contacto,provUsuario as Usuario, provFechaIns as Fecha FROM stproveedor " _
                             & "where provRuc = @ruc"
                 dbcomm = New MySqlCommand(query, con)
                 dbcomm.Parameters.AddWithValue("@ruc", regla)
             ElseIf criterio = 2 Then
                 query = "SELECT `provCodigo` as `Código`, `provDescripcion` as Descripción,`provRuc` as RUC, provTelef as Teléfono, " _
-                            & "provContacto as Contacto,provUsuario as Usuario, provFechaIns as Fecha FROM stockcapiata.`stproveedor` " _
+                            & "provContacto as Contacto,provUsuario as Usuario, provFechaIns as Fecha FROM stproveedor " _
                             & "where provContacto LIKE CONCAT('%',@contacto,'%')"
                 dbcomm = New MySqlCommand(query, con)
                 dbcomm.Parameters.AddWithValue("@contacto", regla)
