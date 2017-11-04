@@ -159,6 +159,24 @@ Public Class ProductoDAO
         Return modelo
     End Function
 
+    Public Function obtenerProductos(ByVal filtro As String) As DataSet
+        Dim ds As New DataSet
+        Try
+            Dim con As New MySqlConnection(ConexionDB.cadenaConexionBD(Sesion.Usuario, Sesion.Password))
+            con.Open()
+            Dim query = "CALL `pproductosmovint`(" & filtro & ")"
+            Dim cmd As New MySqlCommand(query, con)
+
+            Dim adp As New MySqlDataAdapter(query, con)
+            ds.Tables.Add("tabla")
+            adp.Fill(ds.Tables("tabla"))
+            con.Close()
+
+        Catch ex As Exception
+            Throw New DAOException(ex.ToString)
+        End Try
+        Return ds
+    End Function
     Public Sub actualizarProducto(ByVal modelo As Producto)
         Try
             Dim con As New MySqlConnection(ConexionDB.cadenaConexionBD(Sesion.Usuario, Sesion.Password))

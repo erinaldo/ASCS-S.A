@@ -27,6 +27,11 @@ Partial Class MovimientoInterno
         Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnlDatosMov = New System.Windows.Forms.Panel()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.gbTipoPago = New System.Windows.Forms.GroupBox()
@@ -58,11 +63,16 @@ Partial Class MovimientoInterno
         Me.txtDescripcionProd = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.dgvProductos = New System.Windows.Forms.DataGridView()
+        Me.dgvBusquedaResult = New System.Windows.Forms.DataGridView()
+        Me.pnlBusqueda = New System.Windows.Forms.Panel()
+        Me.btnSeleccionarDeBusqueda = New System.Windows.Forms.Button()
         Me.pnlDatosMov.SuspendLayout()
         Me.gbTipoPago.SuspendLayout()
         Me.gbSolicitante.SuspendLayout()
         Me.pnlDatosProducto.SuspendLayout()
         CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvBusquedaResult, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlBusqueda.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlDatosMov
@@ -434,7 +444,7 @@ Partial Class MovimientoInterno
         DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvProductos.DefaultCellStyle = DataGridViewCellStyle13
         Me.dgvProductos.GridColor = System.Drawing.SystemColors.AppWorkspace
-        Me.dgvProductos.Location = New System.Drawing.Point(12, 463)
+        Me.dgvProductos.Location = New System.Drawing.Point(465, 451)
         Me.dgvProductos.Name = "dgvProductos"
         Me.dgvProductos.ReadOnly = True
         DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -448,15 +458,83 @@ Partial Class MovimientoInterno
         DataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.dgvProductos.RowsDefaultCellStyle = DataGridViewCellStyle15
         Me.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvProductos.Size = New System.Drawing.Size(812, 322)
+        Me.dgvProductos.Size = New System.Drawing.Size(593, 325)
         Me.dgvProductos.TabIndex = 35
+        '
+        'dgvBusquedaResult
+        '
+        Me.dgvBusquedaResult.AllowUserToAddRows = False
+        Me.dgvBusquedaResult.AllowUserToDeleteRows = False
+        Me.dgvBusquedaResult.AllowUserToOrderColumns = True
+        Me.dgvBusquedaResult.AllowUserToResizeColumns = False
+        Me.dgvBusquedaResult.AllowUserToResizeRows = False
+        DataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.ControlLight
+        DataGridViewCellStyle16.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgvBusquedaResult.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle16
+        Me.dgvBusquedaResult.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.ButtonShadow
+        DataGridViewCellStyle17.Font = New System.Drawing.Font("Arial", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvBusquedaResult.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle17
+        Me.dgvBusquedaResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle18.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvBusquedaResult.DefaultCellStyle = DataGridViewCellStyle18
+        Me.dgvBusquedaResult.GridColor = System.Drawing.SystemColors.AppWorkspace
+        Me.dgvBusquedaResult.Location = New System.Drawing.Point(12, 451)
+        Me.dgvBusquedaResult.Name = "dgvBusquedaResult"
+        Me.dgvBusquedaResult.ReadOnly = True
+        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle19.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight
+        DataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvBusquedaResult.RowHeadersDefaultCellStyle = DataGridViewCellStyle19
+        DataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.dgvBusquedaResult.RowsDefaultCellStyle = DataGridViewCellStyle20
+        Me.dgvBusquedaResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvBusquedaResult.Size = New System.Drawing.Size(593, 325)
+        Me.dgvBusquedaResult.TabIndex = 36
+        '
+        'pnlBusqueda
+        '
+        Me.pnlBusqueda.Controls.Add(Me.btnSeleccionarDeBusqueda)
+        Me.pnlBusqueda.Location = New System.Drawing.Point(867, 452)
+        Me.pnlBusqueda.Name = "pnlBusqueda"
+        Me.pnlBusqueda.Size = New System.Drawing.Size(200, 100)
+        Me.pnlBusqueda.TabIndex = 37
+        Me.pnlBusqueda.Visible = False
+        '
+        'btnSeleccionarDeBusqueda
+        '
+        Me.btnSeleccionarDeBusqueda.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSeleccionarDeBusqueda.Location = New System.Drawing.Point(42, 36)
+        Me.btnSeleccionarDeBusqueda.Name = "btnSeleccionarDeBusqueda"
+        Me.btnSeleccionarDeBusqueda.Size = New System.Drawing.Size(117, 38)
+        Me.btnSeleccionarDeBusqueda.TabIndex = 0
+        Me.btnSeleccionarDeBusqueda.Text = "Seleccionar"
+        Me.btnSeleccionarDeBusqueda.UseVisualStyleBackColor = True
+        Me.btnSeleccionarDeBusqueda.Visible = False
         '
         'MovimientoInterno
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(1088, 587)
+        Me.ClientSize = New System.Drawing.Size(1088, 942)
+        Me.Controls.Add(Me.pnlBusqueda)
+        Me.Controls.Add(Me.dgvBusquedaResult)
         Me.Controls.Add(Me.dgvProductos)
         Me.Controls.Add(Me.pnlDatosProducto)
         Me.Controls.Add(Me.lblTitulo)
@@ -475,6 +553,8 @@ Partial Class MovimientoInterno
         Me.pnlDatosProducto.ResumeLayout(False)
         Me.pnlDatosProducto.PerformLayout()
         CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvBusquedaResult, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlBusqueda.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -511,4 +591,7 @@ Partial Class MovimientoInterno
     Friend WithEvents txtDescripcionProd As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents dgvProductos As DataGridView
+    Friend WithEvents dgvBusquedaResult As DataGridView
+    Friend WithEvents pnlBusqueda As Panel
+    Friend WithEvents btnSeleccionarDeBusqueda As Button
 End Class

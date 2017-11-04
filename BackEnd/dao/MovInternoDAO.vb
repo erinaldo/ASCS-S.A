@@ -51,4 +51,9 @@ Public Class MovInternoDAO
         Dim tmp As New ProductoDAO
         Return tmp.obtenerProducto(cod)
     End Function
+
+    Public Function BuscarProducts(cod As String) As DataSet
+        Dim tmp As New ProductoDAO
+        Return tmp.obtenerProductos(cod)
+    End Function
 End Class
