@@ -25,14 +25,13 @@ Partial Class GenerarCompras
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.tbcCompra = New System.Windows.Forms.TabControl()
         Me.tpListado = New System.Windows.Forms.TabPage()
         Me.dgvCompras = New System.Windows.Forms.DataGridView()
         Me.gbBusquedaCompra = New System.Windows.Forms.GroupBox()
         Me.btnDetalle = New System.Windows.Forms.Button()
-        Me.lblBusqTxt = New System.Windows.Forms.Label()
         Me.cbProveedor1 = New System.Windows.Forms.ComboBox()
         Me.txtNroFacturaListado = New System.Windows.Forms.TextBox()
         Me.pnlRangoFecha = New System.Windows.Forms.Panel()
@@ -65,10 +64,12 @@ Partial Class GenerarCompras
         Me.pnlDatosCompra = New System.Windows.Forms.Panel()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.gbTipoPago = New System.Windows.Forms.GroupBox()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.txtEntregaInicial = New System.Windows.Forms.TextBox()
         Me.rbCredito = New System.Windows.Forms.RadioButton()
         Me.rbContado = New System.Windows.Forms.RadioButton()
         Me.dateFactura = New System.Windows.Forms.DateTimePicker()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.gbProveedor = New System.Windows.Forms.GroupBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cbProveedor2 = New System.Windows.Forms.ComboBox()
@@ -92,15 +93,25 @@ Partial Class GenerarCompras
         Me.txtSub = New System.Windows.Forms.TextBox()
         Me.dgvProductos = New System.Windows.Forms.DataGridView()
         Me.tpAnularCompra = New System.Windows.Forms.TabPage()
+        Me.pnlOperandosAnular = New System.Windows.Forms.Panel()
+        Me.btnAnularCompra = New System.Windows.Forms.Button()
+        Me.btnVerDetalleAnul = New System.Windows.Forms.Button()
+        Me.dgvComprasAnular = New System.Windows.Forms.DataGridView()
         Me.txtTituloAnular = New System.Windows.Forms.Label()
         Me.pnlAnular = New System.Windows.Forms.Panel()
+        Me.txtHastaAnul = New System.Windows.Forms.Label()
+        Me.txtFiltro = New System.Windows.Forms.Label()
         Me.btnBuscarAnular = New System.Windows.Forms.Button()
-        Me.dpAnularCompra = New System.Windows.Forms.DateTimePicker()
+        Me.dpAnularCompraFin = New System.Windows.Forms.DateTimePicker()
+        Me.dpAnularCompraIni = New System.Windows.Forms.DateTimePicker()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.txtNrofacturaAnul = New System.Windows.Forms.TextBox()
         Me.cbProveedor3 = New System.Windows.Forms.ComboBox()
         Me.cbAnularFiltro = New System.Windows.Forms.ComboBox()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.ttCompra = New System.Windows.Forms.ToolTip(Me.components)
+        Me.cbEstadoCompra = New System.Windows.Forms.ComboBox()
+        Me.lblBusqTxt = New System.Windows.Forms.Label()
         Me.tbcCompra.SuspendLayout()
         Me.tpListado.SuspendLayout()
         CType(Me.dgvCompras, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -110,12 +121,14 @@ Partial Class GenerarCompras
         Me.pnlDatosProducto.SuspendLayout()
         Me.pnlDatosCompra.SuspendLayout()
         Me.gbTipoPago.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
+        Me.gbProveedor.SuspendLayout()
         Me.pnlOperadores.SuspendLayout()
         Me.pnlComentario.SuspendLayout()
         Me.pnlTotales.SuspendLayout()
         CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tpAnularCompra.SuspendLayout()
+        Me.pnlOperandosAnular.SuspendLayout()
+        CType(Me.dgvComprasAnular, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlAnular.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -124,11 +137,13 @@ Partial Class GenerarCompras
         Me.tbcCompra.Controls.Add(Me.tpListado)
         Me.tbcCompra.Controls.Add(Me.tpNuevaCompra)
         Me.tbcCompra.Controls.Add(Me.tpAnularCompra)
+        Me.tbcCompra.Controls.Add(Me.TabPage1)
         Me.tbcCompra.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tbcCompra.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbcCompra.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbcCompra.Location = New System.Drawing.Point(0, 0)
-        Me.tbcCompra.Margin = New System.Windows.Forms.Padding(3, 3, 5, 3)
+        Me.tbcCompra.Margin = New System.Windows.Forms.Padding(0)
         Me.tbcCompra.Name = "tbcCompra"
+        Me.tbcCompra.Padding = New System.Drawing.Point(10, 8)
         Me.tbcCompra.SelectedIndex = 0
         Me.tbcCompra.Size = New System.Drawing.Size(1120, 942)
         Me.tbcCompra.TabIndex = 3
@@ -139,10 +154,10 @@ Partial Class GenerarCompras
         Me.tpListado.Controls.Add(Me.dgvCompras)
         Me.tpListado.Controls.Add(Me.gbBusquedaCompra)
         Me.tpListado.Controls.Add(Me.txtTituloBusqueda)
-        Me.tpListado.Location = New System.Drawing.Point(4, 25)
+        Me.tpListado.Location = New System.Drawing.Point(4, 38)
         Me.tpListado.Name = "tpListado"
         Me.tpListado.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpListado.Size = New System.Drawing.Size(1112, 913)
+        Me.tpListado.Size = New System.Drawing.Size(1112, 900)
         Me.tpListado.TabIndex = 0
         Me.tpListado.Text = "Listado"
         '
@@ -150,8 +165,8 @@ Partial Class GenerarCompras
         '
         Me.dgvCompras.AllowUserToAddRows = False
         Me.dgvCompras.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver
-        Me.dgvCompras.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.Silver
+        Me.dgvCompras.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
         Me.dgvCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvCompras.Location = New System.Drawing.Point(51, 298)
         Me.dgvCompras.Name = "dgvCompras"
@@ -164,6 +179,7 @@ Partial Class GenerarCompras
         'gbBusquedaCompra
         '
         Me.gbBusquedaCompra.BackColor = System.Drawing.Color.Transparent
+        Me.gbBusquedaCompra.Controls.Add(Me.cbEstadoCompra)
         Me.gbBusquedaCompra.Controls.Add(Me.btnDetalle)
         Me.gbBusquedaCompra.Controls.Add(Me.lblBusqTxt)
         Me.gbBusquedaCompra.Controls.Add(Me.cbProveedor1)
@@ -192,17 +208,6 @@ Partial Class GenerarCompras
         Me.btnDetalle.Text = "Ver Detalle"
         Me.btnDetalle.UseVisualStyleBackColor = True
         Me.btnDetalle.Visible = False
-        '
-        'lblBusqTxt
-        '
-        Me.lblBusqTxt.AutoSize = True
-        Me.lblBusqTxt.BackColor = System.Drawing.Color.Transparent
-        Me.lblBusqTxt.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblBusqTxt.Location = New System.Drawing.Point(378, 14)
-        Me.lblBusqTxt.Name = "lblBusqTxt"
-        Me.lblBusqTxt.Size = New System.Drawing.Size(203, 23)
-        Me.lblBusqTxt.TabIndex = 10
-        Me.lblBusqTxt.Text = "Inserte Nro. Factura"
         '
         'cbProveedor1
         '
@@ -282,7 +287,7 @@ Partial Class GenerarCompras
         Me.cbBuscarCompra.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbBuscarCompra.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbBuscarCompra.FormattingEnabled = True
-        Me.cbBuscarCompra.Location = New System.Drawing.Point(158, 46)
+        Me.cbBuscarCompra.Location = New System.Drawing.Point(158, 43)
         Me.cbBuscarCompra.Name = "cbBuscarCompra"
         Me.cbBuscarCompra.Size = New System.Drawing.Size(184, 27)
         Me.cbBuscarCompra.TabIndex = 6
@@ -293,7 +298,7 @@ Partial Class GenerarCompras
         Me.Label15.BackColor = System.Drawing.Color.Transparent
         Me.Label15.Font = New System.Drawing.Font("Arial Black", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label15.Location = New System.Drawing.Point(26, 47)
+        Me.Label15.Location = New System.Drawing.Point(26, 41)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(126, 27)
         Me.Label15.TabIndex = 5
@@ -303,7 +308,7 @@ Partial Class GenerarCompras
         '
         Me.btnBuscarCompra.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBuscarCompra.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnBuscarCompra.Location = New System.Drawing.Point(736, 117)
+        Me.btnBuscarCompra.Location = New System.Drawing.Point(736, 118)
         Me.btnBuscarCompra.Name = "btnBuscarCompra"
         Me.btnBuscarCompra.Size = New System.Drawing.Size(108, 29)
         Me.btnBuscarCompra.TabIndex = 3
@@ -313,10 +318,11 @@ Partial Class GenerarCompras
         'txtTituloBusqueda
         '
         Me.txtTituloBusqueda.AutoSize = True
-        Me.txtTituloBusqueda.Font = New System.Drawing.Font("Tahoma", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTituloBusqueda.Location = New System.Drawing.Point(383, 40)
+        Me.txtTituloBusqueda.Font = New System.Drawing.Font("Arial", 24.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTituloBusqueda.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.txtTituloBusqueda.Location = New System.Drawing.Point(375, 28)
         Me.txtTituloBusqueda.Name = "txtTituloBusqueda"
-        Me.txtTituloBusqueda.Size = New System.Drawing.Size(196, 25)
+        Me.txtTituloBusqueda.Size = New System.Drawing.Size(326, 36)
         Me.txtTituloBusqueda.TabIndex = 1
         Me.txtTituloBusqueda.Text = "Listado de Compras"
         '
@@ -330,10 +336,10 @@ Partial Class GenerarCompras
         Me.tpNuevaCompra.Controls.Add(Me.pnlComentario)
         Me.tpNuevaCompra.Controls.Add(Me.pnlTotales)
         Me.tpNuevaCompra.Controls.Add(Me.dgvProductos)
-        Me.tpNuevaCompra.Location = New System.Drawing.Point(4, 25)
+        Me.tpNuevaCompra.Location = New System.Drawing.Point(4, 38)
         Me.tpNuevaCompra.Name = "tpNuevaCompra"
         Me.tpNuevaCompra.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpNuevaCompra.Size = New System.Drawing.Size(1112, 913)
+        Me.tpNuevaCompra.Size = New System.Drawing.Size(1112, 900)
         Me.tpNuevaCompra.TabIndex = 1
         Me.tpNuevaCompra.Text = "Nueva Compra"
         '
@@ -536,7 +542,7 @@ Partial Class GenerarCompras
         Me.pnlDatosCompra.Controls.Add(Me.Label18)
         Me.pnlDatosCompra.Controls.Add(Me.gbTipoPago)
         Me.pnlDatosCompra.Controls.Add(Me.dateFactura)
-        Me.pnlDatosCompra.Controls.Add(Me.GroupBox2)
+        Me.pnlDatosCompra.Controls.Add(Me.gbProveedor)
         Me.pnlDatosCompra.Controls.Add(Me.Label3)
         Me.pnlDatosCompra.Controls.Add(Me.Label2)
         Me.pnlDatosCompra.Controls.Add(Me.txtFacturaNro)
@@ -561,16 +567,37 @@ Partial Class GenerarCompras
         'gbTipoPago
         '
         Me.gbTipoPago.BackColor = System.Drawing.Color.Transparent
+        Me.gbTipoPago.Controls.Add(Me.Label20)
+        Me.gbTipoPago.Controls.Add(Me.txtEntregaInicial)
         Me.gbTipoPago.Controls.Add(Me.rbCredito)
         Me.gbTipoPago.Controls.Add(Me.rbContado)
         Me.gbTipoPago.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbTipoPago.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.gbTipoPago.Location = New System.Drawing.Point(725, 17)
         Me.gbTipoPago.Name = "gbTipoPago"
-        Me.gbTipoPago.Size = New System.Drawing.Size(307, 64)
+        Me.gbTipoPago.Size = New System.Drawing.Size(307, 67)
         Me.gbTipoPago.TabIndex = 3
         Me.gbTipoPago.TabStop = False
         Me.gbTipoPago.Text = "Tipo de Pago"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(8, 79)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(117, 19)
+        Me.Label20.TabIndex = 3
+        Me.Label20.Text = "Entrega Inicial"
+        '
+        'txtEntregaInicial
+        '
+        Me.txtEntregaInicial.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEntregaInicial.Location = New System.Drawing.Point(131, 74)
+        Me.txtEntregaInicial.Name = "txtEntregaInicial"
+        Me.txtEntregaInicial.Size = New System.Drawing.Size(157, 26)
+        Me.txtEntregaInicial.TabIndex = 2
+        Me.txtEntregaInicial.Text = "0"
+        Me.txtEntregaInicial.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'rbCredito
         '
@@ -604,21 +631,21 @@ Partial Class GenerarCompras
         Me.dateFactura.Size = New System.Drawing.Size(168, 27)
         Me.dateFactura.TabIndex = 5
         '
-        'GroupBox2
+        'gbProveedor
         '
-        Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox2.Controls.Add(Me.Label11)
-        Me.GroupBox2.Controls.Add(Me.Label1)
-        Me.GroupBox2.Controls.Add(Me.cbProveedor2)
-        Me.GroupBox2.Controls.Add(Me.TextBox6)
-        Me.GroupBox2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.GroupBox2.Location = New System.Drawing.Point(336, 17)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(379, 111)
-        Me.GroupBox2.TabIndex = 8
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Proveedor"
+        Me.gbProveedor.BackColor = System.Drawing.Color.Transparent
+        Me.gbProveedor.Controls.Add(Me.Label11)
+        Me.gbProveedor.Controls.Add(Me.Label1)
+        Me.gbProveedor.Controls.Add(Me.cbProveedor2)
+        Me.gbProveedor.Controls.Add(Me.TextBox6)
+        Me.gbProveedor.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbProveedor.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.gbProveedor.Location = New System.Drawing.Point(336, 17)
+        Me.gbProveedor.Name = "gbProveedor"
+        Me.gbProveedor.Size = New System.Drawing.Size(379, 111)
+        Me.gbProveedor.TabIndex = 8
+        Me.gbProveedor.TabStop = False
+        Me.gbProveedor.Text = "Proveedor"
         '
         'Label11
         '
@@ -683,9 +710,10 @@ Partial Class GenerarCompras
         '
         'txtFacturaNro
         '
-        Me.txtFacturaNro.Location = New System.Drawing.Point(138, 45)
+        Me.txtFacturaNro.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFacturaNro.Location = New System.Drawing.Point(138, 39)
         Me.txtFacturaNro.Name = "txtFacturaNro"
-        Me.txtFacturaNro.Size = New System.Drawing.Size(168, 22)
+        Me.txtFacturaNro.Size = New System.Drawing.Size(168, 26)
         Me.txtFacturaNro.TabIndex = 0
         '
         'pnlOperadores
@@ -843,14 +871,14 @@ Partial Class GenerarCompras
         Me.dgvProductos.AllowUserToAddRows = False
         Me.dgvProductos.AllowUserToOrderColumns = True
         Me.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvProductos.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvProductos.DefaultCellStyle = DataGridViewCellStyle8
         Me.dgvProductos.Location = New System.Drawing.Point(32, 385)
         Me.dgvProductos.MultiSelect = False
         Me.dgvProductos.Name = "dgvProductos"
@@ -863,58 +891,141 @@ Partial Class GenerarCompras
         'tpAnularCompra
         '
         Me.tpAnularCompra.BackColor = System.Drawing.Color.SteelBlue
+        Me.tpAnularCompra.Controls.Add(Me.pnlOperandosAnular)
+        Me.tpAnularCompra.Controls.Add(Me.dgvComprasAnular)
         Me.tpAnularCompra.Controls.Add(Me.txtTituloAnular)
         Me.tpAnularCompra.Controls.Add(Me.pnlAnular)
-        Me.tpAnularCompra.Location = New System.Drawing.Point(4, 25)
+        Me.tpAnularCompra.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tpAnularCompra.Location = New System.Drawing.Point(4, 38)
         Me.tpAnularCompra.Name = "tpAnularCompra"
         Me.tpAnularCompra.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpAnularCompra.Size = New System.Drawing.Size(1112, 913)
+        Me.tpAnularCompra.Size = New System.Drawing.Size(1112, 900)
         Me.tpAnularCompra.TabIndex = 2
         Me.tpAnularCompra.Text = "Anular Compra"
+        '
+        'pnlOperandosAnular
+        '
+        Me.pnlOperandosAnular.Controls.Add(Me.btnAnularCompra)
+        Me.pnlOperandosAnular.Controls.Add(Me.btnVerDetalleAnul)
+        Me.pnlOperandosAnular.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pnlOperandosAnular.Location = New System.Drawing.Point(538, 242)
+        Me.pnlOperandosAnular.Name = "pnlOperandosAnular"
+        Me.pnlOperandosAnular.Size = New System.Drawing.Size(398, 76)
+        Me.pnlOperandosAnular.TabIndex = 4
+        '
+        'btnAnularCompra
+        '
+        Me.btnAnularCompra.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAnularCompra.Location = New System.Drawing.Point(205, 23)
+        Me.btnAnularCompra.Name = "btnAnularCompra"
+        Me.btnAnularCompra.Size = New System.Drawing.Size(164, 34)
+        Me.btnAnularCompra.TabIndex = 1
+        Me.btnAnularCompra.Text = "Anular Factura"
+        Me.btnAnularCompra.UseVisualStyleBackColor = True
+        '
+        'btnVerDetalleAnul
+        '
+        Me.btnVerDetalleAnul.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnVerDetalleAnul.Location = New System.Drawing.Point(38, 22)
+        Me.btnVerDetalleAnul.Name = "btnVerDetalleAnul"
+        Me.btnVerDetalleAnul.Size = New System.Drawing.Size(132, 35)
+        Me.btnVerDetalleAnul.TabIndex = 0
+        Me.btnVerDetalleAnul.Text = "Ver Detalle"
+        Me.btnVerDetalleAnul.UseVisualStyleBackColor = True
+        '
+        'dgvComprasAnular
+        '
+        Me.dgvComprasAnular.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvComprasAnular.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
+        Me.dgvComprasAnular.Location = New System.Drawing.Point(115, 324)
+        Me.dgvComprasAnular.MultiSelect = False
+        Me.dgvComprasAnular.Name = "dgvComprasAnular"
+        Me.dgvComprasAnular.ReadOnly = True
+        Me.dgvComprasAnular.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvComprasAnular.Size = New System.Drawing.Size(821, 218)
+        Me.dgvComprasAnular.TabIndex = 3
         '
         'txtTituloAnular
         '
         Me.txtTituloAnular.AutoSize = True
         Me.txtTituloAnular.BackColor = System.Drawing.Color.Transparent
-        Me.txtTituloAnular.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTituloAnular.Font = New System.Drawing.Font("Arial", 24.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTituloAnular.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.txtTituloAnular.Location = New System.Drawing.Point(381, 45)
         Me.txtTituloAnular.Name = "txtTituloAnular"
-        Me.txtTituloAnular.Size = New System.Drawing.Size(192, 33)
+        Me.txtTituloAnular.Size = New System.Drawing.Size(245, 36)
         Me.txtTituloAnular.TabIndex = 2
         Me.txtTituloAnular.Text = "Anular Compra"
         '
         'pnlAnular
         '
+        Me.pnlAnular.Controls.Add(Me.txtHastaAnul)
+        Me.pnlAnular.Controls.Add(Me.txtFiltro)
         Me.pnlAnular.Controls.Add(Me.btnBuscarAnular)
-        Me.pnlAnular.Controls.Add(Me.dpAnularCompra)
+        Me.pnlAnular.Controls.Add(Me.dpAnularCompraFin)
+        Me.pnlAnular.Controls.Add(Me.dpAnularCompraIni)
         Me.pnlAnular.Controls.Add(Me.Label21)
         Me.pnlAnular.Controls.Add(Me.txtNrofacturaAnul)
         Me.pnlAnular.Controls.Add(Me.cbProveedor3)
         Me.pnlAnular.Controls.Add(Me.cbAnularFiltro)
         Me.pnlAnular.Location = New System.Drawing.Point(115, 144)
         Me.pnlAnular.Name = "pnlAnular"
-        Me.pnlAnular.Size = New System.Drawing.Size(821, 79)
+        Me.pnlAnular.Size = New System.Drawing.Size(821, 77)
         Me.pnlAnular.TabIndex = 0
+        '
+        'txtHastaAnul
+        '
+        Me.txtHastaAnul.AutoSize = True
+        Me.txtHastaAnul.BackColor = System.Drawing.Color.Transparent
+        Me.txtHastaAnul.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.txtHastaAnul.Location = New System.Drawing.Point(397, 76)
+        Me.txtHastaAnul.Name = "txtHastaAnul"
+        Me.txtHastaAnul.Size = New System.Drawing.Size(53, 19)
+        Me.txtHastaAnul.TabIndex = 7
+        Me.txtHastaAnul.Text = "Hasta"
+        Me.txtHastaAnul.Visible = False
+        '
+        'txtFiltro
+        '
+        Me.txtFiltro.AutoSize = True
+        Me.txtFiltro.BackColor = System.Drawing.Color.Transparent
+        Me.txtFiltro.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.txtFiltro.Location = New System.Drawing.Point(397, 8)
+        Me.txtFiltro.Name = "txtFiltro"
+        Me.txtFiltro.Size = New System.Drawing.Size(103, 19)
+        Me.txtFiltro.TabIndex = 7
+        Me.txtFiltro.Text = "Nro. Factura"
+        Me.txtFiltro.Visible = False
         '
         'btnBuscarAnular
         '
         Me.btnBuscarAnular.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBuscarAnular.Location = New System.Drawing.Point(633, 20)
+        Me.btnBuscarAnular.Location = New System.Drawing.Point(661, 26)
         Me.btnBuscarAnular.Name = "btnBuscarAnular"
         Me.btnBuscarAnular.Size = New System.Drawing.Size(131, 33)
         Me.btnBuscarAnular.TabIndex = 6
         Me.btnBuscarAnular.Text = "Buscar"
         Me.btnBuscarAnular.UseVisualStyleBackColor = True
         '
-        'dpAnularCompra
+        'dpAnularCompraFin
         '
-        Me.dpAnularCompra.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dpAnularCompra.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dpAnularCompra.Location = New System.Drawing.Point(152, 89)
-        Me.dpAnularCompra.Name = "dpAnularCompra"
-        Me.dpAnularCompra.Size = New System.Drawing.Size(200, 26)
-        Me.dpAnularCompra.TabIndex = 5
-        Me.dpAnularCompra.Visible = False
+        Me.dpAnularCompraFin.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dpAnularCompraFin.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dpAnularCompraFin.Location = New System.Drawing.Point(397, 98)
+        Me.dpAnularCompraFin.Name = "dpAnularCompraFin"
+        Me.dpAnularCompraFin.Size = New System.Drawing.Size(200, 26)
+        Me.dpAnularCompraFin.TabIndex = 5
+        Me.dpAnularCompraFin.Visible = False
+        '
+        'dpAnularCompraIni
+        '
+        Me.dpAnularCompraIni.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dpAnularCompraIni.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dpAnularCompraIni.Location = New System.Drawing.Point(20, 88)
+        Me.dpAnularCompraIni.Name = "dpAnularCompraIni"
+        Me.dpAnularCompraIni.Size = New System.Drawing.Size(200, 26)
+        Me.dpAnularCompraIni.TabIndex = 5
+        Me.dpAnularCompraIni.Visible = False
         '
         'Label21
         '
@@ -922,7 +1033,7 @@ Partial Class GenerarCompras
         Me.Label21.BackColor = System.Drawing.Color.Transparent
         Me.Label21.Font = New System.Drawing.Font("Arial Black", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label21.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label21.Location = New System.Drawing.Point(71, 23)
+        Me.Label21.Location = New System.Drawing.Point(76, 29)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(133, 27)
         Me.Label21.TabIndex = 1
@@ -931,7 +1042,7 @@ Partial Class GenerarCompras
         'txtNrofacturaAnul
         '
         Me.txtNrofacturaAnul.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNrofacturaAnul.Location = New System.Drawing.Point(397, 24)
+        Me.txtNrofacturaAnul.Location = New System.Drawing.Point(397, 30)
         Me.txtNrofacturaAnul.Name = "txtNrofacturaAnul"
         Me.txtNrofacturaAnul.Size = New System.Drawing.Size(176, 26)
         Me.txtNrofacturaAnul.TabIndex = 4
@@ -941,7 +1052,7 @@ Partial Class GenerarCompras
         Me.cbProveedor3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbProveedor3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbProveedor3.FormattingEnabled = True
-        Me.cbProveedor3.Location = New System.Drawing.Point(358, 89)
+        Me.cbProveedor3.Location = New System.Drawing.Point(173, 88)
         Me.cbProveedor3.Name = "cbProveedor3"
         Me.cbProveedor3.Size = New System.Drawing.Size(200, 26)
         Me.cbProveedor3.TabIndex = 3
@@ -952,16 +1063,48 @@ Partial Class GenerarCompras
         Me.cbAnularFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbAnularFiltro.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbAnularFiltro.FormattingEnabled = True
-        Me.cbAnularFiltro.Location = New System.Drawing.Point(228, 24)
+        Me.cbAnularFiltro.Location = New System.Drawing.Point(227, 30)
         Me.cbAnularFiltro.Name = "cbAnularFiltro"
         Me.cbAnularFiltro.Size = New System.Drawing.Size(146, 26)
         Me.cbAnularFiltro.TabIndex = 2
+        '
+        'TabPage1
+        '
+        Me.TabPage1.Location = New System.Drawing.Point(4, 38)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(1112, 900)
+        Me.TabPage1.TabIndex = 3
+        Me.TabPage1.Text = "Pagos"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'cbEstadoCompra
+        '
+        Me.cbEstadoCompra.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbEstadoCompra.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbEstadoCompra.FormattingEnabled = True
+        Me.cbEstadoCompra.Location = New System.Drawing.Point(30, 107)
+        Me.cbEstadoCompra.Name = "cbEstadoCompra"
+        Me.cbEstadoCompra.Size = New System.Drawing.Size(217, 26)
+        Me.cbEstadoCompra.TabIndex = 12
+        Me.cbEstadoCompra.Visible = False
+        '
+        'lblBusqTxt
+        '
+        Me.lblBusqTxt.AutoSize = True
+        Me.lblBusqTxt.BackColor = System.Drawing.Color.Transparent
+        Me.lblBusqTxt.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lblBusqTxt.Location = New System.Drawing.Point(378, 14)
+        Me.lblBusqTxt.Name = "lblBusqTxt"
+        Me.lblBusqTxt.Size = New System.Drawing.Size(203, 23)
+        Me.lblBusqTxt.TabIndex = 10
+        Me.lblBusqTxt.Text = "Inserte Nro. Factura"
         '
         'GenerarCompras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.Control
+        Me.BackColor = System.Drawing.Color.WhiteSmoke
         Me.ClientSize = New System.Drawing.Size(1120, 942)
         Me.Controls.Add(Me.tbcCompra)
         Me.Name = "GenerarCompras"
@@ -982,8 +1125,8 @@ Partial Class GenerarCompras
         Me.pnlDatosCompra.PerformLayout()
         Me.gbTipoPago.ResumeLayout(False)
         Me.gbTipoPago.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
+        Me.gbProveedor.ResumeLayout(False)
+        Me.gbProveedor.PerformLayout()
         Me.pnlOperadores.ResumeLayout(False)
         Me.pnlComentario.ResumeLayout(False)
         Me.pnlComentario.PerformLayout()
@@ -992,6 +1135,8 @@ Partial Class GenerarCompras
         CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tpAnularCompra.ResumeLayout(False)
         Me.tpAnularCompra.PerformLayout()
+        Me.pnlOperandosAnular.ResumeLayout(False)
+        CType(Me.dgvComprasAnular, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlAnular.ResumeLayout(False)
         Me.pnlAnular.PerformLayout()
         Me.ResumeLayout(False)
@@ -999,7 +1144,6 @@ Partial Class GenerarCompras
     End Sub
     Friend WithEvents tbcCompra As System.Windows.Forms.TabControl
     Friend WithEvents tpListado As System.Windows.Forms.TabPage
-    Friend WithEvents tpAnularCompra As System.Windows.Forms.TabPage
     Friend WithEvents dgvCompras As System.Windows.Forms.DataGridView
     Friend WithEvents gbBusquedaCompra As System.Windows.Forms.GroupBox
     Friend WithEvents Label13 As System.Windows.Forms.Label
@@ -1047,7 +1191,7 @@ Partial Class GenerarCompras
     Friend WithEvents rbCredito As RadioButton
     Friend WithEvents rbContado As RadioButton
     Friend WithEvents dateFactura As DateTimePicker
-    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents gbProveedor As GroupBox
     Friend WithEvents Label11 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents cbProveedor2 As ComboBox
@@ -1070,16 +1214,28 @@ Partial Class GenerarCompras
     Friend WithEvents Label12 As Label
     Friend WithEvents txtSub As TextBox
     Friend WithEvents dgvProductos As DataGridView
+    Friend WithEvents txtNroFacturaListado As TextBox
+    Friend WithEvents cbProveedor1 As ComboBox
+    Friend WithEvents btnDetalle As Button
+    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents Label20 As Label
+    Friend WithEvents txtEntregaInicial As TextBox
+    Friend WithEvents tpAnularCompra As TabPage
+    Friend WithEvents dgvComprasAnular As DataGridView
     Friend WithEvents txtTituloAnular As Label
     Friend WithEvents pnlAnular As Panel
-    Friend WithEvents dpAnularCompra As DateTimePicker
+    Friend WithEvents txtHastaAnul As Label
+    Friend WithEvents txtFiltro As Label
+    Friend WithEvents btnBuscarAnular As Button
+    Friend WithEvents dpAnularCompraFin As DateTimePicker
+    Friend WithEvents dpAnularCompraIni As DateTimePicker
+    Friend WithEvents Label21 As Label
     Friend WithEvents txtNrofacturaAnul As TextBox
     Friend WithEvents cbProveedor3 As ComboBox
     Friend WithEvents cbAnularFiltro As ComboBox
-    Friend WithEvents Label21 As Label
-    Friend WithEvents btnBuscarAnular As Button
-    Friend WithEvents txtNroFacturaListado As TextBox
-    Friend WithEvents cbProveedor1 As ComboBox
+    Friend WithEvents pnlOperandosAnular As Panel
+    Friend WithEvents btnAnularCompra As Button
+    Friend WithEvents btnVerDetalleAnul As Button
+    Friend WithEvents cbEstadoCompra As ComboBox
     Friend WithEvents lblBusqTxt As Label
-    Friend WithEvents btnDetalle As Button
 End Class

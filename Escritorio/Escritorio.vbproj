@@ -49,6 +49,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>casamarcoicono.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportAppServer.Controllers, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
@@ -172,6 +175,12 @@
     <Compile Include="Movimientos\Compra\GenerarCompras.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Movimientos\Mov. Interno\MovimientoInterno.Designer.vb">
+      <DependentUpon>MovimientoInterno.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Movimientos\Mov. Interno\MovimientoInterno.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -240,6 +249,9 @@
     <EmbeddedResource Include="Movimientos\Compra\GenerarCompras.resx">
       <DependentUpon>GenerarCompras.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Movimientos\Mov. Interno\MovimientoInterno.resx">
+      <DependentUpon>MovimientoInterno.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
@@ -306,6 +318,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="casamarcoicono.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

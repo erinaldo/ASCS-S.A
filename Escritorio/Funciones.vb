@@ -12,13 +12,5 @@ Module Funciones
 
     End Sub
 
-    Public Function CreateBackgroundGradient(ByVal Img As Bitmap, ByVal h As Integer, ByVal w As Integer) As Bitmap
-        Using e As Graphics = Graphics.FromImage(Img)
-            Using b As New LinearGradientBrush(New Rectangle(0I, 0I, w, h), Color.RoyalBlue, Color.CornflowerBlue, Drawing2D.LinearGradientMode.ForwardDiagonal)
-                e.FillRectangle(b, New Rectangle(0I, 0I, w, h))
-            End Using
-        End Using
 
-        Return Img
-    End Function
 End Module

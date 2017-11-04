@@ -77,11 +77,10 @@ Public Class ClienteDAO
             Dim reader = cmd.ExecuteReader()
 
             While reader.Read
-                modelo.codigo = reader.GetInt16(0)
-                modelo.nombre = reader.GetString(1)
-                modelo.ruc = reader.GetString(2)
-                modelo.tel = reader.GetString(3)
-                modelo.contacto = reader.GetString(4)
+                modelo.nombre = SafeGetInt(reader, 0)
+                modelo.ruc = SafeGetString(reader, 2)
+                modelo.tel = SafeGetString(reader, 3)
+                modelo.contacto = SafeGetString(reader, 4)
             End While
 
             reader.Close()

@@ -10,5 +10,7 @@
     Public productoTipo As New Collection From {{"Herrajes", 0}, {"Perfiles", 1}}
 
     Public porcentaje As New Collection From {{"1%", 1}, {"0.5%", 2}}
-    Public estado As New Collection From {{"Activo", 0}, {"Inactivo", 1}}
+    Public estado As New Collection From {{"Activo", 0}, {"Pagado", 1}, {"Anulado", 2}}
+
+    Public sucursales As New Collection From {{"Seleccione...", 0}, {"Mayoristas Asunción", 1}, {"Fáb. Lambaré", 2}, {"Depósito Capiata", 3}, {"Mayoristas Capiata", 4}, {"Sucursal K.M 9", 5}, {"ShowRoom", 6}}
 End Module

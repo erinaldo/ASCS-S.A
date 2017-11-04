@@ -27,4 +27,13 @@ Public Class CambiarContra
         Me.Close()
 
     End Sub
+
+    Private Sub CambiarContra_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.SuspendLayout()
+        pnlContra.Left = (Me.ClientSize.Width / 2) - (pnlContra.Width / 2)
+        pnlContra.BackColor = Color.FromArgb(80, Color.Black)
+        Me.BackgroundImageLayout = ImageLayout.Center
+        Me.BackgroundImage = My.Resources.Panther1
+        Me.ResumeLayout()
+    End Sub
 End Class

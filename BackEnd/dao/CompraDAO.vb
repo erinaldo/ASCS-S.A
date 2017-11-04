@@ -10,12 +10,11 @@ Public Class CompraDAO
             con.Open()
 
 
-            Dim mysql = "SELECT * from cargacomprasview WHERE (Fecha_Factura BETWEEN @desde AND @hasta)"
+            Dim mysql = "SELECT * from cargacomprasview WHERE (`Fecha Factura` BETWEEN @desde AND @hasta)"
 
             Dim cmd As New MySqlCommand(mysql, con)
             cmd.Parameters.AddWithValue("@desde", inicio)
-            MsgBox(inicio)
-            MsgBox(fin)
+
 
             cmd.Parameters.AddWithValue("@hasta", fin)
             Dim adp As New MySqlDataAdapter(cmd)
@@ -77,15 +76,16 @@ Public Class CompraDAO
                 compra.codigo = SafeGetString(reader, 0)
                 compra.fechaFactura = SafeGetDate(reader, 1)
                 compra.nroFactura = SafeGetString(reader, 2)
-                compra.comentario = SafeGetString(reader, 3)
-                compra.fechaAnulacion = SafeGetDate(reader, 4)
-                compra.fechaPagado = SafeGetDate(reader, 5)
-                compra.saldo = SafeGetInteger(reader, 6)
-                compra.tipo = SafeGetString(reader, 7)
-                compra.proveedor = SafeGetString(reader, 8)
-                compra.usuario = SafeGetString(reader, 9)
-                compra.fechaActualizacion = SafeGetDate(reader, 10)
-                compra.fechaInsFactura = SafeGetDate(reader, 11)
+                compra.estado = SafeGetString(reader, 3)
+                compra.comentario = SafeGetString(reader, 4)
+                compra.fechaAnulacion = SafeGetDate(reader, 5)
+                compra.fechaPagado = SafeGetDate(reader, 6)
+                compra.saldo = SafeGetInt(reader, 7)
+                compra.tipo = SafeGetString(reader, 8)
+                compra.proveedor = SafeGetString(reader, 9)
+                compra.usuario = SafeGetString(reader, 10)
+                compra.fechaActualizacion = SafeGetDate(reader, 11)
+                compra.fechaInsFactura = SafeGetDate(reader, 12)
             End If
             reader.Close()
             con.Close()
@@ -96,34 +96,9 @@ Public Class CompraDAO
         Return compra
     End Function
 
-    Private Function SafeGetDouble(ByRef reader As MySqlDataReader, ByVal Index As Integer) As Double
-        If Not reader.IsDBNull(Index) Then
-            Return reader.GetDouble(Index)
-        End If
-        Return 0
-    End Function
 
-    Private Function SafeGetString(ByRef reader As MySqlDataReader, ByVal Index As Integer) As String
-        If Not reader.IsDBNull(Index) Then
-            Return reader.GetString(Index)
-        End If
-        Return String.Empty
-    End Function
 
-    Private Function SafeGetDate(ByRef reader As MySqlDataReader, ByVal Index As Integer) As Date
-        If Not reader.IsDBNull(Index) Then
-            Return reader.GetDateTime(Index)
-        End If
 
-        Return Nothing
-    End Function
-
-    Private Function SafeGetInteger(ByRef reader As MySqlDataReader, ByVal Index As Integer) As Integer
-        If Not reader.IsDBNull(Index) Then
-            Return reader.GetInt16(Index)
-        End If
-        Return 0
-    End Function
 
     Function buscarCompra(ByVal filtro As String, ByVal tipo As Integer) As DataSet
         Dim ds As New DataSet
@@ -134,10 +109,11 @@ Public Class CompraDAO
             Dim mysql As String = ""
 
             If tipo = 0 Then
-                mysql = "SELECT * from cargacomprasview2 WHERE (`Nro. Factura` = '" & filtro & "')"
+                mysql = "SELECT * from cargacomprasview WHERE `Nro. Factura` = " & filtro & ""
 
             ElseIf tipo = 2 Then
-                mysql = "SELECT * from cargacomprasview2 WHERE (Proveedor = '" & filtro & "')"
+
+                mysql = "SELECT * from cargacomprasview WHERE `Proveedor` = '" & filtro & "'"
 
             End If
 
@@ -214,6 +190,27 @@ Public Class CompraDAO
 
     End Function
 
+    Public Sub anularCompra(codigo As Object)
+        Try
+            Dim con As New MySqlConnection(ConexionDB.cadenaConexionBD(Sesion.Usuario, Sesion.Password))
+            con.Open()
+
+            ' Actualizando compra
+            Dim query = "UPDATE `stockcapiata`.`stcompras`  SET `comprasEstado`= @estado, comprasFechaAnulacion= @fechaAnul, comprasUsrUpd = @usuario, `comprasFechaUpd` = @fechaUpd where comprasCod = @codigo"
+            Dim cmd As New MySqlCommand(query, con)
+            cmd.Parameters.AddWithValue("@codigo", codigo)
+            cmd.Parameters.AddWithValue("@estado", "Anul")
+            cmd.Parameters.AddWithValue("@fechaAnul", Date.Today)
+            cmd.Parameters.AddWithValue("@usuario", Sesion.Usuario)
+            cmd.Parameters.AddWithValue("@fechaUpd", Date.Today)
+            cmd.ExecuteNonQuery()
+
+            ' Actualizando existencia
+            con.Close()
+        Catch ex As Exception
+            Throw New DAOException(ex.ToString)
+        End Try
+    End Sub
     Public Function BuscarProd(cod As String) As Producto
         Dim tmp As New ProductoDAO
         Return tmp.obtenerProducto(cod)
@@ -313,24 +310,51 @@ Public Class CompraDAO
         Try
 
             compra.userInsert = Sesion.Usuario
-            Dim mysql = "INSERT INTO `stockcapiata`.`stcompras` ( `comprasCod`, `comprasFechaFact`, `comprasNroFactura`, `comprasObs`, `comprasSaldo`, `comprasTipoFact`, `provCodigo`, `comprasUsrIns`, `comprasFechaIns` ) " _
-                       & "VALUES (@cod,@fechaFact,@nroFact,@obs,@saldo,@tipo,@prov,@userIns,@fechaIns)"
+            Dim mysql As String = ""
+            If compra.tipo = "Contado" Then
+
+                mysql = "INSERT INTO `stockcapiata`.`stcompras` ( `comprasCod`, `comprasFechaFact`, `comprasNroFactura`, `comprasObs`, `comprasSaldo`, `comprasTipoFact`, `provCodigo`, `comprasUsrIns`, `comprasFechaIns`,`comprasFechaPagado`,`comprasEstado` ) " _
+                       & "VALUES (@cod,@fechaFact,@nroFact,@obs,@saldo,@tipo,@prov,@userIns,@fechaIns,@fechaPago,@estado)"
+
+            Else
+                mysql = "INSERT INTO `stockcapiata`.`stcompras` ( `comprasCod`, `comprasFechaFact`, `comprasNroFactura`, `comprasObs`, `comprasSaldo`, `comprasTipoFact`, `provCodigo`, `comprasUsrIns`, `comprasFechaIns`,`comprasEstado` ) " _
+                       & "VALUES (@cod,@fechaFact,@nroFact,@obs,@saldo,@tipo,@prov,@userIns,@fechaIns,@estado)"
+
+            End If
             Dim con As New MySqlConnection(ConexionDB.cadenaConexionBD(Sesion.Usuario, Sesion.Password))
             Dim con2 As New MySqlConnection(ConexionDB.cadenaConexionBD(Sesion.Usuario, Sesion.Password))
             con.Open()
 
             Dim sqlcmd As New MySqlCommand(mysql, con)
-            sqlcmd.Parameters.AddWithValue("@cod", compra.nroFactura)
-            sqlcmd.Parameters.AddWithValue("@fechaFact", compra.fechaFactura)
-            sqlcmd.Parameters.AddWithValue("@nroFact", compra.nroFactura)
-            sqlcmd.Parameters.AddWithValue("@obs", compra.comentario)
+            If compra.tipo = "Contado" Then
+                sqlcmd.Parameters.AddWithValue("@cod", compra.nroFactura)
+                sqlcmd.Parameters.AddWithValue("@fechaFact", compra.fechaFactura)
+                sqlcmd.Parameters.AddWithValue("@nroFact", compra.nroFactura)
+                sqlcmd.Parameters.AddWithValue("@obs", compra.comentario)
 
-            sqlcmd.Parameters.AddWithValue("@saldo", compra.saldo)
+                sqlcmd.Parameters.AddWithValue("@saldo", compra.saldo)
 
-            sqlcmd.Parameters.AddWithValue("@tipo", compra.tipo)
-            sqlcmd.Parameters.AddWithValue("@prov", compra.proveedor)
-            sqlcmd.Parameters.AddWithValue("@userIns", compra.userInsert)
-            sqlcmd.Parameters.AddWithValue("@fechaIns", compra.fechaInsFactura)
+                sqlcmd.Parameters.AddWithValue("@tipo", compra.tipo)
+                sqlcmd.Parameters.AddWithValue("@estado", compra.estado)
+                sqlcmd.Parameters.AddWithValue("@prov", compra.proveedor)
+                sqlcmd.Parameters.AddWithValue("@userIns", compra.userInsert)
+                sqlcmd.Parameters.AddWithValue("@fechaIns", compra.fechaInsFactura)
+                sqlcmd.Parameters.AddWithValue("@fechapago", compra.fechaPagado)
+
+            Else
+                sqlcmd.Parameters.AddWithValue("@cod", compra.nroFactura)
+                sqlcmd.Parameters.AddWithValue("@fechaFact", compra.fechaFactura)
+                sqlcmd.Parameters.AddWithValue("@nroFact", compra.nroFactura)
+                sqlcmd.Parameters.AddWithValue("@obs", compra.comentario)
+
+                sqlcmd.Parameters.AddWithValue("@saldo", compra.saldo)
+                sqlcmd.Parameters.AddWithValue("@estado", compra.estado)
+                sqlcmd.Parameters.AddWithValue("@tipo", compra.tipo)
+                sqlcmd.Parameters.AddWithValue("@prov", compra.proveedor)
+                sqlcmd.Parameters.AddWithValue("@userIns", compra.userInsert)
+                sqlcmd.Parameters.AddWithValue("@fechaIns", compra.fechaInsFactura)
+
+            End If
 
             sqlcmd.ExecuteNonQuery()
 

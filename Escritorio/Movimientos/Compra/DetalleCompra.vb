@@ -2,6 +2,8 @@
 
 Public Class DetalleCompra
     Dim codigo As String
+    Dim compra As New Compra
+    Dim provaux As String
     Public Sub New(ByVal item As String)
         InitializeComponent() ' This call is required by the Windows Form Designer.
         codigo = item
@@ -33,7 +35,7 @@ Public Class DetalleCompra
 
     Private Sub cargarDetalle()
         Dim compraDao As New CompraDAO
-        Dim compra As New Compra
+
         compra = compraDao.obtenerCompraDatos(codigo)
 
         txtFacturaNro.Text = compra.nroFactura
@@ -48,7 +50,7 @@ Public Class DetalleCompra
         End If
         Dim prov As New ProveedorDAO
         Dim proveedor = prov.obtenerProveedor(compra.proveedor)
-
+        provaux = proveedor.descripcion
         txtProveedor.Text = proveedor.descripcion
         txtSaldo.Text = compra.saldo
         txtTipo.Text = compra.tipo
@@ -85,7 +87,14 @@ Public Class DetalleCompra
     Private Sub btnReporte_Click(sender As Object, e As EventArgs) Handles btnReporte.Click
         Dim reporte As New ReporteForm
         reporte.codigoCompra = codigo
+        reporte.compra = compra
+        reporte.compra.proveedor = provaux
         reporte.ShowDialog()
         reporte.Dispose()
+    End Sub
+
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Me.Close()
+
     End Sub
 End Class

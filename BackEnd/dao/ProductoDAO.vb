@@ -137,16 +137,16 @@ Public Class ProductoDAO
             Dim reader = cmd.ExecuteReader()
 
             While reader.Read
-                modelo.codigo = reader.GetString(0)
-                modelo.descripcion = reader.GetString(1)
-                modelo.espesor = reader.GetDecimal(2)
-                modelo.largo = reader.GetDecimal(3)
-                modelo.alto = reader.GetDecimal(4)
-                modelo.m2 = reader.GetDecimal(5)
-                modelo.venta = reader.GetDouble(6)
-                modelo.color = reader.GetString(7)
-                modelo.stock = reader.GetInt16(8)
-                modelo.tipo = reader.GetString(9)
+                modelo.codigo = SafeGetString(reader, 0)
+                modelo.descripcion = SafeGetString(reader, 1)
+                modelo.espesor = SafeGetDecimal(reader, 2)
+                modelo.largo = SafeGetDecimal(reader, 3)
+                modelo.alto = SafeGetDecimal(reader, 4)
+                modelo.m2 = SafeGetDecimal(reader, 5)
+                modelo.venta = SafeGetDouble(reader, 6)
+                modelo.color = SafeGetString(reader, 7)
+                modelo.stock = SafeGetInt(reader, 8)
+                modelo.tipo = SafeGetString(reader, 9)
 
             End While
 
@@ -209,5 +209,6 @@ Public Class ProductoDAO
             Throw New DAOException(ex.ToString)
         End Try
     End Sub
+
 
 End Class

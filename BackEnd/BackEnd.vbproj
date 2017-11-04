@@ -47,7 +47,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
-    <Reference Include="MySql.Data.Entity, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="MySql.Data.Entity.EF6, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -71,6 +70,7 @@
   <ItemGroup>
     <Compile Include="dao\ClienteDAO.vb" />
     <Compile Include="dao\CompraDAO.vb" />
+    <Compile Include="dao\MovInternoDAO.vb" />
     <Compile Include="dao\ProductoDAO.vb" />
     <Compile Include="dao\ProveedorDAO.vb" />
     <Compile Include="dao\UsuarioDAO.vb" />
@@ -144,7 +144,9 @@
       <DependentUpon>stockcapiataDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="bd\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -60,6 +60,16 @@
         End Set
     End Property
 
+    Private _estado As String
+    Public Property estado() As String
+        Get
+            Return _estado
+        End Get
+        Set(ByVal value As String)
+            _estado = value
+        End Set
+    End Property
+
     Private _comentario As String
     Public Property comentario() As String
         Get
@@ -107,6 +117,16 @@
         End Get
         Set(ByVal value As String)
             _userInsert = value
+        End Set
+    End Property
+
+    Private _userUpdate As String
+    Public Property userUpdate() As String
+        Get
+            Return _userUpdate
+        End Get
+        Set(ByVal value As String)
+            _userUpdate = value
         End Set
     End Property
 

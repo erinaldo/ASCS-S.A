@@ -93,7 +93,7 @@ Public Class Inicio
         Dim cont As New CambiarContra
         cont.FormBorderStyle = FormBorderStyle.FixedDialog
         cont.ShowDialog(Me)
-
+        cont.Dispose()
     End Sub
 
     'Private Sub pbProductos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -139,6 +139,7 @@ Public Class Inicio
         If target = "" Then
             'dgvDatos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
             dgvDatos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+            dgvDatos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
             Me.dgvDatos.EditMode = False
             dgvDatos.Visible = True
             dgvDatos.DefaultCellStyle.WrapMode = DataGridViewTriState.True
@@ -154,7 +155,7 @@ Public Class Inicio
             panelOperaciones.Visible = True
             PanelTitulo.Visible = True
             txtBusqueda.Text = ""
-            dgvDatos.Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCellsExceptHeader
+            ''dgvDatos.Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCellsExceptHeader
 
             target = "productos"
             lblTitulo.Text = "LISTADO DE PRODUCTOS"
@@ -340,6 +341,8 @@ Public Class Inicio
             dgvDatos.Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCellsExceptHeader
             target = "proveedores"
             PanelTitulo.Visible = True
+            dgvDatos.Columns("Usuario").Visible = False
+            dgvDatos.Columns("Fecha").Visible = False
             lblTitulo.Text = "LISTADO DE PROVEEDORES"
             lblTitulo.Left = (PanelTitulo.Width / 2) - (lblTitulo.Width / 2)
         Catch ex As Exception
@@ -403,6 +406,7 @@ Public Class Inicio
             panelOperaciones.Visible = True
             txtBusqueda.Text = ""
             dgvDatos.Columns(0).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+
             target = "vendedores"
             PanelTitulo.Visible = True
             lblTitulo.Text = "LISTADO DE VENDEDORES"
@@ -476,6 +480,7 @@ Public Class Inicio
         If target = "productos" Then
             Dim dao As New ProductoDAO
             Dim criterio = cboxBuscar.SelectedItem
+
 
             If cboxBuscar.SelectedIndex = 0 And txtBusqueda.Text.Length > 0 Then
                 busqueda = dao.cargarBusqueda(0, txtBusqueda.Text)
@@ -569,11 +574,19 @@ Public Class Inicio
         'dgvDatos.Visible = False
         agregarProv.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
         agregarProv.ShowDialog(Me)
+        agregarProv.Dispose()
+
     End Sub
 
 
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles pbInicio.Click
+    ' ------------------------------------------------------ MOVIMIENTO INTERNO  ------------------------------------------------------
 
+    Private Sub MovInternoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles miMovInterno.Click
+        Dim movInt As New MovimientoInterno
+        'dgvDatos.Visible = False
+        movInt.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
+        movInt.ShowDialog(Me)
+        movInt.Dispose()
     End Sub
 End Class

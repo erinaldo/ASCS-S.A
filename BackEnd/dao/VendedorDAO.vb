@@ -75,11 +75,11 @@ Public Class VendedorDAO
             Dim reader = cmd.ExecuteReader()
 
             While reader.Read
-                modelo.codigo = reader.GetInt16(0)
-                modelo.nombre = reader.GetString(1)
-                modelo.porcentaje = reader.GetString(2)
-                modelo.tel = reader.GetString(3)
-                modelo.estado = reader.GetString(4)
+                modelo.codigo = SafeGetInt(reader, 0)
+                modelo.nombre = SafeGetString(reader, 1)
+                modelo.porcentaje = SafeGetString(reader, 2)
+                modelo.tel = SafeGetString(reader, 3)
+                modelo.estado = SafeGetString(reader, 4)
             End While
 
             reader.Close()
@@ -105,7 +105,7 @@ Public Class VendedorDAO
             cmd.Parameters.AddWithValue("@estado", modelo.estado)
 
             cmd.ExecuteNonQuery()
-            MsgBox(VariablesUtiles.porcentaje(modelo.porcentaje.ToString))
+
             con.Close()
 
         Catch ex As Exception

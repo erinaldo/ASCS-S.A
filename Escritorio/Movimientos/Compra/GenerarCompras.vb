@@ -29,18 +29,24 @@ Public Class GenerarCompras
 
         ' Anular Compra
         pnlAnular.Left = (Me.ClientSize.Width / 2) - (pnlAnular.Width / 2)
+        dgvComprasAnular.Left = pnlAnular.Left
         txtTituloAnular.Left = (Me.ClientSize.Width / 2) - (txtTituloAnular.Width / 2)
+        pnlOperandosAnular.Left = pnlAnular.Right - pnlOperandosAnular.Width
+        pnlOperandosAnular.Visible = False
     End Sub
     Private Sub generarCompraElementos()
         dgvCompras.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-
-
+        dgvComprasAnular.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        dgvComprasAnular.Visible = False
+        dgvComprasAnular.EditMode = False
 
         Dim prov = compraDao.CargaProv()
         cbProveedor2.DataSource = prov.Tables("tabla")
         cbProveedor2.DisplayMember = "Descripción"
         cbProveedor2.ValueMember = "Código"
+
+        cbEstadoCompra.DataSource = VariablesUtiles.estado
 
         Dim depositos = compraDao.cargaDeposito()
         cbDeposito.DataSource = depositos.Tables("tabla")
@@ -69,6 +75,7 @@ Public Class GenerarCompras
         pnlDatosCompra.BackColor = Color.FromArgb(80, Color.Black)
         pnlDatosProducto.BackColor = Color.FromArgb(80, Color.Black)
         pnlAnular.BackColor = Color.FromArgb(80, Color.Black)
+        pnlOperandosAnular.BackColor = Color.FromArgb(80, Color.Black)
 
         cbProveedor3.DataSource = prov.Tables("tabla")
         cbProveedor3.DisplayMember = "Descripción"
@@ -133,18 +140,22 @@ Public Class GenerarCompras
     End Sub
 
     Private Sub cbBuscarCompra_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbBuscarCompra.SelectedIndexChanged
+        btnDetalle.Visible = False
+        Me.SuspendLayout()
         If cbBuscarCompra.SelectedItem = "Nro. Factura" Then
             pnlRangoFecha.Visible = False
             txtNroFacturaListado.Visible = True
             cbProveedor1.Visible = False
+            txtNroFacturaListado.Text = ""
             txtNroFacturaListado.Focus()
             lblBusqTxt.Text = "Inserte Nro. Factura"
             lblBusqTxt.Visible = True
+            cbEstadoCompra.Visible = False
         ElseIf cbBuscarCompra.SelectedItem = "Rango de Fecha" Then
             pnlRangoFecha.Visible = True
             txtNroFacturaListado.Visible = False
             cbProveedor1.Visible = False
-
+            cbEstadoCompra.Visible = False
             lblBusqTxt.Visible = False
         ElseIf cbBuscarCompra.SelectedItem = "Proveedor" Then
             pnlRangoFecha.Visible = False
@@ -152,13 +163,22 @@ Public Class GenerarCompras
             cbProveedor1.Visible = True
             lblBusqTxt.Text = "Seleccione el proveedor"
             lblBusqTxt.Visible = True
+            cbEstadoCompra.Visible = False
             'txtNroFacturaListado.Focus()
             'ElseIf cbBuscarCompra.SelectedItem = "Proveedor" Then
             '    dpAnularCompra.Visible = False
             '    cbProveedoresAnular.Location = txtNrofacturaAnul.Location
             '    cbProveedoresAnular.Visible = True
             '    txtNrofacturaAnul.Visible = False
+        Else
+            lblBusqTxt.Text = "Seleccione un estado"
+            pnlRangoFecha.Visible = False
+            txtNroFacturaListado.Visible = False
+            cbProveedor1.Visible = False
+            cbEstadoCompra.Visible = True
+            cbEstadoCompra.Location = txtNroFacturaListado.Location
         End If
+        Me.ResumeLayout()
     End Sub
 
 
@@ -175,13 +195,21 @@ Public Class GenerarCompras
             txtCodProd.Text = producto.codigo
             txtDescripcionProd.Text = producto.descripcion
             txtPrecioProd.Text = producto.venta
-            txtPrecioProd.Enabled = False
+            txtPrecioProd.Enabled = True
             txtDescripcionProd.Enabled = False
         Catch ex As Exception
             MsgBox(ex.Message.ToString)
         End Try
     End Sub
 
+    Private Sub rbCredito_CheckedChanged(sender As Object, e As EventArgs) Handles rbCredito.CheckedChanged
+        If rbCredito.Checked Then
+            gbTipoPago.Height = gbProveedor.Height
+            txtEntregaInicial.Text = 0
+        Else
+            gbTipoPago.Height = gbProveedor.Height / 2
+        End If
+    End Sub
     Private Function calcularIva(ByVal total As Double, ByVal cod As String) As Double
         Dim resultado As Double
         If cod = "10%" Then
@@ -264,10 +292,13 @@ Public Class GenerarCompras
                 compra.proveedor = cbProveedor2.SelectedItem.item("Código")
                 If rbContado.Checked = True Then
                     compra.tipo = "Contado"
+                    compra.estado = "Paga"
                     compra.saldo = CDbl(0)
+                    compra.fechaPagado = Date.Today
                 Else
                     compra.tipo = "Crédito"
-                    compra.saldo = CDbl(txtTotalCompra.Text)
+                    compra.estado = "Acti"
+                    compra.saldo = CDbl(txtTotalCompra.Text) - CDbl(txtEntregaInicial.Text)
                 End If
 
 
@@ -303,6 +334,10 @@ Public Class GenerarCompras
             Return False
         ElseIf txtCodProd.Text = "" Then
             Return False
+        ElseIf txtCantidad.Text = "" Then
+            Return False
+        ElseIf txtPrecioProd.Text = "" Then
+            Return False
         End If
         Return True
 
@@ -313,25 +348,108 @@ Public Class GenerarCompras
     ' ---------------------------------------------- ANULAR COMPRA Métodos -----------------------
 
     Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbAnularFiltro.SelectedIndexChanged
-        If cbAnularFiltro.SelectedItem = "Nro. Factura" Then
-            dpAnularCompra.Visible = False
+        If cbAnularFiltro.SelectedIndex = 0 Then
+            dpAnularCompraIni.Visible = False
             cbProveedor3.Visible = False
             txtNrofacturaAnul.Visible = True
+            txtFiltro.Text = "Nro. Factura"
+            txtFiltro.Visible = True
+            pnlAnular.Height = 76
+            pnlAnular.Width = 821
+            pnlOperandosAnular.Top = pnlAnular.Bottom + 5
+            dgvComprasAnular.Top = pnlOperandosAnular.Bottom + 5
             txtNrofacturaAnul.Focus()
-        ElseIf cbAnularFiltro.SelectedItem = "Fecha Factura" Then
-            dpAnularCompra.Visible = True
-            dpAnularCompra.Location = txtNrofacturaAnul.Location
+
+        ElseIf cbAnularFiltro.Selectedindex = 1 Then
+            txtFiltro.Text = "Desde"
+            txtFiltro.Visible = True
+
+            dpAnularCompraIni.Visible = True
+            dpAnularCompraIni.Location = txtNrofacturaAnul.Location
+            pnlAnular.Height = 138
+            pnlAnular.Width = 821
+            pnlOperandosAnular.Top = pnlAnular.Bottom + 5
+            dgvComprasAnular.Top = pnlOperandosAnular.Bottom + 5
+            txtHastaAnul.Visible = True
+            dpAnularCompraFin.Visible = True
             cbProveedor3.Visible = False
             txtNrofacturaAnul.Visible = False
-        ElseIf cbAnularFiltro.SelectedItem = "Proveedor" Then
-            dpAnularCompra.Visible = False
+
+        ElseIf cbAnularFiltro.SelectedIndex = 2 Then
+            txtFiltro.Text = "Seleccione Proveedor"
+            txtFiltro.Visible = True
+
+            pnlAnular.Height = 76
+            pnlAnular.Width = 821
+            dpAnularCompraIni.Visible = False
+            dpAnularCompraFin.Visible = False
             cbProveedor3.Location = txtNrofacturaAnul.Location
             cbProveedor3.Visible = True
             txtNrofacturaAnul.Visible = False
+            pnlOperandosAnular.Top = pnlAnular.Bottom + 5
+            dgvComprasAnular.Top = pnlOperandosAnular.Bottom + 5
         End If
     End Sub
 
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnAnularCompra.Click
+        Dim row = dgvComprasAnular.CurrentRow.Index
+        Dim codigo = dgvComprasAnular.Item(0, row).Value
 
+        Dim result As Integer = MessageBox.Show("Desea Anular la compra  " + codigo.ToString + " ?", "caption", MessageBoxButtons.YesNo)
+
+        If result = DialogResult.No Then
+
+        ElseIf result = DialogResult.Yes Then
+            Dim daoProd As New ProductoDAO
+            compraDao.anularCompra(codigo)
+            MsgBox("Compra Anulada con éxito!", MsgBoxStyle.Information, "Notificación Anulación")
+        End If
+    End Sub
+
+    Private Sub btnBuscarAnular_Click(sender As Object, e As EventArgs) Handles btnBuscarAnular.Click
+        Dim listadoCompras As New DataSet
+        If validarAnulacion() Then
+            If cbAnularFiltro.SelectedIndex = 0 Then
+                Dim filtro = txtNrofacturaAnul.Text
+                Dim tipoBusq = cbBuscarCompra.SelectedIndex
+                listadoCompras = compraDao.buscarCompra(filtro, tipoBusq)
+            ElseIf cbAnularFiltro.SelectedIndex = 1 Then
+                Dim inicio = dpAnularCompraIni.Value.Date
+                Dim fin = dpAnularCompraFin.Value.Date
+                listadoCompras = compraDao.carga(inicio, fin)
+            ElseIf cbAnularFiltro.SelectedIndex = 2 Then
+                Dim filtro = cbProveedor3.SelectedItem.item("Descripción")
+                Dim tipoBusq = 2
+                listadoCompras = compraDao.buscarCompra(filtro, tipoBusq)
+            End If
+            dgvComprasAnular.DataSource = listadoCompras.Tables("tabla")
+            dgvComprasAnular.Visible = True
+            pnlOperandosAnular.Visible = True
+        Else
+            MsgBox("Debe ingresar un número de factura", MsgBoxStyle.Critical, "Notificación")
+        End If
+
+    End Sub
+
+    Private Function validarAnulacion()
+        If cbAnularFiltro.SelectedIndex = 0 Then
+            If txtNrofacturaAnul.Text = "" Then
+                Return False
+            End If
+        End If
+        Return True
+    End Function
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnVerDetalleAnul.Click
+        If dgvComprasAnular.SelectedRows.Count > 0 Then
+            Dim row = dgvComprasAnular.CurrentRow.Index
+            Dim codigo = dgvComprasAnular.Item(0, row).Value
+            Dim detalleForm As New DetalleCompra(codigo)
+            detalleForm.ShowDialog()
+
+            detalleForm.Dispose()
+        End If
+    End Sub
     ' --------------------------------------------- LOAD - METODOS ---------------------------------------------
 
 
@@ -345,4 +463,14 @@ Public Class GenerarCompras
             detalleForm.Dispose()
         End If
     End Sub
+
+
+
+    Private Sub soloAdmiteNumeros(sender As Object, e As KeyPressEventArgs) Handles txtCantidad.KeyPress, txtEntregaInicial.KeyPress, txtPrecioProd.KeyPress
+        soloNumeros(e)
+    End Sub
+
+
+
+
 End Class

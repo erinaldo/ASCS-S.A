@@ -23,6 +23,11 @@ Partial Class Inicio
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvDatos = New System.Windows.Forms.DataGridView()
         Me.PanelTitulo = New System.Windows.Forms.Panel()
         Me.lblTitulo = New System.Windows.Forms.Label()
@@ -70,7 +75,8 @@ Partial Class Inicio
         Me.miMovimientos = New System.Windows.Forms.ToolStripMenuItem()
         Me.miCompras = New System.Windows.Forms.ToolStripMenuItem()
         Me.miGenerarCompra = New System.Windows.Forms.ToolStripMenuItem()
-        Me.VentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.miVentas = New System.Windows.Forms.ToolStripMenuItem()
+        Me.miMovInterno = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.pbInicio = New System.Windows.Forms.PictureBox()
         CType(Me.dgvDatos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -89,11 +95,41 @@ Partial Class Inicio
         Me.dgvDatos.AllowUserToOrderColumns = True
         Me.dgvDatos.AllowUserToResizeColumns = False
         Me.dgvDatos.AllowUserToResizeRows = False
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ControlLight
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgvDatos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvDatos.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ButtonShadow
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Arial", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvDatos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvDatos.DefaultCellStyle = DataGridViewCellStyle8
+        Me.dgvDatos.GridColor = System.Drawing.SystemColors.AppWorkspace
         Me.dgvDatos.Location = New System.Drawing.Point(90, 269)
         Me.dgvDatos.Name = "dgvDatos"
         Me.dgvDatos.ReadOnly = True
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvDatos.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.dgvDatos.RowsDefaultCellStyle = DataGridViewCellStyle10
         Me.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvDatos.Size = New System.Drawing.Size(812, 322)
         Me.dgvDatos.TabIndex = 34
@@ -151,30 +187,31 @@ Partial Class Inicio
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label3.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label3.Location = New System.Drawing.Point(183, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(130, 24)
+        Me.Label3.Size = New System.Drawing.Size(133, 21)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Búsqueda/Filtro"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Label1.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label1.Location = New System.Drawing.Point(34, 17)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(101, 19)
+        Me.Label1.Size = New System.Drawing.Size(100, 19)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Buscar por:"
         '
         'cbTipoBusqueda
         '
         Me.cbTipoBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbTipoBusqueda.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbTipoBusqueda.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbTipoBusqueda.FormattingEnabled = True
         Me.cbTipoBusqueda.Items.AddRange(New Object() {"Herrajes", "Perfiles"})
         Me.cbTipoBusqueda.Location = New System.Drawing.Point(176, 15)
@@ -186,7 +223,7 @@ Partial Class Inicio
         'cboxBuscar
         '
         Me.cboxBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboxBuscar.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboxBuscar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboxBuscar.FormattingEnabled = True
         Me.cboxBuscar.Location = New System.Drawing.Point(38, 42)
         Me.cboxBuscar.Name = "cboxBuscar"
@@ -195,7 +232,7 @@ Partial Class Inicio
         '
         'btnBuscar
         '
-        Me.btnBuscar.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBuscar.Location = New System.Drawing.Point(351, 37)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(113, 35)
@@ -205,7 +242,7 @@ Partial Class Inicio
         '
         'txtBusqueda
         '
-        Me.txtBusqueda.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBusqueda.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBusqueda.Location = New System.Drawing.Point(176, 42)
         Me.txtBusqueda.Name = "txtBusqueda"
         Me.txtBusqueda.Size = New System.Drawing.Size(150, 26)
@@ -228,17 +265,17 @@ Partial Class Inicio
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label2.Location = New System.Drawing.Point(103, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(106, 24)
+        Me.Label2.Size = New System.Drawing.Size(108, 21)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Operaciones"
         '
         'btnAgregar
         '
-        Me.btnAgregar.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregar.Location = New System.Drawing.Point(22, 42)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(80, 30)
@@ -248,7 +285,7 @@ Partial Class Inicio
         '
         'btnEliminar
         '
-        Me.btnEliminar.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEliminar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEliminar.Location = New System.Drawing.Point(201, 42)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(85, 30)
@@ -258,7 +295,7 @@ Partial Class Inicio
         '
         'btnModificar
         '
-        Me.btnModificar.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnModificar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnModificar.Location = New System.Drawing.Point(108, 42)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(87, 30)
@@ -466,7 +503,7 @@ Partial Class Inicio
         '
         'miMovimientos
         '
-        Me.miMovimientos.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miCompras, Me.VentasToolStripMenuItem})
+        Me.miMovimientos.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miCompras, Me.miVentas, Me.miMovInterno})
         Me.miMovimientos.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.miMovimientos.ForeColor = System.Drawing.SystemColors.ControlText
         Me.miMovimientos.Margin = New System.Windows.Forms.Padding(0, 10, 0, 0)
@@ -478,20 +515,26 @@ Partial Class Inicio
         '
         Me.miCompras.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miGenerarCompra})
         Me.miCompras.Name = "miCompras"
-        Me.miCompras.Size = New System.Drawing.Size(141, 24)
+        Me.miCompras.Size = New System.Drawing.Size(169, 24)
         Me.miCompras.Text = "Compras"
         '
         'miGenerarCompra
         '
         Me.miGenerarCompra.Name = "miGenerarCompra"
-        Me.miGenerarCompra.Size = New System.Drawing.Size(195, 24)
-        Me.miGenerarCompra.Text = "Generar Compra"
+        Me.miGenerarCompra.Size = New System.Drawing.Size(229, 24)
+        Me.miGenerarCompra.Text = "Administrar Compras"
         '
-        'VentasToolStripMenuItem
+        'miVentas
         '
-        Me.VentasToolStripMenuItem.Name = "VentasToolStripMenuItem"
-        Me.VentasToolStripMenuItem.Size = New System.Drawing.Size(141, 24)
-        Me.VentasToolStripMenuItem.Text = "Ventas"
+        Me.miVentas.Name = "miVentas"
+        Me.miVentas.Size = New System.Drawing.Size(169, 24)
+        Me.miVentas.Text = "Ventas"
+        '
+        'miMovInterno
+        '
+        Me.miMovInterno.Name = "miMovInterno"
+        Me.miMovInterno.Size = New System.Drawing.Size(169, 24)
+        Me.miMovInterno.Text = "Mov. Interno"
         '
         'ReportesToolStripMenuItem
         '
@@ -603,6 +646,7 @@ Partial Class Inicio
     Friend WithEvents miGenerarCompra As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents miCambiarContra As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents dgvDatos As DataGridView
-    Friend WithEvents VentasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents miVentas As ToolStripMenuItem
     Friend WithEvents pbInicio As PictureBox
+    Friend WithEvents miMovInterno As ToolStripMenuItem
 End Class
