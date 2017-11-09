@@ -583,6 +583,10 @@ Public Class Inicio
     ' ------------------------------------------------------ MOVIMIENTO INTERNO  ------------------------------------------------------
 
     Private Sub MovInternoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles miMovInterno.Click
+
+    End Sub
+
+    Private Sub GeneraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles miGenerarMI.Click
         Dim movInt As New MovimientoInterno
         'dgvDatos.Visible = False
         movInt.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog

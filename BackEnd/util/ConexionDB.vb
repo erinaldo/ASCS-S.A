@@ -3,8 +3,8 @@
 Public Class ConexionDB
 
     Public Shared Function cadenaConexionBD(ByVal user As String, ByVal passwd As String)
-        Dim server As String = "localhost"
-        Dim BD As String = "stockcapiata"
+        Dim server As String = "192.168.0.11"
+        Dim BD As String = "stocklynch"
 
         'Dim server As String = "192.168.0.110"
         'Dim BD As String = "stocklynch"

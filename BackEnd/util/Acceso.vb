@@ -11,8 +11,17 @@ Public Class Acceso
             Sesion.Usuario = user
             Sesion.Password = passwd
 
+        Catch ex As MySql.Data.MySqlClient.MySqlException
+            Select Case ex.Number
+                Case 1042
+                    Throw New DAOException("No se puede acceder al servidor." & vbCrLf & "Contacte al administrator.")
+                Case 1045
+                    Throw New DAOException("Usuario o contraseña incorrectos." & vbCrLf & "intente de nuevo.")
+                Case Else
+                    Throw New DAOException(ex.Message)
+            End Select
         Catch ex As Exception
-            Throw New DAOException("Conexion sin éxito")
+            Throw New DAOException(ex.ToString)
         End Try
     End Sub
 End Class

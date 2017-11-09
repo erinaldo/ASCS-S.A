@@ -175,6 +175,12 @@
     <Compile Include="Movimientos\Compra\GenerarCompras.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Movimientos\Compra\Pagar.Designer.vb">
+      <DependentUpon>Pagar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Movimientos\Compra\Pagar.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Movimientos\Mov. Interno\MovimientoInterno.Designer.vb">
       <DependentUpon>MovimientoInterno.vb</DependentUpon>
     </Compile>
@@ -248,6 +254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Movimientos\Compra\GenerarCompras.resx">
       <DependentUpon>GenerarCompras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimientos\Compra\Pagar.resx">
+      <DependentUpon>Pagar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movimientos\Mov. Interno\MovimientoInterno.resx">
       <DependentUpon>MovimientoInterno.vb</DependentUpon>

@@ -42,8 +42,6 @@ Partial Class MovimientoInterno
         Me.cbAutorizador = New System.Windows.Forms.ComboBox()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.gbTipoMov = New System.Windows.Forms.GroupBox()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.txtEntregaInicial = New System.Windows.Forms.TextBox()
         Me.rbSalida = New System.Windows.Forms.RadioButton()
         Me.rbEntrada = New System.Windows.Forms.RadioButton()
         Me.dpFechaMov = New System.Windows.Forms.DateTimePicker()
@@ -58,7 +56,7 @@ Partial Class MovimientoInterno
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btnInsertarProd = New System.Windows.Forms.Button()
         Me.btnEliminarProd = New System.Windows.Forms.Button()
-        Me.txtCodProd = New System.Windows.Forms.TextBox()
+        Me.txtFiltro = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtStock = New System.Windows.Forms.TextBox()
@@ -74,6 +72,7 @@ Partial Class MovimientoInterno
         Me.pnlGuardarMov = New System.Windows.Forms.Panel()
         Me.btnGuardarMov = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.lblTituloDetalle = New System.Windows.Forms.Label()
         Me.pnlDatosMov.SuspendLayout()
         Me.gbSolicitante.SuspendLayout()
         Me.gbTipoMov.SuspendLayout()
@@ -187,37 +186,16 @@ Partial Class MovimientoInterno
         'gbTipoMov
         '
         Me.gbTipoMov.BackColor = System.Drawing.Color.Transparent
-        Me.gbTipoMov.Controls.Add(Me.Label20)
-        Me.gbTipoMov.Controls.Add(Me.txtEntregaInicial)
         Me.gbTipoMov.Controls.Add(Me.rbSalida)
         Me.gbTipoMov.Controls.Add(Me.rbEntrada)
         Me.gbTipoMov.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbTipoMov.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.gbTipoMov.Location = New System.Drawing.Point(646, 110)
         Me.gbTipoMov.Name = "gbTipoMov"
-        Me.gbTipoMov.Size = New System.Drawing.Size(307, 67)
+        Me.gbTipoMov.Size = New System.Drawing.Size(307, 68)
         Me.gbTipoMov.TabIndex = 3
         Me.gbTipoMov.TabStop = False
         Me.gbTipoMov.Text = "Tipo de Movimiento"
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(8, 79)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(117, 19)
-        Me.Label20.TabIndex = 3
-        Me.Label20.Text = "Entrega Inicial"
-        '
-        'txtEntregaInicial
-        '
-        Me.txtEntregaInicial.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEntregaInicial.Location = New System.Drawing.Point(131, 74)
-        Me.txtEntregaInicial.Name = "txtEntregaInicial"
-        Me.txtEntregaInicial.Size = New System.Drawing.Size(157, 26)
-        Me.txtEntregaInicial.TabIndex = 2
-        Me.txtEntregaInicial.Text = "0"
-        Me.txtEntregaInicial.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'rbSalida
         '
@@ -313,7 +291,7 @@ Partial Class MovimientoInterno
         Me.pnlDatosProducto.Controls.Add(Me.Label5)
         Me.pnlDatosProducto.Controls.Add(Me.btnInsertarProd)
         Me.pnlDatosProducto.Controls.Add(Me.btnEliminarProd)
-        Me.pnlDatosProducto.Controls.Add(Me.txtCodProd)
+        Me.pnlDatosProducto.Controls.Add(Me.txtFiltro)
         Me.pnlDatosProducto.Controls.Add(Me.Label8)
         Me.pnlDatosProducto.Controls.Add(Me.Label6)
         Me.pnlDatosProducto.Controls.Add(Me.txtStock)
@@ -384,14 +362,14 @@ Partial Class MovimientoInterno
         Me.ToolTip1.SetToolTip(Me.btnEliminarProd, "Eliminar Producto Seleccionado")
         Me.btnEliminarProd.UseVisualStyleBackColor = True
         '
-        'txtCodProd
+        'txtFiltro
         '
-        Me.txtCodProd.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtCodProd.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodProd.Location = New System.Drawing.Point(92, 39)
-        Me.txtCodProd.Name = "txtCodProd"
-        Me.txtCodProd.Size = New System.Drawing.Size(127, 27)
-        Me.txtCodProd.TabIndex = 4
+        Me.txtFiltro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtFiltro.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFiltro.Location = New System.Drawing.Point(92, 39)
+        Me.txtFiltro.Name = "txtFiltro"
+        Me.txtFiltro.Size = New System.Drawing.Size(127, 27)
+        Me.txtFiltro.TabIndex = 4
         '
         'Label8
         '
@@ -508,7 +486,7 @@ Partial Class MovimientoInterno
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvProductos.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvProductos.GridColor = System.Drawing.SystemColors.AppWorkspace
-        Me.dgvProductos.Location = New System.Drawing.Point(465, 432)
+        Me.dgvProductos.Location = New System.Drawing.Point(465, 463)
         Me.dgvProductos.Name = "dgvProductos"
         Me.dgvProductos.ReadOnly = True
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -554,7 +532,7 @@ Partial Class MovimientoInterno
         DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvBusquedaResult.DefaultCellStyle = DataGridViewCellStyle8
         Me.dgvBusquedaResult.GridColor = System.Drawing.SystemColors.AppWorkspace
-        Me.dgvBusquedaResult.Location = New System.Drawing.Point(12, 432)
+        Me.dgvBusquedaResult.Location = New System.Drawing.Point(12, 463)
         Me.dgvBusquedaResult.Name = "dgvBusquedaResult"
         Me.dgvBusquedaResult.ReadOnly = True
         DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -610,12 +588,24 @@ Partial Class MovimientoInterno
         Me.btnGuardarMov.Text = "Guardar Movimiento"
         Me.btnGuardarMov.UseVisualStyleBackColor = True
         '
+        'lblTituloDetalle
+        '
+        Me.lblTituloDetalle.AutoSize = True
+        Me.lblTituloDetalle.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTituloDetalle.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lblTituloDetalle.Location = New System.Drawing.Point(513, 425)
+        Me.lblTituloDetalle.Name = "lblTituloDetalle"
+        Me.lblTituloDetalle.Size = New System.Drawing.Size(303, 22)
+        Me.lblTituloDetalle.TabIndex = 38
+        Me.lblTituloDetalle.Text = "PRODUCTOS DEL MOVIMIENTO"
+        '
         'MovimientoInterno
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(1088, 742)
+        Me.Controls.Add(Me.lblTituloDetalle)
         Me.Controls.Add(Me.pnlGuardarMov)
         Me.Controls.Add(Me.pnlBusqueda)
         Me.Controls.Add(Me.dgvBusquedaResult)
@@ -654,8 +644,6 @@ Partial Class MovimientoInterno
     Friend WithEvents cbAutorizador As ComboBox
     Friend WithEvents Label18 As Label
     Friend WithEvents gbTipoMov As GroupBox
-    Friend WithEvents Label20 As Label
-    Friend WithEvents txtEntregaInicial As TextBox
     Friend WithEvents rbSalida As RadioButton
     Friend WithEvents rbEntrada As RadioButton
     Friend WithEvents dpFechaMov As DateTimePicker
@@ -670,7 +658,7 @@ Partial Class MovimientoInterno
     Friend WithEvents Label5 As Label
     Friend WithEvents btnInsertarProd As Button
     Friend WithEvents btnEliminarProd As Button
-    Friend WithEvents txtCodProd As TextBox
+    Friend WithEvents txtFiltro As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents txtCantidad As TextBox
     Friend WithEvents txtDescripcionProd As TextBox
@@ -686,4 +674,5 @@ Partial Class MovimientoInterno
     Friend WithEvents pnlGuardarMov As Panel
     Friend WithEvents btnGuardarMov As Button
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents lblTituloDetalle As Label
 End Class

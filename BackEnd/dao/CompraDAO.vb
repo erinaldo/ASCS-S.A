@@ -3,41 +3,46 @@ Imports MySql.Data.MySqlClient
 
 Public Class CompraDAO
 
-    Function carga(ByVal inicio As Date, ByVal fin As Date) As DataSet
+    Function carga(ByVal inicio As Date, ByVal fin As Date, ByVal tipo As Integer) As DataSet
         Dim ds As New DataSet
         Try
             Dim con As New MySqlConnection(ConexionDB.cadenaConexionBD(Sesion.Usuario, Sesion.Password))
             con.Open()
-
-
-            Dim mysql = "SELECT * from cargacomprasview WHERE (`Fecha Factura` BETWEEN @desde AND @hasta)"
-
+            Dim mysql = ""
+            If tipo = 0 Then
+                mysql = "SELECT * from cargacomprasview WHERE (`Fecha Factura` BETWEEN @desde AND @hasta)"
+            Else
+                mysql = "SELECT * from cargacomprasview WHERE (`Fecha Factura` BETWEEN @desde AND @hasta) AND Estado = 'Activo'"
+            End If
             Dim cmd As New MySqlCommand(mysql, con)
             cmd.Parameters.AddWithValue("@desde", inicio)
-
-
             cmd.Parameters.AddWithValue("@hasta", fin)
             Dim adp As New MySqlDataAdapter(cmd)
-
             ds.Tables.Add("tabla")
             adp.Fill(ds.Tables("tabla"))
-
             con.Close()
-
-
-            ' a += 1
-            '  End While
-            ' MsgBox(a)
-
-            ' dr.Close()
-            'con.Close()
-
-
         Catch ex As Exception
             Throw New DAOException(ex.ToString)
         End Try
         Return ds
     End Function
+
+    Public Sub pagoCompra(ByVal nroFact As String, ByVal pago As Double)
+        Try
+            Dim con As New MySqlConnection(ConexionDB.cadenaConexionBD(Sesion.Usuario, Sesion.Password))
+            con.Open()
+            Dim query = "UPDATE stcompras SET comprasSaldo = comprasSaldo - @pago , comprasFechaUpd =  @hoy ," _
+                        & " comprasUsrUpd = @user WHERE comprasNroFactura = @nro"
+            Dim cmd As New MySqlCommand(query, con)
+            cmd.Parameters.AddWithValue("@pago", pago)
+            cmd.Parameters.AddWithValue("@user", Sesion.Usuario)
+            cmd.Parameters.AddWithValue("@hoy", Date.Now)
+            cmd.Parameters.AddWithValue("@nro", nroFact)
+            cmd.ExecuteNonQuery()
+        Catch ex As Exception
+            Throw New DAOException(ex.ToString)
+        End Try
+    End Sub
 
     Public Function cargarPoductosCompra(codigo As String) As stockcapiataDataSet.detalleproductocompraviewDataTable
         Dim ds As New stockcapiataDataSet.detalleproductocompraviewDataTable
@@ -144,6 +149,50 @@ Public Class CompraDAO
         Return ds
     End Function
 
+    Function buscarCompraPago(ByVal filtro As String, ByVal tipo As Integer) As DataSet
+        Dim ds As New DataSet
+        Try
+            Dim con As New MySqlConnection(ConexionDB.cadenaConexionBD(Sesion.Usuario, Sesion.Password))
+            con.Open()
+
+            Dim mysql As String = ""
+
+            If tipo = 0 Then
+                mysql = "SELECT * from cargacomprasview WHERE `Nro. Factura` = " & filtro & " AND Estado = 'Activo'"
+
+
+            ElseIf tipo = 2 Then
+                MsgBox(filtro)
+                mysql = "SELECT * from cargacomprasview WHERE `Proveedor` = '" & filtro & "' AND Estado = 'Activo'"
+
+            End If
+
+
+            Dim cmd As New MySqlCommand(mysql, con)
+
+
+
+            Dim adp As New MySqlDataAdapter(cmd)
+
+            ds.Tables.Add("tabla")
+            adp.Fill(ds.Tables("tabla"))
+
+            con.Close()
+
+
+            ' a += 1
+            '  End While
+            ' MsgBox(a)
+
+            ' dr.Close()
+            'con.Close()
+
+
+        Catch ex As Exception
+            Throw New DAOException(ex.ToString)
+        End Try
+        Return ds
+    End Function
     Public Function cargaDeposito() As DataSet
         Dim ds As New DataSet
         Dim da As New MySqlDataAdapter
@@ -426,8 +475,8 @@ Public Class CompraDAO
 
                 '    sqlExistencia.Parameters.Clear()
                 'Else
-                Dim queryExistencia = "INSERT INTO `stexistencia` (`codigo_base`, `depoCod`, `exisCantidad`, `exisUsrIns`, `exisFchIns`,`exisNroOt`) " _
-                                     & "VALUES(@cod,@depo,@cantidad,@user,@fecha,@Ot) "
+                Dim queryExistencia = "INSERT INTO `stexistencia` (`codigo_base`, `depoCod`, `exisCantidad`, `exisUsrIns`, `exisFchIns`,`exisNroOt`,`existTipoMov`) " _
+                                     & "VALUES(@cod,@depo,@cantidad,@user,@fecha,@Ot,@tipo) "
                 Dim sqlExistencia As New MySqlCommand(queryExistencia, con)
                 sqlExistencia.Parameters.AddWithValue("@cod", codigo)
                 sqlExistencia.Parameters.AddWithValue("@depo", deposito)
@@ -435,6 +484,7 @@ Public Class CompraDAO
                 sqlExistencia.Parameters.AddWithValue("@user", compra.userInsert)
                 sqlExistencia.Parameters.AddWithValue("@fecha", compra.fechaInsFactura)
                 sqlExistencia.Parameters.AddWithValue("@Ot", compra.nroFactura)
+                sqlExistencia.Parameters.AddWithValue("@tipo", "Compra")
                 sqlExistencia.ExecuteNonQuery()
                 sqlExistencia.Parameters.Clear()
                 'End If
@@ -447,4 +497,9 @@ Public Class CompraDAO
             Throw New DAOException(ex.ToString)
         End Try
     End Sub
+
+    Public Function BuscarProducts(cod As String) As DataSet
+        Dim tmp As New ProductoDAO
+        Return tmp.obtenerProductos(cod)
+    End Function
 End Class

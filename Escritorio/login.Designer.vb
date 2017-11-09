@@ -109,11 +109,12 @@ Partial Class login
         Me.lbAdvertencia.BackColor = System.Drawing.Color.Transparent
         Me.lbAdvertencia.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbAdvertencia.ForeColor = System.Drawing.Color.White
-        Me.lbAdvertencia.Location = New System.Drawing.Point(26, 151)
+        Me.lbAdvertencia.Location = New System.Drawing.Point(25, 135)
         Me.lbAdvertencia.Name = "lbAdvertencia"
         Me.lbAdvertencia.Size = New System.Drawing.Size(255, 18)
         Me.lbAdvertencia.TabIndex = 7
         Me.lbAdvertencia.Text = "Usuario o contraseña incorrectos"
+        Me.lbAdvertencia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.lbAdvertencia.Visible = False
         '
         'btnSalir

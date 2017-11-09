@@ -23,7 +23,7 @@ Public Class login
         Catch ex As Exception
 
             Me.lbAdvertencia.Visible = True
-
+            Me.lbAdvertencia.Text = ex.Message
             Me.txtUsuario.Text = ""
             Me.txtPasswd.Text = ""
             Me.txtUsuario.Focus()
