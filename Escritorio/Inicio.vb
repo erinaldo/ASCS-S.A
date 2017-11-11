@@ -31,7 +31,7 @@ Public Class Inicio
         PanelTitulo.BackColor = Color.FromArgb(80, Color.Black)
         panelBuscar.BackColor = Color.FromArgb(80, Color.Black)
         panelOperaciones.BackColor = Color.FromArgb(80, Color.Black)
-        msInicio.BackColor = Color.DarkOrange
+        msInicio.BackColor = Color.OrangeRed
         Me.SuspendLayout()
     End Sub
 
@@ -588,6 +588,14 @@ Public Class Inicio
 
     Private Sub GeneraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles miGenerarMI.Click
         Dim movInt As New MovimientoInterno
+        'dgvDatos.Visible = False
+        movInt.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
+        movInt.ShowDialog(Me)
+        movInt.Dispose()
+    End Sub
+    '' LISTADO
+    Private Sub ListadoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoToolStripMenuItem.Click
+        Dim movInt As New ListadoMovimientoInt
         'dgvDatos.Visible = False
         movInt.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
         movInt.ShowDialog(Me)

@@ -77,10 +77,10 @@ Partial Class Inicio
         Me.miGenerarCompra = New System.Windows.Forms.ToolStripMenuItem()
         Me.miVentas = New System.Windows.Forms.ToolStripMenuItem()
         Me.miMovInterno = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.pbInicio = New System.Windows.Forms.PictureBox()
         Me.miGenerarMI = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListadoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.pbInicio = New System.Windows.Forms.PictureBox()
         CType(Me.dgvDatos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelTitulo.SuspendLayout()
         Me.pnlControles.SuspendLayout()
@@ -539,6 +539,18 @@ Partial Class Inicio
         Me.miMovInterno.Size = New System.Drawing.Size(169, 24)
         Me.miMovInterno.Text = "Mov. Interno"
         '
+        'miGenerarMI
+        '
+        Me.miGenerarMI.Name = "miGenerarMI"
+        Me.miGenerarMI.Size = New System.Drawing.Size(235, 24)
+        Me.miGenerarMI.Text = "Generar"
+        '
+        'ListadoToolStripMenuItem
+        '
+        Me.ListadoToolStripMenuItem.Name = "ListadoToolStripMenuItem"
+        Me.ListadoToolStripMenuItem.Size = New System.Drawing.Size(235, 24)
+        Me.ListadoToolStripMenuItem.Text = "Listado/Detalle/Anular"
+        '
         'ReportesToolStripMenuItem
         '
         Me.ReportesToolStripMenuItem.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -557,18 +569,6 @@ Partial Class Inicio
         Me.pbInicio.Size = New System.Drawing.Size(963, 617)
         Me.pbInicio.TabIndex = 36
         Me.pbInicio.TabStop = False
-        '
-        'miGenerarMI
-        '
-        Me.miGenerarMI.Name = "miGenerarMI"
-        Me.miGenerarMI.Size = New System.Drawing.Size(152, 24)
-        Me.miGenerarMI.Text = "Generar"
-        '
-        'ListadoToolStripMenuItem
-        '
-        Me.ListadoToolStripMenuItem.Name = "ListadoToolStripMenuItem"
-        Me.ListadoToolStripMenuItem.Size = New System.Drawing.Size(152, 24)
-        Me.ListadoToolStripMenuItem.Text = "Listado"
         '
         'Inicio
         '

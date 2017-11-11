@@ -28,9 +28,12 @@ Public Class DetalleCompra
         dgvProductos.DataSource = productos
         dgvProductos.Columns(1).Visible = False
         dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        dgvProductos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
+
         dgvProductos.EditMode = False
         dgvProductos.Visible = True
         dgvProductos.DefaultCellStyle.WrapMode = DataGridViewTriState.True
+        dgvProductos.ClearSelection()
     End Sub
 
     Private Sub cargarDetalle()

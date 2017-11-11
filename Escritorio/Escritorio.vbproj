@@ -181,6 +181,18 @@
     <Compile Include="Movimientos\Compra\Pagar.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Movimientos\Mov. Interno\DetalleMovimiento.Designer.vb">
+      <DependentUpon>DetalleMovimiento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Movimientos\Mov. Interno\DetalleMovimiento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimientos\Mov. Interno\ListadoMovimientoInt.Designer.vb">
+      <DependentUpon>ListadoMovimientoInt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Movimientos\Mov. Interno\ListadoMovimientoInt.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Movimientos\Mov. Interno\MovimientoInterno.Designer.vb">
       <DependentUpon>MovimientoInterno.vb</DependentUpon>
     </Compile>
@@ -207,6 +219,12 @@
     </Compile>
     <Compile Include="Reportes\ReporteForm.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteMovInt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteMovInt.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\rpDetalleCompraCod.vb">
       <AutoGen>True</AutoGen>
@@ -258,6 +276,12 @@
     <EmbeddedResource Include="Movimientos\Compra\Pagar.resx">
       <DependentUpon>Pagar.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Movimientos\Mov. Interno\DetalleMovimiento.resx">
+      <DependentUpon>DetalleMovimiento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimientos\Mov. Interno\ListadoMovimientoInt.resx">
+      <DependentUpon>ListadoMovimientoInt.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Movimientos\Mov. Interno\MovimientoInterno.resx">
       <DependentUpon>MovimientoInterno.vb</DependentUpon>
     </EmbeddedResource>
@@ -269,6 +293,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReporteForm.resx">
       <DependentUpon>ReporteForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteMovInt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteMovInt.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rpDetalleCompraCod.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

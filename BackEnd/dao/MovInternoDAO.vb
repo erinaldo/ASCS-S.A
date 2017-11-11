@@ -49,6 +49,57 @@ Public Class MovInternoDAO
         Return ds
 
     End Function
+
+    Public Function cargaMov(ByVal codigo As String) As MovimientoInterno
+        Dim modelo As New MovimientoInterno
+        Try
+            Dim con As New MySqlConnection(ConexionDB.cadenaConexionBD(Sesion.Usuario, Sesion.Password))
+            con.Open()
+
+
+            Dim query = "SELECT * FROM stmovinterno WHERE `movNro` = @cod LIMIT 1"
+            Dim cmd As New MySqlCommand(query, con)
+            cmd.Parameters.AddWithValue("@cod", codigo)
+            Dim reader = cmd.ExecuteReader()
+
+            If reader.Read Then
+                modelo.nroMov = codigo
+                modelo.fecha = SafeGetDate(reader, 3)
+                modelo.solicitante = SafeGetString(reader, 4)
+                modelo.proveedor = SafeGetInt(reader, 6)
+                modelo.autorizado = SafeGetString(reader, 5)
+                modelo.tipo = SafeGetString(reader, 10)
+            End If
+            con.Close()
+        Catch ex As Exception
+            Throw New DAOException(ex.ToString)
+        End Try
+        Return modelo
+    End Function
+    Public Function cargarDetalle(codigo As String) As DataSet
+        Dim ds As New DataSet
+        Try
+            Dim con As New MySqlConnection(ConexionDB.cadenaConexionBD(Sesion.Usuario, Sesion.Password))
+            con.Open()
+
+
+            Dim query = "SELECT * FROM detallemovintproductosview WHERE `MovNro` = @cod ORDER BY Linea"
+            Dim cmd As New MySqlCommand(query, con)
+            cmd.Parameters.AddWithValue("@cod", codigo)
+            Dim adp As New MySqlDataAdapter(cmd)
+            ds.Tables.Add("tabla")
+            adp.Fill(ds.Tables("tabla"))
+            con.Close()
+
+        Catch ex As Exception
+            Throw New DAOException(ex.ToString)
+        End Try
+
+        Return ds
+
+
+    End Function
+
     Public Function CargaProv() As DataSet
         Dim ds As New DataSet
         Dim da As New MySqlDataAdapter
@@ -120,4 +171,46 @@ Public Class MovInternoDAO
 
 
     End Sub
+
+    Public Function buscarMovimiento(ByVal filtro As String, ByVal tipo As Integer, ByVal inicio As Date, ByVal fin As Date)
+        Dim ds As New DataSet
+        Try
+            Dim con As New MySqlConnection(ConexionDB.cadenaConexionBD(Sesion.Usuario, Sesion.Password))
+            con.Open()
+
+
+            Dim query = ""
+
+            Select Case tipo
+                Case 0
+                    query = "SELECT * FROM movinternolistadoview WHERE `Nro. Operación` =  @filtro GROUP BY `Nro. Operación`  "
+                    Dim cmd As New MySqlCommand(query, con)
+                    cmd.Parameters.AddWithValue("@filtro", filtro)
+                    Dim adp As New MySqlDataAdapter(cmd)
+                    ds.Tables.Add("tabla")
+                    adp.Fill(ds.Tables("tabla"))
+
+                Case 1
+                    query = "Select * FROM movinternolistadoview WHERE (Fecha BETWEEN @desde AND @hasta) GROUP BY `Nro. Operación` "
+                    Dim cmd As New MySqlCommand(query, con)
+                    cmd.Parameters.AddWithValue("@desde", inicio)
+                    cmd.Parameters.AddWithValue("@hasta", fin)
+                    Dim adp As New MySqlDataAdapter(cmd)
+                    ds.Tables.Add("tabla")
+                    adp.Fill(ds.Tables("tabla"))
+                Case 2
+                    query = "SELECT * FROM movinternolistadoview WHERE Proveedor =  @filtro GROUP BY `Nro. Operación`"
+                    Dim cmd As New MySqlCommand(query, con)
+                    cmd.Parameters.AddWithValue("@filtro", filtro)
+                    Dim adp As New MySqlDataAdapter(cmd)
+                    ds.Tables.Add("tabla")
+                    adp.Fill(ds.Tables("tabla"))
+
+            End Select
+        Catch ex As Exception
+            Throw New DAOException(ex.ToString)
+        End Try
+        Return ds
+    End Function
+
 End Class

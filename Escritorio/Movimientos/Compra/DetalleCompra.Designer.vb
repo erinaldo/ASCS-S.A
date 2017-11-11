@@ -72,9 +72,9 @@ Partial Class DetalleCompra
         Me.pnlDatosCompra.Controls.Add(Me.txtFechaFactura)
         Me.pnlDatosCompra.Controls.Add(Me.txtFacturaNro)
         Me.pnlDatosCompra.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pnlDatosCompra.Location = New System.Drawing.Point(12, 76)
+        Me.pnlDatosCompra.Location = New System.Drawing.Point(12, 58)
         Me.pnlDatosCompra.Name = "pnlDatosCompra"
-        Me.pnlDatosCompra.Size = New System.Drawing.Size(1145, 260)
+        Me.pnlDatosCompra.Size = New System.Drawing.Size(1145, 210)
         Me.pnlDatosCompra.TabIndex = 21
         '
         'Label11
@@ -120,9 +120,9 @@ Partial Class DetalleCompra
         Me.gbTipoPago.Controls.Add(Me.txtFechaPagado)
         Me.gbTipoPago.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbTipoPago.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.gbTipoPago.Location = New System.Drawing.Point(734, 17)
+        Me.gbTipoPago.Location = New System.Drawing.Point(734, 3)
         Me.gbTipoPago.Name = "gbTipoPago"
-        Me.gbTipoPago.Size = New System.Drawing.Size(370, 198)
+        Me.gbTipoPago.Size = New System.Drawing.Size(370, 184)
         Me.gbTipoPago.TabIndex = 3
         Me.gbTipoPago.TabStop = False
         Me.gbTipoPago.Text = "Pago"
@@ -279,9 +279,9 @@ Partial Class DetalleCompra
         '
         Me.pnlComentario.Controls.Add(Me.Label17)
         Me.pnlComentario.Controls.Add(Me.txtComentario)
-        Me.pnlComentario.Location = New System.Drawing.Point(12, 671)
+        Me.pnlComentario.Location = New System.Drawing.Point(12, 594)
         Me.pnlComentario.Name = "pnlComentario"
-        Me.pnlComentario.Size = New System.Drawing.Size(402, 227)
+        Me.pnlComentario.Size = New System.Drawing.Size(405, 112)
         Me.pnlComentario.TabIndex = 19
         '
         'Label17
@@ -303,7 +303,7 @@ Partial Class DetalleCompra
         Me.txtComentario.Location = New System.Drawing.Point(22, 31)
         Me.txtComentario.Name = "txtComentario"
         Me.txtComentario.ReadOnly = True
-        Me.txtComentario.Size = New System.Drawing.Size(359, 183)
+        Me.txtComentario.Size = New System.Drawing.Size(359, 68)
         Me.txtComentario.TabIndex = 5
         Me.txtComentario.Text = ""
         '
@@ -321,11 +321,14 @@ Partial Class DetalleCompra
         '
         'dgvProductos
         '
+        Me.dgvProductos.AllowUserToAddRows = False
         Me.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvProductos.Enabled = False
-        Me.dgvProductos.Location = New System.Drawing.Point(12, 369)
+        Me.dgvProductos.Location = New System.Drawing.Point(12, 301)
         Me.dgvProductos.Name = "dgvProductos"
         Me.dgvProductos.ReadOnly = True
+        Me.dgvProductos.RowHeadersVisible = False
+        Me.dgvProductos.ShowEditingIcon = False
         Me.dgvProductos.Size = New System.Drawing.Size(1145, 275)
         Me.dgvProductos.TabIndex = 23
         '
@@ -333,7 +336,7 @@ Partial Class DetalleCompra
         '
         Me.pnlOperadores.Controls.Add(Me.btnSalir)
         Me.pnlOperadores.Controls.Add(Me.btnReporte)
-        Me.pnlOperadores.Location = New System.Drawing.Point(638, 828)
+        Me.pnlOperadores.Location = New System.Drawing.Point(756, 594)
         Me.pnlOperadores.Name = "pnlOperadores"
         Me.pnlOperadores.Size = New System.Drawing.Size(385, 70)
         Me.pnlOperadores.TabIndex = 25
@@ -364,7 +367,7 @@ Partial Class DetalleCompra
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(1169, 942)
+        Me.ClientSize = New System.Drawing.Size(1186, 750)
         Me.Controls.Add(Me.pnlOperadores)
         Me.Controls.Add(Me.dgvProductos)
         Me.Controls.Add(Me.lblDetalleCompra)

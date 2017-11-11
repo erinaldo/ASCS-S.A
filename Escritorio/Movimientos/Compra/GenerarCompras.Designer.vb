@@ -1468,7 +1468,7 @@ Partial Class GenerarCompras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.BackColor = System.Drawing.Color.OrangeRed
         Me.ClientSize = New System.Drawing.Size(1120, 742)
         Me.Controls.Add(Me.tbcCompra)
         Me.Name = "GenerarCompras"

@@ -9,6 +9,7 @@
     Public busquedaComprasPago As New Collection From {{"Nro. Factura", 0}, {"Rango de Fecha", 1}, {"Proveedor", 2}}
     Public AnularCompras As New Collection From {{"Nro. Factura", 0}, {"Fecha Factura", 1}, {"Proveedor", 2}}
     Public productoTipo As New Collection From {{"Herrajes", 0}, {"Perfiles", 1}}
+    Public busquedaMovInterno As New Collection From {{"Nro. Movimiento", 0}, {"Rango de Fecha", 1}, {"Proveedor", 2}}
 
     Public porcentaje As New Collection From {{"1%", 1}, {"0.5%", 2}}
     Public estado As New Collection From {{"Activo", 0}, {"Pagado", 1}, {"Anulado", 2}}
