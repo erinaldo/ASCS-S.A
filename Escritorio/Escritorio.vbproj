@@ -69,10 +69,10 @@
     <ApplicationIcon>casamarcoicono.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>142955650AA39E588C6E48349DE8C820460BA682</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>A227647DCD012243C955034E5AD84186D7E9B5AB</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Escritorio_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>camamarcofirma.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -84,7 +84,8 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>camamarcofirma.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -351,8 +352,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="camamarcofirma.pfx" />
-    <None Include="Escritorio_ClaveTemporal.pfx" />
-    <None Include="Escritorio_TemporaryKey.pfx" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
