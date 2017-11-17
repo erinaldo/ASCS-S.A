@@ -88,8 +88,9 @@ Public Class DetalleCompra
     End Sub
 
     Private Sub btnReporte_Click(sender As Object, e As EventArgs) Handles btnReporte.Click
-        Dim reporte As New ReporteForm
+        Dim reporte As New Reporte
         reporte.codigoCompra = codigo
+        reporte.tipo = "compra"
         reporte.compra = compra
         reporte.compra.proveedor = provaux
         reporte.ShowDialog()

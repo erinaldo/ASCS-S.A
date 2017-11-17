@@ -16,6 +16,22 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Sam\Desktop\exe\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -51,6 +67,24 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>casamarcoicono.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>142955650AA39E588C6E48349DE8C820460BA682</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Escritorio_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>camamarcofirma.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -199,6 +233,12 @@
     <Compile Include="Movimientos\Mov. Interno\MovimientoInterno.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Movimientos\Venta\AdministrarVentas.Designer.vb">
+      <DependentUpon>AdministrarVentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Movimientos\Venta\AdministrarVentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -214,16 +254,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Reportes\ReporteForm.Designer.vb">
-      <DependentUpon>ReporteForm.vb</DependentUpon>
+    <Compile Include="Reportes\Reporte.Designer.vb">
+      <DependentUpon>Reporte.vb</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\ReporteForm.vb">
+    <Compile Include="Reportes\Reporte.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\ReporteMovInt.vb">
+    <Compile Include="Reportes\rpMovInterno.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ReporteMovInt.rpt</DependentUpon>
+      <DependentUpon>rpMovInterno.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\rpDetalleCompraCod.vb">
@@ -285,18 +325,21 @@
     <EmbeddedResource Include="Movimientos\Mov. Interno\MovimientoInterno.resx">
       <DependentUpon>MovimientoInterno.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Movimientos\Venta\AdministrarVentas.resx">
+      <DependentUpon>AdministrarVentas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ReporteForm.resx">
-      <DependentUpon>ReporteForm.vb</DependentUpon>
+    <EmbeddedResource Include="Reportes\Reporte.resx">
+      <DependentUpon>Reporte.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ReporteMovInt.rpt">
+    <EmbeddedResource Include="Reportes\rpMovInterno.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ReporteMovInt.vb</LastGenOutput>
+      <LastGenOutput>rpMovInterno.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rpDetalleCompraCod.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -307,6 +350,9 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="camamarcofirma.pfx" />
+    <None Include="Escritorio_ClaveTemporal.pfx" />
+    <None Include="Escritorio_TemporaryKey.pfx" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -358,6 +404,23 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="casamarcoicono.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

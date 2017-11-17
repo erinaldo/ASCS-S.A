@@ -172,6 +172,21 @@ Public Class MovInternoDAO
 
     End Sub
 
+    Public Sub anular(codigo As String)
+        Try
+            Dim con As New MySqlConnection(ConexionDB.cadenaConexionBD(Sesion.Usuario, Sesion.Password))
+            con.Open()
+
+
+            Dim query = "UPDATE stmovinterno SET movEstado = 'ANUL' WHERE movNro = " & codigo & ""
+            Dim cmd As New MySqlCommand(query, con)
+            cmd.ExecuteNonQuery()
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
     Public Function buscarMovimiento(ByVal filtro As String, ByVal tipo As Integer, ByVal inicio As Date, ByVal fin As Date)
         Dim ds As New DataSet
         Try
@@ -183,7 +198,7 @@ Public Class MovInternoDAO
 
             Select Case tipo
                 Case 0
-                    query = "SELECT * FROM movinternolistadoview WHERE `Nro. Operación` =  @filtro GROUP BY `Nro. Operación`  "
+                    query = "SELECT * FROM movinternolistadoview WHERE `Nro. Operación` =  @filtro and Estado <> 'Anulado' GROUP BY `Nro. Operación`  "
                     Dim cmd As New MySqlCommand(query, con)
                     cmd.Parameters.AddWithValue("@filtro", filtro)
                     Dim adp As New MySqlDataAdapter(cmd)
@@ -191,7 +206,7 @@ Public Class MovInternoDAO
                     adp.Fill(ds.Tables("tabla"))
 
                 Case 1
-                    query = "Select * FROM movinternolistadoview WHERE (Fecha BETWEEN @desde AND @hasta) GROUP BY `Nro. Operación` "
+                    query = "Select * FROM movinternolistadoview WHERE (Fecha BETWEEN @desde AND @hasta) and Estado <> 'Anulado' GROUP BY `Nro. Operación` "
                     Dim cmd As New MySqlCommand(query, con)
                     cmd.Parameters.AddWithValue("@desde", inicio)
                     cmd.Parameters.AddWithValue("@hasta", fin)
@@ -199,7 +214,7 @@ Public Class MovInternoDAO
                     ds.Tables.Add("tabla")
                     adp.Fill(ds.Tables("tabla"))
                 Case 2
-                    query = "SELECT * FROM movinternolistadoview WHERE Proveedor =  @filtro GROUP BY `Nro. Operación`"
+                    query = "SELECT * FROM movinternolistadoview WHERE Proveedor =  @filtro and Estado <> 'Anulado' GROUP BY `Nro. Operación`"
                     Dim cmd As New MySqlCommand(query, con)
                     cmd.Parameters.AddWithValue("@filtro", filtro)
                     Dim adp As New MySqlDataAdapter(cmd)

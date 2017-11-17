@@ -885,7 +885,7 @@ Partial Class GenerarCompras
         '
         Me.pnlOperadores.Controls.Add(Me.Button4)
         Me.pnlOperadores.Controls.Add(Me.btnGuardarCompra)
-        Me.pnlOperadores.Location = New System.Drawing.Point(32, 779)
+        Me.pnlOperadores.Location = New System.Drawing.Point(32, 766)
         Me.pnlOperadores.Name = "pnlOperadores"
         Me.pnlOperadores.Size = New System.Drawing.Size(370, 70)
         Me.pnlOperadores.TabIndex = 19

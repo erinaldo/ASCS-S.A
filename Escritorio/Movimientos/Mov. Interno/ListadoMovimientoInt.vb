@@ -72,8 +72,10 @@ Public Class ListadoMovimientoInt
             End If
 
             btnDetalle.Visible = True
+            btnAnular.Visible = True
             dgvMovInt.DataSource = listadoMovs.Tables("tabla")
             dgvMovInt.Visible = True
+            dgvMovInt.ClearSelection()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -81,6 +83,7 @@ Public Class ListadoMovimientoInt
 
     Private Sub cbBuscarMovInt_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbBuscarMovInt.SelectedIndexChanged
         btnDetalle.Visible = False
+        btnAnular.Visible = False
         Me.SuspendLayout()
         If cbBuscarMovInt.SelectedIndex = 0 Then
             pnlRangoFecha.Visible = False
@@ -118,7 +121,6 @@ Public Class ListadoMovimientoInt
         If dgvMovInt.SelectedRows.Count > 0 Then
             Dim row = dgvMovInt.CurrentRow.Index
             Dim codigo = dgvMovInt.Item(1, row).Value
-            MsgBox(codigo)
             Dim detalleForm As New DetalleMovimiento(codigo)
             detalleForm.ShowDialog()
 
@@ -126,5 +128,28 @@ Public Class ListadoMovimientoInt
         Else
             MsgBox("Nigun movimiento seleccionado!", MsgBoxStyle.Critical, "Notificación")
         End If
+    End Sub
+
+    Private Sub btnAnular_Click(sender As Object, e As EventArgs) Handles btnAnular.Click
+        Try
+            If dgvMovInt.SelectedRows.Count > 0 Then
+                Dim row = dgvMovInt.CurrentRow.Index
+                Dim codigo = dgvMovInt.Item(1, row).Value
+
+                Dim result As Integer = MessageBox.Show("Anular el movimiento " + dgvMovInt.SelectedRows.Count.ToString + " seleccionado?", "caption", MessageBoxButtons.YesNo)
+
+                If result = DialogResult.Yes Then
+
+                    movInt.anular(codigo)
+                    MsgBox("Movimiento Anulado!", MsgBoxStyle.Information, "Notificación")
+                End If
+            Else
+                MsgBox("Nigun movimiento seleccionado!", MsgBoxStyle.Critical, "Notificación")
+            End If
+
+
+        Catch ex As Exception
+            Throw New DAOException(ex.ToString)
+        End Try
     End Sub
 End Class

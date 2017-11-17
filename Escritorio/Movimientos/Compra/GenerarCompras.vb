@@ -137,31 +137,44 @@ Public Class GenerarCompras
 
     ' --------------------------------------------- BUSQUEDA / LISTADO DE COMPRAS - METODOS ---------------------------------------------
     Private Sub buscarCompraFecha_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscarCompra.Click
-        Try
-            Dim listadoCompras As New DataSet
-            If cbBuscarCompra.SelectedIndex = 0 Then
-                Dim filtro = txtNroFacturaListado.Text
+        If validarBusquedaCompra() Then
+            Try
+                Dim listadoCompras As New DataSet
+                If cbBuscarCompra.SelectedIndex = 0 Then
+                    Dim filtro = txtNroFacturaListado.Text
 
-                listadoCompras = compraDao.buscarCompra(filtro, 0)
-            ElseIf cbBuscarCompra.SelectedIndex = 1 Then
-                Dim inicio = datepInicio.Value.Date
-                Dim fin = datepFin.Value.Date
-                listadoCompras = compraDao.carga(inicio, fin, 0)
-            ElseIf cbBuscarCompra.SelectedIndex = 2 Then
-                Dim filtro = cbProveedor2.SelectedItem.item("Descripción")
+                    listadoCompras = compraDao.buscarCompra(filtro, 0)
+                ElseIf cbBuscarCompra.SelectedIndex = 1 Then
+                    Dim inicio = datepInicio.Value.Date
+                    Dim fin = datepFin.Value.Date
+                    listadoCompras = compraDao.carga(inicio, fin, 0)
+                ElseIf cbBuscarCompra.SelectedIndex = 2 Then
+                    Dim filtro = cbProveedor2.SelectedItem.item("Descripción")
 
-                listadoCompras = compraDao.buscarCompra(filtro, 2)
-            End If
+                    listadoCompras = compraDao.buscarCompra(filtro, 2)
+                End If
 
-            btnDetalle.Visible = True
-            dgvCompras.DataSource = listadoCompras.Tables("tabla")
-            dgvCompras.Visible = True
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-        'carga elementos generar compra
+                btnDetalle.Visible = True
+                dgvCompras.DataSource = listadoCompras.Tables("tabla")
+                dgvCompras.Visible = True
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+            'carga elementos generar compra
+        Else
+            MsgBox("Inserte los parametros de búsqueda!", MsgBoxStyle.Critical, "Notificación")
+        End If
+
 
     End Sub
+    Private Function validarBusquedaCompra()
+        If cbBuscarCompra.SelectedIndex = 0 Then
+            If txtNroFacturaListado.Text = "" Then
+                Return False
+            End If
+        End If
+        Return True
+    End Function
 
     Private Sub btnDetalle_Click(sender As Object, e As EventArgs) Handles btnDetalle.Click
         If dgvCompras.SelectedRows.Count > 0 Then
@@ -568,32 +581,46 @@ Public Class GenerarCompras
     End Sub
 
     Private Sub btnBuscarP_Click(sender As Object, e As EventArgs) Handles btnBuscarP.Click
-        Try
-            Dim listadoCompras As New DataSet
-            If cbFiltroP.SelectedIndex = 0 Then
-                Dim filtro = txtNroFactPago.Text
+        If validarBusquedaPago() Then
+            Try
+                Dim listadoCompras As New DataSet
+                If cbFiltroP.SelectedIndex = 0 Then
+                    Dim filtro = txtNroFactPago.Text
 
-                listadoCompras = compraDao.buscarCompraPago(filtro, 0)
-            ElseIf cbFiltroP.SelectedIndex = 1 Then
-                Dim inicio = dpDesdePago.Value.Date
-                Dim fin = dpHastaPago.Value.Date
-                listadoCompras = compraDao.carga(inicio, fin, 1)
-            ElseIf cbFiltroP.SelectedIndex = 2 Then
-                Dim filtro = cbProveedor4.SelectedItem.item("Descripción")
+                    listadoCompras = compraDao.buscarCompraPago(filtro, 0)
+                ElseIf cbFiltroP.SelectedIndex = 1 Then
+                    Dim inicio = dpDesdePago.Value.Date
+                    Dim fin = dpHastaPago.Value.Date
+                    listadoCompras = compraDao.carga(inicio, fin, 1)
+                ElseIf cbFiltroP.SelectedIndex = 2 Then
+                    Dim filtro = cbProveedor4.SelectedItem.item("Descripción")
 
-                listadoCompras = compraDao.buscarCompraPago(filtro, 2)
-            End If
+                    listadoCompras = compraDao.buscarCompraPago(filtro, 2)
+                End If
 
-            btnDetalleP.Visible = True
-            btnPagar.Visible = True
-            dgvComprasP.DataSource = listadoCompras.Tables("tabla")
-            dgvComprasP.Visible = True
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-        'carga elemento
+                btnDetalleP.Visible = True
+                btnPagar.Visible = True
+                dgvComprasP.DataSource = listadoCompras.Tables("tabla")
+                dgvComprasP.Visible = True
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        Else
+            MsgBox("Debe ingresar un número de factura", MsgBoxStyle.Critical, "Notificación")
+        End If
+
+
+
     End Sub
 
+    Private Function validarBusquedaPago()
+        If cbFiltroP.SelectedIndex = 0 Then
+            If txtNroFactPago.Text = "" Then
+                Return False
+            End If
+        End If
+        Return True
+    End Function
 
 
     Private Sub btnDetalleP_Click(sender As Object, e As EventArgs) Handles btnDetalleP.Click

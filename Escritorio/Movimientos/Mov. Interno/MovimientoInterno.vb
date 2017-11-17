@@ -211,4 +211,8 @@ Public Class MovimientoInterno
     Private Sub soloAdmiteNumeros(sender As Object, e As KeyPressEventArgs) Handles txtFiltro.KeyPress
         soloNumeros(e)
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Me.DialogResult = DialogResult.Cancel
+    End Sub
 End Class

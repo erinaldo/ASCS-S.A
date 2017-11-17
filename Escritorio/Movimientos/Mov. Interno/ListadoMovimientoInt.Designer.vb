@@ -42,6 +42,7 @@ Partial Class ListadoMovimientoInt
         Me.Label13 = New System.Windows.Forms.Label()
         Me.dgvMovInt = New System.Windows.Forms.DataGridView()
         Me.lblTitulo = New System.Windows.Forms.Label()
+        Me.btnAnular = New System.Windows.Forms.Button()
         Me.pnlListado.SuspendLayout()
         Me.pnlRangoFecha.SuspendLayout()
         CType(Me.dgvMovInt, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -49,6 +50,7 @@ Partial Class ListadoMovimientoInt
         '
         'pnlListado
         '
+        Me.pnlListado.Controls.Add(Me.btnAnular)
         Me.pnlListado.Controls.Add(Me.txtNroFacturaListado)
         Me.pnlListado.Controls.Add(Me.btnDetalle)
         Me.pnlListado.Controls.Add(Me.btnBuscarCompra)
@@ -250,6 +252,17 @@ Partial Class ListadoMovimientoInt
         Me.lblTitulo.TabIndex = 37
         Me.lblTitulo.Text = "Listado de Movimientos"
         '
+        'btnAnular
+        '
+        Me.btnAnular.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAnular.Location = New System.Drawing.Point(490, 131)
+        Me.btnAnular.Name = "btnAnular"
+        Me.btnAnular.Size = New System.Drawing.Size(109, 30)
+        Me.btnAnular.TabIndex = 12
+        Me.btnAnular.Text = "Anular"
+        Me.btnAnular.UseVisualStyleBackColor = True
+        Me.btnAnular.Visible = False
+        '
         'ListadoMovimientoInt
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -288,4 +301,5 @@ Partial Class ListadoMovimientoInt
     Friend WithEvents Label13 As Label
     Friend WithEvents dgvMovInt As DataGridView
     Friend WithEvents lblTitulo As Label
+    Friend WithEvents btnAnular As Button
 End Class

@@ -3,6 +3,7 @@
 Public Class DetalleMovimiento
     Dim codigo = ""
     Dim movInt As New MovInternoDAO
+    Dim modelo As New BackEnd.MovimientoInterno
     Public Sub New(ByVal item As String)
         InitializeComponent() ' This call is required by the Windows Form Designer.
         codigo = item
@@ -26,7 +27,7 @@ Public Class DetalleMovimiento
 
     Private Sub prepararElementos()
         txtNroOperacion.Text = codigo
-        Dim modelo = movInt.cargaMov(codigo)
+        modelo = movInt.cargaMov(codigo)
         txtAutorizado.Text = modelo.autorizado
         txtFecha.Text = modelo.fecha.ToShortDateString
         txtSolicita.Text = modelo.solicitante
@@ -51,5 +52,14 @@ Public Class DetalleMovimiento
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Me.DialogResult = DialogResult.Cancel
+    End Sub
+
+    Private Sub btnReporte_Click(sender As Object, e As EventArgs) Handles btnReporte.Click
+        Dim reporte As New Reporte
+        reporte.codigoCompra = codigo
+        reporte.tipo = "movInt"
+        reporte.movInt = modelo
+        reporte.ShowDialog()
+        reporte.Dispose()
     End Sub
 End Class

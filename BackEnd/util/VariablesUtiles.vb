@@ -1,5 +1,5 @@
 ﻿Public Module VariablesUtiles
-    Public colores As New Collection From {{"Gris", "G"}, {"Incoloro", "I"}, {"Bronce", "B"}, {"Dorado", "D"}, _
+    Public colores As New Collection From {{"Gris", "G"}, {"Incoloro", "I"}, {"Bronce", "B"}, {"Dorado", "D"},
                                        {"Cromado", "C"}, {"Fosco", "Fosco"}, {"Pintado", "P"}, {"Azul", "A"}}
 
     Public busquedaProducto As New Collection From {{"Código", 0}, {"Tipo", 1}}
@@ -15,5 +15,5 @@
     Public estado As New Collection From {{"Activo", 0}, {"Pagado", 1}, {"Anulado", 2}}
 
     Public sucursales As New Collection From {{"Seleccione...", 0}, {"Mayoristas Asunción", 1}, {"Fáb. Lambaré", 2}, {"Depósito Capiata", 3}, {"Mayoristas Capiata", 4}, {"Sucursal K.M 9", 5}, {"ShowRoom", 6}}
-    Public autorizado As New Collection From {{"Yeruti Vazquez", 0}, {"Marcelo Román", 1}}
+    Public autorizado As New Collection From {{"Magali Lopez", 0}, {"Yeruti Vazquez", 1}, {"Marcelo Román", 2}}
 End Module

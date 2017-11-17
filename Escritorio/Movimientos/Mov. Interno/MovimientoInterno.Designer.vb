@@ -73,6 +73,7 @@ Partial Class MovimientoInterno
         Me.btnGuardarMov = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.lblTituloDetalle = New System.Windows.Forms.Label()
+        Me.btnSalir = New System.Windows.Forms.Button()
         Me.pnlDatosMov.SuspendLayout()
         Me.gbSolicitante.SuspendLayout()
         Me.gbTipoMov.SuspendLayout()
@@ -276,7 +277,7 @@ Partial Class MovimientoInterno
         'lblTitulo
         '
         Me.lblTitulo.AutoSize = True
-        Me.lblTitulo.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.Font = New System.Drawing.Font("Arial", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitulo.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.lblTitulo.Location = New System.Drawing.Point(360, 9)
         Me.lblTitulo.Name = "lblTitulo"
@@ -572,10 +573,11 @@ Partial Class MovimientoInterno
         '
         'pnlGuardarMov
         '
+        Me.pnlGuardarMov.Controls.Add(Me.btnSalir)
         Me.pnlGuardarMov.Controls.Add(Me.btnGuardarMov)
-        Me.pnlGuardarMov.Location = New System.Drawing.Point(867, 619)
+        Me.pnlGuardarMov.Location = New System.Drawing.Point(867, 558)
         Me.pnlGuardarMov.Name = "pnlGuardarMov"
-        Me.pnlGuardarMov.Size = New System.Drawing.Size(200, 100)
+        Me.pnlGuardarMov.Size = New System.Drawing.Size(200, 161)
         Me.pnlGuardarMov.TabIndex = 37
         '
         'btnGuardarMov
@@ -598,6 +600,16 @@ Partial Class MovimientoInterno
         Me.lblTituloDetalle.Size = New System.Drawing.Size(303, 22)
         Me.lblTituloDetalle.TabIndex = 38
         Me.lblTituloDetalle.Text = "PRODUCTOS DEL MOVIMIENTO"
+        '
+        'btnSalir
+        '
+        Me.btnSalir.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSalir.Location = New System.Drawing.Point(35, 97)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(135, 48)
+        Me.btnSalir.TabIndex = 1
+        Me.btnSalir.Text = "Cancelar"
+        Me.btnSalir.UseVisualStyleBackColor = True
         '
         'MovimientoInterno
         '
@@ -675,4 +687,5 @@ Partial Class MovimientoInterno
     Friend WithEvents btnGuardarMov As Button
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents lblTituloDetalle As Label
+    Friend WithEvents btnSalir As Button
 End Class

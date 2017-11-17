@@ -1,5 +1,5 @@
 /*
-SQLyog Community v12.4.3 (64 bit)
+SQLyog Community v12.4.3 (32 bit)
 MySQL - 5.7.17-log : Database - stocklynch
 *********************************************************************
 */
@@ -169,103 +169,104 @@ CREATE TABLE `stexistencia` (
   `exisUsrIns` char(10) DEFAULT NULL,
   `exisFchIns` datetime DEFAULT NULL,
   `exisNroOt` decimal(10,0) DEFAULT NULL,
-  `existTipoMov` varchar(10) DEFAULT NULL
+  `existTipoMov` varchar(10) DEFAULT NULL,
+  `existEstado` varchar(7) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `stexistencia` */
 
-insert  into `stexistencia`(`codigo_base`,`depoCod`,`exisCantidad`,`exisUsrIns`,`exisFchIns`,`exisNroOt`,`existTipoMov`) values 
-('EMF7043',1,40,'YERUTI','2017-08-29 15:56:26',NULL,NULL),
-('EMF7029',1,36,'YERUTI','2017-08-29 15:56:26',NULL,NULL),
-('EMF7042',1,180,'YERUTI','2017-08-29 15:56:26',NULL,NULL),
-('EMF7039',1,32,'YERUTI','2017-08-29 15:56:26',NULL,NULL),
-('EMF3016',1,49,'YERUTI','2017-08-29 15:56:26',NULL,NULL),
-('EMF0254',1,12,'YERUTI','2017-08-29 15:56:26',NULL,NULL),
-('MF0185',1,79,'YERUTI','2017-08-29 15:56:26',NULL,NULL),
-('EMF7027',1,64,'YERUTI','2017-08-29 16:38:58',NULL,NULL),
-('EMF7040',1,24,'YERUTI','2017-08-29 16:38:59',NULL,NULL),
-('EMF7041',1,82,'YERUTI','2017-08-29 16:38:59',NULL,NULL),
-('EMF7025',1,30,'YERUTI','2017-08-29 16:38:59',NULL,NULL),
-('EMF3129',1,330,'YERUTI','2017-08-29 16:38:59',NULL,NULL),
-('EMF2252',1,222,'YERUTI','2017-08-29 16:38:59',NULL,NULL),
-('EMF2074',1,425,'YERUTI','2017-08-29 16:38:59',NULL,NULL),
-('EMF2123',1,84,'YERUTI','2017-08-29 16:38:59',NULL,NULL),
-('EMF7038F',1,40,'YERUTI','2017-08-29 16:38:59',NULL,NULL),
-('EMF7043F',1,88,'YERUTI','2017-08-29 16:38:59',NULL,NULL),
-('EMF7029F',1,84,'YERUTI','2017-08-29 16:45:26',NULL,NULL),
-('EMF7042F',1,324,'YERUTI','2017-08-29 16:45:26',NULL,NULL),
-('EMF7024F',1,192,'YERUTI','2017-08-29 16:45:26',NULL,NULL),
-('EMF7023F',1,250,'YERUTI','2017-08-29 16:45:26',NULL,NULL),
-('MF0254F',1,3,'YERUTI','2017-08-29 16:45:26',NULL,NULL),
-('EMF3016F',1,12,'YERUTI','2017-08-29 16:45:26',NULL,NULL),
-('EMF3127F',1,13,'YERUTI','2017-08-29 16:45:26',NULL,NULL),
-('MF00150F',1,41,'YERUTI','2017-08-29 16:45:26',NULL,NULL),
-('MF00232F',1,42,'YERUTI','2017-08-29 16:45:26',NULL,NULL),
-('EMF7041F',1,35,'YERUTI','2017-08-29 16:45:26',NULL,NULL),
-('EMF7026F',1,120,'YERUTI','2017-08-29 16:51:06',NULL,NULL),
-('EMF7027F',1,672,'YERUTI','2017-08-29 16:51:06',NULL,NULL),
-('EMF7040F',1,192,'YERUTI','2017-08-29 16:51:06',NULL,NULL),
-('EMF7025F',1,1260,'YERUTI','2017-08-29 16:51:06',NULL,NULL),
-('EMF3129F',1,2130,'YERUTI','2017-08-29 16:51:06',NULL,NULL),
-('EMF0185F',1,6,'YERUTI','2017-08-29 16:51:06',NULL,NULL),
-('BX-084',1,61,'YERUTI','2017-08-29 16:51:06',NULL,NULL),
-('BX-239P ',1,26,'YERUTI','2017-08-29 16:51:06',NULL,NULL),
-('BX-239F',1,12,'YERUTI','2017-08-29 16:51:07',NULL,NULL),
-('BG-001',1,513,'YERUTI','2017-08-29 16:51:07',NULL,NULL),
-('BX-500',1,57,'YERUTI','2017-08-29 16:51:07',NULL,NULL),
-('SI-501',1,1,'YERUTI','2017-08-29 16:51:07',NULL,NULL),
-('EMF0203F',1,6,'YERUTI','2017-08-29 17:10:09',NULL,NULL),
-('BX-1005',1,109,'YERUTI','2017-08-29 17:10:09',NULL,NULL),
-('BX-1005F',1,40,'YERUTI','2017-08-29 17:10:09',NULL,NULL),
-('BX-1005VF',1,106,'YERUTI','2017-08-29 17:10:09',NULL,NULL),
-('BX-1012VF',1,95,'YERUTI','2017-08-29 17:10:09',NULL,NULL),
-('BX-1011F',1,40,'YERUTI','2017-08-29 17:10:09',NULL,NULL),
-('BX-1012',1,18,'YERUTI','2017-08-29 17:10:09',NULL,NULL),
-('BX-1012F',1,20,'YERUTI','2017-08-29 17:10:09',NULL,NULL),
-('PU-344F',1,324,'YERUTI','2017-08-29 17:10:09',NULL,NULL),
-('PU-350F',1,210,'YERUTI','2017-08-29 17:10:10',NULL,NULL),
-('TG-110',1,9,'YERUTI','2017-08-29 17:10:10',NULL,NULL),
-('TG-110F',1,9,'YERUTI','2017-08-29 17:10:10',NULL,NULL),
-('TG-112',1,16,'YERUTI','2017-08-29 17:10:10',NULL,NULL),
-('TG112F',1,116,'YERUTI','2017-08-29 17:13:30',NULL,NULL),
-('TQ089',1,132,'YERUTI','2017-08-29 17:13:30',NULL,NULL),
-('CT-085F',1,35,'YERUTI','2017-08-29 17:13:30',NULL,NULL),
-('BX-246',1,270,'YERUTI','2017-08-29 17:13:30',NULL,NULL),
-('FC-419',1,97,'YERUTI','2017-08-29 17:13:30',NULL,NULL),
-('FC-419F',1,29,'YERUTI','2017-08-29 17:13:31',NULL,NULL),
-('FC-544',1,98,'YERUTI','2017-08-29 17:13:31',NULL,NULL),
-('FC-544F',1,21,'YERUTI','2017-08-29 17:13:31',NULL,NULL),
-('FC-007',1,112,'YERUTI','2017-08-29 17:13:31',NULL,NULL),
-('FC-007F',1,50,'YERUTI','2017-08-29 17:13:31',NULL,NULL),
-('BX-258',1,60,'YERUTI','2017-08-29 17:13:31',NULL,NULL),
-('BX-258F',1,84,'YERUTI','2017-08-29 17:13:31',NULL,NULL),
-('BX-257',1,72,'YERUTI','2017-08-29 17:13:31',NULL,NULL),
-('BX-257F',1,46,'YERUTI','2017-08-29 17:13:31',NULL,NULL),
-('BX-206',1,45,'YERUTI','2017-08-29 17:13:31',NULL,NULL),
-('BX-206F',1,67,'YERUTI','2017-08-29 17:13:31',NULL,NULL),
-('IN-006F',1,6,'YERUTI','2017-08-30 09:41:38',NULL,NULL),
-('IN-008F',1,1,'YERUTI','2017-08-30 09:41:38',NULL,NULL),
-('IN-018F',1,61,'YERUTI','2017-08-30 09:41:38',NULL,NULL),
-('IN-017F',1,43,'YERUTI','2017-08-30 09:41:38',NULL,NULL),
-('CG-182F',1,133,'YERUTI','2017-08-30 09:41:38',NULL,NULL),
-('IN-047F',1,27,'YERUTI','2017-08-30 09:41:38',NULL,NULL),
-('IN-012F',1,34,'YERUTI','2017-08-30 09:41:38',NULL,NULL),
-('IN-013F',1,28,'YERUTI','2017-08-30 09:41:38',NULL,NULL),
-('IN-011F',1,43,'YERUTI','2017-08-30 09:41:38',NULL,NULL),
-('IN-004F',1,40,'YERUTI','2017-08-30 09:41:38',NULL,NULL),
-('IN-003F',1,64,'YERUTI','2017-08-30 09:57:06',NULL,NULL),
-('IN-009F',1,16,'YERUTI','2017-08-30 09:57:06',NULL,NULL),
-('IN-010F',1,11,'YERUTI','2017-08-30 09:57:06',NULL,NULL),
-('IN-015F',1,18,'YERUTI','2017-08-30 09:57:07',NULL,NULL),
-('CG-179F',1,81,'YERUTI','2017-08-30 09:57:07',NULL,NULL),
-('CG-171F',1,200,'YERUTI','2017-08-30 09:57:07',NULL,NULL),
-('IN-056F',1,206,'YERUTI','2017-08-30 09:57:07',NULL,NULL),
-('IN-058F',1,58,'YERUTI','2017-08-30 09:57:07',NULL,NULL),
-('IN-061',1,159,'YERUTI','2017-08-30 09:57:07',NULL,NULL),
-('IN-017',1,386,'YERUTI','2017-08-30 09:57:07',NULL,NULL),
-('IN-008',1,13,'YERUTI','2017-08-30 09:57:07',NULL,NULL),
-('IN-047',1,47,'YERUTI','2017-08-30 09:57:07',NULL,NULL),
-('IN-061',1,332,'YERUTI','2017-08-30 09:57:07',NULL,NULL);
+insert  into `stexistencia`(`codigo_base`,`depoCod`,`exisCantidad`,`exisUsrIns`,`exisFchIns`,`exisNroOt`,`existTipoMov`,`existEstado`) values 
+('EMF7043',1,40,'YERUTI','2017-08-29 15:56:26',NULL,NULL,NULL),
+('EMF7029',1,36,'YERUTI','2017-08-29 15:56:26',NULL,NULL,NULL),
+('EMF7042',1,180,'YERUTI','2017-08-29 15:56:26',NULL,NULL,NULL),
+('EMF7039',1,32,'YERUTI','2017-08-29 15:56:26',NULL,NULL,NULL),
+('EMF3016',1,49,'YERUTI','2017-08-29 15:56:26',NULL,NULL,NULL),
+('EMF0254',1,12,'YERUTI','2017-08-29 15:56:26',NULL,NULL,NULL),
+('MF0185',1,79,'YERUTI','2017-08-29 15:56:26',NULL,NULL,NULL),
+('EMF7027',1,64,'YERUTI','2017-08-29 16:38:58',NULL,NULL,NULL),
+('EMF7040',1,24,'YERUTI','2017-08-29 16:38:59',NULL,NULL,NULL),
+('EMF7041',1,82,'YERUTI','2017-08-29 16:38:59',NULL,NULL,NULL),
+('EMF7025',1,30,'YERUTI','2017-08-29 16:38:59',NULL,NULL,NULL),
+('EMF3129',1,330,'YERUTI','2017-08-29 16:38:59',NULL,NULL,NULL),
+('EMF2252',1,222,'YERUTI','2017-08-29 16:38:59',NULL,NULL,NULL),
+('EMF2074',1,425,'YERUTI','2017-08-29 16:38:59',NULL,NULL,NULL),
+('EMF2123',1,84,'YERUTI','2017-08-29 16:38:59',NULL,NULL,NULL),
+('EMF7038F',1,40,'YERUTI','2017-08-29 16:38:59',NULL,NULL,NULL),
+('EMF7043F',1,88,'YERUTI','2017-08-29 16:38:59',NULL,NULL,NULL),
+('EMF7029F',1,84,'YERUTI','2017-08-29 16:45:26',NULL,NULL,NULL),
+('EMF7042F',1,324,'YERUTI','2017-08-29 16:45:26',NULL,NULL,NULL),
+('EMF7024F',1,192,'YERUTI','2017-08-29 16:45:26',NULL,NULL,NULL),
+('EMF7023F',1,250,'YERUTI','2017-08-29 16:45:26',NULL,NULL,NULL),
+('MF0254F',1,3,'YERUTI','2017-08-29 16:45:26',NULL,NULL,NULL),
+('EMF3016F',1,12,'YERUTI','2017-08-29 16:45:26',NULL,NULL,NULL),
+('EMF3127F',1,13,'YERUTI','2017-08-29 16:45:26',NULL,NULL,NULL),
+('MF00150F',1,41,'YERUTI','2017-08-29 16:45:26',NULL,NULL,NULL),
+('MF00232F',1,42,'YERUTI','2017-08-29 16:45:26',NULL,NULL,NULL),
+('EMF7041F',1,35,'YERUTI','2017-08-29 16:45:26',NULL,NULL,NULL),
+('EMF7026F',1,120,'YERUTI','2017-08-29 16:51:06',NULL,NULL,NULL),
+('EMF7027F',1,672,'YERUTI','2017-08-29 16:51:06',NULL,NULL,NULL),
+('EMF7040F',1,192,'YERUTI','2017-08-29 16:51:06',NULL,NULL,NULL),
+('EMF7025F',1,1260,'YERUTI','2017-08-29 16:51:06',NULL,NULL,NULL),
+('EMF3129F',1,2130,'YERUTI','2017-08-29 16:51:06',NULL,NULL,NULL),
+('EMF0185F',1,6,'YERUTI','2017-08-29 16:51:06',NULL,NULL,NULL),
+('BX-084',1,61,'YERUTI','2017-08-29 16:51:06',NULL,NULL,NULL),
+('BX-239P ',1,26,'YERUTI','2017-08-29 16:51:06',NULL,NULL,NULL),
+('BX-239F',1,12,'YERUTI','2017-08-29 16:51:07',NULL,NULL,NULL),
+('BG-001',1,513,'YERUTI','2017-08-29 16:51:07',NULL,NULL,NULL),
+('BX-500',1,57,'YERUTI','2017-08-29 16:51:07',NULL,NULL,NULL),
+('SI-501',1,1,'YERUTI','2017-08-29 16:51:07',NULL,NULL,NULL),
+('EMF0203F',1,6,'YERUTI','2017-08-29 17:10:09',NULL,NULL,NULL),
+('BX-1005',1,109,'YERUTI','2017-08-29 17:10:09',NULL,NULL,NULL),
+('BX-1005F',1,40,'YERUTI','2017-08-29 17:10:09',NULL,NULL,NULL),
+('BX-1005VF',1,106,'YERUTI','2017-08-29 17:10:09',NULL,NULL,'Activo'),
+('BX-1012VF',1,95,'YERUTI','2017-08-29 17:10:09',NULL,NULL,NULL),
+('BX-1011F',1,40,'YERUTI','2017-08-29 17:10:09',NULL,NULL,NULL),
+('BX-1012',1,18,'YERUTI','2017-08-29 17:10:09',NULL,NULL,NULL),
+('BX-1012F',1,20,'YERUTI','2017-08-29 17:10:09',NULL,NULL,NULL),
+('PU-344F',1,324,'YERUTI','2017-08-29 17:10:09',NULL,NULL,NULL),
+('PU-350F',1,210,'YERUTI','2017-08-29 17:10:10',NULL,NULL,NULL),
+('TG-110',1,9,'YERUTI','2017-08-29 17:10:10',NULL,NULL,NULL),
+('TG-110F',1,9,'YERUTI','2017-08-29 17:10:10',NULL,NULL,NULL),
+('TG-112',1,16,'YERUTI','2017-08-29 17:10:10',NULL,NULL,NULL),
+('TG112F',1,116,'YERUTI','2017-08-29 17:13:30',NULL,NULL,NULL),
+('TQ089',1,132,'YERUTI','2017-08-29 17:13:30',NULL,NULL,NULL),
+('CT-085F',1,35,'YERUTI','2017-08-29 17:13:30',NULL,NULL,NULL),
+('BX-246',1,270,'YERUTI','2017-08-29 17:13:30',NULL,NULL,NULL),
+('FC-419',1,97,'YERUTI','2017-08-29 17:13:30',NULL,NULL,NULL),
+('FC-419F',1,29,'YERUTI','2017-08-29 17:13:31',NULL,NULL,NULL),
+('FC-544',1,98,'YERUTI','2017-08-29 17:13:31',NULL,NULL,NULL),
+('FC-544F',1,21,'YERUTI','2017-08-29 17:13:31',NULL,NULL,NULL),
+('FC-007',1,112,'YERUTI','2017-08-29 17:13:31',NULL,NULL,NULL),
+('FC-007F',1,50,'YERUTI','2017-08-29 17:13:31',NULL,NULL,NULL),
+('BX-258',1,60,'YERUTI','2017-08-29 17:13:31',NULL,NULL,NULL),
+('BX-258F',1,84,'YERUTI','2017-08-29 17:13:31',NULL,NULL,NULL),
+('BX-257',1,72,'YERUTI','2017-08-29 17:13:31',NULL,NULL,NULL),
+('BX-257F',1,46,'YERUTI','2017-08-29 17:13:31',NULL,NULL,NULL),
+('BX-206',1,45,'YERUTI','2017-08-29 17:13:31',NULL,NULL,NULL),
+('BX-206F',1,67,'YERUTI','2017-08-29 17:13:31',NULL,NULL,NULL),
+('IN-006F',1,6,'YERUTI','2017-08-30 09:41:38',NULL,NULL,NULL),
+('IN-008F',1,1,'YERUTI','2017-08-30 09:41:38',NULL,NULL,NULL),
+('IN-018F',1,61,'YERUTI','2017-08-30 09:41:38',NULL,NULL,NULL),
+('IN-017F',1,43,'YERUTI','2017-08-30 09:41:38',NULL,NULL,NULL),
+('CG-182F',1,133,'YERUTI','2017-08-30 09:41:38',NULL,NULL,NULL),
+('IN-047F',1,27,'YERUTI','2017-08-30 09:41:38',NULL,NULL,NULL),
+('IN-012F',1,34,'YERUTI','2017-08-30 09:41:38',NULL,NULL,NULL),
+('IN-013F',1,28,'YERUTI','2017-08-30 09:41:38',NULL,NULL,NULL),
+('IN-011F',1,43,'YERUTI','2017-08-30 09:41:38',NULL,NULL,NULL),
+('IN-004F',1,40,'YERUTI','2017-08-30 09:41:38',NULL,NULL,NULL),
+('IN-003F',1,64,'YERUTI','2017-08-30 09:57:06',NULL,NULL,NULL),
+('IN-009F',1,16,'YERUTI','2017-08-30 09:57:06',NULL,NULL,NULL),
+('IN-010F',1,11,'YERUTI','2017-08-30 09:57:06',NULL,NULL,NULL),
+('IN-015F',1,18,'YERUTI','2017-08-30 09:57:07',NULL,NULL,NULL),
+('CG-179F',1,81,'YERUTI','2017-08-30 09:57:07',NULL,NULL,NULL),
+('CG-171F',1,200,'YERUTI','2017-08-30 09:57:07',NULL,NULL,NULL),
+('IN-056F',1,206,'YERUTI','2017-08-30 09:57:07',NULL,NULL,NULL),
+('IN-058F',1,58,'YERUTI','2017-08-30 09:57:07',NULL,NULL,NULL),
+('IN-061',1,159,'YERUTI','2017-08-30 09:57:07',NULL,NULL,NULL),
+('IN-017',1,386,'YERUTI','2017-08-30 09:57:07',NULL,NULL,NULL),
+('IN-008',1,13,'YERUTI','2017-08-30 09:57:07',NULL,NULL,NULL),
+('IN-047',1,47,'YERUTI','2017-08-30 09:57:07',NULL,NULL,NULL),
+('IN-061',1,332,'YERUTI','2017-08-30 09:57:07',NULL,NULL,NULL);
 
 /*Table structure for table `stimpuesto` */
 
@@ -307,7 +308,7 @@ CREATE TABLE `stmovinterno` (
   `movFchUpd` datetime DEFAULT NULL,
   PRIMARY KEY (`movCodigo`,`movNro`),
   UNIQUE KEY `movCodigo` (`movCodigo`)
-) ENGINE=InnoDB AUTO_INCREMENT=1712 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1705 DEFAULT CHARSET=utf8;
 
 /*Data for the table `stmovinterno` */
 
@@ -991,7 +992,7 @@ DELIMITER $$
 
 /*!50003 CREATE */ /*!50017 DEFINER = 'root'@'localhost' */ /*!50003 TRIGGER `actualizarExistencia` AFTER UPDATE ON `stcompras` FOR EACH ROW BEGIN
 	IF NEW.comprasEstado = 'Anul' THEN
-		UPDATE stexistencia e SET e.exisCantidad = e.exiscantidad * -1
+		UPDATE stexistencia e SET e.exisCantidad = e.exiscantidad * -1, e.`existEstado`= 'Anulado'
 		WHERE e.exisNroOt =  NEW.comprasCod and e.`existTipoMov` = 'Compra';
 	END IF ;
     END */$$
@@ -1013,6 +1014,22 @@ DELIMITER $$
 		INSERT INTO stexistencia (`codigo_base`, `exisCantidad`, `exisUsrIns`, `exisFchIns`, `exisNroOt`,`existTipoMov` )
 		VALUES (NEW.`prodCodigo`,NEW.`movCantidad` * -1,NEW.`movUsrIns`,NEW.`movFecha`,NEW.`movNro`,"Interno");
 	END IF;
+    END */$$
+
+
+DELIMITER ;
+
+/* Trigger structure for table `stmovinterno` */
+
+DELIMITER $$
+
+/*!50003 DROP TRIGGER*//*!50032 IF EXISTS */ /*!50003 `actualizarExistenciaMIAnular` */$$
+
+/*!50003 CREATE */ /*!50017 DEFINER = 'root'@'localhost' */ /*!50003 TRIGGER `actualizarExistenciaMIAnular` BEFORE UPDATE ON `stmovinterno` FOR EACH ROW BEGIN
+	IF NEW.movEstado = 'Anul' THEN
+		UPDATE stexistencia e SET e.exisCantidad = e.exiscantidad * -1, e.`existEstado`= 'Anulado'
+		WHERE e.exisNroOt =  NEW.movNro AND e.`existTipoMov` = 'Interno';
+	END IF ;
     END */$$
 
 
@@ -1065,7 +1082,7 @@ BEGIN
 	END AS `Stock Disponible`
 	FROM stproductos p
 	INNER JOIN stexistencia e
-	ON p.prodCodigo = e.codigo_base  WHERE (CAST(p.prodCodigo AS CHAR) LIKE CONCAT('%', filtro, '%') OR CAST(p.prodDescripcion AS CHAR) LIKE CONCAT('%', filtro, '%')) 
+	ON p.prodCodigo = e.codigo_base AND (e.`existEstado` <> 'Anulado' OR e.`existEstado` IS NULL)  WHERE (CAST(p.prodCodigo AS CHAR) LIKE CONCAT('%', filtro, '%') OR CAST(p.prodDescripcion AS CHAR) LIKE CONCAT('%', filtro, '%') ) 
 	GROUP BY e.codigo_base;
 END */$$
 DELIMITER ;
@@ -1111,6 +1128,21 @@ DROP TABLE IF EXISTS `cargacomprasview`;
  `Fecha Pagado` date 
 )*/;
 
+/*Table structure for table `detallemovintproductosview` */
+
+DROP TABLE IF EXISTS `detallemovintproductosview`;
+
+/*!50001 DROP VIEW IF EXISTS `detallemovintproductosview` */;
+/*!50001 DROP TABLE IF EXISTS `detallemovintproductosview` */;
+
+/*!50001 CREATE TABLE  `detallemovintproductosview`(
+ `MovNro` int(11) ,
+ `Código` varchar(20) ,
+ `Nro. Operación` varchar(60) ,
+ `Linea` int(11) ,
+ `Cantidad` int(11) 
+)*/;
+
 /*Table structure for table `detalleproductocompraview` */
 
 DROP TABLE IF EXISTS `detalleproductocompraview`;
@@ -1128,6 +1160,23 @@ DROP TABLE IF EXISTS `detalleproductocompraview`;
  `Iva 5%` double ,
  `Iva 10%` double ,
  `Precio Total` double 
+)*/;
+
+/*Table structure for table `movinternolistadoview` */
+
+DROP TABLE IF EXISTS `movinternolistadoview`;
+
+/*!50001 DROP VIEW IF EXISTS `movinternolistadoview` */;
+/*!50001 DROP TABLE IF EXISTS `movinternolistadoview` */;
+
+/*!50001 CREATE TABLE  `movinternolistadoview`(
+ `Código` int(11) ,
+ `Nro. Operación` int(11) ,
+ `Solicitante` char(25) ,
+ `Proveedor` int(11) ,
+ `Tipo` char(8) ,
+ `Fecha` date ,
+ `Estado` varchar(7) 
 )*/;
 
 /*Table structure for table `productosviewcarga` */
@@ -1158,12 +1207,26 @@ DROP TABLE IF EXISTS `productosviewcarga`;
 
 /*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `cargacomprasview` AS select `a`.`comprasCod` AS `Código`,`a`.`comprasNroFactura` AS `Nro. Factura`,`b`.`provDescripcion` AS `Proveedor`,`a`.`comprasFechaFact` AS `Fecha Factura`,(case when (`a`.`comprasEstado` = 'Paga') then 'Pagado' when (`a`.`comprasEstado` = 'Anul') then 'Anulado' when (`a`.`comprasEstado` = 'Acti') then 'Activo' end) AS `Estado`,`a`.`comprasSaldo` AS `Saldo`,`a`.`comprasFechaUpd` AS `Última Act.`,`a`.`comprasFechaPagado` AS `Fecha Pagado` from (`stcompras` `a` join `stproveedor` `b` on((`a`.`provCodigo` = `b`.`provCodigo`))) */;
 
+/*View structure for view detallemovintproductosview */
+
+/*!50001 DROP TABLE IF EXISTS `detallemovintproductosview` */;
+/*!50001 DROP VIEW IF EXISTS `detallemovintproductosview` */;
+
+/*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `detallemovintproductosview` AS (select `m`.`movNro` AS `MovNro`,`p`.`prodCodigo` AS `Código`,`p`.`prodDescripcion` AS `Nro. Operación`,`m`.`movLineaNro` AS `Linea`,`m`.`movCantidad` AS `Cantidad` from (`stproductos` `p` join `stmovinterno` `m` on((`m`.`prodCodigo` = `p`.`prodCodigo`)))) */;
+
 /*View structure for view detalleproductocompraview */
 
 /*!50001 DROP TABLE IF EXISTS `detalleproductocompraview` */;
 /*!50001 DROP VIEW IF EXISTS `detalleproductocompraview` */;
 
 /*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `detalleproductocompraview` AS select `e`.`codigo_base` AS `Código`,`d`.`comprasCod` AS `Compra`,`p`.`prodDescripcion` AS `Descripción`,`dp`.`depoDescripcion` AS `Depósito`,`e`.`exisCantidad` AS `Cantidad`,`d`.`comprasImpExcente` AS `Iva Excedente`,`d`.`comprasImp5` AS `Iva 5%`,`d`.`comprasImp10` AS `Iva 10%`,`d`.`comprasCosto` AS `Precio Total` from (((`stcomprasdet` `d` join `stexistencia` `e` on(((`e`.`exisNroOt` = `d`.`comprasCod`) and (`e`.`codigo_base` = `d`.`codigo_base`) and (abs(`d`.`comprasCanitad`) = abs(`e`.`exisCantidad`))))) join `stproductos` `p` on((`p`.`prodCodigo` = `e`.`codigo_base`))) join `stdeposito` `dp` on((`e`.`depoCod` = `dp`.`depoCod`))) */;
+
+/*View structure for view movinternolistadoview */
+
+/*!50001 DROP TABLE IF EXISTS `movinternolistadoview` */;
+/*!50001 DROP VIEW IF EXISTS `movinternolistadoview` */;
+
+/*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `movinternolistadoview` AS (select `stmovinterno`.`movCodigo` AS `Código`,`stmovinterno`.`movNro` AS `Nro. Operación`,`stmovinterno`.`movSolicitado` AS `Solicitante`,`stmovinterno`.`provCodigo` AS `Proveedor`,`stmovinterno`.`movTipo` AS `Tipo`,`stmovinterno`.`movFecha` AS `Fecha`,(case when (`stmovinterno`.`movEstado` = 'ANUL') then 'Anulado' when (`stmovinterno`.`movEstado` = 'ACTI') then 'Activo' end) AS `Estado` from `stmovinterno`) */;
 
 /*View structure for view productosviewcarga */
 
