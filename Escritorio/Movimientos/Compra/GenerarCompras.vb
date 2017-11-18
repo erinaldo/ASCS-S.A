@@ -454,7 +454,7 @@ Public Class GenerarCompras
             dgvComprasAnular.Top = pnlOperandosAnular.Bottom + 5
             txtNrofacturaAnul.Focus()
 
-        ElseIf cbAnularFiltro.Selectedindex = 1 Then
+        ElseIf cbAnularFiltro.SelectedIndex = 1 Then
             txtFiltro.Text = "Desde"
             txtFiltro.Visible = True
 

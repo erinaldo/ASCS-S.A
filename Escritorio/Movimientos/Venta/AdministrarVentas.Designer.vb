@@ -22,25 +22,26 @@ Partial Class AdministrarVentas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AdministrarVentas))
         Me.tbcVenta = New System.Windows.Forms.TabControl()
         Me.tpListado = New System.Windows.Forms.TabPage()
-        Me.dgvCompras = New System.Windows.Forms.DataGridView()
+        Me.dgvVentasListado = New System.Windows.Forms.DataGridView()
         Me.pnlListado = New System.Windows.Forms.Panel()
         Me.txtNroFacturaListado = New System.Windows.Forms.TextBox()
         Me.cbEstadoCompra = New System.Windows.Forms.ComboBox()
@@ -49,13 +50,13 @@ Partial Class AdministrarVentas
         Me.lblBusqTxt = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.cbCliente1 = New System.Windows.Forms.ComboBox()
-        Me.cbBuscarVenta = New System.Windows.Forms.ComboBox()
+        Me.cbBuscarVentaListado = New System.Windows.Forms.ComboBox()
         Me.pnlRangoFecha = New System.Windows.Forms.Panel()
         Me.datepFin = New System.Windows.Forms.DateTimePicker()
         Me.datepInicio = New System.Windows.Forms.DateTimePicker()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.txtTituloBusqueda = New System.Windows.Forms.Label()
+        Me.txtTituloBusquedaList = New System.Windows.Forms.Label()
         Me.tpNuevaVenta = New System.Windows.Forms.TabPage()
         Me.dgvBusquedaResult = New System.Windows.Forms.DataGridView()
         Me.pnlDatosProducto = New System.Windows.Forms.Panel()
@@ -72,12 +73,12 @@ Partial Class AdministrarVentas
         Me.txtFiltroBusquedaNC = New System.Windows.Forms.TextBox()
         Me.txtCodProd = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtCantidad = New System.Windows.Forms.TextBox()
+        Me.txtStock = New System.Windows.Forms.TextBox()
         Me.txtDescripcionProd = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtPrecioProd = New System.Windows.Forms.TextBox()
-        Me.pnlDatosCompra = New System.Windows.Forms.Panel()
+        Me.pnlDatosVenta = New System.Windows.Forms.Panel()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.gbTipoPago = New System.Windows.Forms.GroupBox()
         Me.Label20 = New System.Windows.Forms.Label()
@@ -86,9 +87,13 @@ Partial Class AdministrarVentas
         Me.rbContado = New System.Windows.Forms.RadioButton()
         Me.dateFactura = New System.Windows.Forms.DateTimePicker()
         Me.gbCliente = New System.Windows.Forms.GroupBox()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.cbVendedor2 = New System.Windows.Forms.ComboBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.cbProveedor2 = New System.Windows.Forms.ComboBox()
+        Me.cbCliente2 = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtFacturaNro = New System.Windows.Forms.TextBox()
         Me.pnlSeleccionProd = New System.Windows.Forms.Panel()
@@ -112,7 +117,7 @@ Partial Class AdministrarVentas
         Me.pnlOperandosAnular = New System.Windows.Forms.Panel()
         Me.btnAnularVenta = New System.Windows.Forms.Button()
         Me.btnVerDetalleAnul = New System.Windows.Forms.Button()
-        Me.dgvComprasAnular = New System.Windows.Forms.DataGridView()
+        Me.dgvVentasAnular = New System.Windows.Forms.DataGridView()
         Me.txtTituloAnular = New System.Windows.Forms.Label()
         Me.pnlAnular = New System.Windows.Forms.Panel()
         Me.txtHastaAnul = New System.Windows.Forms.Label()
@@ -125,35 +130,33 @@ Partial Class AdministrarVentas
         Me.cbCliente3 = New System.Windows.Forms.ComboBox()
         Me.cbAnularFiltro = New System.Windows.Forms.ComboBox()
         Me.tpCobros = New System.Windows.Forms.TabPage()
-        Me.dgvComprasP = New System.Windows.Forms.DataGridView()
-        Me.lblTituloP = New System.Windows.Forms.Label()
-        Me.pnlPago = New System.Windows.Forms.Panel()
-        Me.cbProveedor4 = New System.Windows.Forms.ComboBox()
+        Me.dgvVentasCobro = New System.Windows.Forms.DataGridView()
+        Me.lblTituloVenta = New System.Windows.Forms.Label()
+        Me.pnlCobro = New System.Windows.Forms.Panel()
+        Me.cbCliente4 = New System.Windows.Forms.ComboBox()
         Me.btnDetalleP = New System.Windows.Forms.Button()
         Me.btnPagar = New System.Windows.Forms.Button()
         Me.btnBuscarP = New System.Windows.Forms.Button()
         Me.lblFiltroTipo = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
-        Me.txtNroFactPago = New System.Windows.Forms.TextBox()
-        Me.cbFiltroP = New System.Windows.Forms.ComboBox()
+        Me.txtNroFactCobro = New System.Windows.Forms.TextBox()
+        Me.cbFiltroC = New System.Windows.Forms.ComboBox()
         Me.pnlFechas = New System.Windows.Forms.Panel()
         Me.dpHastaPago = New System.Windows.Forms.DateTimePicker()
         Me.dpDesdePago = New System.Windows.Forms.DateTimePicker()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label26 = New System.Windows.Forms.Label()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.txtCantidad = New System.Windows.Forms.TextBox()
         Me.tbcVenta.SuspendLayout()
         Me.tpListado.SuspendLayout()
-        CType(Me.dgvCompras, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvVentasListado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlListado.SuspendLayout()
         Me.pnlRangoFecha.SuspendLayout()
         Me.tpNuevaVenta.SuspendLayout()
         CType(Me.dgvBusquedaResult, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlDatosProducto.SuspendLayout()
-        Me.pnlDatosCompra.SuspendLayout()
+        Me.pnlDatosVenta.SuspendLayout()
         Me.gbTipoPago.SuspendLayout()
         Me.gbCliente.SuspendLayout()
         Me.pnlSeleccionProd.SuspendLayout()
@@ -163,11 +166,11 @@ Partial Class AdministrarVentas
         CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tpAnularVenta.SuspendLayout()
         Me.pnlOperandosAnular.SuspendLayout()
-        CType(Me.dgvComprasAnular, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvVentasAnular, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlAnular.SuspendLayout()
         Me.tpCobros.SuspendLayout()
-        CType(Me.dgvComprasP, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pnlPago.SuspendLayout()
+        CType(Me.dgvVentasCobro, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlCobro.SuspendLayout()
         Me.pnlFechas.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -190,9 +193,9 @@ Partial Class AdministrarVentas
         'tpListado
         '
         Me.tpListado.BackColor = System.Drawing.Color.SteelBlue
-        Me.tpListado.Controls.Add(Me.dgvCompras)
+        Me.tpListado.Controls.Add(Me.dgvVentasListado)
         Me.tpListado.Controls.Add(Me.pnlListado)
-        Me.tpListado.Controls.Add(Me.txtTituloBusqueda)
+        Me.tpListado.Controls.Add(Me.txtTituloBusquedaList)
         Me.tpListado.Location = New System.Drawing.Point(4, 38)
         Me.tpListado.Name = "tpListado"
         Me.tpListado.Padding = New System.Windows.Forms.Padding(3)
@@ -200,52 +203,52 @@ Partial Class AdministrarVentas
         Me.tpListado.TabIndex = 0
         Me.tpListado.Text = "Listado"
         '
-        'dgvCompras
+        'dgvVentasListado
         '
-        Me.dgvCompras.AllowUserToAddRows = False
-        Me.dgvCompras.AllowUserToDeleteRows = False
-        Me.dgvCompras.AllowUserToOrderColumns = True
-        Me.dgvCompras.AllowUserToResizeColumns = False
-        Me.dgvCompras.AllowUserToResizeRows = False
-        DataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.ControlLight
-        DataGridViewCellStyle17.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgvCompras.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle17
-        Me.dgvCompras.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
-        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.ButtonShadow
-        DataGridViewCellStyle18.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCompras.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle18
-        Me.dgvCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle19.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvCompras.DefaultCellStyle = DataGridViewCellStyle19
-        Me.dgvCompras.GridColor = System.Drawing.SystemColors.AppWorkspace
-        Me.dgvCompras.Location = New System.Drawing.Point(51, 323)
-        Me.dgvCompras.Name = "dgvCompras"
-        Me.dgvCompras.ReadOnly = True
-        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle20.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight
-        DataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCompras.RowHeadersDefaultCellStyle = DataGridViewCellStyle20
-        DataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.dgvCompras.RowsDefaultCellStyle = DataGridViewCellStyle21
-        Me.dgvCompras.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvCompras.Size = New System.Drawing.Size(910, 178)
-        Me.dgvCompras.TabIndex = 35
-        Me.dgvCompras.Visible = False
+        Me.dgvVentasListado.AllowUserToAddRows = False
+        Me.dgvVentasListado.AllowUserToDeleteRows = False
+        Me.dgvVentasListado.AllowUserToOrderColumns = True
+        Me.dgvVentasListado.AllowUserToResizeColumns = False
+        Me.dgvVentasListado.AllowUserToResizeRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlLight
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgvVentasListado.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvVentasListado.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ButtonShadow
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvVentasListado.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvVentasListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvVentasListado.DefaultCellStyle = DataGridViewCellStyle3
+        Me.dgvVentasListado.GridColor = System.Drawing.SystemColors.AppWorkspace
+        Me.dgvVentasListado.Location = New System.Drawing.Point(51, 323)
+        Me.dgvVentasListado.Name = "dgvVentasListado"
+        Me.dgvVentasListado.ReadOnly = True
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvVentasListado.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.dgvVentasListado.RowsDefaultCellStyle = DataGridViewCellStyle5
+        Me.dgvVentasListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvVentasListado.Size = New System.Drawing.Size(910, 178)
+        Me.dgvVentasListado.TabIndex = 35
+        Me.dgvVentasListado.Visible = False
         '
         'pnlListado
         '
@@ -256,7 +259,7 @@ Partial Class AdministrarVentas
         Me.pnlListado.Controls.Add(Me.lblBusqTxt)
         Me.pnlListado.Controls.Add(Me.Label15)
         Me.pnlListado.Controls.Add(Me.cbCliente1)
-        Me.pnlListado.Controls.Add(Me.cbBuscarVenta)
+        Me.pnlListado.Controls.Add(Me.cbBuscarVentaListado)
         Me.pnlListado.Controls.Add(Me.pnlRangoFecha)
         Me.pnlListado.Location = New System.Drawing.Point(51, 85)
         Me.pnlListado.Name = "pnlListado"
@@ -340,15 +343,15 @@ Partial Class AdministrarVentas
         Me.cbCliente1.TabIndex = 9
         Me.cbCliente1.Visible = False
         '
-        'cbBuscarVenta
+        'cbBuscarVentaListado
         '
-        Me.cbBuscarVenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbBuscarVenta.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbBuscarVenta.FormattingEnabled = True
-        Me.cbBuscarVenta.Location = New System.Drawing.Point(144, 56)
-        Me.cbBuscarVenta.Name = "cbBuscarVenta"
-        Me.cbBuscarVenta.Size = New System.Drawing.Size(184, 27)
-        Me.cbBuscarVenta.TabIndex = 6
+        Me.cbBuscarVentaListado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbBuscarVentaListado.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbBuscarVentaListado.FormattingEnabled = True
+        Me.cbBuscarVentaListado.Location = New System.Drawing.Point(144, 56)
+        Me.cbBuscarVentaListado.Name = "cbBuscarVentaListado"
+        Me.cbBuscarVentaListado.Size = New System.Drawing.Size(184, 27)
+        Me.cbBuscarVentaListado.TabIndex = 6
         '
         'pnlRangoFecha
         '
@@ -357,7 +360,7 @@ Partial Class AdministrarVentas
         Me.pnlRangoFecha.Controls.Add(Me.datepInicio)
         Me.pnlRangoFecha.Controls.Add(Me.Label14)
         Me.pnlRangoFecha.Controls.Add(Me.Label13)
-        Me.pnlRangoFecha.Location = New System.Drawing.Point(355, 12)
+        Me.pnlRangoFecha.Location = New System.Drawing.Point(332, 10)
         Me.pnlRangoFecha.Name = "pnlRangoFecha"
         Me.pnlRangoFecha.Size = New System.Drawing.Size(494, 100)
         Me.pnlRangoFecha.TabIndex = 7
@@ -405,16 +408,16 @@ Partial Class AdministrarVentas
         Me.Label13.TabIndex = 2
         Me.Label13.Text = "Desde"
         '
-        'txtTituloBusqueda
+        'txtTituloBusquedaList
         '
-        Me.txtTituloBusqueda.AutoSize = True
-        Me.txtTituloBusqueda.Font = New System.Drawing.Font("Arial", 24.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTituloBusqueda.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.txtTituloBusqueda.Location = New System.Drawing.Point(375, 28)
-        Me.txtTituloBusqueda.Name = "txtTituloBusqueda"
-        Me.txtTituloBusqueda.Size = New System.Drawing.Size(292, 36)
-        Me.txtTituloBusqueda.TabIndex = 1
-        Me.txtTituloBusqueda.Text = "Listado de Ventas"
+        Me.txtTituloBusquedaList.AutoSize = True
+        Me.txtTituloBusquedaList.Font = New System.Drawing.Font("Arial", 24.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTituloBusquedaList.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.txtTituloBusquedaList.Location = New System.Drawing.Point(375, 28)
+        Me.txtTituloBusquedaList.Name = "txtTituloBusquedaList"
+        Me.txtTituloBusquedaList.Size = New System.Drawing.Size(292, 36)
+        Me.txtTituloBusquedaList.TabIndex = 1
+        Me.txtTituloBusquedaList.Text = "Listado de Ventas"
         '
         'tpNuevaVenta
         '
@@ -422,7 +425,7 @@ Partial Class AdministrarVentas
         Me.tpNuevaVenta.BackColor = System.Drawing.Color.SteelBlue
         Me.tpNuevaVenta.Controls.Add(Me.dgvBusquedaResult)
         Me.tpNuevaVenta.Controls.Add(Me.pnlDatosProducto)
-        Me.tpNuevaVenta.Controls.Add(Me.pnlDatosCompra)
+        Me.tpNuevaVenta.Controls.Add(Me.pnlDatosVenta)
         Me.tpNuevaVenta.Controls.Add(Me.pnlSeleccionProd)
         Me.tpNuevaVenta.Controls.Add(Me.pnlOperadores)
         Me.tpNuevaVenta.Controls.Add(Me.pnlComentario)
@@ -442,41 +445,41 @@ Partial Class AdministrarVentas
         Me.dgvBusquedaResult.AllowUserToOrderColumns = True
         Me.dgvBusquedaResult.AllowUserToResizeColumns = False
         Me.dgvBusquedaResult.AllowUserToResizeRows = False
-        DataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.ControlLight
-        DataGridViewCellStyle27.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgvBusquedaResult.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle27
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ControlLight
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgvBusquedaResult.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvBusquedaResult.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
-        DataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.ButtonShadow
-        DataGridViewCellStyle28.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvBusquedaResult.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle28
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ButtonShadow
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvBusquedaResult.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.dgvBusquedaResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle29.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvBusquedaResult.DefaultCellStyle = DataGridViewCellStyle29
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvBusquedaResult.DefaultCellStyle = DataGridViewCellStyle8
         Me.dgvBusquedaResult.GridColor = System.Drawing.SystemColors.AppWorkspace
         Me.dgvBusquedaResult.Location = New System.Drawing.Point(93, 385)
         Me.dgvBusquedaResult.Name = "dgvBusquedaResult"
         Me.dgvBusquedaResult.ReadOnly = True
-        DataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle30.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight
-        DataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvBusquedaResult.RowHeadersDefaultCellStyle = DataGridViewCellStyle30
-        DataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.dgvBusquedaResult.RowsDefaultCellStyle = DataGridViewCellStyle31
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvBusquedaResult.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.dgvBusquedaResult.RowsDefaultCellStyle = DataGridViewCellStyle10
         Me.dgvBusquedaResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvBusquedaResult.Size = New System.Drawing.Size(826, 208)
         Me.dgvBusquedaResult.TabIndex = 36
@@ -498,13 +501,15 @@ Partial Class AdministrarVentas
         Me.pnlDatosProducto.Controls.Add(Me.txtCodProd)
         Me.pnlDatosProducto.Controls.Add(Me.Label6)
         Me.pnlDatosProducto.Controls.Add(Me.txtCantidad)
+        Me.pnlDatosProducto.Controls.Add(Me.txtStock)
         Me.pnlDatosProducto.Controls.Add(Me.txtDescripcionProd)
+        Me.pnlDatosProducto.Controls.Add(Me.Label27)
         Me.pnlDatosProducto.Controls.Add(Me.Label5)
         Me.pnlDatosProducto.Controls.Add(Me.Label7)
         Me.pnlDatosProducto.Controls.Add(Me.txtPrecioProd)
         Me.pnlDatosProducto.Location = New System.Drawing.Point(32, 191)
         Me.pnlDatosProducto.Name = "pnlDatosProducto"
-        Me.pnlDatosProducto.Size = New System.Drawing.Size(1046, 173)
+        Me.pnlDatosProducto.Size = New System.Drawing.Size(1193, 173)
         Me.pnlDatosProducto.TabIndex = 21
         '
         'Label19
@@ -524,7 +529,7 @@ Partial Class AdministrarVentas
         Me.cbImpuesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbImpuesto.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbImpuesto.FormattingEnabled = True
-        Me.cbImpuesto.Location = New System.Drawing.Point(392, 128)
+        Me.cbImpuesto.Location = New System.Drawing.Point(376, 128)
         Me.cbImpuesto.Name = "cbImpuesto"
         Me.cbImpuesto.Size = New System.Drawing.Size(195, 27)
         Me.cbImpuesto.TabIndex = 13
@@ -534,7 +539,7 @@ Partial Class AdministrarVentas
         Me.cbDeposito.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbDeposito.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbDeposito.FormattingEnabled = True
-        Me.cbDeposito.Location = New System.Drawing.Point(392, 88)
+        Me.cbDeposito.Location = New System.Drawing.Point(376, 86)
         Me.cbDeposito.Name = "cbDeposito"
         Me.cbDeposito.Size = New System.Drawing.Size(195, 27)
         Me.cbDeposito.TabIndex = 10
@@ -555,7 +560,7 @@ Partial Class AdministrarVentas
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label1.Location = New System.Drawing.Point(284, 46)
+        Me.Label1.Location = New System.Drawing.Point(268, 46)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(65, 19)
         Me.Label1.TabIndex = 1
@@ -576,7 +581,7 @@ Partial Class AdministrarVentas
         'btnInsertarProd
         '
         Me.btnInsertarProd.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnInsertarProd.Location = New System.Drawing.Point(957, 34)
+        Me.btnInsertarProd.Location = New System.Drawing.Point(1096, 39)
         Me.btnInsertarProd.Name = "btnInsertarProd"
         Me.btnInsertarProd.Size = New System.Drawing.Size(75, 32)
         Me.btnInsertarProd.TabIndex = 2
@@ -589,7 +594,7 @@ Partial Class AdministrarVentas
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label9.Location = New System.Drawing.Point(284, 136)
+        Me.Label9.Location = New System.Drawing.Point(268, 136)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(86, 19)
         Me.Label9.TabIndex = 9
@@ -598,7 +603,7 @@ Partial Class AdministrarVentas
         'btnEliminarProd
         '
         Me.btnEliminarProd.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEliminarProd.Location = New System.Drawing.Point(957, 88)
+        Me.btnEliminarProd.Location = New System.Drawing.Point(1096, 118)
         Me.btnEliminarProd.Name = "btnEliminarProd"
         Me.btnEliminarProd.Size = New System.Drawing.Size(75, 32)
         Me.btnEliminarProd.TabIndex = 3
@@ -611,7 +616,7 @@ Partial Class AdministrarVentas
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label8.Location = New System.Drawing.Point(284, 88)
+        Me.Label8.Location = New System.Drawing.Point(268, 91)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(81, 19)
         Me.Label8.TabIndex = 8
@@ -631,7 +636,7 @@ Partial Class AdministrarVentas
         Me.txtCodProd.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtCodProd.Enabled = False
         Me.txtCodProd.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodProd.Location = New System.Drawing.Point(392, 41)
+        Me.txtCodProd.Location = New System.Drawing.Point(376, 40)
         Me.txtCodProd.Name = "txtCodProd"
         Me.txtCodProd.ReadOnly = True
         Me.txtCodProd.Size = New System.Drawing.Size(195, 27)
@@ -643,28 +648,28 @@ Partial Class AdministrarVentas
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label6.Location = New System.Drawing.Point(605, 44)
+        Me.Label6.Location = New System.Drawing.Point(650, 41)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(102, 19)
         Me.Label6.TabIndex = 6
         Me.Label6.Text = "Descripción"
         '
-        'txtCantidad
+        'txtStock
         '
-        Me.txtCantidad.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCantidad.Location = New System.Drawing.Point(713, 85)
-        Me.txtCantidad.Name = "txtCantidad"
-        Me.txtCantidad.Size = New System.Drawing.Size(174, 27)
-        Me.txtCantidad.TabIndex = 5
+        Me.txtStock.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtStock.Location = New System.Drawing.Point(766, 83)
+        Me.txtStock.Name = "txtStock"
+        Me.txtStock.Size = New System.Drawing.Size(70, 27)
+        Me.txtStock.TabIndex = 5
         '
         'txtDescripcionProd
         '
         Me.txtDescripcionProd.Enabled = False
         Me.txtDescripcionProd.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDescripcionProd.Location = New System.Drawing.Point(713, 41)
+        Me.txtDescripcionProd.Location = New System.Drawing.Point(764, 38)
         Me.txtDescripcionProd.Name = "txtDescripcionProd"
         Me.txtDescripcionProd.ReadOnly = True
-        Me.txtDescripcionProd.Size = New System.Drawing.Size(174, 27)
+        Me.txtDescripcionProd.Size = New System.Drawing.Size(244, 27)
         Me.txtDescripcionProd.TabIndex = 5
         '
         'Label5
@@ -673,11 +678,11 @@ Partial Class AdministrarVentas
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label5.Location = New System.Drawing.Point(605, 91)
+        Me.Label5.Location = New System.Drawing.Point(649, 86)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(82, 19)
+        Me.Label5.Size = New System.Drawing.Size(111, 19)
         Me.Label5.TabIndex = 6
-        Me.Label5.Text = "Cantidad"
+        Me.Label5.Text = "Stock Actual"
         '
         'Label7
         '
@@ -685,7 +690,7 @@ Partial Class AdministrarVentas
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label7.Location = New System.Drawing.Point(605, 131)
+        Me.Label7.Location = New System.Drawing.Point(650, 131)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(60, 19)
         Me.Label7.TabIndex = 6
@@ -694,28 +699,28 @@ Partial Class AdministrarVentas
         'txtPrecioProd
         '
         Me.txtPrecioProd.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPrecioProd.Location = New System.Drawing.Point(713, 128)
+        Me.txtPrecioProd.Location = New System.Drawing.Point(766, 128)
         Me.txtPrecioProd.Name = "txtPrecioProd"
-        Me.txtPrecioProd.Size = New System.Drawing.Size(174, 27)
+        Me.txtPrecioProd.Size = New System.Drawing.Size(242, 27)
         Me.txtPrecioProd.TabIndex = 5
         '
-        'pnlDatosCompra
+        'pnlDatosVenta
         '
-        Me.pnlDatosCompra.BackColor = System.Drawing.Color.Transparent
-        Me.pnlDatosCompra.Controls.Add(Me.Label18)
-        Me.pnlDatosCompra.Controls.Add(Me.gbTipoPago)
-        Me.pnlDatosCompra.Controls.Add(Me.dateFactura)
-        Me.pnlDatosCompra.Controls.Add(Me.gbCliente)
-        Me.pnlDatosCompra.Controls.Add(Me.Label3)
-        Me.pnlDatosCompra.Controls.Add(Me.Label26)
-        Me.pnlDatosCompra.Controls.Add(Me.TextBox1)
-        Me.pnlDatosCompra.Controls.Add(Me.Label2)
-        Me.pnlDatosCompra.Controls.Add(Me.txtFacturaNro)
-        Me.pnlDatosCompra.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pnlDatosCompra.Location = New System.Drawing.Point(32, 30)
-        Me.pnlDatosCompra.Name = "pnlDatosCompra"
-        Me.pnlDatosCompra.Size = New System.Drawing.Size(1193, 146)
-        Me.pnlDatosCompra.TabIndex = 20
+        Me.pnlDatosVenta.BackColor = System.Drawing.Color.Transparent
+        Me.pnlDatosVenta.Controls.Add(Me.Label18)
+        Me.pnlDatosVenta.Controls.Add(Me.gbTipoPago)
+        Me.pnlDatosVenta.Controls.Add(Me.dateFactura)
+        Me.pnlDatosVenta.Controls.Add(Me.gbCliente)
+        Me.pnlDatosVenta.Controls.Add(Me.Label3)
+        Me.pnlDatosVenta.Controls.Add(Me.Label26)
+        Me.pnlDatosVenta.Controls.Add(Me.TextBox1)
+        Me.pnlDatosVenta.Controls.Add(Me.Label2)
+        Me.pnlDatosVenta.Controls.Add(Me.txtFacturaNro)
+        Me.pnlDatosVenta.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pnlDatosVenta.Location = New System.Drawing.Point(32, 30)
+        Me.pnlDatosVenta.Name = "pnlDatosVenta"
+        Me.pnlDatosVenta.Size = New System.Drawing.Size(1193, 146)
+        Me.pnlDatosVenta.TabIndex = 20
         '
         'Label18
         '
@@ -738,9 +743,9 @@ Partial Class AdministrarVentas
         Me.gbTipoPago.Controls.Add(Me.rbContado)
         Me.gbTipoPago.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbTipoPago.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.gbTipoPago.Location = New System.Drawing.Point(957, 17)
+        Me.gbTipoPago.Location = New System.Drawing.Point(922, 17)
         Me.gbTipoPago.Name = "gbTipoPago"
-        Me.gbTipoPago.Size = New System.Drawing.Size(233, 67)
+        Me.gbTipoPago.Size = New System.Drawing.Size(260, 67)
         Me.gbTipoPago.TabIndex = 3
         Me.gbTipoPago.TabStop = False
         Me.gbTipoPago.Text = "Tipo de Pago"
@@ -800,17 +805,37 @@ Partial Class AdministrarVentas
         '
         Me.gbCliente.BackColor = System.Drawing.Color.Transparent
         Me.gbCliente.Controls.Add(Me.Label22)
-        Me.gbCliente.Controls.Add(Me.ComboBox1)
+        Me.gbCliente.Controls.Add(Me.cbVendedor2)
         Me.gbCliente.Controls.Add(Me.Label11)
-        Me.gbCliente.Controls.Add(Me.cbProveedor2)
+        Me.gbCliente.Controls.Add(Me.cbCliente2)
         Me.gbCliente.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbCliente.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.gbCliente.Location = New System.Drawing.Point(646, 17)
+        Me.gbCliente.Location = New System.Drawing.Point(577, 17)
         Me.gbCliente.Name = "gbCliente"
-        Me.gbCliente.Size = New System.Drawing.Size(305, 119)
+        Me.gbCliente.Size = New System.Drawing.Size(339, 119)
         Me.gbCliente.TabIndex = 8
         Me.gbCliente.TabStop = False
         Me.gbCliente.Text = "Cliente"
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.Location = New System.Drawing.Point(12, 74)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(87, 19)
+        Me.Label22.TabIndex = 1
+        Me.Label22.Text = "Vendedor"
+        '
+        'cbVendedor2
+        '
+        Me.cbVendedor2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbVendedor2.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbVendedor2.FormattingEnabled = True
+        Me.cbVendedor2.Location = New System.Drawing.Point(118, 70)
+        Me.cbVendedor2.Name = "cbVendedor2"
+        Me.cbVendedor2.Size = New System.Drawing.Size(215, 27)
+        Me.cbVendedor2.TabIndex = 6
         '
         'Label11
         '
@@ -822,15 +847,15 @@ Partial Class AdministrarVentas
         Me.Label11.TabIndex = 1
         Me.Label11.Text = "Cliente"
         '
-        'cbProveedor2
+        'cbCliente2
         '
-        Me.cbProveedor2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbProveedor2.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbProveedor2.FormattingEnabled = True
-        Me.cbProveedor2.Location = New System.Drawing.Point(118, 28)
-        Me.cbProveedor2.Name = "cbProveedor2"
-        Me.cbProveedor2.Size = New System.Drawing.Size(168, 27)
-        Me.cbProveedor2.TabIndex = 6
+        Me.cbCliente2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbCliente2.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbCliente2.FormattingEnabled = True
+        Me.cbCliente2.Location = New System.Drawing.Point(118, 28)
+        Me.cbCliente2.Name = "cbCliente2"
+        Me.cbCliente2.Size = New System.Drawing.Size(215, 27)
+        Me.cbCliente2.TabIndex = 6
         '
         'Label3
         '
@@ -843,6 +868,26 @@ Partial Class AdministrarVentas
         Me.Label3.Size = New System.Drawing.Size(118, 19)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Fecha Factura"
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.BackColor = System.Drawing.Color.Transparent
+        Me.Label26.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label26.Location = New System.Drawing.Point(312, 42)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(85, 19)
+        Me.Label26.TabIndex = 1
+        Me.Label26.Text = "Recibo Nº"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(403, 39)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(168, 26)
+        Me.TextBox1.TabIndex = 0
         '
         'Label2
         '
@@ -1038,28 +1083,28 @@ Partial Class AdministrarVentas
         Me.dgvProductos.AllowUserToAddRows = False
         Me.dgvProductos.AllowUserToOrderColumns = True
         Me.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle32.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvProductos.DefaultCellStyle = DataGridViewCellStyle32
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvProductos.DefaultCellStyle = DataGridViewCellStyle11
         Me.dgvProductos.Location = New System.Drawing.Point(32, 385)
         Me.dgvProductos.MultiSelect = False
         Me.dgvProductos.Name = "dgvProductos"
         Me.dgvProductos.ReadOnly = True
         Me.dgvProductos.RowHeadersVisible = False
         Me.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvProductos.Size = New System.Drawing.Size(1046, 208)
+        Me.dgvProductos.Size = New System.Drawing.Size(1193, 208)
         Me.dgvProductos.TabIndex = 4
         '
         'tpAnularVenta
         '
         Me.tpAnularVenta.BackColor = System.Drawing.Color.SteelBlue
         Me.tpAnularVenta.Controls.Add(Me.pnlOperandosAnular)
-        Me.tpAnularVenta.Controls.Add(Me.dgvComprasAnular)
+        Me.tpAnularVenta.Controls.Add(Me.dgvVentasAnular)
         Me.tpAnularVenta.Controls.Add(Me.txtTituloAnular)
         Me.tpAnularVenta.Controls.Add(Me.pnlAnular)
         Me.tpAnularVenta.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1100,17 +1145,18 @@ Partial Class AdministrarVentas
         Me.btnVerDetalleAnul.Text = "Ver Detalle"
         Me.btnVerDetalleAnul.UseVisualStyleBackColor = True
         '
-        'dgvComprasAnular
+        'dgvVentasAnular
         '
-        Me.dgvComprasAnular.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvComprasAnular.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
-        Me.dgvComprasAnular.Location = New System.Drawing.Point(115, 324)
-        Me.dgvComprasAnular.MultiSelect = False
-        Me.dgvComprasAnular.Name = "dgvComprasAnular"
-        Me.dgvComprasAnular.ReadOnly = True
-        Me.dgvComprasAnular.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvComprasAnular.Size = New System.Drawing.Size(821, 218)
-        Me.dgvComprasAnular.TabIndex = 3
+        Me.dgvVentasAnular.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvVentasAnular.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
+        Me.dgvVentasAnular.Location = New System.Drawing.Point(115, 324)
+        Me.dgvVentasAnular.MultiSelect = False
+        Me.dgvVentasAnular.Name = "dgvVentasAnular"
+        Me.dgvVentasAnular.ReadOnly = True
+        Me.dgvVentasAnular.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvVentasAnular.Size = New System.Drawing.Size(821, 218)
+        Me.dgvVentasAnular.TabIndex = 3
+        Me.dgvVentasAnular.Visible = False
         '
         'txtTituloAnular
         '
@@ -1137,7 +1183,7 @@ Partial Class AdministrarVentas
         Me.pnlAnular.Controls.Add(Me.cbAnularFiltro)
         Me.pnlAnular.Location = New System.Drawing.Point(115, 144)
         Me.pnlAnular.Name = "pnlAnular"
-        Me.pnlAnular.Size = New System.Drawing.Size(821, 75)
+        Me.pnlAnular.Size = New System.Drawing.Size(821, 155)
         Me.pnlAnular.TabIndex = 0
         '
         'txtHastaAnul
@@ -1239,9 +1285,9 @@ Partial Class AdministrarVentas
         '
         Me.tpCobros.BackColor = System.Drawing.Color.SteelBlue
         Me.tpCobros.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.tpCobros.Controls.Add(Me.dgvComprasP)
-        Me.tpCobros.Controls.Add(Me.lblTituloP)
-        Me.tpCobros.Controls.Add(Me.pnlPago)
+        Me.tpCobros.Controls.Add(Me.dgvVentasCobro)
+        Me.tpCobros.Controls.Add(Me.lblTituloVenta)
+        Me.tpCobros.Controls.Add(Me.pnlCobro)
         Me.tpCobros.Location = New System.Drawing.Point(4, 38)
         Me.tpCobros.Name = "tpCobros"
         Me.tpCobros.Padding = New System.Windows.Forms.Padding(3)
@@ -1249,90 +1295,90 @@ Partial Class AdministrarVentas
         Me.tpCobros.TabIndex = 3
         Me.tpCobros.Text = "Cobros"
         '
-        'dgvComprasP
+        'dgvVentasCobro
         '
-        Me.dgvComprasP.AllowUserToAddRows = False
-        Me.dgvComprasP.AllowUserToDeleteRows = False
-        Me.dgvComprasP.AllowUserToOrderColumns = True
-        Me.dgvComprasP.AllowUserToResizeColumns = False
-        Me.dgvComprasP.AllowUserToResizeRows = False
-        DataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.ControlLight
-        DataGridViewCellStyle22.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgvComprasP.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle22
-        Me.dgvComprasP.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
-        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.ButtonShadow
-        DataGridViewCellStyle23.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvComprasP.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle23
-        Me.dgvComprasP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle24.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvComprasP.DefaultCellStyle = DataGridViewCellStyle24
-        Me.dgvComprasP.GridColor = System.Drawing.SystemColors.AppWorkspace
-        Me.dgvComprasP.Location = New System.Drawing.Point(42, 317)
-        Me.dgvComprasP.Name = "dgvComprasP"
-        Me.dgvComprasP.ReadOnly = True
-        DataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle25.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight
-        DataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvComprasP.RowHeadersDefaultCellStyle = DataGridViewCellStyle25
-        DataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.dgvComprasP.RowsDefaultCellStyle = DataGridViewCellStyle26
-        Me.dgvComprasP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvComprasP.Size = New System.Drawing.Size(910, 308)
-        Me.dgvComprasP.TabIndex = 37
-        Me.dgvComprasP.Visible = False
+        Me.dgvVentasCobro.AllowUserToAddRows = False
+        Me.dgvVentasCobro.AllowUserToDeleteRows = False
+        Me.dgvVentasCobro.AllowUserToOrderColumns = True
+        Me.dgvVentasCobro.AllowUserToResizeColumns = False
+        Me.dgvVentasCobro.AllowUserToResizeRows = False
+        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.ControlLight
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgvVentasCobro.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle12
+        Me.dgvVentasCobro.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.ButtonShadow
+        DataGridViewCellStyle13.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvVentasCobro.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle13
+        Me.dgvVentasCobro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvVentasCobro.DefaultCellStyle = DataGridViewCellStyle14
+        Me.dgvVentasCobro.GridColor = System.Drawing.SystemColors.AppWorkspace
+        Me.dgvVentasCobro.Location = New System.Drawing.Point(42, 317)
+        Me.dgvVentasCobro.Name = "dgvVentasCobro"
+        Me.dgvVentasCobro.ReadOnly = True
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle15.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight
+        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvVentasCobro.RowHeadersDefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.dgvVentasCobro.RowsDefaultCellStyle = DataGridViewCellStyle16
+        Me.dgvVentasCobro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvVentasCobro.Size = New System.Drawing.Size(910, 308)
+        Me.dgvVentasCobro.TabIndex = 37
+        Me.dgvVentasCobro.Visible = False
         '
-        'lblTituloP
+        'lblTituloVenta
         '
-        Me.lblTituloP.AutoSize = True
-        Me.lblTituloP.Font = New System.Drawing.Font("Arial", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTituloP.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblTituloP.Location = New System.Drawing.Point(372, 38)
-        Me.lblTituloP.Name = "lblTituloP"
-        Me.lblTituloP.Size = New System.Drawing.Size(291, 32)
-        Me.lblTituloP.TabIndex = 6
-        Me.lblTituloP.Text = "COBROS DE VENTAS"
+        Me.lblTituloVenta.AutoSize = True
+        Me.lblTituloVenta.Font = New System.Drawing.Font("Arial", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTituloVenta.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lblTituloVenta.Location = New System.Drawing.Point(372, 38)
+        Me.lblTituloVenta.Name = "lblTituloVenta"
+        Me.lblTituloVenta.Size = New System.Drawing.Size(291, 32)
+        Me.lblTituloVenta.TabIndex = 6
+        Me.lblTituloVenta.Text = "COBROS DE VENTAS"
         '
-        'pnlPago
+        'pnlCobro
         '
-        Me.pnlPago.Controls.Add(Me.cbProveedor4)
-        Me.pnlPago.Controls.Add(Me.btnDetalleP)
-        Me.pnlPago.Controls.Add(Me.btnPagar)
-        Me.pnlPago.Controls.Add(Me.btnBuscarP)
-        Me.pnlPago.Controls.Add(Me.lblFiltroTipo)
-        Me.pnlPago.Controls.Add(Me.Label25)
-        Me.pnlPago.Controls.Add(Me.txtNroFactPago)
-        Me.pnlPago.Controls.Add(Me.cbFiltroP)
-        Me.pnlPago.Controls.Add(Me.pnlFechas)
-        Me.pnlPago.Location = New System.Drawing.Point(42, 83)
-        Me.pnlPago.Name = "pnlPago"
-        Me.pnlPago.Size = New System.Drawing.Size(910, 188)
-        Me.pnlPago.TabIndex = 5
+        Me.pnlCobro.Controls.Add(Me.cbCliente4)
+        Me.pnlCobro.Controls.Add(Me.btnDetalleP)
+        Me.pnlCobro.Controls.Add(Me.btnPagar)
+        Me.pnlCobro.Controls.Add(Me.btnBuscarP)
+        Me.pnlCobro.Controls.Add(Me.lblFiltroTipo)
+        Me.pnlCobro.Controls.Add(Me.Label25)
+        Me.pnlCobro.Controls.Add(Me.txtNroFactCobro)
+        Me.pnlCobro.Controls.Add(Me.cbFiltroC)
+        Me.pnlCobro.Controls.Add(Me.pnlFechas)
+        Me.pnlCobro.Location = New System.Drawing.Point(42, 83)
+        Me.pnlCobro.Name = "pnlCobro"
+        Me.pnlCobro.Size = New System.Drawing.Size(910, 188)
+        Me.pnlCobro.TabIndex = 5
         '
-        'cbProveedor4
+        'cbCliente4
         '
-        Me.cbProveedor4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbProveedor4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbProveedor4.FormattingEnabled = True
-        Me.cbProveedor4.Location = New System.Drawing.Point(50, 121)
-        Me.cbProveedor4.Name = "cbProveedor4"
-        Me.cbProveedor4.Size = New System.Drawing.Size(217, 26)
-        Me.cbProveedor4.TabIndex = 12
-        Me.cbProveedor4.Visible = False
+        Me.cbCliente4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbCliente4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbCliente4.FormattingEnabled = True
+        Me.cbCliente4.Location = New System.Drawing.Point(50, 121)
+        Me.cbCliente4.Name = "cbCliente4"
+        Me.cbCliente4.Size = New System.Drawing.Size(217, 26)
+        Me.cbCliente4.TabIndex = 12
+        Me.cbCliente4.Visible = False
         '
         'btnDetalleP
         '
@@ -1393,23 +1439,23 @@ Partial Class AdministrarVentas
         Me.Label25.TabIndex = 5
         Me.Label25.Text = "Buscar por"
         '
-        'txtNroFactPago
+        'txtNroFactCobro
         '
-        Me.txtNroFactPago.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNroFactPago.Location = New System.Drawing.Point(401, 59)
-        Me.txtNroFactPago.Name = "txtNroFactPago"
-        Me.txtNroFactPago.Size = New System.Drawing.Size(262, 26)
-        Me.txtNroFactPago.TabIndex = 8
+        Me.txtNroFactCobro.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNroFactCobro.Location = New System.Drawing.Point(401, 59)
+        Me.txtNroFactCobro.Name = "txtNroFactCobro"
+        Me.txtNroFactCobro.Size = New System.Drawing.Size(262, 26)
+        Me.txtNroFactCobro.TabIndex = 8
         '
-        'cbFiltroP
+        'cbFiltroC
         '
-        Me.cbFiltroP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbFiltroP.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbFiltroP.FormattingEnabled = True
-        Me.cbFiltroP.Location = New System.Drawing.Point(178, 57)
-        Me.cbFiltroP.Name = "cbFiltroP"
-        Me.cbFiltroP.Size = New System.Drawing.Size(184, 27)
-        Me.cbFiltroP.TabIndex = 6
+        Me.cbFiltroC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbFiltroC.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbFiltroC.FormattingEnabled = True
+        Me.cbFiltroC.Location = New System.Drawing.Point(178, 57)
+        Me.cbFiltroC.Name = "cbFiltroC"
+        Me.cbFiltroC.Size = New System.Drawing.Size(184, 27)
+        Me.cbFiltroC.TabIndex = 6
         '
         'pnlFechas
         '
@@ -1466,45 +1512,25 @@ Partial Class AdministrarVentas
         Me.Label24.TabIndex = 2
         Me.Label24.Text = "Desde"
         '
-        'ComboBox1
+        'Label27
         '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(118, 70)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(168, 27)
-        Me.ComboBox1.TabIndex = 6
+        Me.Label27.AutoSize = True
+        Me.Label27.BackColor = System.Drawing.Color.Transparent
+        Me.Label27.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label27.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label27.Location = New System.Drawing.Point(850, 86)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(82, 19)
+        Me.Label27.TabIndex = 6
+        Me.Label27.Text = "Cantidad"
         '
-        'Label22
+        'txtCantidad
         '
-        Me.Label22.AutoSize = True
-        Me.Label22.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.Location = New System.Drawing.Point(12, 74)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(87, 19)
-        Me.Label22.TabIndex = 1
-        Me.Label22.Text = "Vendedor"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(439, 39)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(168, 26)
-        Me.TextBox1.TabIndex = 0
-        '
-        'Label26
-        '
-        Me.Label26.AutoSize = True
-        Me.Label26.BackColor = System.Drawing.Color.Transparent
-        Me.Label26.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label26.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label26.Location = New System.Drawing.Point(332, 42)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(85, 19)
-        Me.Label26.TabIndex = 1
-        Me.Label26.Text = "Recibo Nº"
+        Me.txtCantidad.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCantidad.Location = New System.Drawing.Point(938, 83)
+        Me.txtCantidad.Name = "txtCantidad"
+        Me.txtCantidad.Size = New System.Drawing.Size(70, 27)
+        Me.txtCantidad.TabIndex = 5
         '
         'AdministrarVentas
         '
@@ -1512,12 +1538,15 @@ Partial Class AdministrarVentas
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1256, 574)
         Me.Controls.Add(Me.tbcVenta)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "AdministrarVentas"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "AdministrarVentas"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.tbcVenta.ResumeLayout(False)
         Me.tpListado.ResumeLayout(False)
         Me.tpListado.PerformLayout()
-        CType(Me.dgvCompras, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvVentasListado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlListado.ResumeLayout(False)
         Me.pnlListado.PerformLayout()
         Me.pnlRangoFecha.ResumeLayout(False)
@@ -1526,8 +1555,8 @@ Partial Class AdministrarVentas
         CType(Me.dgvBusquedaResult, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlDatosProducto.ResumeLayout(False)
         Me.pnlDatosProducto.PerformLayout()
-        Me.pnlDatosCompra.ResumeLayout(False)
-        Me.pnlDatosCompra.PerformLayout()
+        Me.pnlDatosVenta.ResumeLayout(False)
+        Me.pnlDatosVenta.PerformLayout()
         Me.gbTipoPago.ResumeLayout(False)
         Me.gbTipoPago.PerformLayout()
         Me.gbCliente.ResumeLayout(False)
@@ -1542,14 +1571,14 @@ Partial Class AdministrarVentas
         Me.tpAnularVenta.ResumeLayout(False)
         Me.tpAnularVenta.PerformLayout()
         Me.pnlOperandosAnular.ResumeLayout(False)
-        CType(Me.dgvComprasAnular, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvVentasAnular, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlAnular.ResumeLayout(False)
         Me.pnlAnular.PerformLayout()
         Me.tpCobros.ResumeLayout(False)
         Me.tpCobros.PerformLayout()
-        CType(Me.dgvComprasP, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.pnlPago.ResumeLayout(False)
-        Me.pnlPago.PerformLayout()
+        CType(Me.dgvVentasCobro, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlCobro.ResumeLayout(False)
+        Me.pnlCobro.PerformLayout()
         Me.pnlFechas.ResumeLayout(False)
         Me.pnlFechas.PerformLayout()
         Me.ResumeLayout(False)
@@ -1558,7 +1587,7 @@ Partial Class AdministrarVentas
 
     Friend WithEvents tbcVenta As TabControl
     Friend WithEvents tpListado As TabPage
-    Friend WithEvents dgvCompras As DataGridView
+    Friend WithEvents dgvVentasListado As DataGridView
     Friend WithEvents pnlListado As Panel
     Friend WithEvents txtNroFacturaListado As TextBox
     Friend WithEvents cbEstadoCompra As ComboBox
@@ -1567,13 +1596,13 @@ Partial Class AdministrarVentas
     Friend WithEvents lblBusqTxt As Label
     Friend WithEvents Label15 As Label
     Friend WithEvents cbCliente1 As ComboBox
-    Friend WithEvents cbBuscarVenta As ComboBox
+    Friend WithEvents cbBuscarVentaListado As ComboBox
     Friend WithEvents pnlRangoFecha As Panel
     Friend WithEvents datepFin As DateTimePicker
     Friend WithEvents datepInicio As DateTimePicker
     Friend WithEvents Label14 As Label
     Friend WithEvents Label13 As Label
-    Friend WithEvents txtTituloBusqueda As Label
+    Friend WithEvents txtTituloBusquedaList As Label
     Friend WithEvents tpNuevaVenta As TabPage
     Friend WithEvents dgvBusquedaResult As DataGridView
     Friend WithEvents pnlDatosProducto As Panel
@@ -1590,12 +1619,12 @@ Partial Class AdministrarVentas
     Friend WithEvents txtFiltroBusquedaNC As TextBox
     Friend WithEvents txtCodProd As TextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents txtCantidad As TextBox
+    Friend WithEvents txtStock As TextBox
     Friend WithEvents txtDescripcionProd As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents txtPrecioProd As TextBox
-    Friend WithEvents pnlDatosCompra As Panel
+    Friend WithEvents pnlDatosVenta As Panel
     Friend WithEvents Label18 As Label
     Friend WithEvents gbTipoPago As GroupBox
     Friend WithEvents Label20 As Label
@@ -1605,7 +1634,7 @@ Partial Class AdministrarVentas
     Friend WithEvents dateFactura As DateTimePicker
     Friend WithEvents gbCliente As GroupBox
     Friend WithEvents Label11 As Label
-    Friend WithEvents cbProveedor2 As ComboBox
+    Friend WithEvents cbCliente2 As ComboBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents txtFacturaNro As TextBox
@@ -1630,7 +1659,7 @@ Partial Class AdministrarVentas
     Friend WithEvents pnlOperandosAnular As Panel
     Friend WithEvents btnAnularVenta As Button
     Friend WithEvents btnVerDetalleAnul As Button
-    Friend WithEvents dgvComprasAnular As DataGridView
+    Friend WithEvents dgvVentasAnular As DataGridView
     Friend WithEvents txtTituloAnular As Label
     Friend WithEvents pnlAnular As Panel
     Friend WithEvents txtHastaAnul As Label
@@ -1643,24 +1672,26 @@ Partial Class AdministrarVentas
     Friend WithEvents cbCliente3 As ComboBox
     Friend WithEvents cbAnularFiltro As ComboBox
     Friend WithEvents tpCobros As TabPage
-    Friend WithEvents dgvComprasP As DataGridView
-    Friend WithEvents lblTituloP As Label
-    Friend WithEvents pnlPago As Panel
-    Friend WithEvents cbProveedor4 As ComboBox
+    Friend WithEvents dgvVentasCobro As DataGridView
+    Friend WithEvents lblTituloVenta As Label
+    Friend WithEvents pnlCobro As Panel
+    Friend WithEvents cbCliente4 As ComboBox
     Friend WithEvents btnDetalleP As Button
     Friend WithEvents btnPagar As Button
     Friend WithEvents btnBuscarP As Button
     Friend WithEvents lblFiltroTipo As Label
     Friend WithEvents Label25 As Label
-    Friend WithEvents txtNroFactPago As TextBox
-    Friend WithEvents cbFiltroP As ComboBox
+    Friend WithEvents txtNroFactCobro As TextBox
+    Friend WithEvents cbFiltroC As ComboBox
     Friend WithEvents pnlFechas As Panel
     Friend WithEvents dpHastaPago As DateTimePicker
     Friend WithEvents dpDesdePago As DateTimePicker
     Friend WithEvents Label23 As Label
     Friend WithEvents Label24 As Label
     Friend WithEvents Label22 As Label
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cbVendedor2 As ComboBox
     Friend WithEvents Label26 As Label
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtCantidad As TextBox
+    Friend WithEvents Label27 As Label
 End Class

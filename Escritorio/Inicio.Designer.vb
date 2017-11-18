@@ -81,6 +81,7 @@ Partial Class Inicio
         Me.ListadoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.pbInicio = New System.Windows.Forms.PictureBox()
+        Me.AdministrarVentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.dgvDatos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelTitulo.SuspendLayout()
         Me.pnlControles.SuspendLayout()
@@ -528,6 +529,7 @@ Partial Class Inicio
         '
         'miVentas
         '
+        Me.miVentas.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AdministrarVentasToolStripMenuItem})
         Me.miVentas.Name = "miVentas"
         Me.miVentas.Size = New System.Drawing.Size(169, 24)
         Me.miVentas.Text = "Ventas"
@@ -569,6 +571,12 @@ Partial Class Inicio
         Me.pbInicio.Size = New System.Drawing.Size(963, 617)
         Me.pbInicio.TabIndex = 36
         Me.pbInicio.TabStop = False
+        '
+        'AdministrarVentasToolStripMenuItem
+        '
+        Me.AdministrarVentasToolStripMenuItem.Name = "AdministrarVentasToolStripMenuItem"
+        Me.AdministrarVentasToolStripMenuItem.Size = New System.Drawing.Size(213, 24)
+        Me.AdministrarVentasToolStripMenuItem.Text = "Administrar Ventas"
         '
         'Inicio
         '
@@ -666,4 +674,5 @@ Partial Class Inicio
     Friend WithEvents miMovInterno As ToolStripMenuItem
     Friend WithEvents miGenerarMI As ToolStripMenuItem
     Friend WithEvents ListadoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AdministrarVentasToolStripMenuItem As ToolStripMenuItem
 End Class

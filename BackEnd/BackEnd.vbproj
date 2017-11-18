@@ -78,6 +78,7 @@
     <Compile Include="dao\ProveedorDAO.vb" />
     <Compile Include="dao\UsuarioDAO.vb" />
     <Compile Include="dao\VendedorDAO.vb" />
+    <Compile Include="dao\VentaDAO.vb" />
     <Compile Include="modelos\Cliente.vb" />
     <Compile Include="modelos\Compra.vb" />
     <Compile Include="modelos\MovimientoInterno.vb" />

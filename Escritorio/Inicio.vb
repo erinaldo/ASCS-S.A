@@ -578,6 +578,13 @@ Public Class Inicio
 
     End Sub
 
+    ' ------------------------------------------------------ VENTAS  ------------------------------------------------------
+    Private Sub AdministrarVentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AdministrarVentasToolStripMenuItem.Click
+        Dim ventas As New AdministrarVentas
+        ventas.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
+        ventas.ShowDialog(Me)
+        ventas.Dispose()
+    End Sub
 
 
     ' ------------------------------------------------------ MOVIMIENTO INTERNO  ------------------------------------------------------
@@ -601,4 +608,6 @@ Public Class Inicio
         movInt.ShowDialog(Me)
         movInt.Dispose()
     End Sub
+
+
 End Class
