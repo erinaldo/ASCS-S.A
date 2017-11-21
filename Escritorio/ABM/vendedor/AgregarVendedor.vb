@@ -56,4 +56,19 @@ Public Class AgregarVendedor
         txtTel.Text = ""
         txtNombre.Focus()
     End Sub
+
+    Private Sub AgregarVendedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.SuspendLayout()
+        backgroundElementos()
+        Me.ResumeLayout()
+
+    End Sub
+
+    Private Sub backgroundElementos()
+        Me.BackgroundImageLayout = ImageLayout.Center
+        Me.BackgroundImage = My.Resources.Panther1
+        Panel1.BackColor = Color.FromArgb(80, Color.Black)
+        Panel2.BackColor = Color.FromArgb(80, Color.Black)
+
+    End Sub
 End Class

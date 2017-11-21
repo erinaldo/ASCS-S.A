@@ -50,6 +50,29 @@ Public Class MovInternoDAO
 
     End Function
 
+    Public Function buscarSolicitante(solicitante As String) As String
+        Dim sucursal = ""
+        Try
+            Dim con As New MySqlConnection(ConexionDB.cadenaConexionBD(Sesion.Usuario, Sesion.Password))
+            con.Open()
+
+            Dim query = "SELECT sucNombre as Nombre FROM stsucursales WHERE `sucCod` = @cod"
+            Dim cmd As New MySqlCommand(query, con)
+            cmd.Parameters.AddWithValue("@cod", solicitante)
+            Dim reader = cmd.ExecuteReader()
+
+            If reader.Read Then
+                sucursal = SafeGetString(reader, 0)
+            End If
+
+            con.Close()
+            reader.Close()
+        Catch ex As Exception
+            Throw New DAOException(ex.ToString)
+        End Try
+        Return sucursal
+    End Function
+
     Public Function cargaMov(ByVal codigo As String) As MovimientoInterno
         Dim modelo As New MovimientoInterno
         Try
@@ -76,6 +99,8 @@ Public Class MovInternoDAO
         End Try
         Return modelo
     End Function
+
+
     Public Function cargarDetalle(codigo As String) As DataSet
         Dim ds As New DataSet
         Try
@@ -127,9 +152,9 @@ Public Class MovInternoDAO
         Return tmp.obtenerProducto(cod)
     End Function
 
-    Public Function BuscarProducts(cod As String) As DataSet
+    Public Function BuscarProducts(ByVal cod As String, ByVal deposito As Integer) As DataSet
         Dim tmp As New ProductoDAO
-        Return tmp.obtenerProductos(cod)
+        Return tmp.obtenerProductos(cod, deposito)
     End Function
 
     Public Sub guardar(mov As MovimientoInterno, productos As DataGridViewRowCollection)
@@ -139,15 +164,15 @@ Public Class MovInternoDAO
 
             Dim query = "INSERT INTO `stmovinterno` (`movNro`, `movEstado`, `movFecha`," _
                 & "`movSolicitado`, `movAutorizado`, `provCodigo`, `movLineaNro`, `prodCodigo`, `movCantidad`," _
-                & "`movTipo`, `movUsrIns`, `movFchIns`) " _
-                & "VALUES(@nro,@estado,@fecha,@solicita,@autoriza,@prov,@linea,@prodCod,@cantidad,@tipo,@user,@fechaIns)"
+                & "`movTipo`, `movUsrIns`, `movFchIns`, movDepositoOrigen) " _
+                & "VALUES(@nro,@estado,@fecha,@solicita,@autoriza,@prov,@linea,@prodCod,@cantidad,@tipo,@user,@fechaIns,@depo)"
 
             Dim cmd As New MySqlCommand(query, con)
 
             For Each row As Windows.Forms.DataGridViewRow In productos
                 Dim codProd = row.Cells("Código").Value
                 Dim linea = row.Cells("Línea").Value
-
+                Dim depo = row.Cells("Depósito Codigo").Value
                 Dim cant = row.Cells("Cantidad").Value
                 cmd.Parameters.AddWithValue("@nro", mov.nroMov)
                 cmd.Parameters.AddWithValue("@estado", "ACTI")
@@ -161,10 +186,70 @@ Public Class MovInternoDAO
                 cmd.Parameters.AddWithValue("@tipo", mov.tipo)
                 cmd.Parameters.AddWithValue("@user", Sesion.Usuario)
                 cmd.Parameters.AddWithValue("@fechaIns", Date.Now)
+                cmd.Parameters.AddWithValue("@depo", depo)
+
                 cmd.ExecuteNonQuery()
                 cmd.Parameters.Clear()
 
             Next
+            con.Clone()
+        Catch ex As Exception
+            Throw New DAOException(ex.ToString)
+        End Try
+
+
+    End Sub
+
+    Public Sub guardarMovDepositos(mov As MovimientoInterno, productos As DataGridViewRowCollection)
+        Try
+            Dim con As New MySqlConnection(ConexionDB.cadenaConexionBD(Sesion.Usuario, Sesion.Password))
+            con.Open()
+
+            Dim query = "INSERT INTO `stmovinterno` (`movNro`, `movEstado`, `movFecha`," _
+                & "`movSolicitado`, `movAutorizado`, `provCodigo`, `movLineaNro`, `prodCodigo`, `movCantidad`," _
+                & "`movTipo`, `movUsrIns`, `movFchIns`, movDepositoOrigen) " _
+                & "VALUES(@nro,@estado,@fecha,@solicita,@autoriza,@prov,@linea,@prodCod,@cantidad,@tipo,@user,@fechaIns,@depo)"
+
+            Dim queryExistencia = ""
+
+
+            If mov.proveedor = 1 Then
+                queryExistencia = "UPDATE stproductos SET prodExistencia = prodExistencia - @cantidad, prodExistenciaB = prodExistenciaB + @cantidad WHERE prodCodigo = @codigo"
+            Else
+                queryExistencia = "UPDATE stproductos SET prodExistencia = prodExistencia + @cantidad, prodExistenciaB = prodExistenciaB - @cantidad WHERE prodCodigo = @codigo"
+            End If
+
+            Dim cmd As New MySqlCommand(query, con)
+            Dim cmdExistencia As New MySqlCommand(queryExistencia, con)
+            For Each row As Windows.Forms.DataGridViewRow In productos
+                Dim codProd = row.Cells("Código").Value
+                Dim linea = row.Cells("Línea").Value
+                Dim depo = row.Cells("Depósito Codigo").Value
+                Dim cant = row.Cells("Cantidad").Value
+                cmd.Parameters.AddWithValue("@nro", mov.nroMov)
+                cmd.Parameters.AddWithValue("@estado", "ACTI")
+                cmd.Parameters.AddWithValue("@fecha", mov.fecha)
+                cmd.Parameters.AddWithValue("@solicita", mov.solicitante)
+                cmd.Parameters.AddWithValue("@autoriza", mov.autorizado)
+                cmd.Parameters.AddWithValue("@prov", mov.proveedor)
+                cmd.Parameters.AddWithValue("@linea", linea)
+                cmd.Parameters.AddWithValue("@prodCod", codProd)
+                cmd.Parameters.AddWithValue("@cantidad", cant)
+                cmd.Parameters.AddWithValue("@tipo", mov.tipo)
+                cmd.Parameters.AddWithValue("@user", Sesion.Usuario)
+                cmd.Parameters.AddWithValue("@fechaIns", Date.Now)
+                cmd.Parameters.AddWithValue("@depo", depo)
+
+                'cmd.ExecuteNonQuery()
+                cmd.Parameters.Clear()
+
+                ' Existencia
+                cmdExistencia.Parameters.AddWithValue("@cantidad", cant)
+                cmdExistencia.Parameters.AddWithValue("@codigo", codProd)
+                cmdExistencia.ExecuteNonQuery()
+                cmdExistencia.Parameters.Clear()
+            Next
+            con.Close()
         Catch ex As Exception
             Throw New DAOException(ex.ToString)
         End Try

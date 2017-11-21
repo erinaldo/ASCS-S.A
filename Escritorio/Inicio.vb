@@ -33,6 +33,7 @@ Public Class Inicio
         panelOperaciones.BackColor = Color.FromArgb(80, Color.Black)
         msInicio.BackColor = Color.OrangeRed
         Me.SuspendLayout()
+
     End Sub
 
 
@@ -264,6 +265,7 @@ Public Class Inicio
         dgvDatos.Visible = False
         agregarCliente.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
         agregarCliente.ShowDialog(Me)
+        listadoClientes(sender, e)
         dgvDatos.Visible = True
         agregarCliente.Dispose()
     End Sub
@@ -319,6 +321,7 @@ Public Class Inicio
     ' ------------------- Listado ------------------- 
 
     Private Sub listadoProveedores(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles miProveedoresListado.Click
+
         Dim prov As New ProveedorDAO
         dgvDatos.DataSource = ""
         pnlControles.Visible = True
@@ -330,6 +333,7 @@ Public Class Inicio
             dgvDatos.DefaultCellStyle.WrapMode = DataGridViewTriState.True
         End If
         Try
+            Me.SuspendLayout()
             Dim listaProv = prov.cargar()
             Me.dgvDatos.DataSource = listaProv.Tables("tabla")
             cbTipoBusqueda.Visible = False
@@ -345,9 +349,11 @@ Public Class Inicio
             dgvDatos.Columns("Fecha").Visible = False
             lblTitulo.Text = "LISTADO DE PROVEEDORES"
             lblTitulo.Left = (PanelTitulo.Width / 2) - (lblTitulo.Width / 2)
+            Me.ResumeLayout()
         Catch ex As Exception
             Throw New DAOException(ex.ToString)
         End Try
+
     End Sub
 
     ' ------------------- Agregar nuevo Proveedor ------------------- 
@@ -600,14 +606,19 @@ Public Class Inicio
         movInt.ShowDialog(Me)
         movInt.Dispose()
     End Sub
+
     '' LISTADO
-    Private Sub ListadoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoToolStripMenuItem.Click
+    Private Sub ListadoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles miListadoMI.Click
         Dim movInt As New ListadoMovimientoInt
         'dgvDatos.Visible = False
         movInt.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
         movInt.ShowDialog(Me)
         movInt.Dispose()
     End Sub
-
-
+    ' MOVIMIENTO INTERNO ENTRE DEPÓSITOS
+    Private Sub EntreDepósitosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles miMIDep.Click
+        Dim depoMov As New DepositosMI
+        depoMov.ShowDialog()
+        depoMov.Dispose()
+    End Sub
 End Class

@@ -73,8 +73,10 @@ Partial Class AdministrarVentas
         Me.txtFiltroBusquedaNC = New System.Windows.Forms.TextBox()
         Me.txtCodProd = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtCantidad = New System.Windows.Forms.TextBox()
         Me.txtStock = New System.Windows.Forms.TextBox()
         Me.txtDescripcionProd = New System.Windows.Forms.TextBox()
+        Me.Label27 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtPrecioProd = New System.Windows.Forms.TextBox()
@@ -146,8 +148,6 @@ Partial Class AdministrarVentas
         Me.dpDesdePago = New System.Windows.Forms.DateTimePicker()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
-        Me.Label27 = New System.Windows.Forms.Label()
-        Me.txtCantidad = New System.Windows.Forms.TextBox()
         Me.tbcVenta.SuspendLayout()
         Me.tpListado.SuspendLayout()
         CType(Me.dgvVentasListado, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -654,6 +654,14 @@ Partial Class AdministrarVentas
         Me.Label6.TabIndex = 6
         Me.Label6.Text = "Descripción"
         '
+        'txtCantidad
+        '
+        Me.txtCantidad.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCantidad.Location = New System.Drawing.Point(938, 83)
+        Me.txtCantidad.Name = "txtCantidad"
+        Me.txtCantidad.Size = New System.Drawing.Size(70, 27)
+        Me.txtCantidad.TabIndex = 5
+        '
         'txtStock
         '
         Me.txtStock.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -671,6 +679,18 @@ Partial Class AdministrarVentas
         Me.txtDescripcionProd.ReadOnly = True
         Me.txtDescripcionProd.Size = New System.Drawing.Size(244, 27)
         Me.txtDescripcionProd.TabIndex = 5
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.BackColor = System.Drawing.Color.Transparent
+        Me.Label27.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label27.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label27.Location = New System.Drawing.Point(850, 86)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(82, 19)
+        Me.Label27.TabIndex = 6
+        Me.Label27.Text = "Cantidad"
         '
         'Label5
         '
@@ -1511,26 +1531,6 @@ Partial Class AdministrarVentas
         Me.Label24.Size = New System.Drawing.Size(78, 27)
         Me.Label24.TabIndex = 2
         Me.Label24.Text = "Desde"
-        '
-        'Label27
-        '
-        Me.Label27.AutoSize = True
-        Me.Label27.BackColor = System.Drawing.Color.Transparent
-        Me.Label27.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label27.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label27.Location = New System.Drawing.Point(850, 86)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(82, 19)
-        Me.Label27.TabIndex = 6
-        Me.Label27.Text = "Cantidad"
-        '
-        'txtCantidad
-        '
-        Me.txtCantidad.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCantidad.Location = New System.Drawing.Point(938, 83)
-        Me.txtCantidad.Name = "txtCantidad"
-        Me.txtCantidad.Size = New System.Drawing.Size(70, 27)
-        Me.txtCantidad.TabIndex = 5
         '
         'AdministrarVentas
         '

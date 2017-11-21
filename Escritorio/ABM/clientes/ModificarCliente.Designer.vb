@@ -32,12 +32,12 @@ Partial Class ModificarCliente
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.txtRUC = New System.Windows.Forms.TextBox()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.lblRuc = New System.Windows.Forms.Label()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -64,7 +64,7 @@ Partial Class ModificarCliente
         'txtContacto
         '
         Me.txtContacto.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtContacto.Location = New System.Drawing.Point(149, 178)
+        Me.txtContacto.Location = New System.Drawing.Point(155, 177)
         Me.txtContacto.Name = "txtContacto"
         Me.txtContacto.Size = New System.Drawing.Size(242, 26)
         Me.txtContacto.TabIndex = 4
@@ -72,10 +72,12 @@ Partial Class ModificarCliente
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(46, 181)
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label5.Location = New System.Drawing.Point(52, 180)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(74, 22)
+        Me.Label5.Size = New System.Drawing.Size(79, 22)
         Me.Label5.TabIndex = 0
         Me.Label5.Text = "Contacto"
         '
@@ -92,7 +94,7 @@ Partial Class ModificarCliente
         'txtTel
         '
         Me.txtTel.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTel.Location = New System.Drawing.Point(149, 134)
+        Me.txtTel.Location = New System.Drawing.Point(155, 133)
         Me.txtTel.Name = "txtTel"
         Me.txtTel.Size = New System.Drawing.Size(242, 26)
         Me.txtTel.TabIndex = 3
@@ -100,10 +102,12 @@ Partial Class ModificarCliente
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(46, 137)
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label4.Location = New System.Drawing.Point(52, 136)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(73, 22)
+        Me.Label4.Size = New System.Drawing.Size(77, 22)
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "Teléfono"
         '
@@ -130,43 +134,27 @@ Partial Class ModificarCliente
         'txtRUC
         '
         Me.txtRUC.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtRUC.Location = New System.Drawing.Point(149, 90)
+        Me.txtRUC.Location = New System.Drawing.Point(155, 89)
         Me.txtRUC.Name = "txtRUC"
         Me.txtRUC.Size = New System.Drawing.Size(242, 26)
         Me.txtRUC.TabIndex = 2
         '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.txtContacto)
-        Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.txtTel)
-        Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.txtRUC)
-        Me.GroupBox1.Controls.Add(Me.lblRuc)
-        Me.GroupBox1.Controls.Add(Me.txtNombre)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(46, 104)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(466, 241)
-        Me.GroupBox1.TabIndex = 9
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Datos Cliente"
-        '
         'lblRuc
         '
         Me.lblRuc.AutoSize = True
-        Me.lblRuc.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRuc.Location = New System.Drawing.Point(46, 94)
+        Me.lblRuc.BackColor = System.Drawing.Color.Transparent
+        Me.lblRuc.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRuc.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lblRuc.Location = New System.Drawing.Point(52, 93)
         Me.lblRuc.Name = "lblRuc"
-        Me.lblRuc.Size = New System.Drawing.Size(39, 22)
+        Me.lblRuc.Size = New System.Drawing.Size(41, 22)
         Me.lblRuc.TabIndex = 0
         Me.lblRuc.Text = "RUC"
         '
         'txtNombre
         '
         Me.txtNombre.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombre.Location = New System.Drawing.Point(149, 39)
+        Me.txtNombre.Location = New System.Drawing.Point(155, 38)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(242, 26)
         Me.txtNombre.TabIndex = 1
@@ -174,12 +162,29 @@ Partial Class ModificarCliente
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(46, 42)
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label2.Location = New System.Drawing.Point(52, 41)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(66, 22)
+        Me.Label2.Size = New System.Drawing.Size(70, 22)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Nombre"
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.txtContacto)
+        Me.Panel2.Controls.Add(Me.lblRuc)
+        Me.Panel2.Controls.Add(Me.Label5)
+        Me.Panel2.Controls.Add(Me.Label2)
+        Me.Panel2.Controls.Add(Me.txtTel)
+        Me.Panel2.Controls.Add(Me.txtNombre)
+        Me.Panel2.Controls.Add(Me.Label4)
+        Me.Panel2.Controls.Add(Me.txtRUC)
+        Me.Panel2.Location = New System.Drawing.Point(65, 106)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(430, 240)
+        Me.Panel2.TabIndex = 10
         '
         'ModificarCliente
         '
@@ -187,15 +192,15 @@ Partial Class ModificarCliente
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SteelBlue
         Me.ClientSize = New System.Drawing.Size(558, 460)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.GroupBox1)
         Me.Name = "ModificarCliente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ModificarCliente"
         Me.Panel1.ResumeLayout(False)
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -210,8 +215,8 @@ Partial Class ModificarCliente
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents txtRUC As System.Windows.Forms.TextBox
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents lblRuc As System.Windows.Forms.Label
     Friend WithEvents txtNombre As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Panel2 As Panel
 End Class

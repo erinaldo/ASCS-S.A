@@ -35,6 +35,8 @@ Public Class ModificarProducto
     ' ---------------------------- Carga del Formulario ---------------------------------
     Private Sub ModificarProducto_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Try
+            Me.SuspendLayout()
+            backgroundElementos()
             modelo = daoProd.obtenerProducto(codigo)
             txtCod.Text = modelo.codigo
             txtAlto.Text = modelo.alto
@@ -48,14 +50,21 @@ Public Class ModificarProducto
             cbColor.DataSource = VariablesUtiles.colores
             cbColor.SelectedItem = color
             txtStock.Text = modelo.stock
-
+            Me.ResumeLayout()
         Catch ex As Exception
             Throw New DAOException(ex.ToString)
         End Try
 
     End Sub
 
-
+    Private Sub backgroundElementos()
+        Me.BackgroundImageLayout = ImageLayout.Center
+        Me.BackgroundImage = My.Resources.Panther1
+        Panel1.BackColor = Color.FromArgb(80, Color.Black)
+        Panel2.BackColor = Color.FromArgb(80, Color.Black)
+        Panel3.BackColor = Color.FromArgb(80, Color.Black)
+        Label2.BackColor = Color.FromArgb(80, Color.Black)
+    End Sub
     ' ---------------------------- Cancelar modificación ---------------------------------
     Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
         Me.DialogResult = Windows.Forms.DialogResult.Cancel

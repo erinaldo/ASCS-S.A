@@ -10,15 +10,26 @@ Public Class ModificarCliente
     End Sub
     Private Sub ModificarCliente_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Try
+            Me.SuspendLayout()
+            backgroundElementos()
             modelo = daoCli.obtenerCliente(codigo)
             txtNombre.Text = modelo.nombre
             txtRUC.Text = modelo.ruc
             txtTel.Text = modelo.tel
             txtContacto.Text = modelo.contacto
+            Me.ResumeLayout()
         Catch ex As Exception
             Throw New DAOException(ex.ToString)
         End Try
-        
+
+    End Sub
+
+    Private Sub backgroundElementos()
+        Me.BackgroundImageLayout = ImageLayout.Center
+        Me.BackgroundImage = My.Resources.Panther1
+        Panel1.BackColor = Color.FromArgb(80, Color.Black)
+        Panel2.BackColor = Color.FromArgb(80, Color.Black)
+
     End Sub
 
     Private Sub btnRefresh_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRefresh.Click

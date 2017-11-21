@@ -25,7 +25,6 @@ Partial Class AgregarVendedor
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtTel = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.cbEstado = New System.Windows.Forms.ComboBox()
         Me.cbPorcentaje = New System.Windows.Forms.ComboBox()
         Me.lblruc = New System.Windows.Forms.Label()
@@ -36,15 +35,18 @@ Partial Class AgregarVendedor
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.GroupBox1.SuspendLayout()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label5
         '
         Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(25, 198)
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label5.Location = New System.Drawing.Point(23, 211)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(57, 22)
         Me.Label5.TabIndex = 0
@@ -53,7 +55,7 @@ Partial Class AgregarVendedor
         'txtTel
         '
         Me.txtTel.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTel.Location = New System.Drawing.Point(205, 94)
+        Me.txtTel.Location = New System.Drawing.Point(203, 107)
         Me.txtTel.Name = "txtTel"
         Me.txtTel.Size = New System.Drawing.Size(242, 26)
         Me.txtTel.TabIndex = 2
@@ -61,47 +63,33 @@ Partial Class AgregarVendedor
         'Label4
         '
         Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(25, 94)
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label4.Location = New System.Drawing.Point(23, 107)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(73, 22)
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "Teléfono"
         '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.cbEstado)
-        Me.GroupBox1.Controls.Add(Me.cbPorcentaje)
-        Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.txtTel)
-        Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.lblruc)
-        Me.GroupBox1.Controls.Add(Me.txtNombre)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(78, 114)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(460, 241)
-        Me.GroupBox1.TabIndex = 12
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Datos Vendedor"
-        '
         'cbEstado
         '
+        Me.cbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbEstado.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbEstado.FormattingEnabled = True
         Me.cbEstado.Items.AddRange(New Object() {"Activo", "Inactivo"})
-        Me.cbEstado.Location = New System.Drawing.Point(205, 190)
+        Me.cbEstado.Location = New System.Drawing.Point(203, 203)
         Me.cbEstado.Name = "cbEstado"
         Me.cbEstado.Size = New System.Drawing.Size(106, 30)
         Me.cbEstado.TabIndex = 4
         '
         'cbPorcentaje
         '
+        Me.cbPorcentaje.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbPorcentaje.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbPorcentaje.FormattingEnabled = True
         Me.cbPorcentaje.Items.AddRange(New Object() {"1%", "0.5%"})
-        Me.cbPorcentaje.Location = New System.Drawing.Point(205, 139)
+        Me.cbPorcentaje.Location = New System.Drawing.Point(203, 152)
         Me.cbPorcentaje.Name = "cbPorcentaje"
         Me.cbPorcentaje.Size = New System.Drawing.Size(106, 30)
         Me.cbPorcentaje.TabIndex = 3
@@ -109,8 +97,10 @@ Partial Class AgregarVendedor
         'lblruc
         '
         Me.lblruc.AutoSize = True
+        Me.lblruc.BackColor = System.Drawing.Color.Transparent
         Me.lblruc.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblruc.Location = New System.Drawing.Point(25, 142)
+        Me.lblruc.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lblruc.Location = New System.Drawing.Point(23, 155)
         Me.lblruc.Name = "lblruc"
         Me.lblruc.Size = New System.Drawing.Size(88, 22)
         Me.lblruc.TabIndex = 0
@@ -119,7 +109,7 @@ Partial Class AgregarVendedor
         'txtNombre
         '
         Me.txtNombre.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombre.Location = New System.Drawing.Point(205, 40)
+        Me.txtNombre.Location = New System.Drawing.Point(203, 53)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(242, 26)
         Me.txtNombre.TabIndex = 1
@@ -127,8 +117,10 @@ Partial Class AgregarVendedor
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(25, 44)
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label2.Location = New System.Drawing.Point(23, 57)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(142, 22)
         Me.Label2.TabIndex = 0
@@ -185,21 +177,36 @@ Partial Class AgregarVendedor
         Me.Panel1.Size = New System.Drawing.Size(432, 49)
         Me.Panel1.TabIndex = 5
         '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.cbEstado)
+        Me.Panel2.Controls.Add(Me.Label2)
+        Me.Panel2.Controls.Add(Me.cbPorcentaje)
+        Me.Panel2.Controls.Add(Me.txtNombre)
+        Me.Panel2.Controls.Add(Me.Label5)
+        Me.Panel2.Controls.Add(Me.lblruc)
+        Me.Panel2.Controls.Add(Me.txtTel)
+        Me.Panel2.Controls.Add(Me.Label4)
+        Me.Panel2.Location = New System.Drawing.Point(67, 93)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(482, 266)
+        Me.Panel2.TabIndex = 13
+        '
         'AgregarVendedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SteelBlue
         Me.ClientSize = New System.Drawing.Size(617, 463)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "AgregarVendedor"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "AgregarVendedor"
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -207,7 +214,6 @@ Partial Class AgregarVendedor
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents txtTel As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents cbEstado As System.Windows.Forms.ComboBox
     Friend WithEvents cbPorcentaje As System.Windows.Forms.ComboBox
     Friend WithEvents lblruc As System.Windows.Forms.Label
@@ -218,4 +224,5 @@ Partial Class AgregarVendedor
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents btnGuardar As System.Windows.Forms.Button
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Panel2 As Panel
 End Class

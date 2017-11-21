@@ -69,7 +69,7 @@ Partial Class DetalleMovimiento
         Me.pnlDatosMov.Controls.Add(Me.txtAutorizado)
         Me.pnlDatosMov.Controls.Add(Me.txtNroOperacion)
         Me.pnlDatosMov.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pnlDatosMov.Location = New System.Drawing.Point(24, 83)
+        Me.pnlDatosMov.Location = New System.Drawing.Point(24, 62)
         Me.pnlDatosMov.Name = "pnlDatosMov"
         Me.pnlDatosMov.Size = New System.Drawing.Size(1046, 177)
         Me.pnlDatosMov.TabIndex = 22
@@ -261,7 +261,7 @@ Partial Class DetalleMovimiento
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvProductos.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvProductos.GridColor = System.Drawing.SystemColors.AppWorkspace
-        Me.dgvProductos.Location = New System.Drawing.Point(24, 297)
+        Me.dgvProductos.Location = New System.Drawing.Point(24, 267)
         Me.dgvProductos.Name = "dgvProductos"
         Me.dgvProductos.ReadOnly = True
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -323,7 +323,7 @@ Partial Class DetalleMovimiento
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(1193, 750)
+        Me.ClientSize = New System.Drawing.Size(1193, 742)
         Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.pnlOperadores)
         Me.Controls.Add(Me.dgvProductos)

@@ -258,4 +258,8 @@ Public Class AdministrarVentas
         End If
         Me.ResumeLayout()
     End Sub
+
+    Private Sub btnBuscarCompra_Click(sender As Object, e As EventArgs) Handles btnBuscarCompra.Click
+
+    End Sub
 End Class

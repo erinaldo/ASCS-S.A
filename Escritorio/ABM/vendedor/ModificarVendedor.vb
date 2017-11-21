@@ -12,18 +12,26 @@ Public Class ModificarVendedor
 
     Private Sub ModificarProveedor_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Try
-
+            Me.SuspendLayout()
+            backgroundElementos()
             modelo = daoVend.obtenerVendedor(codigo)
             txtNombre.Text = modelo.nombre
             txtTel.Text = modelo.tel
             cbEstado.SelectedItem = modelo.estado
             cbPorcentaje.SelectedItem = VariablesUtiles.porcentaje(modelo.porcentaje.ToString)
+            Me.ResumeLayout()
         Catch ex As Exception
             Throw New DAOException(ex.ToString)
         End Try
 
     End Sub
+    Private Sub backgroundElementos()
+        Me.BackgroundImageLayout = ImageLayout.Center
+        Me.BackgroundImage = My.Resources.Panther1
+        Panel1.BackColor = Color.FromArgb(80, Color.Black)
+        Panel2.BackColor = Color.FromArgb(80, Color.Black)
 
+    End Sub
     Private Sub btnRefresh_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRefresh.Click
         txtNombre.Text = modelo.nombre
         txtTel.Text = modelo.tel
@@ -72,15 +80,7 @@ Public Class ModificarVendedor
 
     End Sub
 
-    Private Sub Panel1_Paint1(ByVal sender As Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles Panel1.Paint
-        Panel1.BorderStyle = BorderStyle.None
 
-        e.Graphics.DrawRectangle(Pens.White,
-                                 e.ClipRectangle.Left,
-                                 e.ClipRectangle.Top,
-                                 e.ClipRectangle.Width - 1,
-                                 e.ClipRectangle.Height - 1)
-    End Sub
 
-   
+
 End Class

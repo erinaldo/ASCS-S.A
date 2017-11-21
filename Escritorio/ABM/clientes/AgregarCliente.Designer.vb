@@ -23,7 +23,6 @@ Partial Class AgregarCliente
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txtContacto = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtTel = New System.Windows.Forms.TextBox()
@@ -36,8 +35,9 @@ Partial Class AgregarCliente
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnRefresh = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
-        Me.GroupBox1.SuspendLayout()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -50,29 +50,10 @@ Partial Class AgregarCliente
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "AGREGAR CLIENTE"
         '
-        'GroupBox1
-        '
-        Me.GroupBox1.BackColor = System.Drawing.Color.SteelBlue
-        Me.GroupBox1.Controls.Add(Me.txtContacto)
-        Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.txtTel)
-        Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.txtRUC)
-        Me.GroupBox1.Controls.Add(Me.lblruc)
-        Me.GroupBox1.Controls.Add(Me.txtNombre)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(46, 90)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(466, 241)
-        Me.GroupBox1.TabIndex = 1
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Datos Cliente"
-        '
         'txtContacto
         '
         Me.txtContacto.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtContacto.Location = New System.Drawing.Point(149, 178)
+        Me.txtContacto.Location = New System.Drawing.Point(150, 175)
         Me.txtContacto.Name = "txtContacto"
         Me.txtContacto.Size = New System.Drawing.Size(242, 26)
         Me.txtContacto.TabIndex = 1
@@ -80,8 +61,10 @@ Partial Class AgregarCliente
         'Label5
         '
         Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(46, 181)
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label5.Location = New System.Drawing.Point(47, 178)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(74, 22)
         Me.Label5.TabIndex = 0
@@ -90,7 +73,7 @@ Partial Class AgregarCliente
         'txtTel
         '
         Me.txtTel.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTel.Location = New System.Drawing.Point(149, 134)
+        Me.txtTel.Location = New System.Drawing.Point(150, 131)
         Me.txtTel.Name = "txtTel"
         Me.txtTel.Size = New System.Drawing.Size(242, 26)
         Me.txtTel.TabIndex = 1
@@ -98,8 +81,10 @@ Partial Class AgregarCliente
         'Label4
         '
         Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(46, 137)
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label4.Location = New System.Drawing.Point(47, 134)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(73, 22)
         Me.Label4.TabIndex = 0
@@ -108,7 +93,7 @@ Partial Class AgregarCliente
         'txtRUC
         '
         Me.txtRUC.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtRUC.Location = New System.Drawing.Point(149, 90)
+        Me.txtRUC.Location = New System.Drawing.Point(150, 87)
         Me.txtRUC.Name = "txtRUC"
         Me.txtRUC.Size = New System.Drawing.Size(242, 26)
         Me.txtRUC.TabIndex = 1
@@ -116,8 +101,10 @@ Partial Class AgregarCliente
         'lblruc
         '
         Me.lblruc.AutoSize = True
+        Me.lblruc.BackColor = System.Drawing.Color.Transparent
         Me.lblruc.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblruc.Location = New System.Drawing.Point(46, 94)
+        Me.lblruc.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lblruc.Location = New System.Drawing.Point(47, 91)
         Me.lblruc.Name = "lblruc"
         Me.lblruc.Size = New System.Drawing.Size(39, 22)
         Me.lblruc.TabIndex = 0
@@ -126,7 +113,7 @@ Partial Class AgregarCliente
         'txtNombre
         '
         Me.txtNombre.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombre.Location = New System.Drawing.Point(149, 39)
+        Me.txtNombre.Location = New System.Drawing.Point(150, 36)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(242, 26)
         Me.txtNombre.TabIndex = 1
@@ -134,8 +121,10 @@ Partial Class AgregarCliente
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(46, 42)
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label2.Location = New System.Drawing.Point(47, 39)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(66, 22)
         Me.Label2.TabIndex = 0
@@ -182,27 +171,41 @@ Partial Class AgregarCliente
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
         '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.txtContacto)
+        Me.Panel2.Controls.Add(Me.Label2)
+        Me.Panel2.Controls.Add(Me.Label5)
+        Me.Panel2.Controls.Add(Me.txtNombre)
+        Me.Panel2.Controls.Add(Me.txtTel)
+        Me.Panel2.Controls.Add(Me.lblruc)
+        Me.Panel2.Controls.Add(Me.Label4)
+        Me.Panel2.Controls.Add(Me.txtRUC)
+        Me.Panel2.Location = New System.Drawing.Point(62, 95)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(433, 242)
+        Me.Panel2.TabIndex = 8
+        '
         'AgregarCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SteelBlue
         Me.ClientSize = New System.Drawing.Size(563, 415)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
         Me.Name = "AgregarCliente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "AgregarCliente"
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents txtContacto As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
@@ -215,4 +218,5 @@ Partial Class AgregarCliente
     Friend WithEvents btnGuardar As System.Windows.Forms.Button
     Friend WithEvents btnRefresh As System.Windows.Forms.Button
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
+    Friend WithEvents Panel2 As Panel
 End Class

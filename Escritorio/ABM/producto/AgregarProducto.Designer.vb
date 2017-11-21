@@ -30,12 +30,10 @@ Partial Class AgregarProducto
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnRefresh = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
-        Me.gbDatos = New System.Windows.Forms.GroupBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtStock = New System.Windows.Forms.TextBox()
         Me.txtPrecio = New System.Windows.Forms.TextBox()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.cbTipo = New System.Windows.Forms.ComboBox()
         Me.cbColor = New System.Windows.Forms.ComboBox()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -53,16 +51,22 @@ Partial Class AgregarProducto
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.gbDatos.SuspendLayout()
-        Me.GroupBox4.SuspendLayout()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(38, 42)
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label1.Location = New System.Drawing.Point(49, 52)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(60, 22)
         Me.Label1.TabIndex = 0
@@ -71,7 +75,7 @@ Partial Class AgregarProducto
         'txtCod
         '
         Me.txtCod.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCod.Location = New System.Drawing.Point(99, 36)
+        Me.txtCod.Location = New System.Drawing.Point(110, 46)
         Me.txtCod.Name = "txtCod"
         Me.txtCod.Size = New System.Drawing.Size(174, 26)
         Me.txtCod.TabIndex = 0
@@ -83,7 +87,7 @@ Partial Class AgregarProducto
         Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label2.Location = New System.Drawing.Point(229, 9)
+        Me.Label2.Location = New System.Drawing.Point(218, 9)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(408, 39)
         Me.Label2.TabIndex = 2
@@ -92,8 +96,10 @@ Partial Class AgregarProducto
         'Label3
         '
         Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(341, 42)
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label3.Location = New System.Drawing.Point(352, 52)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(93, 22)
         Me.Label3.TabIndex = 0
@@ -102,7 +108,7 @@ Partial Class AgregarProducto
         'txtDesc
         '
         Me.txtDesc.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDesc.Location = New System.Drawing.Point(443, 36)
+        Me.txtDesc.Location = New System.Drawing.Point(454, 46)
         Me.txtDesc.Name = "txtDesc"
         Me.txtDesc.Size = New System.Drawing.Size(174, 26)
         Me.txtDesc.TabIndex = 2
@@ -138,32 +144,13 @@ Partial Class AgregarProducto
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
         '
-        'gbDatos
-        '
-        Me.gbDatos.BackColor = System.Drawing.Color.SteelBlue
-        Me.gbDatos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.gbDatos.Controls.Add(Me.Label5)
-        Me.gbDatos.Controls.Add(Me.Label1)
-        Me.gbDatos.Controls.Add(Me.Label6)
-        Me.gbDatos.Controls.Add(Me.Label3)
-        Me.gbDatos.Controls.Add(Me.txtStock)
-        Me.gbDatos.Controls.Add(Me.txtCod)
-        Me.gbDatos.Controls.Add(Me.txtPrecio)
-        Me.gbDatos.Controls.Add(Me.txtDesc)
-        Me.gbDatos.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.gbDatos.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbDatos.Location = New System.Drawing.Point(68, 74)
-        Me.gbDatos.Name = "gbDatos"
-        Me.gbDatos.Size = New System.Drawing.Size(696, 134)
-        Me.gbDatos.TabIndex = 2
-        Me.gbDatos.TabStop = False
-        Me.gbDatos.Text = "Datos del producto"
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(38, 86)
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label5.Location = New System.Drawing.Point(49, 95)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(49, 22)
         Me.Label5.TabIndex = 0
@@ -172,8 +159,10 @@ Partial Class AgregarProducto
         'Label6
         '
         Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(339, 86)
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label6.Location = New System.Drawing.Point(349, 95)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(101, 22)
         Me.Label6.TabIndex = 0
@@ -182,7 +171,7 @@ Partial Class AgregarProducto
         'txtStock
         '
         Me.txtStock.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtStock.Location = New System.Drawing.Point(98, 82)
+        Me.txtStock.Location = New System.Drawing.Point(109, 92)
         Me.txtStock.Name = "txtStock"
         Me.txtStock.Size = New System.Drawing.Size(174, 26)
         Me.txtStock.TabIndex = 1
@@ -190,36 +179,10 @@ Partial Class AgregarProducto
         'txtPrecio
         '
         Me.txtPrecio.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPrecio.Location = New System.Drawing.Point(443, 82)
+        Me.txtPrecio.Location = New System.Drawing.Point(454, 92)
         Me.txtPrecio.Name = "txtPrecio"
         Me.txtPrecio.Size = New System.Drawing.Size(174, 26)
         Me.txtPrecio.TabIndex = 3
-        '
-        'GroupBox4
-        '
-        Me.GroupBox4.Controls.Add(Me.cbTipo)
-        Me.GroupBox4.Controls.Add(Me.cbColor)
-        Me.GroupBox4.Controls.Add(Me.Label13)
-        Me.GroupBox4.Controls.Add(Me.Label14)
-        Me.GroupBox4.Controls.Add(Me.Label4)
-        Me.GroupBox4.Controls.Add(Me.Label15)
-        Me.GroupBox4.Controls.Add(Me.Label16)
-        Me.GroupBox4.Controls.Add(Me.txtAlto)
-        Me.GroupBox4.Controls.Add(Me.Label17)
-        Me.GroupBox4.Controls.Add(Me.Label18)
-        Me.GroupBox4.Controls.Add(Me.txtLargo)
-        Me.GroupBox4.Controls.Add(Me.Label19)
-        Me.GroupBox4.Controls.Add(Me.txtM2)
-        Me.GroupBox4.Controls.Add(Me.txtEspesor)
-        Me.GroupBox4.Controls.Add(Me.Label20)
-        Me.GroupBox4.Controls.Add(Me.Label21)
-        Me.GroupBox4.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox4.Location = New System.Drawing.Point(68, 236)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(696, 138)
-        Me.GroupBox4.TabIndex = 3
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Propiedades del producto"
         '
         'cbTipo
         '
@@ -227,17 +190,18 @@ Partial Class AgregarProducto
         Me.cbTipo.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbTipo.FormattingEnabled = True
         Me.cbTipo.Items.AddRange(New Object() {"Herrajes", "Perfiles"})
-        Me.cbTipo.Location = New System.Drawing.Point(547, 84)
+        Me.cbTipo.Location = New System.Drawing.Point(533, 85)
         Me.cbTipo.Name = "cbTipo"
         Me.cbTipo.Size = New System.Drawing.Size(104, 30)
         Me.cbTipo.TabIndex = 9
         '
         'cbColor
         '
+        Me.cbColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbColor.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbColor.FormattingEnabled = True
         Me.cbColor.Items.AddRange(New Object() {"Gris", "Incoloro", "Bronce", "Dorado", "Cromado", "Fosco", "Pintado", "Azul"})
-        Me.cbColor.Location = New System.Drawing.Point(326, 83)
+        Me.cbColor.Location = New System.Drawing.Point(312, 84)
         Me.cbColor.Name = "cbColor"
         Me.cbColor.Size = New System.Drawing.Size(104, 30)
         Me.cbColor.TabIndex = 7
@@ -245,8 +209,10 @@ Partial Class AgregarProducto
         'Label13
         '
         Me.Label13.AutoSize = True
+        Me.Label13.BackColor = System.Drawing.Color.Transparent
         Me.Label13.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(650, 46)
+        Me.Label13.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label13.Location = New System.Drawing.Point(636, 47)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(36, 22)
         Me.Label13.TabIndex = 2
@@ -255,8 +221,10 @@ Partial Class AgregarProducto
         'Label14
         '
         Me.Label14.AutoSize = True
+        Me.Label14.BackColor = System.Drawing.Color.Transparent
         Me.Label14.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(436, 46)
+        Me.Label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label14.Location = New System.Drawing.Point(422, 47)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(36, 22)
         Me.Label14.TabIndex = 2
@@ -265,8 +233,10 @@ Partial Class AgregarProducto
         'Label4
         '
         Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(218, 86)
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label4.Location = New System.Drawing.Point(204, 87)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(36, 22)
         Me.Label4.TabIndex = 2
@@ -275,8 +245,10 @@ Partial Class AgregarProducto
         'Label15
         '
         Me.Label15.AutoSize = True
+        Me.Label15.BackColor = System.Drawing.Color.Transparent
         Me.Label15.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(218, 46)
+        Me.Label15.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label15.Location = New System.Drawing.Point(204, 47)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(36, 22)
         Me.Label15.TabIndex = 2
@@ -285,8 +257,10 @@ Partial Class AgregarProducto
         'Label16
         '
         Me.Label16.AutoSize = True
+        Me.Label16.BackColor = System.Drawing.Color.Transparent
         Me.Label16.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(38, 47)
+        Me.Label16.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label16.Location = New System.Drawing.Point(24, 48)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(64, 22)
         Me.Label16.TabIndex = 0
@@ -295,7 +269,7 @@ Partial Class AgregarProducto
         'txtAlto
         '
         Me.txtAlto.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAlto.Location = New System.Drawing.Point(547, 43)
+        Me.txtAlto.Location = New System.Drawing.Point(533, 44)
         Me.txtAlto.Name = "txtAlto"
         Me.txtAlto.Size = New System.Drawing.Size(103, 26)
         Me.txtAlto.TabIndex = 8
@@ -303,8 +277,10 @@ Partial Class AgregarProducto
         'Label17
         '
         Me.Label17.AutoSize = True
+        Me.Label17.BackColor = System.Drawing.Color.Transparent
         Me.Label17.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(503, 86)
+        Me.Label17.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label17.Location = New System.Drawing.Point(489, 87)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(42, 22)
         Me.Label17.TabIndex = 0
@@ -313,8 +289,10 @@ Partial Class AgregarProducto
         'Label18
         '
         Me.Label18.AutoSize = True
+        Me.Label18.BackColor = System.Drawing.Color.Transparent
         Me.Label18.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(272, 47)
+        Me.Label18.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label18.Location = New System.Drawing.Point(258, 48)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(49, 22)
         Me.Label18.TabIndex = 0
@@ -323,7 +301,7 @@ Partial Class AgregarProducto
         'txtLargo
         '
         Me.txtLargo.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLargo.Location = New System.Drawing.Point(327, 42)
+        Me.txtLargo.Location = New System.Drawing.Point(313, 43)
         Me.txtLargo.Name = "txtLargo"
         Me.txtLargo.Size = New System.Drawing.Size(103, 26)
         Me.txtLargo.TabIndex = 6
@@ -331,8 +309,10 @@ Partial Class AgregarProducto
         'Label19
         '
         Me.Label19.AutoSize = True
+        Me.Label19.BackColor = System.Drawing.Color.Transparent
         Me.Label19.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(38, 87)
+        Me.Label19.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label19.Location = New System.Drawing.Point(24, 88)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(37, 22)
         Me.Label19.TabIndex = 0
@@ -341,7 +321,7 @@ Partial Class AgregarProducto
         'txtM2
         '
         Me.txtM2.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtM2.Location = New System.Drawing.Point(108, 84)
+        Me.txtM2.Location = New System.Drawing.Point(94, 85)
         Me.txtM2.Name = "txtM2"
         Me.txtM2.Size = New System.Drawing.Size(104, 26)
         Me.txtM2.TabIndex = 5
@@ -349,7 +329,7 @@ Partial Class AgregarProducto
         'txtEspesor
         '
         Me.txtEspesor.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEspesor.Location = New System.Drawing.Point(109, 43)
+        Me.txtEspesor.Location = New System.Drawing.Point(95, 44)
         Me.txtEspesor.Name = "txtEspesor"
         Me.txtEspesor.Size = New System.Drawing.Size(103, 26)
         Me.txtEspesor.TabIndex = 4
@@ -357,8 +337,10 @@ Partial Class AgregarProducto
         'Label20
         '
         Me.Label20.AutoSize = True
+        Me.Label20.BackColor = System.Drawing.Color.Transparent
         Me.Label20.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(272, 86)
+        Me.Label20.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label20.Location = New System.Drawing.Point(258, 87)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(48, 22)
         Me.Label20.TabIndex = 0
@@ -367,8 +349,10 @@ Partial Class AgregarProducto
         'Label21
         '
         Me.Label21.AutoSize = True
+        Me.Label21.BackColor = System.Drawing.Color.Transparent
         Me.Label21.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(503, 46)
+        Me.Label21.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label21.Location = New System.Drawing.Point(489, 47)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(38, 22)
         Me.Label21.TabIndex = 0
@@ -384,6 +368,71 @@ Partial Class AgregarProducto
         Me.Panel1.Size = New System.Drawing.Size(696, 49)
         Me.Panel1.TabIndex = 10
         '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.Label7)
+        Me.Panel2.Controls.Add(Me.Label5)
+        Me.Panel2.Controls.Add(Me.Label1)
+        Me.Panel2.Controls.Add(Me.txtDesc)
+        Me.Panel2.Controls.Add(Me.Label6)
+        Me.Panel2.Controls.Add(Me.txtPrecio)
+        Me.Panel2.Controls.Add(Me.Label3)
+        Me.Panel2.Controls.Add(Me.txtCod)
+        Me.Panel2.Controls.Add(Me.txtStock)
+        Me.Panel2.Location = New System.Drawing.Point(68, 77)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(696, 135)
+        Me.Panel2.TabIndex = 11
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Panel3.Controls.Add(Me.Label8)
+        Me.Panel3.Controls.Add(Me.cbTipo)
+        Me.Panel3.Controls.Add(Me.Label16)
+        Me.Panel3.Controls.Add(Me.cbColor)
+        Me.Panel3.Controls.Add(Me.Label21)
+        Me.Panel3.Controls.Add(Me.Label13)
+        Me.Panel3.Controls.Add(Me.Label20)
+        Me.Panel3.Controls.Add(Me.Label14)
+        Me.Panel3.Controls.Add(Me.txtEspesor)
+        Me.Panel3.Controls.Add(Me.Label4)
+        Me.Panel3.Controls.Add(Me.txtM2)
+        Me.Panel3.Controls.Add(Me.Label15)
+        Me.Panel3.Controls.Add(Me.Label19)
+        Me.Panel3.Controls.Add(Me.txtLargo)
+        Me.Panel3.Controls.Add(Me.txtAlto)
+        Me.Panel3.Controls.Add(Me.Label18)
+        Me.Panel3.Controls.Add(Me.Label17)
+        Me.Panel3.Location = New System.Drawing.Point(68, 246)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(696, 124)
+        Me.Panel3.TabIndex = 10
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label7.Location = New System.Drawing.Point(252, 13)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(198, 19)
+        Me.Label7.TabIndex = 4
+        Me.Label7.Text = "DATOS DEL PRODUCTO"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label8.Location = New System.Drawing.Point(221, 10)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(257, 19)
+        Me.Label8.TabIndex = 12
+        Me.Label8.Text = "INFORMACIÓN DEL PRODUCTO"
+        '
         'AgregarProducto
         '
         Me.AcceptButton = Me.btnGuardar
@@ -391,9 +440,9 @@ Partial Class AgregarProducto
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.CornflowerBlue
         Me.ClientSize = New System.Drawing.Size(862, 475)
+        Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.GroupBox4)
-        Me.Controls.Add(Me.gbDatos)
         Me.Controls.Add(Me.Label2)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -401,11 +450,11 @@ Partial Class AgregarProducto
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "AgregarProducto"
         Me.TopMost = True
-        Me.gbDatos.ResumeLayout(False)
-        Me.gbDatos.PerformLayout()
-        Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
         Me.Panel1.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -418,7 +467,6 @@ Partial Class AgregarProducto
     Friend WithEvents btnGuardar As System.Windows.Forms.Button
     Friend WithEvents btnRefresh As System.Windows.Forms.Button
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
-    Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
     Friend WithEvents cbTipo As System.Windows.Forms.ComboBox
     Friend WithEvents cbColor As System.Windows.Forms.ComboBox
     Friend WithEvents Label13 As System.Windows.Forms.Label
@@ -435,10 +483,13 @@ Partial Class AgregarProducto
     Friend WithEvents txtEspesor As System.Windows.Forms.TextBox
     Friend WithEvents Label20 As System.Windows.Forms.Label
     Friend WithEvents Label21 As System.Windows.Forms.Label
-    Friend WithEvents gbDatos As System.Windows.Forms.GroupBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents txtStock As System.Windows.Forms.TextBox
     Friend WithEvents txtPrecio As System.Windows.Forms.TextBox
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label8 As Label
 End Class

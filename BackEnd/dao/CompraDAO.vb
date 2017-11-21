@@ -415,6 +415,9 @@ Public Class CompraDAO
             'Dim queryCheckExistencia = "SELECT * from stexistencia WHERE codigo_base = @cod AND depoCod = @depo AND `exisNroOt`= @ot"
             'con2.Open()
             'Dim sqlCheck As New MySqlCommand(queryCheckExistencia, con2)
+            Dim queryStock = "UPDATE stproductos SET prodExistencia = prodExistencia + @cantidad WHERE prodCodigo = @cod "
+            Dim cmdStock As New MySqlCommand(queryStock, con)
+
 
 
             For Each row As Windows.Forms.DataGridViewRow In productos
@@ -487,6 +490,11 @@ Public Class CompraDAO
                 sqlExistencia.Parameters.AddWithValue("@tipo", "Compra")
                 sqlExistencia.ExecuteNonQuery()
                 sqlExistencia.Parameters.Clear()
+
+                cmdStock.Parameters.AddWithValue("@cantidad", cantidad)
+                cmdStock.Parameters.AddWithValue("@cod", codigo)
+                cmdStock.ExecuteNonQuery()
+                cmdStock.Parameters.Clear()
                 'End If
                 'reader.Close()
                 'sqlCheck.Parameters.Clear()
@@ -500,6 +508,6 @@ Public Class CompraDAO
 
     Public Function BuscarProducts(cod As String) As DataSet
         Dim tmp As New ProductoDAO
-        Return tmp.obtenerProductos(cod)
+        Return tmp.obtenerProductos(cod, 1)
     End Function
 End Class

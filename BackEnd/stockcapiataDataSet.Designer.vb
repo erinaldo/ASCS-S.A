@@ -2260,7 +2260,9 @@ Partial Public Class stockcapiataDataSet
         
         Private columnCantidad As Global.System.Data.DataColumn
         
-        Private columnSuperficie As Global.System.Data.DataColumn
+        Private columnDepósito_Origen As Global.System.Data.DataColumn
+        
+        Private columnDepósito_Codigo As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -2331,9 +2333,17 @@ Partial Public Class stockcapiataDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property SuperficieColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property Depósito_OrigenColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnSuperficie
+                Return Me.columnDepósito_Origen
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Depósito_CodigoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDepósito_Codigo
             End Get
         End Property
         
@@ -2374,9 +2384,9 @@ Partial Public Class stockcapiataDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddMovInternoProductosRow(ByVal Código As String, ByVal Descripción As String, ByVal Línea As String, ByVal Cantidad As String, ByVal Superficie As String) As MovInternoProductosRow
+        Public Overloads Function AddMovInternoProductosRow(ByVal Código As String, ByVal Descripción As String, ByVal Línea As String, ByVal Cantidad As String, ByVal Depósito_Origen As String, ByVal Depósito_Codigo As Short) As MovInternoProductosRow
             Dim rowMovInternoProductosRow As MovInternoProductosRow = CType(Me.NewRow,MovInternoProductosRow)
-            Dim columnValuesArray() As Object = New Object() {Código, Descripción, Línea, Cantidad, Superficie}
+            Dim columnValuesArray() As Object = New Object() {Código, Descripción, Línea, Cantidad, Depósito_Origen, Depósito_Codigo}
             rowMovInternoProductosRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowMovInternoProductosRow)
             Return rowMovInternoProductosRow
@@ -2403,7 +2413,8 @@ Partial Public Class stockcapiataDataSet
             Me.columnDescripción = MyBase.Columns("Descripción")
             Me.columnLínea = MyBase.Columns("Línea")
             Me.columnCantidad = MyBase.Columns("Cantidad")
-            Me.columnSuperficie = MyBase.Columns("Superficie")
+            Me.columnDepósito_Origen = MyBase.Columns("Depósito Origen")
+            Me.columnDepósito_Codigo = MyBase.Columns("Depósito Codigo")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2417,8 +2428,10 @@ Partial Public Class stockcapiataDataSet
             MyBase.Columns.Add(Me.columnLínea)
             Me.columnCantidad = New Global.System.Data.DataColumn("Cantidad", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCantidad)
-            Me.columnSuperficie = New Global.System.Data.DataColumn("Superficie", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnSuperficie)
+            Me.columnDepósito_Origen = New Global.System.Data.DataColumn("Depósito Origen", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDepósito_Origen)
+            Me.columnDepósito_Codigo = New Global.System.Data.DataColumn("Depósito Codigo", GetType(Short), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDepósito_Codigo)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3621,16 +3634,33 @@ Partial Public Class stockcapiataDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Superficie() As String
+        Public Property Depósito_Origen() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableMovInternoProductos.SuperficieColumn),String)
+                    Return CType(Me(Me.tableMovInternoProductos.Depósito_OrigenColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Superficie' de la tabla 'MovInternoProductos' es DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Depósito Origen' de la tabla 'MovInternoProductos' es DBN"& _ 
+                            "ull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableMovInternoProductos.SuperficieColumn) = value
+                Me(Me.tableMovInternoProductos.Depósito_OrigenColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Depósito_Codigo() As Short
+            Get
+                Try 
+                    Return CType(Me(Me.tableMovInternoProductos.Depósito_CodigoColumn),Short)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Depósito Codigo' de la tabla 'MovInternoProductos' es DBN"& _ 
+                            "ull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableMovInternoProductos.Depósito_CodigoColumn) = value
             End Set
         End Property
         
@@ -3684,14 +3714,26 @@ Partial Public Class stockcapiataDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsSuperficieNull() As Boolean
-            Return Me.IsNull(Me.tableMovInternoProductos.SuperficieColumn)
+        Public Function IsDepósito_OrigenNull() As Boolean
+            Return Me.IsNull(Me.tableMovInternoProductos.Depósito_OrigenColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetSuperficieNull()
-            Me(Me.tableMovInternoProductos.SuperficieColumn) = Global.System.Convert.DBNull
+        Public Sub SetDepósito_OrigenNull()
+            Me(Me.tableMovInternoProductos.Depósito_OrigenColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsDepósito_CodigoNull() As Boolean
+            Return Me.IsNull(Me.tableMovInternoProductos.Depósito_CodigoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetDepósito_CodigoNull()
+            Me(Me.tableMovInternoProductos.Depósito_CodigoColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

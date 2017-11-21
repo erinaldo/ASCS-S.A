@@ -43,7 +43,9 @@ Public Class Reporte
             objreporte.SetParameterValue("codigo", movInt.nroMov)
             objreporte.SetParameterValue("autorizado", movInt.autorizado)
             objreporte.SetParameterValue("solicitado", movInt.solicitante)
-            objreporte.SetParameterValue("proveedor", movInt.proveedor)
+            Dim daomovin As New MovInternoDAO
+            Dim prov = daomovin.buscarSolicitante(movInt.proveedor)
+            objreporte.SetParameterValue("proveedor", prov)
             objreporte.SetParameterValue("fecha", movInt.fecha.ToShortDateString)
             objreporte.SetParameterValue("tipo", movInt.tipo)
             CrystalReportViewer1.ReportSource = objreporte

@@ -3,15 +3,7 @@
 Public Class AgregarCliente
 
 
-    Private Sub Panel1_Paint1(ByVal sender As Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles Panel1.Paint
-        Panel1.BorderStyle = BorderStyle.None
 
-        e.Graphics.DrawRectangle(Pens.White,
-                                 e.ClipRectangle.Left,
-                                 e.ClipRectangle.Top,
-                                 e.ClipRectangle.Width - 1,
-                                 e.ClipRectangle.Height - 1)
-    End Sub
 
     Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
         Me.Close()
@@ -55,5 +47,17 @@ Public Class AgregarCliente
         Return True
     End Function
 
-   
+    Private Sub AgregarCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.SuspendLayout()
+        backgroundElementos()
+        Me.ResumeLayout()
+    End Sub
+
+    Private Sub backgroundElementos()
+        Me.BackgroundImageLayout = ImageLayout.Center
+        Me.BackgroundImage = My.Resources.Panther1
+        Panel1.BackColor = Color.FromArgb(80, Color.Black)
+        Panel2.BackColor = Color.FromArgb(80, Color.Black)
+
+    End Sub
 End Class

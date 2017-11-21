@@ -76,12 +76,13 @@ Partial Class Inicio
         Me.miCompras = New System.Windows.Forms.ToolStripMenuItem()
         Me.miGenerarCompra = New System.Windows.Forms.ToolStripMenuItem()
         Me.miVentas = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AdministrarVentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.miMovInterno = New System.Windows.Forms.ToolStripMenuItem()
         Me.miGenerarMI = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ListadoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.miMIDep = New System.Windows.Forms.ToolStripMenuItem()
+        Me.miListadoMI = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.pbInicio = New System.Windows.Forms.PictureBox()
-        Me.AdministrarVentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.dgvDatos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelTitulo.SuspendLayout()
         Me.pnlControles.SuspendLayout()
@@ -288,6 +289,7 @@ Partial Class Inicio
         '
         'btnEliminar
         '
+        Me.btnEliminar.Enabled = False
         Me.btnEliminar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEliminar.Location = New System.Drawing.Point(201, 42)
         Me.btnEliminar.Name = "btnEliminar"
@@ -321,21 +323,23 @@ Partial Class Inicio
         'miSesion
         '
         Me.miSesion.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miCambiarContra, Me.CerrarToolStripMenuItem})
-        Me.miSesion.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.miSesion.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.miSesion.ForeColor = System.Drawing.SystemColors.ControlText
         Me.miSesion.Margin = New System.Windows.Forms.Padding(0, 10, 0, 0)
         Me.miSesion.Name = "miSesion"
-        Me.miSesion.Size = New System.Drawing.Size(67, 23)
+        Me.miSesion.Size = New System.Drawing.Size(74, 23)
         Me.miSesion.Text = "Sesión"
         '
         'miCambiarContra
         '
+        Me.miCambiarContra.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.miCambiarContra.Name = "miCambiarContra"
         Me.miCambiarContra.Size = New System.Drawing.Size(221, 24)
         Me.miCambiarContra.Text = "Cambiar Contraseña"
         '
         'CerrarToolStripMenuItem
         '
+        Me.CerrarToolStripMenuItem.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CerrarToolStripMenuItem.Name = "CerrarToolStripMenuItem"
         Me.CerrarToolStripMenuItem.Size = New System.Drawing.Size(221, 24)
         Me.CerrarToolStripMenuItem.Text = "Cerrar"
@@ -343,15 +347,16 @@ Partial Class Inicio
         'miProductos
         '
         Me.miProductos.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miProductosList, Me.miProductosOper})
-        Me.miProductos.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.miProductos.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.miProductos.ForeColor = System.Drawing.SystemColors.ControlText
         Me.miProductos.Margin = New System.Windows.Forms.Padding(0, 10, 0, 0)
         Me.miProductos.Name = "miProductos"
-        Me.miProductos.Size = New System.Drawing.Size(91, 23)
+        Me.miProductos.Size = New System.Drawing.Size(102, 23)
         Me.miProductos.Text = "Productos"
         '
         'miProductosList
         '
+        Me.miProductosList.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.miProductosList.Name = "miProductosList"
         Me.miProductosList.Size = New System.Drawing.Size(165, 24)
         Me.miProductosList.Text = "Listado"
@@ -359,6 +364,7 @@ Partial Class Inicio
         'miProductosOper
         '
         Me.miProductosOper.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miProductoAgregar, Me.miModificarProducto, Me.EliminarToolStripMenuItem})
+        Me.miProductosOper.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.miProductosOper.Name = "miProductosOper"
         Me.miProductosOper.Size = New System.Drawing.Size(165, 24)
         Me.miProductosOper.Text = "Operaciones"
@@ -377,6 +383,7 @@ Partial Class Inicio
         '
         'EliminarToolStripMenuItem
         '
+        Me.EliminarToolStripMenuItem.Enabled = False
         Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
         Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(142, 24)
         Me.EliminarToolStripMenuItem.Text = "Eliminar"
@@ -384,15 +391,16 @@ Partial Class Inicio
         'miClientes
         '
         Me.miClientes.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miClientesListado, Me.miClientesOper})
-        Me.miClientes.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.miClientes.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.miClientes.ForeColor = System.Drawing.SystemColors.ControlText
         Me.miClientes.Margin = New System.Windows.Forms.Padding(0, 10, 0, 0)
         Me.miClientes.Name = "miClientes"
-        Me.miClientes.Size = New System.Drawing.Size(76, 23)
+        Me.miClientes.Size = New System.Drawing.Size(87, 23)
         Me.miClientes.Text = "Clientes"
         '
         'miClientesListado
         '
+        Me.miClientesListado.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.miClientesListado.Name = "miClientesListado"
         Me.miClientesListado.Size = New System.Drawing.Size(165, 24)
         Me.miClientesListado.Text = "Listado"
@@ -400,6 +408,7 @@ Partial Class Inicio
         'miClientesOper
         '
         Me.miClientesOper.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miClienteAgregar, Me.ModificarToolStripMenuItem1, Me.ElimiarToolStripMenuItem})
+        Me.miClientesOper.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.miClientesOper.Name = "miClientesOper"
         Me.miClientesOper.Size = New System.Drawing.Size(165, 24)
         Me.miClientesOper.Text = "Operaciones"
@@ -418,6 +427,7 @@ Partial Class Inicio
         '
         'ElimiarToolStripMenuItem
         '
+        Me.ElimiarToolStripMenuItem.Enabled = False
         Me.ElimiarToolStripMenuItem.Name = "ElimiarToolStripMenuItem"
         Me.ElimiarToolStripMenuItem.Size = New System.Drawing.Size(142, 24)
         Me.ElimiarToolStripMenuItem.Text = "Eliminar"
@@ -425,15 +435,16 @@ Partial Class Inicio
         'miProveedores
         '
         Me.miProveedores.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miProveedoresListado, Me.miProveedoresOper})
-        Me.miProveedores.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.miProveedores.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.miProveedores.ForeColor = System.Drawing.SystemColors.ControlText
         Me.miProveedores.Margin = New System.Windows.Forms.Padding(0, 10, 0, 0)
         Me.miProveedores.Name = "miProveedores"
-        Me.miProveedores.Size = New System.Drawing.Size(108, 23)
+        Me.miProveedores.Size = New System.Drawing.Size(123, 23)
         Me.miProveedores.Text = "Proveedores"
         '
         'miProveedoresListado
         '
+        Me.miProveedoresListado.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.miProveedoresListado.Name = "miProveedoresListado"
         Me.miProveedoresListado.Size = New System.Drawing.Size(165, 24)
         Me.miProveedoresListado.Text = "Listado"
@@ -441,6 +452,7 @@ Partial Class Inicio
         'miProveedoresOper
         '
         Me.miProveedoresOper.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miProvAgregar, Me.miProvModificar, Me.miProvEliminar})
+        Me.miProveedoresOper.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.miProveedoresOper.Name = "miProveedoresOper"
         Me.miProveedoresOper.Size = New System.Drawing.Size(165, 24)
         Me.miProveedoresOper.Text = "Operaciones"
@@ -459,6 +471,7 @@ Partial Class Inicio
         '
         'miProvEliminar
         '
+        Me.miProvEliminar.Enabled = False
         Me.miProvEliminar.Name = "miProvEliminar"
         Me.miProvEliminar.Size = New System.Drawing.Size(142, 24)
         Me.miProvEliminar.Text = "Eliminar"
@@ -466,15 +479,16 @@ Partial Class Inicio
         'miVendedores
         '
         Me.miVendedores.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miVendedoresListado, Me.miVendOperaciones})
-        Me.miVendedores.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.miVendedores.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.miVendedores.ForeColor = System.Drawing.SystemColors.ControlText
         Me.miVendedores.Margin = New System.Windows.Forms.Padding(0, 10, 0, 0)
         Me.miVendedores.Name = "miVendedores"
-        Me.miVendedores.Size = New System.Drawing.Size(104, 23)
+        Me.miVendedores.Size = New System.Drawing.Size(117, 23)
         Me.miVendedores.Text = "Vendedores"
         '
         'miVendedoresListado
         '
+        Me.miVendedoresListado.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.miVendedoresListado.Name = "miVendedoresListado"
         Me.miVendedoresListado.Size = New System.Drawing.Size(165, 24)
         Me.miVendedoresListado.Text = "Listado"
@@ -482,6 +496,7 @@ Partial Class Inicio
         'miVendOperaciones
         '
         Me.miVendOperaciones.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miVendAgregar, Me.miVendModificar, Me.miVendEliminar})
+        Me.miVendOperaciones.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.miVendOperaciones.Name = "miVendOperaciones"
         Me.miVendOperaciones.Size = New System.Drawing.Size(165, 24)
         Me.miVendOperaciones.Text = "Operaciones"
@@ -500,6 +515,7 @@ Partial Class Inicio
         '
         'miVendEliminar
         '
+        Me.miVendEliminar.Enabled = False
         Me.miVendEliminar.Name = "miVendEliminar"
         Me.miVendEliminar.Size = New System.Drawing.Size(142, 24)
         Me.miVendEliminar.Text = "Eliminar"
@@ -507,16 +523,17 @@ Partial Class Inicio
         'miMovimientos
         '
         Me.miMovimientos.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miCompras, Me.miVentas, Me.miMovInterno})
-        Me.miMovimientos.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.miMovimientos.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.miMovimientos.ForeColor = System.Drawing.SystemColors.ControlText
         Me.miMovimientos.Margin = New System.Windows.Forms.Padding(0, 10, 0, 0)
         Me.miMovimientos.Name = "miMovimientos"
-        Me.miMovimientos.Size = New System.Drawing.Size(110, 23)
+        Me.miMovimientos.Size = New System.Drawing.Size(124, 23)
         Me.miMovimientos.Text = "Movimientos"
         '
         'miCompras
         '
         Me.miCompras.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miGenerarCompra})
+        Me.miCompras.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.miCompras.Name = "miCompras"
         Me.miCompras.Size = New System.Drawing.Size(169, 24)
         Me.miCompras.Text = "Compras"
@@ -530,13 +547,21 @@ Partial Class Inicio
         'miVentas
         '
         Me.miVentas.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AdministrarVentasToolStripMenuItem})
+        Me.miVentas.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.miVentas.Name = "miVentas"
         Me.miVentas.Size = New System.Drawing.Size(169, 24)
         Me.miVentas.Text = "Ventas"
         '
+        'AdministrarVentasToolStripMenuItem
+        '
+        Me.AdministrarVentasToolStripMenuItem.Name = "AdministrarVentasToolStripMenuItem"
+        Me.AdministrarVentasToolStripMenuItem.Size = New System.Drawing.Size(213, 24)
+        Me.AdministrarVentasToolStripMenuItem.Text = "Administrar Ventas"
+        '
         'miMovInterno
         '
-        Me.miMovInterno.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miGenerarMI, Me.ListadoToolStripMenuItem})
+        Me.miMovInterno.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miGenerarMI, Me.miMIDep, Me.miListadoMI})
+        Me.miMovInterno.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.miMovInterno.Name = "miMovInterno"
         Me.miMovInterno.Size = New System.Drawing.Size(169, 24)
         Me.miMovInterno.Text = "Mov. Interno"
@@ -545,21 +570,27 @@ Partial Class Inicio
         '
         Me.miGenerarMI.Name = "miGenerarMI"
         Me.miGenerarMI.Size = New System.Drawing.Size(235, 24)
-        Me.miGenerarMI.Text = "Generar"
+        Me.miGenerarMI.Text = "Sucursales"
         '
-        'ListadoToolStripMenuItem
+        'miMIDep
         '
-        Me.ListadoToolStripMenuItem.Name = "ListadoToolStripMenuItem"
-        Me.ListadoToolStripMenuItem.Size = New System.Drawing.Size(235, 24)
-        Me.ListadoToolStripMenuItem.Text = "Listado/Detalle/Anular"
+        Me.miMIDep.Name = "miMIDep"
+        Me.miMIDep.Size = New System.Drawing.Size(235, 24)
+        Me.miMIDep.Text = "Entre Depósitos"
+        '
+        'miListadoMI
+        '
+        Me.miListadoMI.Name = "miListadoMI"
+        Me.miListadoMI.Size = New System.Drawing.Size(235, 24)
+        Me.miListadoMI.Text = "Listado/Detalle/Anular"
         '
         'ReportesToolStripMenuItem
         '
-        Me.ReportesToolStripMenuItem.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ReportesToolStripMenuItem.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ReportesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText
         Me.ReportesToolStripMenuItem.Margin = New System.Windows.Forms.Padding(0, 10, 0, 0)
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
-        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(83, 23)
+        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(95, 23)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
         '
         'pbInicio
@@ -571,12 +602,6 @@ Partial Class Inicio
         Me.pbInicio.Size = New System.Drawing.Size(963, 617)
         Me.pbInicio.TabIndex = 36
         Me.pbInicio.TabStop = False
-        '
-        'AdministrarVentasToolStripMenuItem
-        '
-        Me.AdministrarVentasToolStripMenuItem.Name = "AdministrarVentasToolStripMenuItem"
-        Me.AdministrarVentasToolStripMenuItem.Size = New System.Drawing.Size(213, 24)
-        Me.AdministrarVentasToolStripMenuItem.Text = "Administrar Ventas"
         '
         'Inicio
         '
@@ -673,6 +698,7 @@ Partial Class Inicio
     Friend WithEvents pbInicio As PictureBox
     Friend WithEvents miMovInterno As ToolStripMenuItem
     Friend WithEvents miGenerarMI As ToolStripMenuItem
-    Friend WithEvents ListadoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents miListadoMI As ToolStripMenuItem
     Friend WithEvents AdministrarVentasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents miMIDep As ToolStripMenuItem
 End Class

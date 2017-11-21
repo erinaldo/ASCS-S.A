@@ -10,19 +10,28 @@ Public Class ModificarProveedor
     End Sub
 
     Private Sub ModificarProveedor_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Me.SuspendLayout()
         Try
-
+            backgroundElementos()
             modelo = daoProv.obtenerProveedor(codigo)
             txtNombre.Text = modelo.descripcion
             txtRUC.Text = modelo.ruc
             txtTel.Text = modelo.tel
             txtContacto.Text = modelo.contacto
+            txtNombre.Focus()
         Catch ex As Exception
             Throw New DAOException(ex.ToString)
         End Try
-
+        Me.ResumeLayout()
     End Sub
 
+    Private Sub backgroundElementos()
+        Me.BackgroundImageLayout = ImageLayout.Center
+        Me.BackgroundImage = My.Resources.Panther1
+        Panel1.BackColor = Color.FromArgb(80, Color.Black)
+        Panel2.BackColor = Color.FromArgb(80, Color.Black)
+
+    End Sub
     Private Sub btnRefresh_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRefresh.Click
         txtNombre.Text = modelo.descripcion
         txtRUC.Text = modelo.ruc

@@ -2,9 +2,19 @@
 Public Class AgregarProducto
 
     Private Sub AgregarProducto_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-     
+        Me.SuspendLayout()
+        backgroundElementos()
+
+        Me.ResumeLayout()
     End Sub
 
+    Private Sub backgroundElementos()
+        Me.BackgroundImageLayout = ImageLayout.Center
+        Me.BackgroundImage = My.Resources.Panther1
+        Panel1.BackColor = Color.FromArgb(80, Color.Black)
+        Panel2.BackColor = Color.FromArgb(80, Color.Black)
+        Panel3.BackColor = Color.FromArgb(80, Color.Black)
+    End Sub
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
         Me.DialogResult = Windows.Forms.DialogResult.Cancel
 
@@ -85,16 +95,7 @@ Public Class AgregarProducto
 
     End Sub
 
-    
-    Private Sub Panel1_Paint1(ByVal sender As Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles Panel1.Paint
-        Panel1.BorderStyle = BorderStyle.None
 
-        e.Graphics.DrawRectangle(Pens.White,
-                                 e.ClipRectangle.Left,
-                                 e.ClipRectangle.Top,
-                                 e.ClipRectangle.Width - 1,
-                                 e.ClipRectangle.Height - 1)
-    End Sub
 
 
     Private Sub cbColor_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbColor.SelectedIndexChanged
@@ -110,5 +111,29 @@ Public Class AgregarProducto
         txtM2.Text = ""
         txtPrecio.Text = ""
         txtStock.Text = ""
-        End Sub
+    End Sub
+
+    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
+
+    End Sub
+
+    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
+
+    End Sub
+
+    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
+
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
+
+    Private Sub txtDesc_TextChanged(sender As Object, e As EventArgs) Handles txtDesc.TextChanged
+
+    End Sub
+
+    Private Sub txtPrecio_TextChanged(sender As Object, e As EventArgs) Handles txtPrecio.TextChanged
+
+    End Sub
 End Class

@@ -17,10 +17,8 @@ Public Class ProductoDAO
             Dim mysql = "Select * from productosviewCarga"
             Dim cmd As New MySqlCommand(mysql, con)
             Dim adp As New MySqlDataAdapter(mysql, con)
-
             ds.Tables.Add("tabla")
             adp.Fill(ds.Tables("tabla"))
-
             con.Close()
 
 
@@ -60,8 +58,8 @@ Public Class ProductoDAO
             'MsgBox(mysql)
 
 
-            Dim query As String = "INSERT INTO stproductos(prodCodigo,prodDescripcion,prodEspesor,prodLargo,prodAlto,prodM2,prodColor,prodTipo,prodVenta,prodStockMinimo)" _
-                            & "VALUES (@cod,@desc,@espesor,@largo,@alto,@m2,@color,@tipo,@venta,@stock)"
+            Dim query As String = "INSERT INTO stproductos(prodCodigo,prodDescripcion,prodEspesor,prodLargo,prodAlto,prodM2,prodColor,prodTipo,prodVenta,prodStockMinimo,prodExistencia)" _
+                            & "VALUES (@cod,@desc,@espesor,@largo,@alto,@m2,@color,@tipo,@venta,@stock,@exist)"
             Dim sqlcmd As New MySqlCommand(query, con)
             sqlcmd.Parameters.AddWithValue("@cod", modelo.codigo)
             sqlcmd.Parameters.AddWithValue("@desc", modelo.descripcion)
@@ -73,7 +71,7 @@ Public Class ProductoDAO
             sqlcmd.Parameters.AddWithValue("@tipo", modelo.tipo)
             sqlcmd.Parameters.AddWithValue("@venta", modelo.venta)
             sqlcmd.Parameters.AddWithValue("@stock", modelo.stock)
-
+            sqlcmd.Parameters.AddWithValue("@exist", modelo.stock)
 
 
             sqlcmd.ExecuteNonQuery()
@@ -159,12 +157,19 @@ Public Class ProductoDAO
         Return modelo
     End Function
 
-    Public Function obtenerProductos(ByVal filtro As String) As DataSet
+    Public Function obtenerProductos(ByVal filtro As String, ByVal deposito As Integer) As DataSet
         Dim ds As New DataSet
         Try
             Dim con As New MySqlConnection(ConexionDB.cadenaConexionBD(Sesion.Usuario, Sesion.Password))
             con.Open()
-            Dim query = "CALL `pproductosmovint`(" & filtro & ")"
+            Dim query = ""
+            If deposito = 1 Then
+                query = "SELECT prodCodigo AS Código, prodDescripcion AS Descripción, prodExistencia as `Stock Disponible` " _
+                & " FROM stproductos p WHERE (CAST(p.prodCodigo AS CHAR) LIKE CONCAT('%','" & filtro & "', '%') OR CAST(p.prodDescripcion AS CHAR) LIKE CONCAT('%','" & filtro & "', '%') )"
+            Else
+                query = "SELECT prodCodigo AS Código, prodDescripcion AS Descripción, prodExistenciaB as `Stock Disponible` " _
+                & " FROM stproductos p WHERE (CAST(p.prodCodigo AS CHAR) LIKE CONCAT('%','" & filtro & "', '%') OR CAST(p.prodDescripcion AS CHAR) LIKE CONCAT('%','" & filtro & "', '%') )"
+            End If
             Dim cmd As New MySqlCommand(query, con)
 
             Dim adp As New MySqlDataAdapter(query, con)
@@ -181,9 +186,9 @@ Public Class ProductoDAO
         Try
             Dim con As New MySqlConnection(ConexionDB.cadenaConexionBD(Sesion.Usuario, Sesion.Password))
             con.Open()
-            Dim query = "UPDATE stProductos set prodDescripcion = @desc, prodEspesor = @espesor, " _
+            Dim query = "UPDATE stProductos Set prodDescripcion = @desc, prodEspesor = @espesor, " _
                         & " prodLargo = @largo,prodAlto = @alto, prodM2 = @m2,prodVenta= @venta,prodColor = @color," _
-                        & " prodStockMinimo = @stock, prodTipo= @tipo where prodCodigo = @codigo"
+                        & " prodExistencia = @stock, prodTipo= @tipo where prodCodigo = @codigo"
             Dim cmd As New MySqlCommand(query, con)
             cmd.Parameters.AddWithValue("@codigo", modelo.codigo)
             cmd.Parameters.AddWithValue("@desc", modelo.descripcion)

@@ -27,12 +27,16 @@ Public Class DetalleMovimiento
 
     Private Sub prepararElementos()
         txtNroOperacion.Text = codigo
-        modelo = movInt.cargaMov(codigo)
-        txtAutorizado.Text = modelo.autorizado
-        txtFecha.Text = modelo.fecha.ToShortDateString
-        txtSolicita.Text = modelo.solicitante
-        txtTipo.Text = modelo.tipo
-        txtProveedor.Text = modelo.proveedor
+        Dim modelo2 = movInt.cargaMov(codigo)
+        modelo = modelo2
+        txtAutorizado.Text = modelo2.autorizado
+        txtFecha.Text = modelo2.fecha.ToShortDateString
+        Dim soli = modelo2.solicitante
+
+        txtSolicita.Text = soli
+
+        txtTipo.Text = modelo2.tipo
+        txtProveedor.Text = movInt.buscarSolicitante(modelo2.proveedor)
         Dim listado = movInt.cargarDetalle(codigo)
         dgvProductos.DataSource = listado.Tables("tabla")
         dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill

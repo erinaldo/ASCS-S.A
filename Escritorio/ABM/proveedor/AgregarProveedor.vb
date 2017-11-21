@@ -37,5 +37,28 @@ Public Class AgregarProveedor
         Return True
     End Function
 
-   
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        Me.DialogResult = DialogResult.Cancel
+    End Sub
+
+    Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
+        txtNombre.Text = ""
+
+        txtRUC.Text = ""
+
+        txtTel.Text = ""
+
+        txtContacto.Text = ""
+    End Sub
+
+    Private Sub AgregarProveedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        backgroundElementos()
+    End Sub
+    Private Sub backgroundElementos()
+        Me.BackgroundImageLayout = ImageLayout.Center
+        Me.BackgroundImage = My.Resources.Panther1
+        Panel1.BackColor = Color.FromArgb(80, Color.Black)
+        Panel2.BackColor = Color.FromArgb(80, Color.Black)
+
+    End Sub
 End Class
