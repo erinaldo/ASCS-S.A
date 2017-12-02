@@ -4,6 +4,7 @@ Public Class DetalleMovimiento
     Dim codigo = ""
     Dim movInt As New MovInternoDAO
     Dim modelo As New BackEnd.MovimientoInterno
+    Public deposito = 0
     Public Sub New(ByVal item As String)
         InitializeComponent() ' This call is required by the Windows Form Designer.
         codigo = item
@@ -26,20 +27,40 @@ Public Class DetalleMovimiento
     End Sub
 
     Private Sub prepararElementos()
-        txtNroOperacion.Text = codigo
-        Dim modelo2 = movInt.cargaMov(codigo)
-        modelo = modelo2
-        txtAutorizado.Text = modelo2.autorizado
-        txtFecha.Text = modelo2.fecha.ToShortDateString
-        Dim soli = modelo2.solicitante
+        If deposito = 0 Then
+            txtNroOperacion.Text = codigo
+            Dim modelo2 = movInt.cargaMov(codigo)
+            modelo = modelo2
+            txtAutorizado.Text = modelo2.autorizado
+            txtFecha.Text = modelo2.fecha.ToShortDateString
+            Dim soli = modelo2.solicitante
 
-        txtSolicita.Text = soli
+            txtSolicita.Text = soli
 
-        txtTipo.Text = modelo2.tipo
-        txtProveedor.Text = movInt.buscarSolicitante(modelo2.proveedor)
-        Dim listado = movInt.cargarDetalle(codigo)
-        dgvProductos.DataSource = listado.Tables("tabla")
-        dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+            txtTipo.Text = modelo2.tipo
+            txtProveedor.Text = movInt.buscarSolicitante(modelo2.proveedor)
+            Dim listado = movInt.cargarDetalle(codigo)
+            dgvProductos.DataSource = listado.Tables("tabla")
+            dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        Else
+            txtNroOperacion.Text = codigo
+            Dim modelo2 = movInt.cargaMov(codigo)
+            modelo = modelo2
+            txtAutorizado.Text = modelo2.autorizado
+            txtFecha.Text = modelo2.fecha.ToShortDateString
+            Dim soli = modelo2.solicitante
+
+            txtSolicita.Text = soli
+            lblSolicita.Text = "Depósito"
+
+            txtTipo.Text = "Depósitos"
+            txtProveedor.Text = movInt.buscarDeposito(modelo2.proveedor)
+            Dim listado = movInt.cargarDetalle(codigo)
+            dgvProductos.DataSource = listado.Tables("tabla")
+            dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+
+        End If
+
     End Sub
 
     Private Sub backgroundElementos()

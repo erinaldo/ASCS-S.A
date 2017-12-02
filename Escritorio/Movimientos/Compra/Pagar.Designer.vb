@@ -22,6 +22,7 @@ Partial Class Pagar
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Pagar))
         Me.pnlDatosCompra = New System.Windows.Forms.Panel()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -244,6 +245,7 @@ Partial Class Pagar
         Me.ClientSize = New System.Drawing.Size(689, 403)
         Me.Controls.Add(Me.pnlOperadores)
         Me.Controls.Add(Me.pnlDatosCompra)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Pagar"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Pagar"

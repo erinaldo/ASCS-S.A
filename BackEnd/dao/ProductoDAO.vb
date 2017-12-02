@@ -167,8 +167,9 @@ Public Class ProductoDAO
                 query = "SELECT prodCodigo AS Código, prodDescripcion AS Descripción, prodExistencia as `Stock Disponible` " _
                 & " FROM stproductos p WHERE (CAST(p.prodCodigo AS CHAR) LIKE CONCAT('%','" & filtro & "', '%') OR CAST(p.prodDescripcion AS CHAR) LIKE CONCAT('%','" & filtro & "', '%') )"
             Else
+
                 query = "SELECT prodCodigo AS Código, prodDescripcion AS Descripción, prodExistenciaB as `Stock Disponible` " _
-                & " FROM stproductos p WHERE (CAST(p.prodCodigo AS CHAR) LIKE CONCAT('%','" & filtro & "', '%') OR CAST(p.prodDescripcion AS CHAR) LIKE CONCAT('%','" & filtro & "', '%') )"
+                & " FROM stproductos p WHERE p.prodExistenciaB > 0 AND (CAST(p.prodCodigo AS CHAR) LIKE CONCAT('%','" & filtro & "', '%') OR CAST(p.prodDescripcion AS CHAR) LIKE CONCAT('%','" & filtro & "', '%') )"
             End If
             Dim cmd As New MySqlCommand(query, con)
 

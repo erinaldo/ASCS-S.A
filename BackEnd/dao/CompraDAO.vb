@@ -10,9 +10,9 @@ Public Class CompraDAO
             con.Open()
             Dim mysql = ""
             If tipo = 0 Then
-                mysql = "SELECT * from cargacomprasview WHERE (`Fecha Factura` BETWEEN @desde AND @hasta)"
+                mysql = "SELECT * from cargacomprasview WHERE (`Fecha Factura` BETWEEN @desde AND @hasta) "
             Else
-                mysql = "SELECT * from cargacomprasview WHERE (`Fecha Factura` BETWEEN @desde AND @hasta) AND Estado = 'Activo'"
+                mysql = "SELECT * from cargacomprasview WHERE (`Fecha Factura` BETWEEN @desde AND @hasta) AND (Estado = 'Activo' OR Estado = 'Pagado')"
             End If
             Dim cmd As New MySqlCommand(mysql, con)
             cmd.Parameters.AddWithValue("@desde", inicio)
@@ -120,6 +120,8 @@ Public Class CompraDAO
 
                 mysql = "SELECT * from cargacomprasview WHERE `Proveedor` = '" & filtro & "'"
 
+            Else
+                mysql = "SELECT * from cargacomprasview WHERE `Estado` = '" & filtro & "'"
             End If
 
 
@@ -162,7 +164,7 @@ Public Class CompraDAO
 
 
             ElseIf tipo = 2 Then
-                MsgBox(filtro)
+
                 mysql = "SELECT * from cargacomprasview WHERE `Proveedor` = '" & filtro & "' AND Estado = 'Activo'"
 
             End If
@@ -214,22 +216,6 @@ Public Class CompraDAO
             con.Close()
 
 
-            'While dr.Read
-            ' modelo.codigo = dr(0).ToString
-            ' modelo.descripcion = dr(1).ToString
-            '  modelo.stock = dr(2).ToString
-            '  modelo.tipo = dr(3).ToString
-
-
-            '  productos.Add(modelo)
-
-
-            ' a += 1
-            '  End While
-            ' MsgBox(a)
-
-            ' dr.Close()
-            'con.Close()
 
 
         Catch ex As Exception
@@ -362,12 +348,12 @@ Public Class CompraDAO
             Dim mysql As String = ""
             If compra.tipo = "Contado" Then
 
-                mysql = "INSERT INTO `stcompras` ( `comprasCod`, `comprasFechaFact`, `comprasNroFactura`, `comprasObs`, `comprasSaldo`, `comprasTipoFact`, `provCodigo`, `comprasUsrIns`, `comprasFechaIns`,`comprasFechaPagado`,`comprasEstado` ) " _
-                       & "VALUES (@cod,@fechaFact,@nroFact,@obs,@saldo,@tipo,@prov,@userIns,@fechaIns,@fechaPago,@estado)"
+                mysql = "INSERT INTO `stcompras` ( `comprasFechaFact`, `comprasNroFactura`, `comprasObs`, `comprasSaldo`, `comprasTipoFact`, `provCodigo`, `comprasUsrIns`, `comprasFechaIns`,`comprasFechaPagado`,`comprasEstado` ) " _
+                       & "VALUES (@fechaFact,@nroFact,@obs,@saldo,@tipo,@prov,@userIns,@fechaIns,@fechaPago,@estado); SELECT LAST_INSERT_ID();"
 
             Else
-                mysql = "INSERT INTO `stcompras` ( `comprasCod`, `comprasFechaFact`, `comprasNroFactura`, `comprasObs`, `comprasSaldo`, `comprasTipoFact`, `provCodigo`, `comprasUsrIns`, `comprasFechaIns`,`comprasEstado` ) " _
-                       & "VALUES (@cod,@fechaFact,@nroFact,@obs,@saldo,@tipo,@prov,@userIns,@fechaIns,@estado)"
+                mysql = "INSERT INTO `stcompras` ( `comprasFechaFact`, `comprasNroFactura`, `comprasObs`, `comprasSaldo`, `comprasTipoFact`, `provCodigo`, `comprasUsrIns`, `comprasFechaIns`,`comprasEstado` ) " _
+                       & "VALUES (@fechaFact,@nroFact,@obs,@saldo,@tipo,@prov,@userIns,@fechaIns,@estado) ; SELECT LAST_INSERT_ID();"
 
             End If
             Dim con As New MySqlConnection(ConexionDB.cadenaConexionBD(Sesion.Usuario, Sesion.Password))
@@ -376,7 +362,7 @@ Public Class CompraDAO
 
             Dim sqlcmd As New MySqlCommand(mysql, con)
             If compra.tipo = "Contado" Then
-                sqlcmd.Parameters.AddWithValue("@cod", compra.nroFactura)
+
                 sqlcmd.Parameters.AddWithValue("@fechaFact", compra.fechaFactura)
                 sqlcmd.Parameters.AddWithValue("@nroFact", compra.nroFactura)
                 sqlcmd.Parameters.AddWithValue("@obs", compra.comentario)
@@ -391,7 +377,6 @@ Public Class CompraDAO
                 sqlcmd.Parameters.AddWithValue("@fechapago", compra.fechaPagado)
 
             Else
-                sqlcmd.Parameters.AddWithValue("@cod", compra.nroFactura)
                 sqlcmd.Parameters.AddWithValue("@fechaFact", compra.fechaFactura)
                 sqlcmd.Parameters.AddWithValue("@nroFact", compra.nroFactura)
                 sqlcmd.Parameters.AddWithValue("@obs", compra.comentario)
@@ -405,8 +390,8 @@ Public Class CompraDAO
 
             End If
 
-            sqlcmd.ExecuteNonQuery()
 
+            Dim comprasCod = CInt(sqlcmd.ExecuteScalar())
 
             Dim queryDetalle = "INSERT INTO `stcomprasdet` ( `comprasCod`, `codigo_base`, `comprasCosto`, `comprasImpExcente`, `comprasImp5`, `comprasImp10`, `comprasCanitad` )" _
                                 & "VALUE(@cod,@codBase,@costo,@impEx,@imp5,@imp10,@cant)"
@@ -426,10 +411,10 @@ Public Class CompraDAO
 
                 Dim cantidad = row.Cells("Cantidad").Value
                 Dim impuesto = row.Cells("Impuesto").Value
-                Dim iva = row.Cells("Iva").Value
-                Dim costo = row.Cells("Total").Value
+                Dim iva = CDbl(row.Cells("Iva").Value)
+                Dim costo = CDbl(row.Cells("Total").Value)
                 Dim deposito = row.Cells("DepoCod").Value
-                sqldetalle.Parameters.AddWithValue("@cod", compra.nroFactura)
+                sqldetalle.Parameters.AddWithValue("@cod", comprasCod)
                 sqldetalle.Parameters.AddWithValue("@codBase", codigo)
                 sqldetalle.Parameters.AddWithValue("@costo", costo)
 
@@ -486,7 +471,7 @@ Public Class CompraDAO
                 sqlExistencia.Parameters.AddWithValue("@cantidad", cantidad)
                 sqlExistencia.Parameters.AddWithValue("@user", compra.userInsert)
                 sqlExistencia.Parameters.AddWithValue("@fecha", compra.fechaInsFactura)
-                sqlExistencia.Parameters.AddWithValue("@Ot", compra.nroFactura)
+                sqlExistencia.Parameters.AddWithValue("@Ot", comprasCod)
                 sqlExistencia.Parameters.AddWithValue("@tipo", "Compra")
                 sqlExistencia.ExecuteNonQuery()
                 sqlExistencia.Parameters.Clear()

@@ -27,6 +27,36 @@ Public Class MovInternoDAO
 
     End Function
 
+    Public Function buscarDeposito(ByVal codigo As String) As String
+        Dim ds As New DataSet
+        Dim da As New MySqlDataAdapter
+        Dim dt As New DataTable
+        Dim depo As String = ""
+        Try
+            Dim con As New MySqlConnection(ConexionDB.cadenaConexionBD(Sesion.Usuario, Sesion.Password))
+            con.Open()
+
+
+            Dim mysql = "SELECT depoDescripcion as Descripción " _
+                        & "FROM stdeposito WHERE depoCod = " & codigo & ""
+
+            Dim cmd As New MySqlCommand(mysql, con)
+            Dim reader = cmd.ExecuteReader()
+
+            If reader.Read Then
+                depo = SafeGetString(reader, 0)
+            End If
+
+            con.Close()
+            reader.Close()
+        Catch ex As Exception
+            Throw New DAOException(ex.ToString)
+        End Try
+        Return depo
+
+    End Function
+
+
     Public Function cargaSucursales() As DataSet
         Dim ds As New DataSet
         Dim da As New MySqlDataAdapter
@@ -240,7 +270,7 @@ Public Class MovInternoDAO
                 cmd.Parameters.AddWithValue("@fechaIns", Date.Now)
                 cmd.Parameters.AddWithValue("@depo", depo)
 
-                'cmd.ExecuteNonQuery()
+                cmd.ExecuteNonQuery()
                 cmd.Parameters.Clear()
 
                 ' Existencia
@@ -299,7 +329,7 @@ Public Class MovInternoDAO
                     ds.Tables.Add("tabla")
                     adp.Fill(ds.Tables("tabla"))
                 Case 2
-                    query = "SELECT * FROM movinternolistadoview WHERE Proveedor =  @filtro and Estado <> 'Anulado' GROUP BY `Nro. Operación`"
+                    query = "SELECT * FROM movinternolistadoview WHERE (Proveedor =  @filtro) and Estado <> 'Anulado' GROUP BY `Nro. Operación`"
                     Dim cmd As New MySqlCommand(query, con)
                     cmd.Parameters.AddWithValue("@filtro", filtro)
                     Dim adp As New MySqlDataAdapter(cmd)
@@ -312,5 +342,21 @@ Public Class MovInternoDAO
         End Try
         Return ds
     End Function
+    Public Function duplicado(v As String) As Boolean
+        Try
+            Dim con As New MySqlConnection(ConexionDB.cadenaConexionBD(Sesion.Usuario, Sesion.Password))
+            con.Open()
 
+
+            Dim mysql = "SELECT * " _
+                        & "FROM stmovinterno WHERE movNro = " & v & ""
+
+            Dim cmd As New MySqlCommand(mysql, con)
+            Dim adp As New MySqlDataAdapter(mysql, con)
+            Return cmd.ExecuteScalar
+        Catch ex As Exception
+            Throw New DAOException(ex.ToString)
+        End Try
+        Return True
+    End Function
 End Class

@@ -64,7 +64,6 @@ Public Class ClienteDAO
                 modelo.nombre = SafeGetString(reader, 1)
 
                 modelo.ruc = SafeGetString(reader, 2)
-
                 modelo.tel = SafeGetString(reader, 3)
                 modelo.contacto = SafeGetString(reader, 4)
             End While
@@ -78,6 +77,36 @@ Public Class ClienteDAO
         Return modelo
     End Function
 
+    Public Function obtenerClienteVenta(ByVal codigo As String) As Cliente
+        Dim modelo As New Cliente
+        Try
+            Dim con As New MySqlConnection(ConexionDB.cadenaConexionBD(Sesion.Usuario, Sesion.Password))
+            con.Open()
+            Dim query = "Select * from stClientes where clieRuc = @codigo"
+            Dim cmd As New MySqlCommand(query, con)
+            cmd.Parameters.AddWithValue("@codigo", codigo)
+            Dim reader = cmd.ExecuteReader()
+
+            If reader.Read Then
+                modelo.codigo = SafeGetInt(reader, 0)
+
+                modelo.nombre = SafeGetString(reader, 1)
+
+                modelo.ruc = SafeGetString(reader, 2)
+                modelo.tel = SafeGetString(reader, 3)
+                modelo.contacto = SafeGetString(reader, 4)
+            Else
+                modelo.ruc = Nothing
+            End If
+
+            reader.Close()
+            con.Close()
+
+        Catch ex As Exception
+            Throw New DAOException(ex.ToString)
+        End Try
+        Return modelo
+    End Function
     Sub actualizarCliente(ByVal modelo As Cliente)
         Try
             Dim con As New MySqlConnection(ConexionDB.cadenaConexionBD(Sesion.Usuario, Sesion.Password))

@@ -124,13 +124,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_99FEEE53360C4C7983902395A25608EA"
+        "OwnerKey" = "8:_E3377468E9A3AD3068CD4850879E51A4"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_E3377468E9A3AD3068CD4850879E51A4"
+        "OwnerKey" = "8:_99FEEE53360C4C7983902395A25608EA"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -502,15 +502,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:CasaMarco"
-        "ProductCode" = "8:{AA904E6E-9DF4-4194-961C-476D3D92B87F}"
-        "PackageCode" = "8:{088B676A-50CA-42C1-B783-B5F57E2FC626}"
-        "UpgradeCode" = "8:{CF499F47-0039-4FEF-B0B9-3CE6C0E4BBDA}"
+        "ProductCode" = "8:{A3F813B5-5BC3-459F-9E13-605D4BC63DDB}"
+        "PackageCode" = "8:{E11775BC-BAB0-40B6-A93D-E631C30BC273}"
+        "UpgradeCode" = "8:{7A95EC0A-03FC-4E4F-BD71-C115FBACFDF3}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
-        "RemovePreviousVersions" = "11:FALSE"
+        "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.1"
+        "ProductVersion" = "8:1.3.0"
         "Manufacturer" = "8:ASCS"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -520,7 +520,7 @@
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
-        "ARPPRODUCTICON" = "8:"
+        "ARPPRODUCTICON" = "8:_1EC1A06B96894E90A013C242611196B1"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"

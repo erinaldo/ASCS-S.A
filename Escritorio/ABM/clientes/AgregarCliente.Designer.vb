@@ -144,7 +144,7 @@ Partial Class AgregarCliente
         '
         Me.btnGuardar.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnGuardar.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardar.Location = New System.Drawing.Point(23, 8)
+        Me.btnGuardar.Location = New System.Drawing.Point(59, 8)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(97, 32)
         Me.btnGuardar.TabIndex = 3
@@ -154,7 +154,7 @@ Partial Class AgregarCliente
         'btnRefresh
         '
         Me.btnRefresh.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRefresh.Location = New System.Drawing.Point(158, 8)
+        Me.btnRefresh.Location = New System.Drawing.Point(178, 8)
         Me.btnRefresh.Name = "btnRefresh"
         Me.btnRefresh.Size = New System.Drawing.Size(96, 32)
         Me.btnRefresh.TabIndex = 4
@@ -181,7 +181,7 @@ Partial Class AgregarCliente
         Me.Panel2.Controls.Add(Me.lblruc)
         Me.Panel2.Controls.Add(Me.Label4)
         Me.Panel2.Controls.Add(Me.txtRUC)
-        Me.Panel2.Location = New System.Drawing.Point(62, 95)
+        Me.Panel2.Location = New System.Drawing.Point(63, 75)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(433, 242)
         Me.Panel2.TabIndex = 8
@@ -191,7 +191,7 @@ Partial Class AgregarCliente
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SteelBlue
-        Me.ClientSize = New System.Drawing.Size(563, 415)
+        Me.ClientSize = New System.Drawing.Size(564, 415)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label1)

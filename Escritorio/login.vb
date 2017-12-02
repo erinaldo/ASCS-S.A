@@ -32,7 +32,9 @@ Public Class login
 
 
     Private Sub txtPasswd_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtPasswd.KeyDown
+
         If e.KeyCode = Keys.Enter Then
+            e.SuppressKeyPress = True
             conexion()
         End If
     End Sub
@@ -52,6 +54,7 @@ Public Class login
         Me.ResumeLayout()
     End Sub
 
+    Private Sub txtPasswd_TextChanged(sender As Object, e As EventArgs) Handles txtPasswd.TextChanged
 
-
+    End Sub
 End Class

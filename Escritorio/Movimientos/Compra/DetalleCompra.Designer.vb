@@ -22,6 +22,7 @@ Partial Class DetalleCompra
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DetalleCompra))
         Me.pnlDatosCompra = New System.Windows.Forms.Panel()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.txtProveedor = New System.Windows.Forms.TextBox()
@@ -367,12 +368,13 @@ Partial Class DetalleCompra
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(1186, 750)
+        Me.ClientSize = New System.Drawing.Size(1186, 742)
         Me.Controls.Add(Me.pnlOperadores)
         Me.Controls.Add(Me.dgvProductos)
         Me.Controls.Add(Me.lblDetalleCompra)
         Me.Controls.Add(Me.pnlComentario)
         Me.Controls.Add(Me.pnlDatosCompra)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "DetalleCompra"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "DetalleCompra"

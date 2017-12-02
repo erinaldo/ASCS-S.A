@@ -58,7 +58,8 @@ Public Class MovimientoInterno
         cbDeposito.DataSource = listDepositos
         cbDeposito.DisplayMember = "Descripción"
         cbDeposito.ValueMember = "Código"
-
+        cbDeposito.SelectedIndex = 1
+        cbDeposito.Enabled = False
 
         dgvProductos.DataSource = New stockcapiataDataSet.MovInternoProductosDataTable
         dgvProductos.Columns(5).Visible = False
@@ -77,6 +78,12 @@ Public Class MovimientoInterno
         Me.BackgroundImage = My.Resources.Panther1
     End Sub
 
+
+    Private Sub txtFiltroBusquedaNC_KeyDown(sender As Object, e As KeyEventArgs) Handles txtFiltro.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            btnBuscarProd_Click(sender, e)
+        End If
+    End Sub
     Private Sub btnBuscarProd_Click(sender As Object, e As EventArgs) Handles btnBuscarProd.Click
         Dim cod = txtFiltro.Text
         If cod = "" Then
@@ -138,31 +145,64 @@ Public Class MovimientoInterno
     End Sub
 
     Private Sub btnInsertarProd_Click(sender As Object, e As EventArgs) Handles btnInsertarProd.Click
-        If validarCantidad() Then
-            Dim tablaaux As DataTable = dgvProductos.DataSource
-            Dim row As DataRow = tablaaux.NewRow
-            row("Código") = txtCodigoProd.Text
-            row("Descripción") = txtDescripcionProd.Text
-            row("Línea") = linea + 1
-            linea = linea + 1
-            row("Cantidad") = CInt(txtCantidad.Text)
-            'row("Superficie") = 0
-            row("Depósito Origen") = txtDepositoOrigen.Text
-            row("Depósito Codigo") = depositoActCod
-            tablaaux.Rows.Add(row)
-            dgvProductos.DataSource = tablaaux
-            dgvProductos.ClearSelection()
+        If tipoChecked() Then
+            If validarCantidad() Then
+                Dim tablaaux As DataTable = dgvProductos.DataSource
+                Dim row As DataRow = tablaaux.NewRow
+                row("Código") = txtCodigoProd.Text
+                row("Descripción") = txtDescripcionProd.Text
+                row("Línea") = linea + 1
+                linea = linea + 1
+                row("Cantidad") = CInt(txtCantidad.Text)
+                'row("Superficie") = 0
+                row("Depósito Origen") = txtDepositoOrigen.Text
+                row("Depósito Codigo") = depositoActCod
+                tablaaux.Rows.Add(row)
+                dgvProductos.DataSource = tablaaux
+                dgvProductos.ClearSelection()
+                limpiarCamposProducto()
+            End If
         Else
-            MsgBox("La cantidad supera al stock disponible", MsgBoxStyle.Critical, "Notificación")
         End If
     End Sub
 
-    Private Function validarCantidad() As Boolean
-        If txtCantidad.Text = "" Or txtStock.Text = "" Then
-            Return False
-        ElseIf CInt(txtCantidad.Text) > CInt(txtStock.Text) Then
+    Private Function tipoChecked() As Boolean
+        If rbEntrada.Checked = True Then
+            Return True
+        ElseIf rbSalida.Checked = True
+            Return True
+        Else
+            MsgBox("Seleccione el tipo de movimiento", MsgBoxStyle.Critical, "Notificación")
             Return False
         End If
+    End Function
+    Private Sub limpiarCamposProducto()
+        txtCantidad.Text = ""
+        txtCodigoProd.Text = ""
+        txtDepositoOrigen.Text = ""
+        txtDescripcionProd.Text = ""
+        txtStock.Text = ""
+        txtFiltro.Focus()
+    End Sub
+    Private Function validarCantidad() As Boolean
+        If rbEntrada.Checked = False Then
+            If txtCantidad.Text = "" Or txtStock.Text = "" Then
+                MsgBox("Ingrese una cantidad", MsgBoxStyle.Critical, "Notificación")
+
+                Return False
+            ElseIf CInt(txtCantidad.Text) > CInt(txtStock.Text) Then
+                MsgBox("La cantidad supera al stock disponible", MsgBoxStyle.Critical, "Notificación")
+                Return False
+            End If
+        Else
+            If txtCantidad.Text = "" Or txtStock.Text = "" Then
+                MsgBox("Ingrese una cantidad", MsgBoxStyle.Critical, "Notificación")
+
+                Return False
+
+            End If
+        End If
+
 
         Return True
     End Function
@@ -194,34 +234,67 @@ Public Class MovimientoInterno
     Private Sub btnGuardarMov_Click(sender As Object, e As EventArgs) Handles btnGuardarMov.Click
         Dim validar = validarMovimiento()
         If validar = "ok" Then
+            If movInt.duplicado(txtNroOperacion.Text) Then
+                MsgBox("¡Número de movimiento ya registrado! Ingrese uno diferente", MsgBoxStyle.Critical, "Error al guardar")
+                Exit Sub
+            End If
             Dim mov As New BackEnd.MovimientoInterno
-            If rbEntrada.Checked Then
-                mov.tipo = "Entrada"
-            ElseIf rbSalida.Checked Then
-                mov.tipo = "Salida"
-            End If
+            If cbSolicitante.SelectedIndex = 7 And cbProveedor.SelectedIndex = 7 Then
 
-            mov.nroMov = txtNroOperacion.Text
 
-            mov.solicitante = cbSolicitante.SelectedItem.item("Nombre")
-            mov.proveedor = cbProveedor.SelectedItem.item("Código")
-            mov.autorizado = cbAutorizador.SelectedItem
-            mov.fecha = dpFechaMov.Value
-            mov.fechaIns = Date.Now
-            movInt.guardar(mov, dgvProductos.Rows)
-            Dim result As Integer = MessageBox.Show("!Momivimento realizado y guardado! ¿Desea generar un reporte ahora?", "caption", MessageBoxButtons.YesNo)
 
-            If result = DialogResult.Yes Then
-                Dim reporte As New Reporte
-                reporte.codigoCompra = txtNroOperacion.Text
-                reporte.tipo = "movInt"
-                reporte.movInt = mov
-                reporte.ShowDialog()
-                reporte.Dispose()
-                Me.DialogResult = DialogResult.OK
+                mov.nroMov = txtNroOperacion.Text
+                mov.tipo = "Depos"
+                mov.solicitante = "Stock B"
+                mov.proveedor = 1
+                mov.autorizado = cbAutorizador.SelectedItem
+                mov.fecha = dpFechaMov.Value
+                mov.fechaIns = Date.Now
+                movInt.guardarMovDepositos(mov, dgvProductos.Rows)
+                Dim resultado As Integer = MessageBox.Show("!Momivimento realizado y guardado! ¿Desea generar un reporte ahora?", "caption", MessageBoxButtons.YesNo)
+                If resultado = DialogResult.Yes Then
+                    Dim reporte As New Reporte
+                    reporte.codigoCompra = txtNroOperacion.Text
+                    reporte.tipo = "movInt"
+                    reporte.movInt = mov
+                    reporte.ShowDialog()
+                    reporte.Dispose()
+                    Me.DialogResult = DialogResult.OK
+                Else
+                    limpiarCamposProducto()
+                    limpiarCamposMov()
+                End If
             Else
-                Me.DialogResult = DialogResult.OK
+                If rbEntrada.Checked Then
+                    mov.tipo = "Entrada"
+                ElseIf rbSalida.Checked Then
+                    mov.tipo = "Salida"
+                End If
+
+                mov.nroMov = txtNroOperacion.Text
+
+                mov.solicitante = cbSolicitante.SelectedItem.item("Nombre")
+                mov.proveedor = cbProveedor.SelectedItem.item("Código")
+                mov.autorizado = cbAutorizador.SelectedItem
+                mov.fecha = dpFechaMov.Value
+                mov.fechaIns = Date.Now
+                movInt.guardar(mov, dgvProductos.Rows)
+                Dim result As Integer = MessageBox.Show("!Momivimento realizado y guardado! ¿Desea generar un reporte ahora?", "caption", MessageBoxButtons.YesNo)
+
+                If result = DialogResult.Yes Then
+                    Dim reporte As New Reporte
+                    reporte.codigoCompra = txtNroOperacion.Text
+                    reporte.tipo = "movInt"
+                    reporte.movInt = mov
+                    reporte.ShowDialog()
+                    reporte.Dispose()
+                    Me.DialogResult = DialogResult.OK
+                Else
+                    limpiarCamposProducto()
+                    limpiarCamposMov()
+                End If
             End If
+
 
         ElseIf validar = "0" Then
             MsgBox("Debe selecionar un tipo de movimiento", MsgBoxStyle.Critical, "Notificación")
@@ -237,6 +310,17 @@ Public Class MovimientoInterno
         End If
     End Sub
 
+    Private Sub limpiarCamposMov()
+        txtNroOperacion.Text = ""
+        txtNroOperacion.Focus()
+        cbProveedor.SelectedIndex = 0
+        cbSolicitante.SelectedIndex = 0
+        rbEntrada.Checked = False
+        rbSalida.Checked = False
+        dgvProductos.DataSource = New stockcapiataDataSet.MovInternoProductosDataTable
+        dgvProductos.Columns(5).Visible = False
+        dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+    End Sub
     Private Function validarMovimiento() As String
         Dim resultado = "ok"
 
@@ -291,4 +375,6 @@ Public Class MovimientoInterno
     Private Sub pnlGuardarMov_Paint(sender As Object, e As PaintEventArgs) Handles pnlGuardarMov.Paint
 
     End Sub
+
+
 End Class

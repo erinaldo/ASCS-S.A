@@ -86,6 +86,7 @@
     <Compile Include="modelos\Proveedor.vb" />
     <Compile Include="modelos\Usuario.vb" />
     <Compile Include="modelos\Vendedor.vb" />
+    <Compile Include="modelos\Venta.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -101,12 +102,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="stockcapiataDataSet.Designer.vb">
+    <Compile Include="stockcapiataDataSet1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>stockcapiataDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="stockcapiataDataSet.vb">
       <DependentUpon>stockcapiataDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="util\ConexionDB.vb" />
@@ -139,11 +137,12 @@
     </None>
     <None Include="stockcapiataDataSet.xsc">
       <DependentUpon>stockcapiataDataSet.xsd</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
     <None Include="stockcapiataDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>stockcapiataDataSet.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>stockcapiataDataSet1.Designer.vb</LastGenOutput>
     </None>
     <None Include="stockcapiataDataSet.xss">
       <DependentUpon>stockcapiataDataSet.xsd</DependentUpon>

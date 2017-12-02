@@ -66,9 +66,10 @@ Public Class ListadoMovimientoInt
                 Dim fin = datepFin.Value.Date
                 listadoMovs = movInt.buscarMovimiento(Nothing, 1, inicio, fin)
             ElseIf cbBuscarMovInt.SelectedIndex = 2 Then
-                Dim filtro = cbProveedor.SelectedItem.item("Código")
+                Dim filtro = cbProveedor.SelectedItem.item("Nombre")
 
                 listadoMovs = movInt.buscarMovimiento(filtro, 2, Nothing, Nothing)
+
             End If
 
             btnDetalle.Visible = True
@@ -122,11 +123,15 @@ Public Class ListadoMovimientoInt
             Dim row = dgvMovInt.CurrentRow.Index
             Dim codigo = dgvMovInt.Item(1, row).Value
             Dim detalleForm As New DetalleMovimiento(codigo)
-            detalleForm.ShowDialog()
 
+            If dgvMovInt.Item(4, row).Value = "Depósitos" Then
+                detalleForm.deposito = 1
+            End If
+            detalleForm.ShowDialog()
             detalleForm.Dispose()
+
         Else
-            MsgBox("Nigun movimiento seleccionado!", MsgBoxStyle.Critical, "Notificación")
+                MsgBox("Nigun movimiento seleccionado!", MsgBoxStyle.Critical, "Notificación")
         End If
     End Sub
 
@@ -141,6 +146,8 @@ Public Class ListadoMovimientoInt
                 If result = DialogResult.Yes Then
 
                     movInt.anular(codigo)
+                    Dim anular = dgvMovInt.CurrentRow
+                    dgvMovInt.Rows.Remove(anular)
                     MsgBox("Movimiento Anulado!", MsgBoxStyle.Information, "Notificación")
                 End If
             Else

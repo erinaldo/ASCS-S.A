@@ -43,13 +43,13 @@ Partial Class AdministrarVentas
         Me.tpListado = New System.Windows.Forms.TabPage()
         Me.dgvVentasListado = New System.Windows.Forms.DataGridView()
         Me.pnlListado = New System.Windows.Forms.Panel()
+        Me.txtClienteRucListado = New System.Windows.Forms.TextBox()
         Me.txtNroFacturaListado = New System.Windows.Forms.TextBox()
         Me.cbEstadoCompra = New System.Windows.Forms.ComboBox()
         Me.btnDetalle = New System.Windows.Forms.Button()
         Me.btnBuscarCompra = New System.Windows.Forms.Button()
         Me.lblBusqTxt = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.cbCliente1 = New System.Windows.Forms.ComboBox()
         Me.cbBuscarVentaListado = New System.Windows.Forms.ComboBox()
         Me.pnlRangoFecha = New System.Windows.Forms.Panel()
         Me.datepFin = New System.Windows.Forms.DateTimePicker()
@@ -58,47 +58,59 @@ Partial Class AdministrarVentas
         Me.Label13 = New System.Windows.Forms.Label()
         Me.txtTituloBusquedaList = New System.Windows.Forms.Label()
         Me.tpNuevaVenta = New System.Windows.Forms.TabPage()
+        Me.pnlDescuento = New System.Windows.Forms.Panel()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.btnDeschacerDesc = New System.Windows.Forms.Button()
+        Me.btnAplicarDesc = New System.Windows.Forms.Button()
+        Me.txtDescuento = New System.Windows.Forms.TextBox()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.txtNombreCli = New System.Windows.Forms.TextBox()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.txtCI = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.cbVendedor2 = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.dgvBusquedaResult = New System.Windows.Forms.DataGridView()
         Me.pnlDatosProducto = New System.Windows.Forms.Panel()
-        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Panel6 = New System.Windows.Forms.Panel()
         Me.cbImpuesto = New System.Windows.Forms.ComboBox()
-        Me.cbDeposito = New System.Windows.Forms.ComboBox()
-        Me.btnBuscarProd = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.btnInsertarProd = New System.Windows.Forms.Button()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.btnEliminarProd = New System.Windows.Forms.Button()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.txtFiltroBusquedaNC = New System.Windows.Forms.TextBox()
-        Me.txtCodProd = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtCantidad = New System.Windows.Forms.TextBox()
-        Me.txtStock = New System.Windows.Forms.TextBox()
-        Me.txtDescripcionProd = New System.Windows.Forms.TextBox()
-        Me.Label27 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.txtPrecioProd = New System.Windows.Forms.TextBox()
-        Me.pnlDatosVenta = New System.Windows.Forms.Panel()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.gbTipoPago = New System.Windows.Forms.GroupBox()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.txtEntregaInicial = New System.Windows.Forms.TextBox()
-        Me.rbCredito = New System.Windows.Forms.RadioButton()
-        Me.rbContado = New System.Windows.Forms.RadioButton()
-        Me.dateFactura = New System.Windows.Forms.DateTimePicker()
-        Me.gbCliente = New System.Windows.Forms.GroupBox()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.cbVendedor2 = New System.Windows.Forms.ComboBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.cbCliente2 = New System.Windows.Forms.ComboBox()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtStock = New System.Windows.Forms.TextBox()
+        Me.txtCantidad = New System.Windows.Forms.TextBox()
+        Me.txtM2 = New System.Windows.Forms.TextBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.btnBuscarProd = New System.Windows.Forms.Button()
+        Me.txtFiltroBusquedaNC = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtDescripcionProd = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtCodProd = New System.Windows.Forms.TextBox()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.btnInsertarProd = New System.Windows.Forms.Button()
+        Me.btnEliminarProd = New System.Windows.Forms.Button()
+        Me.pnlDatosVenta = New System.Windows.Forms.Panel()
+        Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtFacturaNro = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.cbDeposito = New System.Windows.Forms.ComboBox()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.dateFactura = New System.Windows.Forms.DateTimePicker()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.rbContado = New System.Windows.Forms.RadioButton()
+        Me.rbCredito = New System.Windows.Forms.RadioButton()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
         Me.pnlSeleccionProd = New System.Windows.Forms.Panel()
+        Me.btnCancelarSeleccion = New System.Windows.Forms.Button()
         Me.btnSeleccionarPr = New System.Windows.Forms.Button()
         Me.pnlOperadores = New System.Windows.Forms.Panel()
         Me.Button4 = New System.Windows.Forms.Button()
@@ -109,7 +121,7 @@ Partial Class AdministrarVentas
         Me.pnlTotales = New System.Windows.Forms.Panel()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.lblTotal = New System.Windows.Forms.Label()
-        Me.txtTotalCompra = New System.Windows.Forms.TextBox()
+        Me.txtTotalVenta = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtIva = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -135,14 +147,14 @@ Partial Class AdministrarVentas
         Me.dgvVentasCobro = New System.Windows.Forms.DataGridView()
         Me.lblTituloVenta = New System.Windows.Forms.Label()
         Me.pnlCobro = New System.Windows.Forms.Panel()
-        Me.cbCliente4 = New System.Windows.Forms.ComboBox()
-        Me.btnDetalleP = New System.Windows.Forms.Button()
+        Me.txtClienteCobro = New System.Windows.Forms.TextBox()
+        Me.btnDetalleCobro = New System.Windows.Forms.Button()
         Me.btnPagar = New System.Windows.Forms.Button()
-        Me.btnBuscarP = New System.Windows.Forms.Button()
+        Me.btnBuscarCobro = New System.Windows.Forms.Button()
         Me.lblFiltroTipo = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.txtNroFactCobro = New System.Windows.Forms.TextBox()
-        Me.cbFiltroC = New System.Windows.Forms.ComboBox()
+        Me.cbFiltroCobro = New System.Windows.Forms.ComboBox()
         Me.pnlFechas = New System.Windows.Forms.Panel()
         Me.dpHastaPago = New System.Windows.Forms.DateTimePicker()
         Me.dpDesdePago = New System.Windows.Forms.DateTimePicker()
@@ -154,11 +166,16 @@ Partial Class AdministrarVentas
         Me.pnlListado.SuspendLayout()
         Me.pnlRangoFecha.SuspendLayout()
         Me.tpNuevaVenta.SuspendLayout()
+        Me.pnlDescuento.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         CType(Me.dgvBusquedaResult, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlDatosProducto.SuspendLayout()
+        Me.Panel6.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.pnlDatosVenta.SuspendLayout()
-        Me.gbTipoPago.SuspendLayout()
-        Me.gbCliente.SuspendLayout()
+        Me.Panel5.SuspendLayout()
+        Me.Panel4.SuspendLayout()
         Me.pnlSeleccionProd.SuspendLayout()
         Me.pnlOperadores.SuspendLayout()
         Me.pnlComentario.SuspendLayout()
@@ -187,7 +204,7 @@ Partial Class AdministrarVentas
         Me.tbcVenta.Name = "tbcVenta"
         Me.tbcVenta.Padding = New System.Drawing.Point(10, 8)
         Me.tbcVenta.SelectedIndex = 0
-        Me.tbcVenta.Size = New System.Drawing.Size(1256, 574)
+        Me.tbcVenta.Size = New System.Drawing.Size(1309, 742)
         Me.tbcVenta.TabIndex = 4
         '
         'tpListado
@@ -199,7 +216,7 @@ Partial Class AdministrarVentas
         Me.tpListado.Location = New System.Drawing.Point(4, 38)
         Me.tpListado.Name = "tpListado"
         Me.tpListado.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpListado.Size = New System.Drawing.Size(1248, 532)
+        Me.tpListado.Size = New System.Drawing.Size(1301, 700)
         Me.tpListado.TabIndex = 0
         Me.tpListado.Text = "Listado"
         '
@@ -218,21 +235,24 @@ Partial Class AdministrarVentas
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ButtonShadow
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.Padding = New System.Windows.Forms.Padding(1)
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvVentasListado.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvVentasListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(2)
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvVentasListado.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvVentasListado.GridColor = System.Drawing.SystemColors.AppWorkspace
         Me.dgvVentasListado.Location = New System.Drawing.Point(51, 323)
+        Me.dgvVentasListado.MultiSelect = False
         Me.dgvVentasListado.Name = "dgvVentasListado"
         Me.dgvVentasListado.ReadOnly = True
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -243,28 +263,38 @@ Partial Class AdministrarVentas
         DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight
         DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvVentasListado.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        Me.dgvVentasListado.RowHeadersVisible = False
         DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.dgvVentasListado.RowsDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvVentasListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvVentasListado.Size = New System.Drawing.Size(910, 178)
+        Me.dgvVentasListado.Size = New System.Drawing.Size(910, 334)
         Me.dgvVentasListado.TabIndex = 35
         Me.dgvVentasListado.Visible = False
         '
         'pnlListado
         '
+        Me.pnlListado.Controls.Add(Me.txtClienteRucListado)
         Me.pnlListado.Controls.Add(Me.txtNroFacturaListado)
         Me.pnlListado.Controls.Add(Me.cbEstadoCompra)
         Me.pnlListado.Controls.Add(Me.btnDetalle)
         Me.pnlListado.Controls.Add(Me.btnBuscarCompra)
         Me.pnlListado.Controls.Add(Me.lblBusqTxt)
         Me.pnlListado.Controls.Add(Me.Label15)
-        Me.pnlListado.Controls.Add(Me.cbCliente1)
         Me.pnlListado.Controls.Add(Me.cbBuscarVentaListado)
         Me.pnlListado.Controls.Add(Me.pnlRangoFecha)
         Me.pnlListado.Location = New System.Drawing.Point(51, 85)
         Me.pnlListado.Name = "pnlListado"
         Me.pnlListado.Size = New System.Drawing.Size(910, 189)
         Me.pnlListado.TabIndex = 5
+        '
+        'txtClienteRucListado
+        '
+        Me.txtClienteRucListado.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtClienteRucListado.Location = New System.Drawing.Point(324, 134)
+        Me.txtClienteRucListado.Name = "txtClienteRucListado"
+        Me.txtClienteRucListado.Size = New System.Drawing.Size(262, 26)
+        Me.txtClienteRucListado.TabIndex = 8
+        Me.txtClienteRucListado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtNroFacturaListado
         '
@@ -314,7 +344,7 @@ Partial Class AdministrarVentas
         Me.lblBusqTxt.BackColor = System.Drawing.Color.Transparent
         Me.lblBusqTxt.Font = New System.Drawing.Font("Arial Black", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblBusqTxt.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblBusqTxt.Location = New System.Drawing.Point(364, 27)
+        Me.lblBusqTxt.Location = New System.Drawing.Point(383, 27)
         Me.lblBusqTxt.Name = "lblBusqTxt"
         Me.lblBusqTxt.Size = New System.Drawing.Size(222, 27)
         Me.lblBusqTxt.TabIndex = 10
@@ -331,17 +361,6 @@ Partial Class AdministrarVentas
         Me.Label15.Size = New System.Drawing.Size(126, 27)
         Me.Label15.TabIndex = 5
         Me.Label15.Text = "Buscar por"
-        '
-        'cbCliente1
-        '
-        Me.cbCliente1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbCliente1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbCliente1.FormattingEnabled = True
-        Me.cbCliente1.Location = New System.Drawing.Point(324, 120)
-        Me.cbCliente1.Name = "cbCliente1"
-        Me.cbCliente1.Size = New System.Drawing.Size(262, 26)
-        Me.cbCliente1.TabIndex = 9
-        Me.cbCliente1.Visible = False
         '
         'cbBuscarVentaListado
         '
@@ -423,6 +442,9 @@ Partial Class AdministrarVentas
         '
         Me.tpNuevaVenta.AutoScroll = True
         Me.tpNuevaVenta.BackColor = System.Drawing.Color.SteelBlue
+        Me.tpNuevaVenta.Controls.Add(Me.pnlDescuento)
+        Me.tpNuevaVenta.Controls.Add(Me.Panel3)
+        Me.tpNuevaVenta.Controls.Add(Me.Panel2)
         Me.tpNuevaVenta.Controls.Add(Me.dgvBusquedaResult)
         Me.tpNuevaVenta.Controls.Add(Me.pnlDatosProducto)
         Me.tpNuevaVenta.Controls.Add(Me.pnlDatosVenta)
@@ -434,9 +456,153 @@ Partial Class AdministrarVentas
         Me.tpNuevaVenta.Location = New System.Drawing.Point(4, 38)
         Me.tpNuevaVenta.Name = "tpNuevaVenta"
         Me.tpNuevaVenta.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpNuevaVenta.Size = New System.Drawing.Size(1248, 532)
+        Me.tpNuevaVenta.Size = New System.Drawing.Size(1301, 700)
         Me.tpNuevaVenta.TabIndex = 1
         Me.tpNuevaVenta.Text = "Nueva Venta"
+        '
+        'pnlDescuento
+        '
+        Me.pnlDescuento.Controls.Add(Me.Label28)
+        Me.pnlDescuento.Controls.Add(Me.btnDeschacerDesc)
+        Me.pnlDescuento.Controls.Add(Me.btnAplicarDesc)
+        Me.pnlDescuento.Controls.Add(Me.txtDescuento)
+        Me.pnlDescuento.Location = New System.Drawing.Point(3, 622)
+        Me.pnlDescuento.Name = "pnlDescuento"
+        Me.pnlDescuento.Size = New System.Drawing.Size(336, 139)
+        Me.pnlDescuento.TabIndex = 39
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.BackColor = System.Drawing.Color.Transparent
+        Me.Label28.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label28.Location = New System.Drawing.Point(125, 0)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(94, 19)
+        Me.Label28.TabIndex = 3
+        Me.Label28.Text = "Descuento"
+        '
+        'btnDeschacerDesc
+        '
+        Me.btnDeschacerDesc.Enabled = False
+        Me.btnDeschacerDesc.Location = New System.Drawing.Point(167, 85)
+        Me.btnDeschacerDesc.Name = "btnDeschacerDesc"
+        Me.btnDeschacerDesc.Size = New System.Drawing.Size(131, 38)
+        Me.btnDeschacerDesc.TabIndex = 2
+        Me.btnDeschacerDesc.Text = "Deshacer"
+        Me.btnDeschacerDesc.UseVisualStyleBackColor = True
+        '
+        'btnAplicarDesc
+        '
+        Me.btnAplicarDesc.Location = New System.Drawing.Point(30, 85)
+        Me.btnAplicarDesc.Name = "btnAplicarDesc"
+        Me.btnAplicarDesc.Size = New System.Drawing.Size(131, 38)
+        Me.btnAplicarDesc.TabIndex = 2
+        Me.btnAplicarDesc.Text = "Aplicar"
+        Me.btnAplicarDesc.UseVisualStyleBackColor = True
+        '
+        'txtDescuento
+        '
+        Me.txtDescuento.Location = New System.Drawing.Point(61, 38)
+        Me.txtDescuento.Name = "txtDescuento"
+        Me.txtDescuento.Size = New System.Drawing.Size(223, 27)
+        Me.txtDescuento.TabIndex = 1
+        '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.txtNombreCli)
+        Me.Panel3.Controls.Add(Me.Label22)
+        Me.Panel3.Controls.Add(Me.Label11)
+        Me.Panel3.Controls.Add(Me.txtCI)
+        Me.Panel3.Controls.Add(Me.Label8)
+        Me.Panel3.Location = New System.Drawing.Point(350, 117)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(855, 81)
+        Me.Panel3.TabIndex = 38
+        '
+        'txtNombreCli
+        '
+        Me.txtNombreCli.Enabled = False
+        Me.txtNombreCli.Location = New System.Drawing.Point(564, 35)
+        Me.txtNombreCli.Name = "txtNombreCli"
+        Me.txtNombreCli.ShortcutsEnabled = False
+        Me.txtNombreCli.Size = New System.Drawing.Size(212, 27)
+        Me.txtNombreCli.TabIndex = 7
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.BackColor = System.Drawing.Color.Transparent
+        Me.Label22.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label22.Location = New System.Drawing.Point(383, 7)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(79, 19)
+        Me.Label22.TabIndex = 1
+        Me.Label22.Text = "CLIENTE"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.Transparent
+        Me.Label11.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label11.Location = New System.Drawing.Point(75, 38)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(76, 19)
+        Me.Label11.TabIndex = 1
+        Me.Label11.Text = "RUC/C.I"
+        '
+        'txtCI
+        '
+        Me.txtCI.Location = New System.Drawing.Point(166, 35)
+        Me.txtCI.Name = "txtCI"
+        Me.txtCI.Size = New System.Drawing.Size(197, 27)
+        Me.txtCI.TabIndex = 7
+        Me.txtCI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label8.Location = New System.Drawing.Point(464, 38)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(73, 19)
+        Me.Label8.TabIndex = 1
+        Me.Label8.Text = "Nombre"
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.cbVendedor2)
+        Me.Panel2.Controls.Add(Me.Label4)
+        Me.Panel2.Location = New System.Drawing.Point(8, 117)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(308, 81)
+        Me.Panel2.TabIndex = 37
+        '
+        'cbVendedor2
+        '
+        Me.cbVendedor2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbVendedor2.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbVendedor2.FormattingEnabled = True
+        Me.cbVendedor2.Location = New System.Drawing.Point(62, 38)
+        Me.cbVendedor2.Name = "cbVendedor2"
+        Me.cbVendedor2.Size = New System.Drawing.Size(215, 27)
+        Me.cbVendedor2.TabIndex = 6
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label4.Location = New System.Drawing.Point(115, 4)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(100, 19)
+        Me.Label4.TabIndex = 1
+        Me.Label4.Text = "VENDEDOR"
         '
         'dgvBusquedaResult
         '
@@ -487,222 +653,51 @@ Partial Class AdministrarVentas
         '
         'pnlDatosProducto
         '
+        Me.pnlDatosProducto.Controls.Add(Me.Panel6)
+        Me.pnlDatosProducto.Controls.Add(Me.Panel1)
         Me.pnlDatosProducto.Controls.Add(Me.Label19)
-        Me.pnlDatosProducto.Controls.Add(Me.cbImpuesto)
-        Me.pnlDatosProducto.Controls.Add(Me.cbDeposito)
-        Me.pnlDatosProducto.Controls.Add(Me.btnBuscarProd)
-        Me.pnlDatosProducto.Controls.Add(Me.Label1)
-        Me.pnlDatosProducto.Controls.Add(Me.Label4)
         Me.pnlDatosProducto.Controls.Add(Me.btnInsertarProd)
-        Me.pnlDatosProducto.Controls.Add(Me.Label9)
         Me.pnlDatosProducto.Controls.Add(Me.btnEliminarProd)
-        Me.pnlDatosProducto.Controls.Add(Me.Label8)
-        Me.pnlDatosProducto.Controls.Add(Me.txtFiltroBusquedaNC)
-        Me.pnlDatosProducto.Controls.Add(Me.txtCodProd)
-        Me.pnlDatosProducto.Controls.Add(Me.Label6)
-        Me.pnlDatosProducto.Controls.Add(Me.txtCantidad)
-        Me.pnlDatosProducto.Controls.Add(Me.txtStock)
-        Me.pnlDatosProducto.Controls.Add(Me.txtDescripcionProd)
-        Me.pnlDatosProducto.Controls.Add(Me.Label27)
-        Me.pnlDatosProducto.Controls.Add(Me.Label5)
-        Me.pnlDatosProducto.Controls.Add(Me.Label7)
-        Me.pnlDatosProducto.Controls.Add(Me.txtPrecioProd)
-        Me.pnlDatosProducto.Location = New System.Drawing.Point(32, 191)
+        Me.pnlDatosProducto.Location = New System.Drawing.Point(6, 208)
         Me.pnlDatosProducto.Name = "pnlDatosProducto"
-        Me.pnlDatosProducto.Size = New System.Drawing.Size(1193, 173)
+        Me.pnlDatosProducto.Size = New System.Drawing.Size(1199, 173)
         Me.pnlDatosProducto.TabIndex = 21
         '
-        'Label19
+        'Panel6
         '
-        Me.Label19.AutoSize = True
-        Me.Label19.BackColor = System.Drawing.Color.Transparent
-        Me.Label19.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label19.Location = New System.Drawing.Point(13, 0)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(192, 22)
-        Me.Label19.TabIndex = 14
-        Me.Label19.Text = "DATOS PRODUCTO"
+        Me.Panel6.Controls.Add(Me.cbImpuesto)
+        Me.Panel6.Controls.Add(Me.txtPrecioProd)
+        Me.Panel6.Controls.Add(Me.Label7)
+        Me.Panel6.Controls.Add(Me.Label5)
+        Me.Panel6.Controls.Add(Me.Label27)
+        Me.Panel6.Controls.Add(Me.Label9)
+        Me.Panel6.Controls.Add(Me.Label26)
+        Me.Panel6.Controls.Add(Me.txtStock)
+        Me.Panel6.Controls.Add(Me.txtCantidad)
+        Me.Panel6.Controls.Add(Me.txtM2)
+        Me.Panel6.Location = New System.Drawing.Point(433, 29)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(612, 135)
+        Me.Panel6.TabIndex = 20
         '
         'cbImpuesto
         '
         Me.cbImpuesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbImpuesto.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbImpuesto.FormattingEnabled = True
-        Me.cbImpuesto.Location = New System.Drawing.Point(376, 128)
+        Me.cbImpuesto.Location = New System.Drawing.Point(10, 32)
         Me.cbImpuesto.Name = "cbImpuesto"
-        Me.cbImpuesto.Size = New System.Drawing.Size(195, 27)
+        Me.cbImpuesto.Size = New System.Drawing.Size(188, 27)
         Me.cbImpuesto.TabIndex = 13
         '
-        'cbDeposito
+        'txtPrecioProd
         '
-        Me.cbDeposito.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbDeposito.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbDeposito.FormattingEnabled = True
-        Me.cbDeposito.Location = New System.Drawing.Point(376, 86)
-        Me.cbDeposito.Name = "cbDeposito"
-        Me.cbDeposito.Size = New System.Drawing.Size(195, 27)
-        Me.cbDeposito.TabIndex = 10
-        '
-        'btnBuscarProd
-        '
-        Me.btnBuscarProd.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBuscarProd.Location = New System.Drawing.Point(92, 72)
-        Me.btnBuscarProd.Name = "btnBuscarProd"
-        Me.btnBuscarProd.Size = New System.Drawing.Size(127, 32)
-        Me.btnBuscarProd.TabIndex = 12
-        Me.btnBuscarProd.Text = "Buscar"
-        Me.btnBuscarProd.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label1.Location = New System.Drawing.Point(268, 46)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(65, 19)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Código"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label4.Location = New System.Drawing.Point(23, 43)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(52, 19)
-        Me.Label4.TabIndex = 1
-        Me.Label4.Text = "Filtro"
-        '
-        'btnInsertarProd
-        '
-        Me.btnInsertarProd.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnInsertarProd.Location = New System.Drawing.Point(1096, 39)
-        Me.btnInsertarProd.Name = "btnInsertarProd"
-        Me.btnInsertarProd.Size = New System.Drawing.Size(75, 32)
-        Me.btnInsertarProd.TabIndex = 2
-        Me.btnInsertarProd.Text = "+"
-        Me.btnInsertarProd.UseVisualStyleBackColor = True
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.BackColor = System.Drawing.Color.Transparent
-        Me.Label9.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label9.Location = New System.Drawing.Point(268, 136)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(86, 19)
-        Me.Label9.TabIndex = 9
-        Me.Label9.Text = "Impuesto"
-        '
-        'btnEliminarProd
-        '
-        Me.btnEliminarProd.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEliminarProd.Location = New System.Drawing.Point(1096, 118)
-        Me.btnEliminarProd.Name = "btnEliminarProd"
-        Me.btnEliminarProd.Size = New System.Drawing.Size(75, 32)
-        Me.btnEliminarProd.TabIndex = 3
-        Me.btnEliminarProd.Text = "-"
-        Me.btnEliminarProd.UseVisualStyleBackColor = True
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label8.Location = New System.Drawing.Point(268, 91)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(81, 19)
-        Me.Label8.TabIndex = 8
-        Me.Label8.Text = "Depósito"
-        '
-        'txtFiltroBusquedaNC
-        '
-        Me.txtFiltroBusquedaNC.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtFiltroBusquedaNC.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtFiltroBusquedaNC.Location = New System.Drawing.Point(94, 38)
-        Me.txtFiltroBusquedaNC.Name = "txtFiltroBusquedaNC"
-        Me.txtFiltroBusquedaNC.Size = New System.Drawing.Size(125, 27)
-        Me.txtFiltroBusquedaNC.TabIndex = 4
-        '
-        'txtCodProd
-        '
-        Me.txtCodProd.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtCodProd.Enabled = False
-        Me.txtCodProd.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodProd.Location = New System.Drawing.Point(376, 40)
-        Me.txtCodProd.Name = "txtCodProd"
-        Me.txtCodProd.ReadOnly = True
-        Me.txtCodProd.Size = New System.Drawing.Size(195, 27)
-        Me.txtCodProd.TabIndex = 4
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label6.Location = New System.Drawing.Point(650, 41)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(102, 19)
-        Me.Label6.TabIndex = 6
-        Me.Label6.Text = "Descripción"
-        '
-        'txtCantidad
-        '
-        Me.txtCantidad.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCantidad.Location = New System.Drawing.Point(938, 83)
-        Me.txtCantidad.Name = "txtCantidad"
-        Me.txtCantidad.Size = New System.Drawing.Size(70, 27)
-        Me.txtCantidad.TabIndex = 5
-        '
-        'txtStock
-        '
-        Me.txtStock.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtStock.Location = New System.Drawing.Point(766, 83)
-        Me.txtStock.Name = "txtStock"
-        Me.txtStock.Size = New System.Drawing.Size(70, 27)
-        Me.txtStock.TabIndex = 5
-        '
-        'txtDescripcionProd
-        '
-        Me.txtDescripcionProd.Enabled = False
-        Me.txtDescripcionProd.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDescripcionProd.Location = New System.Drawing.Point(764, 38)
-        Me.txtDescripcionProd.Name = "txtDescripcionProd"
-        Me.txtDescripcionProd.ReadOnly = True
-        Me.txtDescripcionProd.Size = New System.Drawing.Size(244, 27)
-        Me.txtDescripcionProd.TabIndex = 5
-        '
-        'Label27
-        '
-        Me.Label27.AutoSize = True
-        Me.Label27.BackColor = System.Drawing.Color.Transparent
-        Me.Label27.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label27.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label27.Location = New System.Drawing.Point(850, 86)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(82, 19)
-        Me.Label27.TabIndex = 6
-        Me.Label27.Text = "Cantidad"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label5.Location = New System.Drawing.Point(649, 86)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(111, 19)
-        Me.Label5.TabIndex = 6
-        Me.Label5.Text = "Stock Actual"
+        Me.txtPrecioProd.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPrecioProd.Location = New System.Drawing.Point(232, 33)
+        Me.txtPrecioProd.Name = "txtPrecioProd"
+        Me.txtPrecioProd.Size = New System.Drawing.Size(187, 27)
+        Me.txtPrecioProd.TabIndex = 5
+        Me.txtPrecioProd.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label7
         '
@@ -710,204 +705,230 @@ Partial Class AdministrarVentas
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label7.Location = New System.Drawing.Point(650, 131)
+        Me.Label7.Location = New System.Drawing.Point(290, 11)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(60, 19)
         Me.Label7.TabIndex = 6
         Me.Label7.Text = "Precio"
         '
-        'txtPrecioProd
+        'Label5
         '
-        Me.txtPrecioProd.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPrecioProd.Location = New System.Drawing.Point(766, 128)
-        Me.txtPrecioProd.Name = "txtPrecioProd"
-        Me.txtPrecioProd.Size = New System.Drawing.Size(242, 27)
-        Me.txtPrecioProd.TabIndex = 5
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label5.Location = New System.Drawing.Point(8, 74)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(111, 19)
+        Me.Label5.TabIndex = 6
+        Me.Label5.Text = "Stock Actual"
         '
-        'pnlDatosVenta
+        'Label27
         '
-        Me.pnlDatosVenta.BackColor = System.Drawing.Color.Transparent
-        Me.pnlDatosVenta.Controls.Add(Me.Label18)
-        Me.pnlDatosVenta.Controls.Add(Me.gbTipoPago)
-        Me.pnlDatosVenta.Controls.Add(Me.dateFactura)
-        Me.pnlDatosVenta.Controls.Add(Me.gbCliente)
-        Me.pnlDatosVenta.Controls.Add(Me.Label3)
-        Me.pnlDatosVenta.Controls.Add(Me.Label26)
-        Me.pnlDatosVenta.Controls.Add(Me.TextBox1)
-        Me.pnlDatosVenta.Controls.Add(Me.Label2)
-        Me.pnlDatosVenta.Controls.Add(Me.txtFacturaNro)
-        Me.pnlDatosVenta.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pnlDatosVenta.Location = New System.Drawing.Point(32, 30)
-        Me.pnlDatosVenta.Name = "pnlDatosVenta"
-        Me.pnlDatosVenta.Size = New System.Drawing.Size(1193, 146)
-        Me.pnlDatosVenta.TabIndex = 20
+        Me.Label27.AutoSize = True
+        Me.Label27.BackColor = System.Drawing.Color.Transparent
+        Me.Label27.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label27.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label27.Location = New System.Drawing.Point(456, 11)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(82, 19)
+        Me.Label27.TabIndex = 6
+        Me.Label27.Text = "Cantidad"
         '
-        'Label18
+        'Label9
         '
-        Me.Label18.AutoSize = True
-        Me.Label18.BackColor = System.Drawing.Color.Transparent
-        Me.Label18.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label18.Location = New System.Drawing.Point(12, 0)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(147, 23)
-        Me.Label18.TabIndex = 9
-        Me.Label18.Text = "DATOS VENTA"
-        '
-        'gbTipoPago
-        '
-        Me.gbTipoPago.BackColor = System.Drawing.Color.Transparent
-        Me.gbTipoPago.Controls.Add(Me.Label20)
-        Me.gbTipoPago.Controls.Add(Me.txtEntregaInicial)
-        Me.gbTipoPago.Controls.Add(Me.rbCredito)
-        Me.gbTipoPago.Controls.Add(Me.rbContado)
-        Me.gbTipoPago.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbTipoPago.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.gbTipoPago.Location = New System.Drawing.Point(922, 17)
-        Me.gbTipoPago.Name = "gbTipoPago"
-        Me.gbTipoPago.Size = New System.Drawing.Size(260, 67)
-        Me.gbTipoPago.TabIndex = 3
-        Me.gbTipoPago.TabStop = False
-        Me.gbTipoPago.Text = "Tipo de Pago"
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(8, 79)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(117, 19)
-        Me.Label20.TabIndex = 3
-        Me.Label20.Text = "Entrega Inicial"
-        '
-        'txtEntregaInicial
-        '
-        Me.txtEntregaInicial.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEntregaInicial.Location = New System.Drawing.Point(131, 74)
-        Me.txtEntregaInicial.Name = "txtEntregaInicial"
-        Me.txtEntregaInicial.Size = New System.Drawing.Size(157, 26)
-        Me.txtEntregaInicial.TabIndex = 2
-        Me.txtEntregaInicial.Text = "0"
-        Me.txtEntregaInicial.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'rbCredito
-        '
-        Me.rbCredito.AutoSize = True
-        Me.rbCredito.Location = New System.Drawing.Point(131, 28)
-        Me.rbCredito.Name = "rbCredito"
-        Me.rbCredito.Size = New System.Drawing.Size(83, 23)
-        Me.rbCredito.TabIndex = 1
-        Me.rbCredito.TabStop = True
-        Me.rbCredito.Text = "Crédito"
-        Me.rbCredito.UseVisualStyleBackColor = True
-        '
-        'rbContado
-        '
-        Me.rbContado.AutoSize = True
-        Me.rbContado.Location = New System.Drawing.Point(28, 28)
-        Me.rbContado.Name = "rbContado"
-        Me.rbContado.Size = New System.Drawing.Size(93, 23)
-        Me.rbContado.TabIndex = 0
-        Me.rbContado.TabStop = True
-        Me.rbContado.Text = "Contado"
-        Me.rbContado.UseVisualStyleBackColor = True
-        '
-        'dateFactura
-        '
-        Me.dateFactura.CustomFormat = "dd/mm/aaaa"
-        Me.dateFactura.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dateFactura.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dateFactura.Location = New System.Drawing.Point(138, 89)
-        Me.dateFactura.Name = "dateFactura"
-        Me.dateFactura.Size = New System.Drawing.Size(168, 27)
-        Me.dateFactura.TabIndex = 5
-        '
-        'gbCliente
-        '
-        Me.gbCliente.BackColor = System.Drawing.Color.Transparent
-        Me.gbCliente.Controls.Add(Me.Label22)
-        Me.gbCliente.Controls.Add(Me.cbVendedor2)
-        Me.gbCliente.Controls.Add(Me.Label11)
-        Me.gbCliente.Controls.Add(Me.cbCliente2)
-        Me.gbCliente.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbCliente.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.gbCliente.Location = New System.Drawing.Point(577, 17)
-        Me.gbCliente.Name = "gbCliente"
-        Me.gbCliente.Size = New System.Drawing.Size(339, 119)
-        Me.gbCliente.TabIndex = 8
-        Me.gbCliente.TabStop = False
-        Me.gbCliente.Text = "Cliente"
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.Location = New System.Drawing.Point(12, 74)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(87, 19)
-        Me.Label22.TabIndex = 1
-        Me.Label22.Text = "Vendedor"
-        '
-        'cbVendedor2
-        '
-        Me.cbVendedor2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbVendedor2.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbVendedor2.FormattingEnabled = True
-        Me.cbVendedor2.Location = New System.Drawing.Point(118, 70)
-        Me.cbVendedor2.Name = "cbVendedor2"
-        Me.cbVendedor2.Size = New System.Drawing.Size(215, 27)
-        Me.cbVendedor2.TabIndex = 6
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(12, 32)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(67, 19)
-        Me.Label11.TabIndex = 1
-        Me.Label11.Text = "Cliente"
-        '
-        'cbCliente2
-        '
-        Me.cbCliente2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbCliente2.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbCliente2.FormattingEnabled = True
-        Me.cbCliente2.Location = New System.Drawing.Point(118, 28)
-        Me.cbCliente2.Name = "cbCliente2"
-        Me.cbCliente2.Size = New System.Drawing.Size(215, 27)
-        Me.cbCliente2.TabIndex = 6
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label3.Location = New System.Drawing.Point(13, 91)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(118, 19)
-        Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Fecha Factura"
+        Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.Transparent
+        Me.Label9.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label9.Location = New System.Drawing.Point(53, 10)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(86, 19)
+        Me.Label9.TabIndex = 9
+        Me.Label9.Text = "Impuesto"
         '
         'Label26
         '
         Me.Label26.AutoSize = True
         Me.Label26.BackColor = System.Drawing.Color.Transparent
-        Me.Label26.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label26.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label26.Location = New System.Drawing.Point(312, 42)
+        Me.Label26.Location = New System.Drawing.Point(228, 74)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(85, 19)
-        Me.Label26.TabIndex = 1
-        Me.Label26.Text = "Recibo Nº"
+        Me.Label26.Size = New System.Drawing.Size(146, 19)
+        Me.Label26.TabIndex = 6
+        Me.Label26.Text = "Superficie (M^2)"
         '
-        'TextBox1
+        'txtStock
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(403, 39)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(168, 26)
-        Me.TextBox1.TabIndex = 0
+        Me.txtStock.Enabled = False
+        Me.txtStock.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtStock.Location = New System.Drawing.Point(12, 96)
+        Me.txtStock.Name = "txtStock"
+        Me.txtStock.Size = New System.Drawing.Size(187, 27)
+        Me.txtStock.TabIndex = 5
+        '
+        'txtCantidad
+        '
+        Me.txtCantidad.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCantidad.Location = New System.Drawing.Point(455, 33)
+        Me.txtCantidad.Name = "txtCantidad"
+        Me.txtCantidad.Size = New System.Drawing.Size(83, 27)
+        Me.txtCantidad.TabIndex = 5
+        '
+        'txtM2
+        '
+        Me.txtM2.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtM2.Location = New System.Drawing.Point(232, 96)
+        Me.txtM2.Name = "txtM2"
+        Me.txtM2.Size = New System.Drawing.Size(187, 27)
+        Me.txtM2.TabIndex = 5
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.Label29)
+        Me.Panel1.Controls.Add(Me.btnBuscarProd)
+        Me.Panel1.Controls.Add(Me.txtFiltroBusquedaNC)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.txtDescripcionProd)
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.txtCodProd)
+        Me.Panel1.Location = New System.Drawing.Point(20, 29)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(397, 135)
+        Me.Panel1.TabIndex = 19
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.BackColor = System.Drawing.Color.Transparent
+        Me.Label29.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label29.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label29.Location = New System.Drawing.Point(6, 6)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(58, 19)
+        Me.Label29.TabIndex = 1
+        Me.Label29.Text = "Filtro:"
+        '
+        'btnBuscarProd
+        '
+        Me.btnBuscarProd.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscarProd.Location = New System.Drawing.Point(253, 28)
+        Me.btnBuscarProd.Name = "btnBuscarProd"
+        Me.btnBuscarProd.Size = New System.Drawing.Size(127, 32)
+        Me.btnBuscarProd.TabIndex = 12
+        Me.btnBuscarProd.Text = "Buscar"
+        Me.btnBuscarProd.UseVisualStyleBackColor = True
+        '
+        'txtFiltroBusquedaNC
+        '
+        Me.txtFiltroBusquedaNC.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFiltroBusquedaNC.Location = New System.Drawing.Point(10, 32)
+        Me.txtFiltroBusquedaNC.Name = "txtFiltroBusquedaNC"
+        Me.txtFiltroBusquedaNC.Size = New System.Drawing.Size(202, 27)
+        Me.txtFiltroBusquedaNC.TabIndex = 4
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label1.Location = New System.Drawing.Point(6, 74)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(65, 19)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Código"
+        '
+        'txtDescripcionProd
+        '
+        Me.txtDescripcionProd.Enabled = False
+        Me.txtDescripcionProd.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDescripcionProd.Location = New System.Drawing.Point(163, 96)
+        Me.txtDescripcionProd.Name = "txtDescripcionProd"
+        Me.txtDescripcionProd.ReadOnly = True
+        Me.txtDescripcionProd.Size = New System.Drawing.Size(214, 27)
+        Me.txtDescripcionProd.TabIndex = 5
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label6.Location = New System.Drawing.Point(161, 74)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(102, 19)
+        Me.Label6.TabIndex = 6
+        Me.Label6.Text = "Descripción"
+        '
+        'txtCodProd
+        '
+        Me.txtCodProd.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtCodProd.Enabled = False
+        Me.txtCodProd.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodProd.Location = New System.Drawing.Point(10, 96)
+        Me.txtCodProd.Name = "txtCodProd"
+        Me.txtCodProd.ReadOnly = True
+        Me.txtCodProd.Size = New System.Drawing.Size(137, 27)
+        Me.txtCodProd.TabIndex = 4
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.BackColor = System.Drawing.Color.Transparent
+        Me.Label19.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label19.Location = New System.Drawing.Point(527, 0)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(192, 22)
+        Me.Label19.TabIndex = 14
+        Me.Label19.Text = "DATOS PRODUCTO"
+        '
+        'btnInsertarProd
+        '
+        Me.btnInsertarProd.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnInsertarProd.Location = New System.Drawing.Point(1069, 56)
+        Me.btnInsertarProd.Name = "btnInsertarProd"
+        Me.btnInsertarProd.Size = New System.Drawing.Size(75, 32)
+        Me.btnInsertarProd.TabIndex = 2
+        Me.btnInsertarProd.Text = "+"
+        Me.btnInsertarProd.UseVisualStyleBackColor = True
+        '
+        'btnEliminarProd
+        '
+        Me.btnEliminarProd.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEliminarProd.Location = New System.Drawing.Point(1069, 121)
+        Me.btnEliminarProd.Name = "btnEliminarProd"
+        Me.btnEliminarProd.Size = New System.Drawing.Size(75, 32)
+        Me.btnEliminarProd.TabIndex = 3
+        Me.btnEliminarProd.Text = "-"
+        Me.btnEliminarProd.UseVisualStyleBackColor = True
+        '
+        'pnlDatosVenta
+        '
+        Me.pnlDatosVenta.BackColor = System.Drawing.Color.Transparent
+        Me.pnlDatosVenta.Controls.Add(Me.Panel5)
+        Me.pnlDatosVenta.Controls.Add(Me.Panel4)
+        Me.pnlDatosVenta.Controls.Add(Me.Label18)
+        Me.pnlDatosVenta.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pnlDatosVenta.Location = New System.Drawing.Point(8, 1)
+        Me.pnlDatosVenta.Name = "pnlDatosVenta"
+        Me.pnlDatosVenta.Size = New System.Drawing.Size(1197, 105)
+        Me.pnlDatosVenta.TabIndex = 20
+        '
+        'Panel5
+        '
+        Me.Panel5.Controls.Add(Me.Label2)
+        Me.Panel5.Controls.Add(Me.txtFacturaNro)
+        Me.Panel5.Controls.Add(Me.Label3)
+        Me.Panel5.Controls.Add(Me.cbDeposito)
+        Me.Panel5.Controls.Add(Me.Label30)
+        Me.Panel5.Controls.Add(Me.dateFactura)
+        Me.Panel5.Location = New System.Drawing.Point(34, 32)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(718, 64)
+        Me.Panel5.TabIndex = 17
         '
         'Label2
         '
@@ -915,7 +936,7 @@ Partial Class AdministrarVentas
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label2.Location = New System.Drawing.Point(12, 46)
+        Me.Label2.Location = New System.Drawing.Point(87, 6)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(89, 19)
         Me.Label2.TabIndex = 1
@@ -924,24 +945,138 @@ Partial Class AdministrarVentas
         'txtFacturaNro
         '
         Me.txtFacturaNro.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtFacturaNro.Location = New System.Drawing.Point(138, 39)
+        Me.txtFacturaNro.Location = New System.Drawing.Point(28, 32)
         Me.txtFacturaNro.Name = "txtFacturaNro"
-        Me.txtFacturaNro.Size = New System.Drawing.Size(168, 26)
+        Me.txtFacturaNro.Size = New System.Drawing.Size(196, 26)
         Me.txtFacturaNro.TabIndex = 0
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label3.Location = New System.Drawing.Point(289, 6)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(118, 19)
+        Me.Label3.TabIndex = 4
+        Me.Label3.Text = "Fecha Factura"
+        '
+        'cbDeposito
+        '
+        Me.cbDeposito.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbDeposito.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbDeposito.FormattingEnabled = True
+        Me.cbDeposito.Location = New System.Drawing.Point(484, 31)
+        Me.cbDeposito.Name = "cbDeposito"
+        Me.cbDeposito.Size = New System.Drawing.Size(202, 27)
+        Me.cbDeposito.TabIndex = 10
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.BackColor = System.Drawing.Color.Transparent
+        Me.Label30.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label30.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label30.Location = New System.Drawing.Point(535, 5)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(81, 19)
+        Me.Label30.TabIndex = 15
+        Me.Label30.Text = "Depósito"
+        '
+        'dateFactura
+        '
+        Me.dateFactura.CustomFormat = "dd/mm/aaaa"
+        Me.dateFactura.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dateFactura.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dateFactura.Location = New System.Drawing.Point(248, 31)
+        Me.dateFactura.Name = "dateFactura"
+        Me.dateFactura.Size = New System.Drawing.Size(202, 27)
+        Me.dateFactura.TabIndex = 5
+        '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.rbContado)
+        Me.Panel4.Controls.Add(Me.rbCredito)
+        Me.Panel4.Controls.Add(Me.Label20)
+        Me.Panel4.Location = New System.Drawing.Point(810, 32)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(320, 64)
+        Me.Panel4.TabIndex = 16
+        '
+        'rbContado
+        '
+        Me.rbContado.AutoSize = True
+        Me.rbContado.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbContado.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.rbContado.Location = New System.Drawing.Point(30, 33)
+        Me.rbContado.Name = "rbContado"
+        Me.rbContado.Size = New System.Drawing.Size(93, 23)
+        Me.rbContado.TabIndex = 0
+        Me.rbContado.TabStop = True
+        Me.rbContado.Text = "Contado"
+        Me.rbContado.UseVisualStyleBackColor = True
+        '
+        'rbCredito
+        '
+        Me.rbCredito.AutoSize = True
+        Me.rbCredito.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbCredito.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.rbCredito.Location = New System.Drawing.Point(185, 32)
+        Me.rbCredito.Name = "rbCredito"
+        Me.rbCredito.Size = New System.Drawing.Size(83, 23)
+        Me.rbCredito.TabIndex = 1
+        Me.rbCredito.TabStop = True
+        Me.rbCredito.Text = "Crédito"
+        Me.rbCredito.UseVisualStyleBackColor = True
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.BackColor = System.Drawing.Color.Transparent
+        Me.Label20.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label20.Location = New System.Drawing.Point(101, 0)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(116, 19)
+        Me.Label20.TabIndex = 15
+        Me.Label20.Text = "Tipo de Pago"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.BackColor = System.Drawing.Color.Transparent
+        Me.Label18.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label18.Location = New System.Drawing.Point(525, 0)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(147, 23)
+        Me.Label18.TabIndex = 9
+        Me.Label18.Text = "DATOS VENTA"
         '
         'pnlSeleccionProd
         '
+        Me.pnlSeleccionProd.Controls.Add(Me.btnCancelarSeleccion)
         Me.pnlSeleccionProd.Controls.Add(Me.btnSeleccionarPr)
-        Me.pnlSeleccionProd.Location = New System.Drawing.Point(408, 606)
+        Me.pnlSeleccionProd.Location = New System.Drawing.Point(408, 622)
         Me.pnlSeleccionProd.Name = "pnlSeleccionProd"
         Me.pnlSeleccionProd.Size = New System.Drawing.Size(370, 70)
         Me.pnlSeleccionProd.TabIndex = 19
         Me.pnlSeleccionProd.Visible = False
         '
+        'btnCancelarSeleccion
+        '
+        Me.btnCancelarSeleccion.Location = New System.Drawing.Point(208, 16)
+        Me.btnCancelarSeleccion.Name = "btnCancelarSeleccion"
+        Me.btnCancelarSeleccion.Size = New System.Drawing.Size(129, 41)
+        Me.btnCancelarSeleccion.TabIndex = 7
+        Me.btnCancelarSeleccion.Text = "Cancelar"
+        Me.btnCancelarSeleccion.UseVisualStyleBackColor = True
+        '
         'btnSeleccionarPr
         '
         Me.btnSeleccionarPr.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSeleccionarPr.Location = New System.Drawing.Point(128, 23)
+        Me.btnSeleccionarPr.Location = New System.Drawing.Point(45, 16)
         Me.btnSeleccionarPr.Name = "btnSeleccionarPr"
         Me.btnSeleccionarPr.Size = New System.Drawing.Size(129, 41)
         Me.btnSeleccionarPr.TabIndex = 6
@@ -960,7 +1095,7 @@ Partial Class AdministrarVentas
         'Button4
         '
         Me.Button4.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Location = New System.Drawing.Point(215, 29)
+        Me.Button4.Location = New System.Drawing.Point(215, 21)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(129, 41)
         Me.Button4.TabIndex = 7
@@ -970,7 +1105,7 @@ Partial Class AdministrarVentas
         'btnGuardarCompra
         '
         Me.btnGuardarCompra.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardarCompra.Location = New System.Drawing.Point(42, 29)
+        Me.btnGuardarCompra.Location = New System.Drawing.Point(38, 21)
         Me.btnGuardarCompra.Name = "btnGuardarCompra"
         Me.btnGuardarCompra.Size = New System.Drawing.Size(129, 41)
         Me.btnGuardarCompra.TabIndex = 6
@@ -1011,12 +1146,12 @@ Partial Class AdministrarVentas
         '
         Me.pnlTotales.Controls.Add(Me.Label16)
         Me.pnlTotales.Controls.Add(Me.lblTotal)
-        Me.pnlTotales.Controls.Add(Me.txtTotalCompra)
+        Me.pnlTotales.Controls.Add(Me.txtTotalVenta)
         Me.pnlTotales.Controls.Add(Me.Label10)
         Me.pnlTotales.Controls.Add(Me.txtIva)
         Me.pnlTotales.Controls.Add(Me.Label12)
         Me.pnlTotales.Controls.Add(Me.txtSub)
-        Me.pnlTotales.Location = New System.Drawing.Point(577, 619)
+        Me.pnlTotales.Location = New System.Drawing.Point(577, 622)
         Me.pnlTotales.Name = "pnlTotales"
         Me.pnlTotales.Size = New System.Drawing.Size(385, 227)
         Me.pnlTotales.TabIndex = 17
@@ -1044,15 +1179,15 @@ Partial Class AdministrarVentas
         Me.lblTotal.TabIndex = 11
         Me.lblTotal.Text = "TOTAL Gs."
         '
-        'txtTotalCompra
+        'txtTotalVenta
         '
-        Me.txtTotalCompra.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTotalCompra.Location = New System.Drawing.Point(158, 161)
-        Me.txtTotalCompra.Name = "txtTotalCompra"
-        Me.txtTotalCompra.ReadOnly = True
-        Me.txtTotalCompra.Size = New System.Drawing.Size(193, 30)
-        Me.txtTotalCompra.TabIndex = 12
-        Me.txtTotalCompra.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtTotalVenta.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTotalVenta.Location = New System.Drawing.Point(158, 161)
+        Me.txtTotalVenta.Name = "txtTotalVenta"
+        Me.txtTotalVenta.ReadOnly = True
+        Me.txtTotalVenta.Size = New System.Drawing.Size(193, 30)
+        Me.txtTotalVenta.TabIndex = 12
+        Me.txtTotalVenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label10
         '
@@ -1111,13 +1246,13 @@ Partial Class AdministrarVentas
         DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvProductos.DefaultCellStyle = DataGridViewCellStyle11
-        Me.dgvProductos.Location = New System.Drawing.Point(32, 385)
+        Me.dgvProductos.Location = New System.Drawing.Point(6, 385)
         Me.dgvProductos.MultiSelect = False
         Me.dgvProductos.Name = "dgvProductos"
         Me.dgvProductos.ReadOnly = True
         Me.dgvProductos.RowHeadersVisible = False
         Me.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvProductos.Size = New System.Drawing.Size(1193, 208)
+        Me.dgvProductos.Size = New System.Drawing.Size(1199, 208)
         Me.dgvProductos.TabIndex = 4
         '
         'tpAnularVenta
@@ -1131,7 +1266,7 @@ Partial Class AdministrarVentas
         Me.tpAnularVenta.Location = New System.Drawing.Point(4, 38)
         Me.tpAnularVenta.Name = "tpAnularVenta"
         Me.tpAnularVenta.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpAnularVenta.Size = New System.Drawing.Size(1248, 532)
+        Me.tpAnularVenta.Size = New System.Drawing.Size(1301, 700)
         Me.tpAnularVenta.TabIndex = 2
         Me.tpAnularVenta.Text = "Anular Venta"
         '
@@ -1311,7 +1446,7 @@ Partial Class AdministrarVentas
         Me.tpCobros.Location = New System.Drawing.Point(4, 38)
         Me.tpCobros.Name = "tpCobros"
         Me.tpCobros.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpCobros.Size = New System.Drawing.Size(1248, 532)
+        Me.tpCobros.Size = New System.Drawing.Size(1301, 700)
         Me.tpCobros.TabIndex = 3
         Me.tpCobros.Text = "Cobros"
         '
@@ -1335,10 +1470,11 @@ Partial Class AdministrarVentas
         DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvVentasCobro.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle13
         Me.dgvVentasCobro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle14.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle14.Padding = New System.Windows.Forms.Padding(2)
         DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White
         DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
@@ -1355,6 +1491,7 @@ Partial Class AdministrarVentas
         DataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight
         DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvVentasCobro.RowHeadersDefaultCellStyle = DataGridViewCellStyle15
+        Me.dgvVentasCobro.RowHeadersVisible = False
         DataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.dgvVentasCobro.RowsDefaultCellStyle = DataGridViewCellStyle16
         Me.dgvVentasCobro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -1375,42 +1512,40 @@ Partial Class AdministrarVentas
         '
         'pnlCobro
         '
-        Me.pnlCobro.Controls.Add(Me.cbCliente4)
-        Me.pnlCobro.Controls.Add(Me.btnDetalleP)
+        Me.pnlCobro.Controls.Add(Me.txtClienteCobro)
+        Me.pnlCobro.Controls.Add(Me.btnDetalleCobro)
         Me.pnlCobro.Controls.Add(Me.btnPagar)
-        Me.pnlCobro.Controls.Add(Me.btnBuscarP)
+        Me.pnlCobro.Controls.Add(Me.btnBuscarCobro)
         Me.pnlCobro.Controls.Add(Me.lblFiltroTipo)
         Me.pnlCobro.Controls.Add(Me.Label25)
         Me.pnlCobro.Controls.Add(Me.txtNroFactCobro)
-        Me.pnlCobro.Controls.Add(Me.cbFiltroC)
+        Me.pnlCobro.Controls.Add(Me.cbFiltroCobro)
         Me.pnlCobro.Controls.Add(Me.pnlFechas)
         Me.pnlCobro.Location = New System.Drawing.Point(42, 83)
         Me.pnlCobro.Name = "pnlCobro"
         Me.pnlCobro.Size = New System.Drawing.Size(910, 188)
         Me.pnlCobro.TabIndex = 5
         '
-        'cbCliente4
+        'txtClienteCobro
         '
-        Me.cbCliente4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbCliente4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbCliente4.FormattingEnabled = True
-        Me.cbCliente4.Location = New System.Drawing.Point(50, 121)
-        Me.cbCliente4.Name = "cbCliente4"
-        Me.cbCliente4.Size = New System.Drawing.Size(217, 26)
-        Me.cbCliente4.TabIndex = 12
-        Me.cbCliente4.Visible = False
+        Me.txtClienteCobro.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtClienteCobro.Location = New System.Drawing.Point(134, 132)
+        Me.txtClienteCobro.Name = "txtClienteCobro"
+        Me.txtClienteCobro.Size = New System.Drawing.Size(228, 26)
+        Me.txtClienteCobro.TabIndex = 12
+        Me.txtClienteCobro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'btnDetalleP
+        'btnDetalleCobro
         '
-        Me.btnDetalleP.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDetalleP.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnDetalleP.Location = New System.Drawing.Point(639, 132)
-        Me.btnDetalleP.Name = "btnDetalleP"
-        Me.btnDetalleP.Size = New System.Drawing.Size(111, 30)
-        Me.btnDetalleP.TabIndex = 11
-        Me.btnDetalleP.Text = "Ver Detalle"
-        Me.btnDetalleP.UseVisualStyleBackColor = True
-        Me.btnDetalleP.Visible = False
+        Me.btnDetalleCobro.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDetalleCobro.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btnDetalleCobro.Location = New System.Drawing.Point(639, 132)
+        Me.btnDetalleCobro.Name = "btnDetalleCobro"
+        Me.btnDetalleCobro.Size = New System.Drawing.Size(111, 30)
+        Me.btnDetalleCobro.TabIndex = 11
+        Me.btnDetalleCobro.Text = "Ver Detalle"
+        Me.btnDetalleCobro.UseVisualStyleBackColor = True
+        Me.btnDetalleCobro.Visible = False
         '
         'btnPagar
         '
@@ -1424,16 +1559,16 @@ Partial Class AdministrarVentas
         Me.btnPagar.UseVisualStyleBackColor = True
         Me.btnPagar.Visible = False
         '
-        'btnBuscarP
+        'btnBuscarCobro
         '
-        Me.btnBuscarP.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBuscarP.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnBuscarP.Location = New System.Drawing.Point(756, 133)
-        Me.btnBuscarP.Name = "btnBuscarP"
-        Me.btnBuscarP.Size = New System.Drawing.Size(108, 29)
-        Me.btnBuscarP.TabIndex = 3
-        Me.btnBuscarP.Text = "Buscar"
-        Me.btnBuscarP.UseVisualStyleBackColor = True
+        Me.btnBuscarCobro.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscarCobro.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnBuscarCobro.Location = New System.Drawing.Point(756, 133)
+        Me.btnBuscarCobro.Name = "btnBuscarCobro"
+        Me.btnBuscarCobro.Size = New System.Drawing.Size(108, 29)
+        Me.btnBuscarCobro.TabIndex = 3
+        Me.btnBuscarCobro.Text = "Buscar"
+        Me.btnBuscarCobro.UseVisualStyleBackColor = True
         '
         'lblFiltroTipo
         '
@@ -1467,15 +1602,15 @@ Partial Class AdministrarVentas
         Me.txtNroFactCobro.Size = New System.Drawing.Size(262, 26)
         Me.txtNroFactCobro.TabIndex = 8
         '
-        'cbFiltroC
+        'cbFiltroCobro
         '
-        Me.cbFiltroC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbFiltroC.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbFiltroC.FormattingEnabled = True
-        Me.cbFiltroC.Location = New System.Drawing.Point(178, 57)
-        Me.cbFiltroC.Name = "cbFiltroC"
-        Me.cbFiltroC.Size = New System.Drawing.Size(184, 27)
-        Me.cbFiltroC.TabIndex = 6
+        Me.cbFiltroCobro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbFiltroCobro.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbFiltroCobro.FormattingEnabled = True
+        Me.cbFiltroCobro.Location = New System.Drawing.Point(178, 57)
+        Me.cbFiltroCobro.Name = "cbFiltroCobro"
+        Me.cbFiltroCobro.Size = New System.Drawing.Size(184, 27)
+        Me.cbFiltroCobro.TabIndex = 6
         '
         'pnlFechas
         '
@@ -1536,7 +1671,7 @@ Partial Class AdministrarVentas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1256, 574)
+        Me.ClientSize = New System.Drawing.Size(1309, 742)
         Me.Controls.Add(Me.tbcVenta)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "AdministrarVentas"
@@ -1552,15 +1687,25 @@ Partial Class AdministrarVentas
         Me.pnlRangoFecha.ResumeLayout(False)
         Me.pnlRangoFecha.PerformLayout()
         Me.tpNuevaVenta.ResumeLayout(False)
+        Me.pnlDescuento.ResumeLayout(False)
+        Me.pnlDescuento.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         CType(Me.dgvBusquedaResult, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlDatosProducto.ResumeLayout(False)
         Me.pnlDatosProducto.PerformLayout()
+        Me.Panel6.ResumeLayout(False)
+        Me.Panel6.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.pnlDatosVenta.ResumeLayout(False)
         Me.pnlDatosVenta.PerformLayout()
-        Me.gbTipoPago.ResumeLayout(False)
-        Me.gbTipoPago.PerformLayout()
-        Me.gbCliente.ResumeLayout(False)
-        Me.gbCliente.PerformLayout()
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
         Me.pnlSeleccionProd.ResumeLayout(False)
         Me.pnlOperadores.ResumeLayout(False)
         Me.pnlComentario.ResumeLayout(False)
@@ -1595,7 +1740,6 @@ Partial Class AdministrarVentas
     Friend WithEvents btnBuscarCompra As Button
     Friend WithEvents lblBusqTxt As Label
     Friend WithEvents Label15 As Label
-    Friend WithEvents cbCliente1 As ComboBox
     Friend WithEvents cbBuscarVentaListado As ComboBox
     Friend WithEvents pnlRangoFecha As Panel
     Friend WithEvents datepFin As DateTimePicker
@@ -1611,11 +1755,9 @@ Partial Class AdministrarVentas
     Friend WithEvents cbDeposito As ComboBox
     Friend WithEvents btnBuscarProd As Button
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label4 As Label
     Friend WithEvents btnInsertarProd As Button
     Friend WithEvents Label9 As Label
     Friend WithEvents btnEliminarProd As Button
-    Friend WithEvents Label8 As Label
     Friend WithEvents txtFiltroBusquedaNC As TextBox
     Friend WithEvents txtCodProd As TextBox
     Friend WithEvents Label6 As Label
@@ -1626,15 +1768,10 @@ Partial Class AdministrarVentas
     Friend WithEvents txtPrecioProd As TextBox
     Friend WithEvents pnlDatosVenta As Panel
     Friend WithEvents Label18 As Label
-    Friend WithEvents gbTipoPago As GroupBox
-    Friend WithEvents Label20 As Label
-    Friend WithEvents txtEntregaInicial As TextBox
     Friend WithEvents rbCredito As RadioButton
     Friend WithEvents rbContado As RadioButton
     Friend WithEvents dateFactura As DateTimePicker
-    Friend WithEvents gbCliente As GroupBox
     Friend WithEvents Label11 As Label
-    Friend WithEvents cbCliente2 As ComboBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents txtFacturaNro As TextBox
@@ -1649,7 +1786,7 @@ Partial Class AdministrarVentas
     Friend WithEvents pnlTotales As Panel
     Friend WithEvents Label16 As Label
     Friend WithEvents lblTotal As Label
-    Friend WithEvents txtTotalCompra As TextBox
+    Friend WithEvents txtTotalVenta As TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents txtIva As TextBox
     Friend WithEvents Label12 As Label
@@ -1675,23 +1812,43 @@ Partial Class AdministrarVentas
     Friend WithEvents dgvVentasCobro As DataGridView
     Friend WithEvents lblTituloVenta As Label
     Friend WithEvents pnlCobro As Panel
-    Friend WithEvents cbCliente4 As ComboBox
-    Friend WithEvents btnDetalleP As Button
+    Friend WithEvents btnDetalleCobro As Button
     Friend WithEvents btnPagar As Button
-    Friend WithEvents btnBuscarP As Button
+    Friend WithEvents btnBuscarCobro As Button
     Friend WithEvents lblFiltroTipo As Label
     Friend WithEvents Label25 As Label
     Friend WithEvents txtNroFactCobro As TextBox
-    Friend WithEvents cbFiltroC As ComboBox
+    Friend WithEvents cbFiltroCobro As ComboBox
     Friend WithEvents pnlFechas As Panel
     Friend WithEvents dpHastaPago As DateTimePicker
     Friend WithEvents dpDesdePago As DateTimePicker
     Friend WithEvents Label23 As Label
     Friend WithEvents Label24 As Label
-    Friend WithEvents Label22 As Label
     Friend WithEvents cbVendedor2 As ComboBox
-    Friend WithEvents Label26 As Label
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents txtCantidad As TextBox
     Friend WithEvents Label27 As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label29 As Label
+    Friend WithEvents Label30 As Label
+    Friend WithEvents btnCancelarSeleccion As Button
+    Friend WithEvents txtNombreCli As TextBox
+    Friend WithEvents txtCI As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label22 As Label
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Label20 As Label
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents txtM2 As TextBox
+    Friend WithEvents Label26 As Label
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents txtClienteRucListado As TextBox
+    Friend WithEvents txtClienteCobro As TextBox
+    Friend WithEvents pnlDescuento As Panel
+    Friend WithEvents Label28 As Label
+    Friend WithEvents btnDeschacerDesc As Button
+    Friend WithEvents btnAplicarDesc As Button
+    Friend WithEvents txtDescuento As TextBox
 End Class

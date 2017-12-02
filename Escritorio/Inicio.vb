@@ -27,6 +27,11 @@ Public Class Inicio
         dgvDatos.Left = pnlControles.Left
         PanelTitulo.Left = pnlControles.Left
 
+        dgvDatos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvDatos.EditMode = False
+        dgvDatos.Visible = False
+        dgvDatos.DefaultCellStyle.WrapMode = DataGridViewTriState.True
+        dgvDatos.MultiSelect = False
         ' Estilo a paneles
         PanelTitulo.BackColor = Color.FromArgb(80, Color.Black)
         panelBuscar.BackColor = Color.FromArgb(80, Color.Black)
@@ -136,14 +141,17 @@ Public Class Inicio
         Dim prod As New ProductoDAO
         'dgvDatos.DataSource = prod
         pnlControles.Visible = True
-        dgvDatos.DataSource = ""
+        dgvDatos.DataSource = Nothing
+
         If target = "" Then
+
             'dgvDatos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
-            dgvDatos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-            dgvDatos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
-            Me.dgvDatos.EditMode = False
+            'dgvDatos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+            'dgvDatos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
+            'Me.dgvDatos.EditMode = False
             dgvDatos.Visible = True
-            dgvDatos.DefaultCellStyle.WrapMode = DataGridViewTriState.True
+
+            'dgvDatos.DefaultCellStyle.WrapMode = DataGridViewTriState.True
         End If
         Try
             Dim listaProductos = prod.cargar()
@@ -156,11 +164,13 @@ Public Class Inicio
             panelOperaciones.Visible = True
             PanelTitulo.Visible = True
             txtBusqueda.Text = ""
-            ''dgvDatos.Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCellsExceptHeader
+            dgvDatos.Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader
+
 
             target = "productos"
             lblTitulo.Text = "LISTADO DE PRODUCTOS"
             lblTitulo.Left = (PanelTitulo.Width / 2) - (lblTitulo.Width / 2)
+            dgvDatos.ClearSelection()
         Catch ex As Exception
             Throw New DAOException(ex.ToString)
         End Try
@@ -230,10 +240,10 @@ Public Class Inicio
         Dim client As New ClienteDAO
         If target = "" Then
             'dgvDatos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
-            dgvDatos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-            Me.dgvDatos.EditMode = False
+            'dgvDatos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+            'Me.dgvDatos.EditMode = False
             dgvDatos.Visible = True
-            dgvDatos.DefaultCellStyle.WrapMode = DataGridViewTriState.True
+            'dgvDatos.DefaultCellStyle.WrapMode = DataGridViewTriState.True
 
         End If
         Try
@@ -254,6 +264,8 @@ Public Class Inicio
             txtBusqueda.Text = ""
             lblTitulo.Left = (PanelTitulo.Width / 2) - (lblTitulo.Width / 2)
             target = "clientes"
+            dgvDatos.Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.None
+            dgvDatos.ClearSelection()
         Catch ex As Exception
             Throw New DAOException(ex.ToString)
         End Try
@@ -261,7 +273,7 @@ Public Class Inicio
 
     '  ---------------------------- Carga de formulario de agregar Cliente   ----------------------------
     Private Sub agregarCliente_click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles miClienteAgregar.Click
-        Dim agregarCliente As New AgregarCliente
+        Dim agregarCliente As New AgregarCliente("")
         dgvDatos.Visible = False
         agregarCliente.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
         agregarCliente.ShowDialog(Me)
@@ -326,11 +338,11 @@ Public Class Inicio
         dgvDatos.DataSource = ""
         pnlControles.Visible = True
         If target = "" Then
-            'dgvDatos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
-            dgvDatos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-            Me.dgvDatos.EditMode = False
+            ''dgvDatos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
+            'dgvDatos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+            'Me.dgvDatos.EditMode = False
             dgvDatos.Visible = True
-            dgvDatos.DefaultCellStyle.WrapMode = DataGridViewTriState.True
+            'dgvDatos.DefaultCellStyle.WrapMode = DataGridViewTriState.True
         End If
         Try
             Me.SuspendLayout()
@@ -342,7 +354,8 @@ Public Class Inicio
             panelBuscar.Visible = True
             panelOperaciones.Visible = True
             txtBusqueda.Text = ""
-            dgvDatos.Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCellsExceptHeader
+            dgvDatos.Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.None
+            dgvDatos.Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
             target = "proveedores"
             PanelTitulo.Visible = True
             dgvDatos.Columns("Usuario").Visible = False
@@ -396,10 +409,10 @@ Public Class Inicio
         pnlControles.Visible = True
         If target = "" Then
             'dgvDatos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
-            dgvDatos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-            Me.dgvDatos.EditMode = False
+            'dgvDatos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+            'Me.dgvDatos.EditMode = False
             dgvDatos.Visible = True
-            dgvDatos.DefaultCellStyle.WrapMode = DataGridViewTriState.True
+            'dgvDatos.DefaultCellStyle.WrapMode = DataGridViewTriState.True
         End If
         Try
             Dim listaProv = vend.cargar()
@@ -417,6 +430,7 @@ Public Class Inicio
             PanelTitulo.Visible = True
             lblTitulo.Text = "LISTADO DE VENDEDORES"
             lblTitulo.Left = (PanelTitulo.Width / 2) - (lblTitulo.Width / 2)
+
         Catch ex As Exception
             Throw New DAOException(ex.ToString)
         End Try

@@ -189,14 +189,26 @@ Public Class DepositosMI
 
 
             mov.nroMov = txtNroOperacion.Text
-            mov.tipo = "Depositos"
+            mov.tipo = "Depos"
             mov.solicitante = txtDepoDestino.Text
             mov.proveedor = cbDepositoOrigen.SelectedItem.item("Código")
             mov.autorizado = cbAutorizador.SelectedItem
             mov.fecha = dpFechaMov.Value
             mov.fechaIns = Date.Now
             movInt.guardarMovDepositos(mov, dgvProductos.Rows)
-            MsgBox("Movimiento Realizado")
+            Dim result As Integer = MessageBox.Show("!Momivimento realizado y guardado! ¿Desea generar un reporte ahora?", "caption", MessageBoxButtons.YesNo)
+
+            If result = DialogResult.Yes Then
+                Dim reporte As New Reporte
+                reporte.codigoCompra = txtNroOperacion.Text
+                reporte.tipo = "movInt"
+                reporte.movInt = mov
+                reporte.ShowDialog()
+                reporte.Dispose()
+                Me.DialogResult = DialogResult.OK
+            Else
+                limpiarCampos()
+            End If
 
         ElseIf validar = "1" Then
             MsgBox("Debe ingresar un Nro. de operación", MsgBoxStyle.Critical, "Notificación")
@@ -206,7 +218,21 @@ Public Class DepositosMI
             MsgBox("No agrego ningún producto al movimiento", MsgBoxStyle.Critical, "Notificación")
         End If
     End Sub
+    Private Sub limpiarCampos()
+        txtCantidad.Text = ""
+        txtCodigoProd.Text = ""
+        txtDepoDestino.Text = ""
+        txtDescripcionProd.Text = ""
+        txtFiltro.Text = ""
+        txtNroOperacion.Text = ""
+        txtStock.Text = ""
+        cbDepositoOrigen.SelectedIndex = 0
+        txtNroOperacion.Focus()
+        dgvBusquedaResult.DataSource = Nothing
+        dgvProductos.DataSource = Nothing
+        dgvProductos.DataSource = New stockcapiataDataSet.MovInternoProductosDataTable
 
+    End Sub
     Private Function validarMovimiento() As String
         Dim resultado = "ok"
 

@@ -1,12 +1,15 @@
 ﻿Imports BackEnd
 
 Public Class AgregarCliente
+    Dim ruc = ""
 
-
-
+    Public Sub New(ByVal ruc_cli As String)
+        InitializeComponent()
+        ruc = ruc_cli
+    End Sub
 
     Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
-        Me.Close()
+        Me.DialogResult = DialogResult.Abort
 
     End Sub
 
@@ -49,6 +52,11 @@ Public Class AgregarCliente
 
     Private Sub AgregarCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.SuspendLayout()
+        If ruc <> "" Then
+
+            txtRUC.Text = ruc
+            txtRUC.Enabled = False
+        End If
         backgroundElementos()
         Me.ResumeLayout()
     End Sub

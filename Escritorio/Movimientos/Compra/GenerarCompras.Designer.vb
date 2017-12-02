@@ -41,6 +41,7 @@ Partial Class GenerarCompras
         Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GenerarCompras))
         Me.tbcCompra = New System.Windows.Forms.TabControl()
         Me.tpListado = New System.Windows.Forms.TabPage()
         Me.dgvCompras = New System.Windows.Forms.DataGridView()
@@ -243,7 +244,7 @@ Partial Class GenerarCompras
         DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.dgvCompras.RowsDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvCompras.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvCompras.Size = New System.Drawing.Size(910, 178)
+        Me.dgvCompras.Size = New System.Drawing.Size(910, 293)
         Me.dgvCompras.TabIndex = 35
         Me.dgvCompras.Visible = False
         '
@@ -531,6 +532,7 @@ Partial Class GenerarCompras
         'cbDeposito
         '
         Me.cbDeposito.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbDeposito.Enabled = False
         Me.cbDeposito.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbDeposito.FormattingEnabled = True
         Me.cbDeposito.Location = New System.Drawing.Point(392, 88)
@@ -630,7 +632,6 @@ Partial Class GenerarCompras
         '
         'txtCodProd
         '
-        Me.txtCodProd.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtCodProd.Enabled = False
         Me.txtCodProd.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCodProd.Location = New System.Drawing.Point(392, 41)
@@ -1100,6 +1101,8 @@ Partial Class GenerarCompras
         '
         'dgvComprasAnular
         '
+        Me.dgvComprasAnular.AllowUserToAddRows = False
+        Me.dgvComprasAnular.AllowUserToDeleteRows = False
         Me.dgvComprasAnular.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvComprasAnular.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
         Me.dgvComprasAnular.Location = New System.Drawing.Point(115, 324)
@@ -1107,7 +1110,7 @@ Partial Class GenerarCompras
         Me.dgvComprasAnular.Name = "dgvComprasAnular"
         Me.dgvComprasAnular.ReadOnly = True
         Me.dgvComprasAnular.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvComprasAnular.Size = New System.Drawing.Size(821, 218)
+        Me.dgvComprasAnular.Size = New System.Drawing.Size(821, 310)
         Me.dgvComprasAnular.TabIndex = 3
         '
         'txtTituloAnular
@@ -1290,7 +1293,7 @@ Partial Class GenerarCompras
         DataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.dgvComprasP.RowsDefaultCellStyle = DataGridViewCellStyle16
         Me.dgvComprasP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvComprasP.Size = New System.Drawing.Size(910, 308)
+        Me.dgvComprasP.Size = New System.Drawing.Size(910, 345)
         Me.dgvComprasP.TabIndex = 37
         Me.dgvComprasP.Visible = False
         '
@@ -1471,6 +1474,7 @@ Partial Class GenerarCompras
         Me.BackColor = System.Drawing.Color.OrangeRed
         Me.ClientSize = New System.Drawing.Size(1120, 742)
         Me.Controls.Add(Me.tbcCompra)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "GenerarCompras"
         Me.Text = "COMPRAS"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -1580,7 +1584,6 @@ Partial Class GenerarCompras
     Friend WithEvents Label10 As Label
     Friend WithEvents txtIva As TextBox
     Friend WithEvents Label12 As Label
-    Friend WithEvents txtSub As TextBox
     Friend WithEvents dgvProductos As DataGridView
     Friend WithEvents txtNroFacturaListado As TextBox
     Friend WithEvents cbProveedor1 As ComboBox
@@ -1630,4 +1633,5 @@ Partial Class GenerarCompras
     Friend WithEvents dgvBusquedaResult As DataGridView
     Friend WithEvents dgvComprasP As DataGridView
     Friend WithEvents btnPagar As Button
+    Friend WithEvents txtSub As TextBox
 End Class

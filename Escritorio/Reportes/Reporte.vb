@@ -3,10 +3,10 @@
 Public Class Reporte
     Public codigoCompra As String
     Public compra As New Compra
+    Public venta As New Venta
     Public movInt As New BackEnd.MovimientoInterno
     Public tipo As String = ""
     Private Sub ReporteForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
 
         If tipo = "compra" Then
             Dim objreporte As New rpDetalleCompraCod
@@ -44,10 +44,31 @@ Public Class Reporte
             objreporte.SetParameterValue("autorizado", movInt.autorizado)
             objreporte.SetParameterValue("solicitado", movInt.solicitante)
             Dim daomovin As New MovInternoDAO
-            Dim prov = daomovin.buscarSolicitante(movInt.proveedor)
+            Dim prov
+            If movInt.tipo = "Depos" Then
+                prov = daomovin.buscarDeposito(movInt.proveedor)
+
+            Else
+                prov = daomovin.buscarSolicitante(movInt.proveedor)
+
+            End If
             objreporte.SetParameterValue("proveedor", prov)
             objreporte.SetParameterValue("fecha", movInt.fecha.ToShortDateString)
             objreporte.SetParameterValue("tipo", movInt.tipo)
+            CrystalReportViewer1.ReportSource = objreporte
+        ElseIf tipo = "venta" Then
+            Dim objreporte As New rpVenta
+            objreporte.SetParameterValue("codigo", venta.codigo.ToString)
+            objreporte.SetParameterValue("cliente", venta.cliente.ToString)
+            objreporte.SetParameterValue("vendedor", venta.vendedor.ToString)
+            objreporte.SetParameterValue("NroFactura", venta.nroFactura.ToString)
+            objreporte.SetParameterValue("fecha", venta.fechaFactura.ToShortDateString)
+            objreporte.SetParameterValue("tipo", venta.tipo)
+            objreporte.SetParameterValue("saldo", venta.saldo.ToString)
+            objreporte.SetParameterValue("descuento", venta.descuento)
+            'objreporte.SetParameterValue("proveedor", prov)
+            'objreporte.SetParameterValue("fecha", movInt.fecha.ToShortDateString)
+            'objreporte.SetParameterValue("tipo", movInt.tipo)
             CrystalReportViewer1.ReportSource = objreporte
         End If
 

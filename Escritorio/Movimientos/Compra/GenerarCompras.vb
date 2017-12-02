@@ -147,11 +147,15 @@ Public Class GenerarCompras
                 ElseIf cbBuscarCompra.SelectedIndex = 1 Then
                     Dim inicio = datepInicio.Value.Date
                     Dim fin = datepFin.Value.Date
-                    listadoCompras = compraDao.carga(inicio, fin, 0)
+                    listadoCompras = compraDao.carga(inicio, fin, 1)
                 ElseIf cbBuscarCompra.SelectedIndex = 2 Then
                     Dim filtro = cbProveedor2.SelectedItem.item("Descripción")
 
                     listadoCompras = compraDao.buscarCompra(filtro, 2)
+                Else
+                    Dim filtro = cbEstadoCompra.SelectedValue
+
+                    listadoCompras = compraDao.buscarCompra(filtro, 3)
                 End If
 
                 btnDetalle.Visible = True
@@ -231,7 +235,13 @@ Public Class GenerarCompras
         Me.ResumeLayout()
     End Sub
 
+    Private Sub txtFiltroBusquedaNC_KeyDown(sender As Object, e As KeyEventArgs) Handles txtFiltroBusquedaNC.KeyDown
 
+        If e.KeyCode = Keys.Enter Then
+            e.SuppressKeyPress = True
+            btnBuscarProd_Click(sender, e)
+        End If
+    End Sub
     ' --------------------------------------------- GENERAR COMPRA - METODOS ---------------------------------------------
     Private Sub btnBuscarProd_Click(sender As Object, e As EventArgs) Handles btnBuscarProd.Click
         Dim cod = txtFiltroBusquedaNC.Text
@@ -377,6 +387,8 @@ Public Class GenerarCompras
     Private Sub guardarCompra_Click(sender As Object, e As EventArgs) Handles btnGuardarCompra.Click
         If validarCompra() Then
             Try
+
+
                 Dim compra As New Compra
                 Dim compraDao As New CompraDAO
                 compra.nroFactura = txtFacturaNro.Text
@@ -396,6 +408,7 @@ Public Class GenerarCompras
                 End If
 
 
+
                 Dim productos As New Collection
                 'For Each row As DataGridViewRow In dgvProductos.Rows
                 '    Dim codigo = dgvProductos.Item(0, row.Index).Value
@@ -405,18 +418,50 @@ Public Class GenerarCompras
                 'Next
 
                 compraDao.guardarCompra(compra, dgvProductos.Rows)
-                MsgBox("!Compra registrada con éxito!", MsgBoxStyle.Information, "Notificación")
+                MsgBox("!Compra guardada con éxito!", MsgBoxStyle.Information, "Compra")
+                'Dim result As Integer = MessageBox.Show("!Compra realizada y guardada! ¿Desea generar un reporte ahora?", "caption", MessageBoxButtons.YesNo)
+
+
+                'Dim result As Integer = MessageBox.Show("!Compra realizada y guardada! ¿Desea generar un reporte ahora?", "caption", MessageBoxButtons.YesNo)
+
+                'If result = DialogResult.Yes Then
+                '    Dim reporte As New Reporte
+                '    reporte.codigoCompra = compra.nroFactura
+                '    compra.codigo = compra.nroFactura
+                '    reporte.tipo = "compra"
+                '    reporte.compra = compra
+
+                '    reporte.compra.proveedor = cbProveedor2.SelectedItem.item("Descripción")
+                '    reporte.ShowDialog()
+                '    reporte.Dispose()
+                'End If
+                limpiarDatosCompra()
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try
         End If
     End Sub
 
-
+    Private Sub limpiarDatosCompra()
+        txtFacturaNro.Text = ""
+        txtFiltroBusquedaNC.Text = ""
+        txtPrecioProd.Text = ""
+        txtCantidad.Text = ""
+        txtDescripcionProd.Text = ""
+        txtCodProd.Text = ""
+        dgvProductos.DataSource = ""
+        dgvProductos.DataSource = New stockcapiataDataSet.productosCompraDataTable
+        'dgvProductos.Columns("Impuesto").Visible = False
+        dgvProductos.Columns("DepoCod").Visible = False
+    End Sub
     ' Validaciones
     Private Function validarCompra() As Boolean
         If validarProducto() Then
             If txtFacturaNro.Text = "" Then
+                MsgBox("¡Inserte un número de factura¡", MsgBoxStyle.Critical, "Error al guardar")
+                Return False
+            ElseIf dgvProductos.RowCount <= 0 Then
+                MsgBox("¡Inserte al menos un producto¡", MsgBoxStyle.Critical, "Error al guardar")
                 Return False
             End If
         End If
@@ -486,18 +531,29 @@ Public Class GenerarCompras
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnAnularCompra.Click
-        Dim row = dgvComprasAnular.CurrentRow.Index
-        Dim codigo = dgvComprasAnular.Item(0, row).Value
+        If dgvComprasAnular.Rows.Count > 0 Then
+            If dgvComprasAnular.SelectedRows.Count > 0 Then
+                Dim row = dgvComprasAnular.CurrentRow.Index
+                Dim codigo = dgvComprasAnular.Item(0, row).Value
+                Dim anular = dgvComprasAnular.CurrentRow
+                Dim result As Integer = MessageBox.Show("Desea Anular la compra  " + codigo.ToString + " ?", "caption", MessageBoxButtons.YesNo)
 
-        Dim result As Integer = MessageBox.Show("Desea Anular la compra  " + codigo.ToString + " ?", "caption", MessageBoxButtons.YesNo)
+                If result = DialogResult.No Then
 
-        If result = DialogResult.No Then
-
-        ElseIf result = DialogResult.Yes Then
-            Dim daoProd As New ProductoDAO
-            compraDao.anularCompra(codigo)
-            MsgBox("Compra Anulada con éxito!", MsgBoxStyle.Information, "Notificación Anulación")
+                ElseIf result = DialogResult.Yes Then
+                    Dim daoProd As New ProductoDAO
+                    compraDao.anularCompra(codigo)
+                    MsgBox("Compra Anulada con éxito!", MsgBoxStyle.Information, "Notificación Anulación")
+                    dgvComprasAnular.Rows.Remove(anular)
+                    dgvComprasAnular.ClearSelection()
+                End If
+            Else
+                MsgBox("!Debe seleccionar una Compra!", MsgBoxStyle.Critical, "Notificación")
+            End If
+        Else
+            MsgBox("!Debe seleccionar una Compra!", MsgBoxStyle.Critical, "Notificación")
         End If
+
     End Sub
 
     Private Sub btnBuscarAnular_Click(sender As Object, e As EventArgs) Handles btnBuscarAnular.Click
@@ -510,7 +566,7 @@ Public Class GenerarCompras
             ElseIf cbAnularFiltro.SelectedIndex = 1 Then
                 Dim inicio = dpAnularCompraIni.Value.Date
                 Dim fin = dpAnularCompraFin.Value.Date
-                listadoCompras = compraDao.carga(inicio, fin, 0)
+                listadoCompras = compraDao.carga(inicio, fin, 1)
             ElseIf cbAnularFiltro.SelectedIndex = 2 Then
                 Dim filtro = cbProveedor3.SelectedItem.item("Descripción")
 
@@ -543,6 +599,10 @@ Public Class GenerarCompras
             detalleForm.ShowDialog()
 
             detalleForm.Dispose()
+        ElseIf dgvComprasAnular.SelectedRows.Count = 0
+            MsgBox("Ninguna compra encontrada con esos parámetros", MsgBoxStyle.Exclamation, "Notificación")
+        Else
+            MsgBox("!Debe seleccionar una Compra!", MsgBoxStyle.Critical, "Notificación")
         End If
     End Sub
 
@@ -569,7 +629,7 @@ Public Class GenerarCompras
             txtNroFactPago.Visible = False
             cbProveedor4.Visible = True
             lblFiltroTipo.Text = "Seleccione el proveedor"
-
+            lblFiltroTipo.Visible = True
             'txtNroFacturaListado.Focus()
             'ElseIf cbBuscarCompra.SelectedItem = "Proveedor" Then
             '    dpAnularCompra.Visible = False
@@ -645,7 +705,7 @@ Public Class GenerarCompras
 
 
 
-    Private Sub soloAdmiteNumeros(sender As Object, e As KeyPressEventArgs) Handles txtCantidad.KeyPress, txtEntregaInicial.KeyPress, txtPrecioProd.KeyPress, txtFiltroBusquedaNC.KeyPress, txtNroFacturaListado.KeyPress
+    Private Sub soloAdmiteNumeros(sender As Object, e As KeyPressEventArgs) Handles txtCantidad.KeyPress, txtEntregaInicial.KeyPress, txtPrecioProd.KeyPress, txtNroFacturaListado.KeyPress
         soloNumeros(e)
     End Sub
 
@@ -659,17 +719,28 @@ Public Class GenerarCompras
                 fechaAct = Nothing
             End If
             Dim saldo = dgvComprasP.Item(5, row).Value
-                Dim detalleForm As New DetalleCompra(codigo)
+            Dim detalleForm As New DetalleCompra(codigo)
 
-                Dim pago As New Pagar(codigo, saldo, fecha, fechaAct)
-                pago.ShowDialog()
-                pago.Dispose()
+            Dim pago As New Pagar(codigo, saldo, fecha, fechaAct)
+            pago.ShowDialog()
+            pago.Dispose()
 
-            Else
-                MsgBox("Niguna compra selecciona!", MsgBoxStyle.Critical, "Notificación")
+        Else
+            MsgBox("Niguna compra selecciona!", MsgBoxStyle.Critical, "Notificación")
         End If
 
 
     End Sub
 
+    Private Sub txtCantidad_TextChanged(sender As Object, e As EventArgs) Handles txtCantidad.TextChanged
+
+    End Sub
+
+    Private Sub txtPrecioProd_LostFocus(sender As Object, e As EventArgs) Handles txtPrecioProd.LostFocus
+        txtPrecioProd.Text = FormatCurrency(txtPrecioProd.Text)
+    End Sub
+
+    Private Sub cbEstadoCompra_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbEstadoCompra.SelectedIndexChanged
+
+    End Sub
 End Class
