@@ -58,9 +58,13 @@ Public Class Reporte
             CrystalReportViewer1.ReportSource = objreporte
         ElseIf tipo = "venta" Then
             Dim objreporte As New rpVenta
+            Dim daoVenta As New VentaDAO
+            Dim daoVendedor As New VendedorDAO
+            Dim vendedor = daoVenta.obtenerVendedor(venta.vendedor)
+            Dim cliente = daoVenta.obtenerCliente(venta.cliente)
             objreporte.SetParameterValue("codigo", venta.codigo.ToString)
-            objreporte.SetParameterValue("cliente", venta.cliente.ToString)
-            objreporte.SetParameterValue("vendedor", venta.vendedor.ToString)
+            objreporte.SetParameterValue("cliente", cliente.nombre)
+            objreporte.SetParameterValue("vendedor", vendedor.nombre)
             objreporte.SetParameterValue("NroFactura", venta.nroFactura.ToString)
             objreporte.SetParameterValue("fecha", venta.fechaFactura.ToShortDateString)
             objreporte.SetParameterValue("tipo", venta.tipo)

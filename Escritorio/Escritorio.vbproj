@@ -246,6 +246,12 @@
     <Compile Include="Movimientos\Venta\AdministrarVentas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Movimientos\Venta\CobroVenta.Designer.vb">
+      <DependentUpon>CobroVenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Movimientos\Venta\CobroVenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Movimientos\Venta\DetalleVenta.Designer.vb">
       <DependentUpon>DetalleVenta.vb</DependentUpon>
     </Compile>
@@ -349,6 +355,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Movimientos\Venta\AdministrarVentas.resx">
       <DependentUpon>AdministrarVentas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimientos\Venta\CobroVenta.resx">
+      <DependentUpon>CobroVenta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movimientos\Venta\DetalleVenta.resx">
       <DependentUpon>DetalleVenta.vb</DependentUpon>

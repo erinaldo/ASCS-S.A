@@ -393,15 +393,32 @@ Public Class AdministrarVentas
                 Else
                     venta.descuento = CDbl(txtDescuento.Text)
                 End If
-                    venta.fechaFactura = dateFactura.Value
+                venta.fechaFactura = dateFactura.Value
                 venta.fechaInsFactura = Date.Today
                 venta.nroFactura = txtFacturaNro.Text
                 daoVenta.guardarVenta(venta, dgvProductos.Rows)
                 MsgBox("¡Venta Realizada!", MsgBoxStyle.Information, "Notificación Venta")
+                limpiarCamposProducto()
+                limpiarVenta()
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try
         End If
+    End Sub
+
+    Public Sub limpiarVenta()
+        Me.SuspendLayout()
+        txtFacturaNro.Text = ""
+        txtCI.Text = ""
+        txtTotalVenta.Text = ""
+        txtSub.Text = ""
+        txtIva.Text = ""
+        txtDescuento.Text = ""
+        btnAplicarDesc.Enabled = True
+        btnDeschacerDesc.Enabled = False
+        dgvProductos.DataSource = ""
+        dgvProductos.DataSource = New stockcapiataDataSet.productosVentaDataTable
+        Me.ResumeLayout()
     End Sub
     Private Function validarVenta() As Boolean
         If txtFacturaNro.Text = "" Then
@@ -636,6 +653,8 @@ Public Class AdministrarVentas
             txtClienteCobro.Visible = True
             lblFiltroTipo.Text = "Ingrese RUC/C.I"
             lblFiltroTipo.Visible = True
+            txtClienteCobro.Text = ""
+            txtClienteCobro.Focus()
             txtClienteCobro.Location = txtNroFactCobro.Location
             'txtNroFacturaListado.Focus()
             'ElseIf cbBuscarCompra.SelectedItem = "Proveedor" Then
@@ -645,6 +664,35 @@ Public Class AdministrarVentas
             '    txtNrofacturaAnul.Visible = False
         End If
         Me.ResumeLayout()
+    End Sub
+
+    Private Sub btnDetalleCobro_Click(sender As Object, e As EventArgs) Handles btnDetalleCobro.Click
+        If dgvVentasCobro.SelectedRows.Count > 0 Then
+            Dim row = dgvVentasCobro.CurrentRow.Index
+            Dim codigo = dgvVentasCobro.Item(0, row).Value
+            Dim detalleForm As New DetalleVenta(codigo)
+            detalleForm.ShowDialog()
+
+            detalleForm.Dispose()
+        Else
+            MsgBox("¡Ninguna venta seleccionada!", MsgBoxStyle.Critical, "Notificación")
+        End If
+    End Sub
+    Private Sub btnPagar_Click(sender As Object, e As EventArgs) Handles btnPagar.Click
+        If dgvVentasCobro.SelectedRows.Count <= 0 Then
+            MsgBox("¡Ninguna Venta seleccionada", MsgBoxStyle.Critical, "Error cobro")
+        Else
+            Dim cobro As New CobroVenta
+            Dim row = dgvVentasCobro.CurrentRow.Index
+            Dim codigo = dgvVentasCobro.Item(0, row).Value
+
+            Dim venta = daoVenta.obtenerVentaDatos(codigo)
+            cobro.venta = venta
+            cobro.cliente = dgvVentasCobro.Item(2, row).Value
+            cobro.vendedor = dgvVentasCobro.Item(7, row).Value
+            cobro.ShowDialog()
+            cobro.Dispose()
+        End If
     End Sub
 
     Private Sub buscarVentaCobros(sender As Object, e As EventArgs) Handles btnBuscarCobro.Click
@@ -673,6 +721,7 @@ Public Class AdministrarVentas
                 dgvVentasCobro.Visible = True
                 dgvVentasCobro.Columns("rucCliente").Visible = False
                 dgvVentasCobro.ClearSelection()
+                btnPagar.Visible = True
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try
@@ -740,4 +789,10 @@ Public Class AdministrarVentas
         txtDescuento.Text = ""
         btnDeschacerDesc.Enabled = False
     End Sub
+
+    Private Sub txtPrecioProd_TextChanged(sender As Object, e As EventArgs) Handles txtPrecioProd.TextChanged
+
+    End Sub
+
+
 End Class

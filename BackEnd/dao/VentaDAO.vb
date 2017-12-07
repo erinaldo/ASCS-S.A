@@ -86,6 +86,16 @@ Public Class VentaDAO
         Return True
     End Function
 
+    Public Function obtenerCliente(cliente As Integer) As Cliente
+        Dim tmp As New ClienteDAO
+        Return tmp.obtenerCliente(cliente.ToString)
+    End Function
+
+    Public Function obtenerVendedor(vendedor As Integer) As Vendedor
+        Dim tmp As New VendedorDAO
+        Return tmp.obtenerVendedor(vendedor.ToString)
+    End Function
+
     Public Sub guardarVenta(venta As Venta, productos As DataGridViewRowCollection)
         Try
             Dim con As New MySqlConnection(ConexionDB.cadenaConexionBD(Sesion.Usuario, Sesion.Password))
