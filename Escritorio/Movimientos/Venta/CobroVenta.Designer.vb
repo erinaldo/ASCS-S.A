@@ -55,7 +55,9 @@ Partial Class CobroVenta
         Me.chbEfectivo = New System.Windows.Forms.CheckBox()
         Me.pnlRecibo = New System.Windows.Forms.Panel()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.txtRecibo = New System.Windows.Forms.TextBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.dpChequeFecha = New System.Windows.Forms.DateTimePicker()
         Me.pnlOperadores.SuspendLayout()
         Me.pnlDatosVenta.SuspendLayout()
         Me.pnlCobro.SuspendLayout()
@@ -299,10 +301,12 @@ Partial Class CobroVenta
         '
         'pnlCheque
         '
+        Me.pnlCheque.Controls.Add(Me.dpChequeFecha)
         Me.pnlCheque.Controls.Add(Me.Label9)
         Me.pnlCheque.Controls.Add(Me.chbCheque)
         Me.pnlCheque.Controls.Add(Me.txtBanco)
         Me.pnlCheque.Controls.Add(Me.Label6)
+        Me.pnlCheque.Controls.Add(Me.Label12)
         Me.pnlCheque.Controls.Add(Me.Label8)
         Me.pnlCheque.Controls.Add(Me.txtCheque)
         Me.pnlCheque.Controls.Add(Me.txtPagoCheque)
@@ -317,7 +321,7 @@ Partial Class CobroVenta
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label9.Location = New System.Drawing.Point(11, 149)
+        Me.Label9.Location = New System.Drawing.Point(12, 165)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(65, 19)
         Me.Label9.TabIndex = 1
@@ -340,9 +344,9 @@ Partial Class CobroVenta
         '
         Me.txtBanco.Enabled = False
         Me.txtBanco.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBanco.Location = New System.Drawing.Point(140, 150)
+        Me.txtBanco.Location = New System.Drawing.Point(140, 163)
         Me.txtBanco.Name = "txtBanco"
-        Me.txtBanco.Size = New System.Drawing.Size(187, 25)
+        Me.txtBanco.Size = New System.Drawing.Size(191, 25)
         Me.txtBanco.TabIndex = 8
         Me.txtBanco.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -352,7 +356,7 @@ Partial Class CobroVenta
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label6.Location = New System.Drawing.Point(11, 56)
+        Me.Label6.Location = New System.Drawing.Point(11, 34)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(127, 19)
         Me.Label6.TabIndex = 1
@@ -364,7 +368,7 @@ Partial Class CobroVenta
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label8.Location = New System.Drawing.Point(11, 104)
+        Me.Label8.Location = New System.Drawing.Point(12, 75)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(107, 19)
         Me.Label8.TabIndex = 1
@@ -374,7 +378,7 @@ Partial Class CobroVenta
         '
         Me.txtCheque.Enabled = False
         Me.txtCheque.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCheque.Location = New System.Drawing.Point(140, 102)
+        Me.txtCheque.Location = New System.Drawing.Point(144, 73)
         Me.txtCheque.Name = "txtCheque"
         Me.txtCheque.Size = New System.Drawing.Size(187, 25)
         Me.txtCheque.TabIndex = 7
@@ -384,7 +388,7 @@ Partial Class CobroVenta
         '
         Me.txtPagoCheque.Enabled = False
         Me.txtPagoCheque.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPagoCheque.Location = New System.Drawing.Point(140, 53)
+        Me.txtPagoCheque.Location = New System.Drawing.Point(144, 31)
         Me.txtPagoCheque.Name = "txtPagoCheque"
         Me.txtPagoCheque.Size = New System.Drawing.Size(187, 26)
         Me.txtPagoCheque.TabIndex = 6
@@ -416,7 +420,7 @@ Partial Class CobroVenta
         'pnlRecibo
         '
         Me.pnlRecibo.Controls.Add(Me.Label10)
-        Me.pnlRecibo.Controls.Add(Me.TextBox3)
+        Me.pnlRecibo.Controls.Add(Me.txtRecibo)
         Me.pnlRecibo.Location = New System.Drawing.Point(14, 130)
         Me.pnlRecibo.Name = "pnlRecibo"
         Me.pnlRecibo.Size = New System.Drawing.Size(277, 96)
@@ -434,15 +438,36 @@ Partial Class CobroVenta
         Me.Label10.TabIndex = 1
         Me.Label10.Text = "Recibo Nro:"
         '
-        'TextBox3
+        'txtRecibo
         '
-        Me.TextBox3.Enabled = False
-        Me.TextBox3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(30, 38)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(222, 26)
-        Me.TextBox3.TabIndex = 2
-        Me.TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtRecibo.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtRecibo.Location = New System.Drawing.Point(30, 38)
+        Me.txtRecibo.Name = "txtRecibo"
+        Me.txtRecibo.Size = New System.Drawing.Size(222, 26)
+        Me.txtRecibo.TabIndex = 2
+        Me.txtRecibo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.BackColor = System.Drawing.Color.Transparent
+        Me.Label12.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label12.Location = New System.Drawing.Point(12, 125)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(126, 19)
+        Me.Label12.TabIndex = 1
+        Me.Label12.Text = "Fecha Cheque:"
+        '
+        'dpChequeFecha
+        '
+        Me.dpChequeFecha.CalendarFont = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dpChequeFecha.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dpChequeFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dpChequeFecha.Location = New System.Drawing.Point(140, 119)
+        Me.dpChequeFecha.Name = "dpChequeFecha"
+        Me.dpChequeFecha.Size = New System.Drawing.Size(191, 26)
+        Me.dpChequeFecha.TabIndex = 10
         '
         'CobroVenta
         '
@@ -495,7 +520,7 @@ Partial Class CobroVenta
     Friend WithEvents txtCheque As TextBox
     Friend WithEvents pnlRecibo As Panel
     Friend WithEvents Label10 As Label
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents txtRecibo As TextBox
     Friend WithEvents Label11 As Label
     Friend WithEvents txtVendedor As TextBox
     Friend WithEvents pnlEfectivo As Panel
@@ -504,4 +529,6 @@ Partial Class CobroVenta
     Friend WithEvents Label6 As Label
     Friend WithEvents txtPagoCheque As TextBox
     Friend WithEvents chbEfectivo As CheckBox
+    Friend WithEvents dpChequeFecha As DateTimePicker
+    Friend WithEvents Label12 As Label
 End Class

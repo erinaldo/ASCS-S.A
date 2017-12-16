@@ -41,6 +41,7 @@ Partial Class Inicio
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.panelOperaciones = New System.Windows.Forms.Panel()
+        Me.btnImprimir = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
@@ -84,6 +85,7 @@ Partial Class Inicio
         Me.miListadoMI = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.pbInicio = New System.Windows.Forms.PictureBox()
+        Me.miImprimirFact = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.dgvDatos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelTitulo.SuspendLayout()
         Me.pnlControles.SuspendLayout()
@@ -256,6 +258,7 @@ Partial Class Inicio
         'panelOperaciones
         '
         Me.panelOperaciones.BackColor = System.Drawing.Color.SteelBlue
+        Me.panelOperaciones.Controls.Add(Me.btnImprimir)
         Me.panelOperaciones.Controls.Add(Me.Label2)
         Me.panelOperaciones.Controls.Add(Me.btnAgregar)
         Me.panelOperaciones.Controls.Add(Me.btnEliminar)
@@ -264,6 +267,16 @@ Partial Class Inicio
         Me.panelOperaciones.Name = "panelOperaciones"
         Me.panelOperaciones.Size = New System.Drawing.Size(305, 80)
         Me.panelOperaciones.TabIndex = 25
+        '
+        'btnImprimir
+        '
+        Me.btnImprimir.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnImprimir.Location = New System.Drawing.Point(201, 42)
+        Me.btnImprimir.Name = "btnImprimir"
+        Me.btnImprimir.Size = New System.Drawing.Size(85, 30)
+        Me.btnImprimir.TabIndex = 3
+        Me.btnImprimir.Text = "Imprimir"
+        Me.btnImprimir.UseVisualStyleBackColor = True
         '
         'Label2
         '
@@ -298,6 +311,7 @@ Partial Class Inicio
         Me.btnEliminar.TabIndex = 0
         Me.btnEliminar.Text = "Eliminar"
         Me.btnEliminar.UseVisualStyleBackColor = True
+        Me.btnEliminar.Visible = False
         '
         'btnModificar
         '
@@ -547,7 +561,7 @@ Partial Class Inicio
         '
         'miVentas
         '
-        Me.miVentas.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AdministrarVentasToolStripMenuItem})
+        Me.miVentas.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AdministrarVentasToolStripMenuItem, Me.miImprimirFact})
         Me.miVentas.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.miVentas.Name = "miVentas"
         Me.miVentas.Size = New System.Drawing.Size(169, 24)
@@ -604,6 +618,12 @@ Partial Class Inicio
         Me.pbInicio.Size = New System.Drawing.Size(963, 617)
         Me.pbInicio.TabIndex = 36
         Me.pbInicio.TabStop = False
+        '
+        'miImprimirFact
+        '
+        Me.miImprimirFact.Name = "miImprimirFact"
+        Me.miImprimirFact.Size = New System.Drawing.Size(213, 24)
+        Me.miImprimirFact.Text = "Imprimir Factura"
         '
         'Inicio
         '
@@ -704,4 +724,6 @@ Partial Class Inicio
     Friend WithEvents miListadoMI As ToolStripMenuItem
     Friend WithEvents AdministrarVentasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents miMIDep As ToolStripMenuItem
+    Friend WithEvents btnImprimir As Button
+    Friend WithEvents miImprimirFact As ToolStripMenuItem
 End Class

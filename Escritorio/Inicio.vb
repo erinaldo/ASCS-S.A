@@ -37,11 +37,27 @@ Public Class Inicio
         panelBuscar.BackColor = Color.FromArgb(80, Color.Black)
         panelOperaciones.BackColor = Color.FromArgb(80, Color.Black)
         msInicio.BackColor = Color.OrangeRed
+        seguridad()
         Me.SuspendLayout()
 
     End Sub
 
-
+    Private Sub seguridad()
+        Try
+            Dim con As New Acceso
+            Dim result = con.seguridad()
+            If result = 2 Then
+                miProductoAgregar.Enabled = False
+                miModificarProducto.Enabled = False
+                miProveedores.Enabled = False
+                miVendedores.Enabled = False
+                miCompras.Enabled = False
+                miMovInterno.Enabled = False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 
 
     'Private Sub cambiarFondo()
@@ -171,6 +187,12 @@ Public Class Inicio
             lblTitulo.Text = "LISTADO DE PRODUCTOS"
             lblTitulo.Left = (PanelTitulo.Width / 2) - (lblTitulo.Width / 2)
             dgvDatos.ClearSelection()
+            Dim con As New Acceso
+            Dim result = con.seguridad()
+            If result = 2 Then
+                dgvDatos.Columns("Stock Grande").Visible = False
+            End If
+
         Catch ex As Exception
             Throw New DAOException(ex.ToString)
         End Try
@@ -634,5 +656,33 @@ Public Class Inicio
         Dim depoMov As New DepositosMI
         depoMov.ShowDialog()
         depoMov.Dispose()
+    End Sub
+
+    Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
+        If target = "productos" Then
+            Dim reporte As New Reporte
+            reporte.tipo = "listadoProducto"
+            Dim objreporte As New ListadoProductos
+            objreporte.SetDataSource(dgvDatos.DataSource)
+            reporte.CrystalReportViewer1.ReportSource = objreporte
+            reporte.ShowDialog()
+            reporte.Dispose()
+        End If
+    End Sub
+
+    Private Sub dgvDatos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvDatos.CellContentClick
+
+    End Sub
+
+    Private Sub txtBusqueda_KeyDown(sender As Object, e As KeyEventArgs) Handles txtBusqueda.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            btnBuscar_Click(sender, e)
+        End If
+    End Sub
+
+    Private Sub miImprimirFact_Click(sender As Object, e As EventArgs) Handles miImprimirFact.Click
+        Dim facturaForm As New Facturas
+        facturaForm.ShowDialog()
+        facturaForm.Dispose()
     End Sub
 End Class

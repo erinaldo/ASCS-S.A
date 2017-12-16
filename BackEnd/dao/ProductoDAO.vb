@@ -100,15 +100,15 @@ Public Class ProductoDAO
             Dim dbcomm As New MySqlCommand
             If criterio = 0 Then
 
-                query = "SELECT prodCodigo as Código, prodDescripcion as Descripción,prodStockMinimo as Stock,prodTipo as Tipo " _
-                            & "from stproductos where prodCodigo = @codigo "
+                query = "Select * from productosviewCarga " _
+                            & "where CAST(Código AS CHAR) LIKE CONCAT('%','" & regla & "', '%') OR CAST(Descripción AS CHAR) LIKE CONCAT('%','" & regla & "', '%') "
                 dbcomm = New MySqlCommand(query, con)
-                dbcomm.Parameters.AddWithValue("@codigo", regla)
+                'dbcomm.Parameters.AddWithValue("@codigo", regla)
 
             ElseIf criterio = 1 Then
 
-                query = "SELECT prodCodigo AS 'Código', prodDescripcion AS 'Descripción',prodStockMinimo AS 'Stock',prodTipo AS 'Tipo'" _
-                        & " from stproductos where prodTipo = @tipo "
+                query = "Select * from productosviewCarga" _
+                        & " where Tipo = @tipo "
                 dbcomm = New MySqlCommand(query, con)
                 dbcomm.Parameters.AddWithValue("@tipo", regla)
             End If
@@ -143,7 +143,7 @@ Public Class ProductoDAO
                 modelo.m2 = SafeGetDecimal(reader, 5)
                 modelo.venta = SafeGetDouble(reader, 6)
                 modelo.color = SafeGetString(reader, 7)
-                modelo.stock = SafeGetInt(reader, 8)
+                modelo.stock = SafeGetInt(reader, 10)
                 modelo.tipo = SafeGetString(reader, 9)
 
             End While

@@ -32,7 +32,7 @@ Partial Class ListadoMovimientoInt
         Me.btnAnular = New System.Windows.Forms.Button()
         Me.txtNroFacturaListado = New System.Windows.Forms.TextBox()
         Me.btnDetalle = New System.Windows.Forms.Button()
-        Me.btnBuscarCompra = New System.Windows.Forms.Button()
+        Me.btnBuscarMov = New System.Windows.Forms.Button()
         Me.lblBusqTxt = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.cbProveedor = New System.Windows.Forms.ComboBox()
@@ -54,7 +54,7 @@ Partial Class ListadoMovimientoInt
         Me.pnlListado.Controls.Add(Me.btnAnular)
         Me.pnlListado.Controls.Add(Me.txtNroFacturaListado)
         Me.pnlListado.Controls.Add(Me.btnDetalle)
-        Me.pnlListado.Controls.Add(Me.btnBuscarCompra)
+        Me.pnlListado.Controls.Add(Me.btnBuscarMov)
         Me.pnlListado.Controls.Add(Me.lblBusqTxt)
         Me.pnlListado.Controls.Add(Me.Label15)
         Me.pnlListado.Controls.Add(Me.cbProveedor)
@@ -96,16 +96,16 @@ Partial Class ListadoMovimientoInt
         Me.btnDetalle.UseVisualStyleBackColor = True
         Me.btnDetalle.Visible = False
         '
-        'btnBuscarCompra
+        'btnBuscarMov
         '
-        Me.btnBuscarCompra.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBuscarCompra.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnBuscarCompra.Location = New System.Drawing.Point(722, 131)
-        Me.btnBuscarCompra.Name = "btnBuscarCompra"
-        Me.btnBuscarCompra.Size = New System.Drawing.Size(108, 30)
-        Me.btnBuscarCompra.TabIndex = 3
-        Me.btnBuscarCompra.Text = "Buscar"
-        Me.btnBuscarCompra.UseVisualStyleBackColor = True
+        Me.btnBuscarMov.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscarMov.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnBuscarMov.Location = New System.Drawing.Point(722, 131)
+        Me.btnBuscarMov.Name = "btnBuscarMov"
+        Me.btnBuscarMov.Size = New System.Drawing.Size(108, 30)
+        Me.btnBuscarMov.TabIndex = 3
+        Me.btnBuscarMov.Text = "Buscar"
+        Me.btnBuscarMov.UseVisualStyleBackColor = True
         '
         'lblBusqTxt
         '
@@ -291,7 +291,7 @@ Partial Class ListadoMovimientoInt
     Friend WithEvents pnlListado As Panel
     Friend WithEvents txtNroFacturaListado As TextBox
     Friend WithEvents btnDetalle As Button
-    Friend WithEvents btnBuscarCompra As Button
+    Friend WithEvents btnBuscarMov As Button
     Friend WithEvents lblBusqTxt As Label
     Friend WithEvents Label15 As Label
     Friend WithEvents cbProveedor As ComboBox

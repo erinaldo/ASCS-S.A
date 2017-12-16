@@ -10,6 +10,7 @@ Public Class AdministrarVentas
     ' ------------------------------------------------- Carga -------------------------------------------------
     Private Sub AdministrarVentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.SuspendLayout()
+
         centrarElementos()
         backgroundElementos()
         prepararElementos()
@@ -82,10 +83,8 @@ Public Class AdministrarVentas
         ' -------------- Anular --------------
         cbAnularFiltro.BindingContext = New BindingContext()
         cbAnularFiltro.DataSource = VariablesUtiles.busquedaVentas
-
-        cbCliente3.DataSource = listClientes.Copy
-        cbCliente3.DisplayMember = "Nombre"
-        cbCliente3.ValueMember = "Código"
+        dgvVentasAnular.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        dgvVentasAnular.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
         ' -------------- Cobros --------------
 
         cbFiltroCobro.BindingContext = New BindingContext()
@@ -125,7 +124,7 @@ Public Class AdministrarVentas
         pnlAnular.Left = (Me.ClientSize.Width / 2) - (pnlAnular.Width / 2)
         pnlOperandosAnular.Left = pnlAnular.Right - pnlOperandosAnular.Width
         dgvVentasAnular.Left = (Me.ClientSize.Width / 2) - (dgvVentasAnular.Width / 2)
-
+        pnlComentarioAnular.Left = pnlAnular.Left
         ' Cobros
         lblTituloVenta.Left = (Me.ClientSize.Width / 2) - (lblTituloVenta.Width / 2)
         pnlCobro.Left = (Me.ClientSize.Width / 2) - (pnlCobro.Width / 2)
@@ -159,7 +158,7 @@ Public Class AdministrarVentas
         pnlOperandosAnular.BackColor = Color.FromArgb(80, Color.Black)
         tpAnularVenta.BackgroundImageLayout = ImageLayout.Center
         tpAnularVenta.BackgroundImage = My.Resources.Panther1
-
+        pnlComentarioAnular.BackColor = Color.FromArgb(80, Color.Black)
 
         ' Cobros
         lblTituloVenta.BackColor = Color.FromArgb(80, Color.Black)
@@ -194,6 +193,7 @@ Public Class AdministrarVentas
             lblBusqTxt.Text = "Ingrese el RUC/CI "
             lblBusqTxt.Visible = True
             cbEstadoCompra.Visible = False
+            txtClienteRucListado.Focus()
         End If
     End Sub
 
@@ -235,6 +235,7 @@ Public Class AdministrarVentas
                 dgvVentasListado.DataSource = listadoVentas.Tables("tabla")
                 dgvVentasListado.Visible = True
                 dgvVentasListado.Columns("rucCliente").Visible = False
+                dgvVentasListado.Columns("Código").Visible = False
                 dgvVentasListado.ClearSelection()
             Catch ex As Exception
                 MsgBox(ex.Message)
@@ -256,7 +257,7 @@ Public Class AdministrarVentas
                 MsgBox("¡Ingrese el RUC/CI del cliente!", MsgBoxStyle.Critical, "Error de búsqueda")
             End If
         End If
-            Return True
+        Return True
     End Function
     ' ------------------------------------- NUEVA VENTA -------------------------------------
     Private Sub txt_buscar_ci(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles txtCI.KeyDown
@@ -366,7 +367,7 @@ Public Class AdministrarVentas
         Me.ResumeLayout()
     End Sub
 
-    Private Sub btnGuardarCompra_Click(sender As Object, e As EventArgs) Handles btnGuardarCompra.Click
+    Private Sub btnGuardarCompra_Click(sender As Object, e As EventArgs) Handles btnGuardarVenta.Click
         If validarVenta() Then
             Try
                 Dim venta As New Venta
@@ -396,6 +397,7 @@ Public Class AdministrarVentas
                 venta.fechaFactura = dateFactura.Value
                 venta.fechaInsFactura = Date.Today
                 venta.nroFactura = txtFacturaNro.Text
+                venta.total = CDbl(txtTotalVenta.Text)
                 daoVenta.guardarVenta(venta, dgvProductos.Rows)
                 MsgBox("¡Venta Realizada!", MsgBoxStyle.Information, "Notificación Venta")
                 limpiarCamposProducto()
@@ -585,13 +587,14 @@ Public Class AdministrarVentas
     Private Sub cbAnularFiltro_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbAnularFiltro.SelectedIndexChanged
         If cbAnularFiltro.SelectedIndex = 0 Then
             dpAnularVentaIni.Visible = False
-            cbCliente3.Visible = False
+            txtClienteAnular.Visible = False
             txtNrofacturaAnul.Visible = True
             txtFiltro.Text = "Nro. Factura"
             txtFiltro.Visible = True
             pnlAnular.Height = 76
             pnlAnular.Width = 821
             pnlOperandosAnular.Top = pnlAnular.Bottom + 5
+            pnlComentarioAnular.Top = pnlAnular.Bottom + 5
             dgvVentasAnular.Top = pnlOperandosAnular.Bottom + 5
             txtNrofacturaAnul.Focus()
 
@@ -604,24 +607,27 @@ Public Class AdministrarVentas
             pnlAnular.Height = 138
             pnlAnular.Width = 821
             pnlOperandosAnular.Top = pnlAnular.Bottom + 5
+            pnlComentarioAnular.Top = pnlAnular.Bottom + 5
             dgvVentasAnular.Top = pnlOperandosAnular.Bottom + 5
             txtHastaAnul.Visible = True
             dpAnularVentaFin.Visible = True
-            cbCliente3.Visible = False
+            txtClienteAnular.Visible = False
             txtNrofacturaAnul.Visible = False
 
         ElseIf cbAnularFiltro.SelectedIndex = 2 Then
-            txtFiltro.Text = "Seleccione Cliente"
+            txtFiltro.Text = "Ingrese RUC/CI del Cliente"
             txtFiltro.Visible = True
 
             pnlAnular.Height = 76
             pnlAnular.Width = 821
             dpAnularVentaIni.Visible = False
             dpAnularVentaFin.Visible = False
-            cbCliente3.Location = txtNrofacturaAnul.Location
-            cbCliente3.Visible = True
+            txtClienteAnular.Location = txtNrofacturaAnul.Location
+            txtClienteAnular.Visible = True
+            txtClienteAnular.Focus()
             txtNrofacturaAnul.Visible = False
             pnlOperandosAnular.Top = pnlAnular.Bottom + 5
+            pnlComentarioAnular.Top = pnlAnular.Bottom + 5
             dgvVentasAnular.Top = pnlOperandosAnular.Bottom + 5
         End If
     End Sub
@@ -720,6 +726,8 @@ Public Class AdministrarVentas
                 dgvVentasCobro.DataSource = listadoVentas.Tables("tabla")
                 dgvVentasCobro.Visible = True
                 dgvVentasCobro.Columns("rucCliente").Visible = False
+                dgvVentasCobro.Columns("Código").Visible = False
+
                 dgvVentasCobro.ClearSelection()
                 btnPagar.Visible = True
             Catch ex As Exception
@@ -794,5 +802,128 @@ Public Class AdministrarVentas
 
     End Sub
 
+    Private Sub tbcVenta_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tbcVenta.SelectedIndexChanged
+        If tbcVenta.SelectedIndex = 1 Then
+            If cajaAbierta() = False Then
+                MsgBox("Caja cerrada", MsgBoxStyle.Information, "Caja")
+                desactivarNuevaVenta()
+            End If
+        End If
+    End Sub
 
+    Private Sub desactivarNuevaVenta()
+        btnGuardarVenta.Enabled = False
+    End Sub
+    Private Function cajaAbierta()
+        Dim daoVenta As New VentaDAO
+        Return daoVenta.confirmarCaja()
+    End Function
+
+    Private Sub btnAnularVenta_Click(sender As Object, e As EventArgs) Handles btnAnularVenta.Click
+
+        Dim seguridad As New Acceso
+        If txtComentAnular.Text = "" Then
+            Dim result As Integer = MessageBox.Show("No ingreso ningun comentario. Desea continuar  ?", "caption", MessageBoxButtons.YesNo)
+            If result = DialogResult.No Then
+                Exit Sub
+            End If
+        End If
+        If seguridad.permisosAnular = True Then
+            Try
+                If dgvVentasAnular.RowCount > 0 Then
+                    If dgvVentasAnular.SelectedRows.Count > 0 Then
+                        Dim row = dgvVentasAnular.CurrentRow.Index
+                        Dim codigo = dgvVentasAnular.Item(0, row).Value
+                        Dim anular = dgvVentasAnular.CurrentRow
+                        Dim result As Integer = MessageBox.Show("Desea Anular la compra  " + codigo.ToString + " ?", "caption", MessageBoxButtons.YesNo)
+
+                        If result = DialogResult.No Then
+                            Exit Sub
+                        ElseIf result = DialogResult.Yes Then
+
+                            daoVenta.anularVenta(codigo, txtComentAnular.Text)
+                            MsgBox("Venta Anulada con éxito!", MsgBoxStyle.Information, "Notificación Anulación")
+                            dgvVentasAnular.Rows.Remove(anular)
+                            dgvVentasAnular.ClearSelection()
+                            pnlComentarioAnular.Enabled = False
+                            txtComentAnular.Text = ""
+                        End If
+                    End If
+                End If
+
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        Else
+            MsgBox("No posee permisos para anular una venta", MsgBoxStyle.Critical, "Permisos")
+        End If
+
+    End Sub
+
+    Private Sub btnBuscarAnular_Click(sender As Object, e As EventArgs) Handles btnBuscarAnular.Click
+        Dim listadoCompras As New DataSet
+        If validarAnulacion() Then
+            If cbAnularFiltro.SelectedIndex = 0 Then
+                Dim filtro = txtNrofacturaAnul.Text
+
+                listadoCompras = daoVenta.buscarVentasAnular(filtro, 0, Nothing, Nothing)
+            ElseIf cbAnularFiltro.SelectedIndex = 1 Then
+                Dim inicio = dpAnularVentaIni.Value.Date
+                Dim fin = dpAnularVentaFin.Value.Date
+                listadoCompras = daoVenta.buscarVentasAnular(Nothing, 1, inicio, fin)
+            ElseIf cbAnularFiltro.SelectedIndex = 2 Then
+                Dim filtro = txtClienteAnular.Text
+
+                Dim tipoBusq = 2
+                listadoCompras = daoVenta.buscarVentasAnular(filtro, 2, Nothing, Nothing)
+            End If
+            dgvVentasAnular.DataSource = listadoCompras.Tables("tabla")
+            dgvVentasAnular.Visible = True
+            dgvVentasAnular.Columns("rucCliente").Visible = False
+            dgvVentasAnular.Columns("Código").Visible = False
+            dgvVentasAnular.ClearSelection()
+            pnlOperandosAnular.Visible = True
+
+
+        End If
+    End Sub
+
+    Private Function validarAnulacion() As Boolean
+        If cbAnularFiltro.SelectedIndex = 0 Then
+            If txtNrofacturaAnul.Text = "" Then
+                MsgBox("Debe ingresar un número de factura", MsgBoxStyle.Critical, "Notificación")
+                Return False
+            End If
+        ElseIf cbAnularFiltro.SelectedIndex = 2 Then
+            If txtClienteAnular.Text = "" Then
+                MsgBox("Debe ingresar el RUC/CI del cliente", MsgBoxStyle.Critical, "Notificación")
+                Return False
+            End If
+        End If
+        Return True
+    End Function
+
+    Private Sub txtClienteAnular_KeyDown(sender As Object, e As KeyEventArgs) Handles txtClienteAnular.KeyDown, txtNrofacturaAnul.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            e.SuppressKeyPress = True
+            btnBuscarAnular_Click(sender, e)
+        End If
+    End Sub
+
+    Private Sub dgvVentasAnular_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvVentasAnular.CellClick
+        pnlComentarioAnular.Enabled = True
+    End Sub
+
+    Private Sub btnVerDetalleAnul_Click(sender As Object, e As EventArgs) Handles btnVerDetalleAnul.Click
+        If dgvVentasAnular.SelectedRows.Count > 0 Then
+            Dim row = dgvVentasAnular.CurrentRow.Index
+            Dim codigo = dgvVentasAnular.Item(0, row).Value
+            Dim detalleForm As New DetalleVenta(codigo)
+            detalleForm.ShowDialog()
+
+            detalleForm.Dispose()
+        Else
+            MsgBox("¡Ninguna venta seleccionada!", MsgBoxStyle.Critical, "Notificación")
+        End If
+    End Sub
 End Class

@@ -54,7 +54,7 @@ Public Class ListadoMovimientoInt
         Me.BackgroundImage = My.Resources.Panther1
     End Sub
 
-    Private Sub btnBuscarCompra_Click(sender As Object, e As EventArgs) Handles btnBuscarCompra.Click
+    Private Sub btnBuscarCompra_Click(sender As Object, e As EventArgs) Handles btnBuscarMov.Click
         Try
             Dim listadoMovs As New DataSet
             If cbBuscarMovInt.SelectedIndex = 0 Then
@@ -158,5 +158,11 @@ Public Class ListadoMovimientoInt
         Catch ex As Exception
             Throw New DAOException(ex.ToString)
         End Try
+    End Sub
+
+    Private Sub txtNroFacturaListado_KeyDown(sender As Object, e As KeyEventArgs) Handles txtNroFacturaListado.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            btnBuscarCompra_Click(sender, e)
+        End If
     End Sub
 End Class

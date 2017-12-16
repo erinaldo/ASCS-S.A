@@ -80,6 +80,7 @@
     <Compile Include="dao\VendedorDAO.vb" />
     <Compile Include="dao\VentaDAO.vb" />
     <Compile Include="modelos\Cliente.vb" />
+    <Compile Include="modelos\Cobro.vb" />
     <Compile Include="modelos\Compra.vb" />
     <Compile Include="modelos\MovimientoInterno.vb" />
     <Compile Include="modelos\Producto.vb" />
@@ -149,7 +150,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bd\lynch.sql" />
+    <Content Include="bd\backuplynch.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -6,6 +6,7 @@ Public Class Reporte
     Public venta As New Venta
     Public movInt As New BackEnd.MovimientoInterno
     Public tipo As String = ""
+    Public listado
     Private Sub ReporteForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         If tipo = "compra" Then
@@ -74,6 +75,7 @@ Public Class Reporte
             'objreporte.SetParameterValue("fecha", movInt.fecha.ToShortDateString)
             'objreporte.SetParameterValue("tipo", movInt.tipo)
             CrystalReportViewer1.ReportSource = objreporte
+
         End If
 
     End Sub

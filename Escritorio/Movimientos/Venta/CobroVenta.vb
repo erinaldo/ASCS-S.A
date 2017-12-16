@@ -5,12 +5,28 @@ Public Class CobroVenta
     Public vendedor = ""
     Public venta As New Venta
     Private Sub CobroVenta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Me.SuspendLayout()
         prepararElementos()
         backgroundElementos()
         txtPagoEfectivo.Focus()
         Me.ResumeLayout()
+        If cajaAbierta() = False Then
+            MsgBox("Caja cerrada", MsgBoxStyle.Information, "Caja")
+            desactivarControles()
+        End If
+
     End Sub
+    Private Sub desactivarControles()
+        pnlDatosVenta.Enabled = False
+        pnlCobro.Enabled = False
+        btnCobrar.Enabled = False
+
+    End Sub
+    Private Function cajaAbierta()
+        Dim daoVenta As New VentaDAO
+        Return daoVenta.confirmarCaja()
+    End Function
     Private Sub prepararElementos()
         txtFacturaNro.Text = venta.nroFactura
         txtSaldo.Text = FormatCurrency(venta.saldo)
@@ -73,6 +89,7 @@ Public Class CobroVenta
             txtPagoCheque.Focus()
             txtCheque.Enabled = True
             txtBanco.Enabled = True
+            dpChequeFecha.Enabled = True
         Else
             txtPagoCheque.Enabled = False
             txtPagoCheque.Text = ""
@@ -80,6 +97,7 @@ Public Class CobroVenta
             txtCheque.Text = ""
             txtBanco.Enabled = False
             txtBanco.Text = ""
+            dpChequeFecha.Enabled = False
         End If
         Me.ResumeLayout()
     End Sub
@@ -89,6 +107,89 @@ Public Class CobroVenta
     End Sub
 
     Private Sub btnCobrar_Click(sender As Object, e As EventArgs) Handles btnCobrar.Click
+        Dim tipo = 11
+        Try
+            If validarCobro() Then
+                Dim cobro As New Cobro
+                If chbCheque.Checked = True And chbEfectivo.Checked = True Then
+                    cobro.tipo = 2
+                    cobro.efectivo = CDbl(txtPagoEfectivo.Text)
+                    cobro.cheque = CDbl(txtPagoCheque.Text)
+                    cobro.chequeNro = txtCheque.Text
+                    cobro.banco = txtBanco.Text
+                    cobro.fechaCheque = dpChequeFecha.Value
+                Else
+                    If chbEfectivo.Checked = True Then
+                        cobro.tipo = 0
+                        cobro.efectivo = CDbl(txtPagoEfectivo.Text)
+                    End If
+                    If chbCheque.Checked = True Then
+                        cobro.tipo = 1
+                        cobro.cheque = CDbl(txtPagoCheque.Text)
+                        cobro.chequeNro = txtCheque.Text
+                        cobro.banco = txtBanco.Text
+                        cobro.fechaCheque = dpChequeFecha.Value
+                    End If
+                End If
 
+
+
+
+                cobro.cliente = venta.cliente
+                cobro.recibo = txtRecibo.Text
+                Dim daoVenta As New VentaDAO
+                daoVenta.cobrar(cobro, venta.codigo)
+                MsgBox("¡Pago realizado con éxito!")
+                Me.DialogResult = DialogResult.OK
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+
+
+    End Sub
+
+    Private Function validarCobro()
+        If chbCheque.Checked = False And chbEfectivo.Checked = False Then
+            MsgBox("¡Seleccione un tipo de pago!", MsgBoxStyle.Critical, "Error pago")
+            Return False
+        End If
+
+        If chbCheque.Checked = True Then
+            If txtBanco.Text = "" Or txtCheque.Text = "" Or txtPagoCheque.Text = "" Then
+                MsgBox("¡Complete los datos del pago via cheque!", MsgBoxStyle.Critical, "Faltan parámetros")
+                txtPagoCheque.Focus()
+                Return False
+            End If
+        End If
+
+        If chbEfectivo.Checked = True Then
+            If txtPagoEfectivo.Text = "" Then
+                MsgBox("¡Complete los datos del pago via efectivo!", MsgBoxStyle.Critical, "Faltan parámetros")
+                txtPagoEfectivo.Focus()
+                Return False
+            End If
+        End If
+
+        If txtRecibo.Text = "" Then
+            MsgBox("¡Debe ingresar un número de recibo!", MsgBoxStyle.Critical, "Faltan parámetros")
+            txtRecibo.Focus()
+            Return False
+        End If
+        Return True
+    End Function
+
+    Private Sub txtPagoEfectivo_LostFocus(sender As Object, e As EventArgs) Handles txtPagoEfectivo.LostFocus
+        If txtPagoEfectivo.Text <> "" Then
+            txtPagoEfectivo.Text = FormatCurrency(txtPagoEfectivo.Text)
+        End If
+    End Sub
+
+    Private Sub txtPagoCheque_LostFocus(sender As Object, e As EventArgs) Handles txtPagoCheque.LostFocus
+        If txtPagoCheque.Text <> "" Then
+            txtPagoCheque.Text = FormatCurrency(txtPagoCheque.Text)
+        End If
     End Sub
 End Class
