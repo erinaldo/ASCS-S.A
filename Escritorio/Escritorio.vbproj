@@ -279,6 +279,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Reportes\factura.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>factura.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\listados\listadoDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -298,12 +304,6 @@
     </Compile>
     <Compile Include="Reportes\Reporte.vb">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reportes\rpFactura.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rpFactura.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\rpMovInterno.vb">
       <AutoGen>True</AutoGen>
@@ -397,16 +397,16 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\factura.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>factura.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\listados\ListadoProductos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ListadoProductos.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Reporte.resx">
       <DependentUpon>Reporte.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\rpFactura.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rpFactura.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rpMovInterno.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

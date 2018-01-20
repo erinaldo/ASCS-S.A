@@ -8,6 +8,7 @@ Public Class UsuarioDAO
                 'aqui se debe especificaru
                 Dim con As New MySqlConnection(ConexionDB.cadenaConexionBD2(Sesion.Usuario, Sesion.Password))
                 con.Open()
+
                 Dim query = "SET PASSWORD FOR '" + Sesion.Usuario + "'@'localhost' = PASSWORD('" + nueva + "');"
                 Dim cmd As New MySqlCommand(query, con)
                 cmd.ExecuteNonQuery()

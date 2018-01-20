@@ -101,11 +101,29 @@ Public Class Facturas
 
     Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
         Try
-            Dim facturaImprimir As New rpFactura
+            Dim facturaImprimir As New factura
             Dim row = dgvVentas.CurrentRow.Index
+            Dim daoCliente As New ClienteDAO
             Dim codigo = dgvVentas.Item(0, row).Value
+            Dim currentVenta = daoVent.obtenerVentaDatos(codigo)
+            Dim currentCliente = daoCliente.obtenerCliente(currentVenta.cliente)
             facturaImprimir.SetParameterValue("codigo", codigo)
-            facturaImprimir.PrintOptions.PrinterName = "ELX350"
+            facturaImprimir.SetParameterValue("nroFactura", currentVenta.nroFactura)
+            facturaImprimir.SetParameterValue("cliente", currentCliente.nombre)
+            facturaImprimir.SetParameterValue("ruc", currentCliente.ruc)
+            Dim convert As New NumLetra
+            MsgBox(convert.EnLetras(currentVenta.total))
+            If currentVenta.tipo = "Contado" Then
+                facturaImprimir.SetParameterValue("contado", "X")
+                facturaImprimir.SetParameterValue("credito", "")
+            Else
+                facturaImprimir.SetParameterValue("contado", "")
+                facturaImprimir.SetParameterValue("credito", "X")
+            End If
+            ''facturaImprimir.SetParameterValue("totalGuaranies", convert.EnLetras(currentVenta.total))
+            ''facturaImprimir.SetParameterValue("totalVenta", currentVenta.total)
+            ''facturaImprimir.SetParameterValue("liquidacionIva10", currentVenta.total * 0.090909)
+            facturaImprimir.PrintOptions.PrinterName = "PDFCreator" ''PONER NOMBRE DE IMPRESORA
             facturaImprimir.PrintToPrinter(1, False, 0, 0)
             MsgBox("¡Factura impresa!", MsgBoxStyle.Information, "Notificación")
         Catch ex As Exception
@@ -144,5 +162,6 @@ Public Class Facturas
             btnBuscarCobro_Click(sender, e)
         End If
     End Sub
+
 
 End Class

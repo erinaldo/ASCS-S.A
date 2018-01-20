@@ -112,6 +112,7 @@
     <Compile Include="util\DAOException.vb" />
     <Compile Include="util\Acceso.vb" />
     <Compile Include="util\Funciones.vb" />
+    <Compile Include="util\NumLetra.vb" />
     <Compile Include="util\Sesion.vb" />
     <Compile Include="util\VariablesUtiles.vb" />
   </ItemGroup>

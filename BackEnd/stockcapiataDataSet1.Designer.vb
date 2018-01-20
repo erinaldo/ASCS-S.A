@@ -506,8 +506,8 @@ Partial Public Class stockcapiataDataSet
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Private Sub InitExpressions()
         Me.detalleproductocompraview._Sub_TotalColumn.Expression = "`Precio Total` - `Iva 10%` - `Iva 5%` "
-        Me.detalleproductoventaview._Sub_TotalColumn.Expression = "`Precio Unitario` * `Cantidad`"
-        Me.detalleproductoventaview.TotalColumn.Expression = "`Sub-Total` + `Impuesto 10%` + `Impuesto 5%`+`Exc`"
+        Me.detalleproductoventaview._Sub_TotalColumn.Expression = "`Total` - `Impuesto 10%` - `Impuesto 5%` - `Exc`"
+        Me.detalleproductoventaview.TotalColumn.Expression = "`Precio Unitario` * `Cantidad`"
     End Sub
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -2256,8 +2256,8 @@ Partial Public Class stockcapiataDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitExpressions()
-            Me._Sub_TotalColumn.Expression = "`Precio Unitario` * `Cantidad`"
-            Me.TotalColumn.Expression = "`Sub-Total` + `Impuesto 10%` + `Impuesto 5%`+`Exc`"
+            Me._Sub_TotalColumn.Expression = "`Total` - `Impuesto 10%` - `Impuesto 5%` - `Exc`"
+            Me.TotalColumn.Expression = "`Precio Unitario` * `Cantidad`"
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _

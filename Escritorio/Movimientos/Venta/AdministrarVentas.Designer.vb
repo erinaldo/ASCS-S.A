@@ -39,7 +39,6 @@ Partial Class AdministrarVentas
         Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AdministrarVentas))
         Me.tbcVenta = New System.Windows.Forms.TabControl()
         Me.tpListado = New System.Windows.Forms.TabPage()
@@ -219,10 +218,10 @@ Partial Class AdministrarVentas
         Me.tpListado.Controls.Add(Me.dgvVentasListado)
         Me.tpListado.Controls.Add(Me.pnlListado)
         Me.tpListado.Controls.Add(Me.txtTituloBusquedaList)
-        Me.tpListado.Location = New System.Drawing.Point(4, 29)
+        Me.tpListado.Location = New System.Drawing.Point(4, 31)
         Me.tpListado.Name = "tpListado"
         Me.tpListado.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpListado.Size = New System.Drawing.Size(1301, 709)
+        Me.tpListado.Size = New System.Drawing.Size(1301, 707)
         Me.tpListado.TabIndex = 0
         Me.tpListado.Text = "Listado"
         '
@@ -712,11 +711,11 @@ Partial Class AdministrarVentas
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label7.Location = New System.Drawing.Point(290, 11)
+        Me.Label7.Location = New System.Drawing.Point(255, 11)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(60, 19)
+        Me.Label7.Size = New System.Drawing.Size(135, 19)
         Me.Label7.TabIndex = 6
-        Me.Label7.Text = "Precio"
+        Me.Label7.Text = "Precio IVA INC."
         '
         'Label5
         '
@@ -1272,10 +1271,10 @@ Partial Class AdministrarVentas
         Me.tpAnularVenta.Controls.Add(Me.txtTituloAnular)
         Me.tpAnularVenta.Controls.Add(Me.pnlAnular)
         Me.tpAnularVenta.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tpAnularVenta.Location = New System.Drawing.Point(4, 29)
+        Me.tpAnularVenta.Location = New System.Drawing.Point(4, 31)
         Me.tpAnularVenta.Name = "tpAnularVenta"
         Me.tpAnularVenta.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpAnularVenta.Size = New System.Drawing.Size(1301, 709)
+        Me.tpAnularVenta.Size = New System.Drawing.Size(1301, 707)
         Me.tpAnularVenta.TabIndex = 2
         Me.tpAnularVenta.Text = "Anular Venta"
         '
@@ -1348,14 +1347,6 @@ Partial Class AdministrarVentas
         DataGridViewCellStyle12.ForeColor = System.Drawing.Color.DimGray
         Me.dgvVentasAnular.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle12
         Me.dgvVentasAnular.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle13.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvVentasAnular.DefaultCellStyle = DataGridViewCellStyle13
         Me.dgvVentasAnular.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
         Me.dgvVentasAnular.Location = New System.Drawing.Point(53, 324)
         Me.dgvVentasAnular.MultiSelect = False
@@ -1492,10 +1483,10 @@ Partial Class AdministrarVentas
         Me.tpCobros.Controls.Add(Me.dgvVentasCobro)
         Me.tpCobros.Controls.Add(Me.lblTituloVenta)
         Me.tpCobros.Controls.Add(Me.pnlCobro)
-        Me.tpCobros.Location = New System.Drawing.Point(4, 29)
+        Me.tpCobros.Location = New System.Drawing.Point(4, 31)
         Me.tpCobros.Name = "tpCobros"
         Me.tpCobros.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpCobros.Size = New System.Drawing.Size(1301, 709)
+        Me.tpCobros.Size = New System.Drawing.Size(1301, 707)
         Me.tpCobros.TabIndex = 3
         Me.tpCobros.Text = "Cobros"
         '
@@ -1506,44 +1497,44 @@ Partial Class AdministrarVentas
         Me.dgvVentasCobro.AllowUserToOrderColumns = True
         Me.dgvVentasCobro.AllowUserToResizeColumns = False
         Me.dgvVentasCobro.AllowUserToResizeRows = False
-        DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.ControlLight
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.dgvVentasCobro.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.ControlLight
+        DataGridViewCellStyle13.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.dgvVentasCobro.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle13
         Me.dgvVentasCobro.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
-        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.ButtonShadow
-        DataGridViewCellStyle15.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvVentasCobro.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.ButtonShadow
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvVentasCobro.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle14
         Me.dgvVentasCobro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle16.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle16.Padding = New System.Windows.Forms.Padding(2)
-        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvVentasCobro.DefaultCellStyle = DataGridViewCellStyle16
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle15.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle15.Padding = New System.Windows.Forms.Padding(2)
+        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvVentasCobro.DefaultCellStyle = DataGridViewCellStyle15
         Me.dgvVentasCobro.GridColor = System.Drawing.SystemColors.AppWorkspace
         Me.dgvVentasCobro.Location = New System.Drawing.Point(42, 317)
         Me.dgvVentasCobro.Name = "dgvVentasCobro"
         Me.dgvVentasCobro.ReadOnly = True
-        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle17.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight
-        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvVentasCobro.RowHeadersDefaultCellStyle = DataGridViewCellStyle17
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle16.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight
+        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvVentasCobro.RowHeadersDefaultCellStyle = DataGridViewCellStyle16
         Me.dgvVentasCobro.RowHeadersVisible = False
-        DataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.dgvVentasCobro.RowsDefaultCellStyle = DataGridViewCellStyle18
+        DataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.dgvVentasCobro.RowsDefaultCellStyle = DataGridViewCellStyle17
         Me.dgvVentasCobro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvVentasCobro.Size = New System.Drawing.Size(910, 308)
         Me.dgvVentasCobro.TabIndex = 37

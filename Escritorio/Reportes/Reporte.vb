@@ -14,24 +14,24 @@ Public Class Reporte
             objreporte.SetParameterValue("codigo", codigoCompra)
             objreporte.SetParameterValue("proveedor", compra.proveedor)
             objreporte.SetParameterValue("estado", compra.estado)
-            objreporte.SetParameterValue("fechaCompra", compra.fechaInsFactura.ToString)
+            objreporte.SetParameterValue("fechaCompra", compra.fechaInsFactura.ToShortDateString)
 
             If compra.fechaPagado = Nothing Then
                 objreporte.SetParameterValue("fechaPagado", "- - -")
             Else
-                objreporte.SetParameterValue("fechaPagado", compra.fechaPagado.ToString)
+                objreporte.SetParameterValue("fechaPagado", compra.fechaPagado.ToShortDateString)
             End If
 
             If compra.fechaActualizacion = Nothing Then
                 objreporte.SetParameterValue("ultAct", "- - -")
             Else
-                objreporte.SetParameterValue("ultAct", compra.fechaActualizacion.ToString)
+                objreporte.SetParameterValue("ultAct", compra.fechaActualizacion.ToShortDateString)
             End If
 
             If compra.fechaAnulacion = Nothing Then
                 objreporte.SetParameterValue("fechaAnulacion", "- - -")
             Else
-                objreporte.SetParameterValue("fechaAnulacion", compra.fechaAnulacion.ToString)
+                objreporte.SetParameterValue("fechaAnulacion", compra.fechaAnulacion.ToShortDateString)
             End If
 
 

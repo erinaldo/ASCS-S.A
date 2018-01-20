@@ -179,11 +179,11 @@ Partial Class GenerarCompras
         Me.tbcCompra.Controls.Add(Me.tpAnularCompra)
         Me.tbcCompra.Controls.Add(Me.tpPagos)
         Me.tbcCompra.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tbcCompra.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbcCompra.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbcCompra.Location = New System.Drawing.Point(0, 0)
         Me.tbcCompra.Margin = New System.Windows.Forms.Padding(0)
         Me.tbcCompra.Name = "tbcCompra"
-        Me.tbcCompra.Padding = New System.Drawing.Point(10, 8)
+        Me.tbcCompra.Padding = New System.Drawing.Point(10, 5)
         Me.tbcCompra.SelectedIndex = 0
         Me.tbcCompra.Size = New System.Drawing.Size(1120, 742)
         Me.tbcCompra.TabIndex = 3
@@ -194,10 +194,10 @@ Partial Class GenerarCompras
         Me.tpListado.Controls.Add(Me.dgvCompras)
         Me.tpListado.Controls.Add(Me.pnlListado)
         Me.tpListado.Controls.Add(Me.txtTituloBusqueda)
-        Me.tpListado.Location = New System.Drawing.Point(4, 38)
+        Me.tpListado.Location = New System.Drawing.Point(4, 31)
         Me.tpListado.Name = "tpListado"
         Me.tpListado.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpListado.Size = New System.Drawing.Size(1112, 700)
+        Me.tpListado.Size = New System.Drawing.Size(1112, 707)
         Me.tpListado.TabIndex = 0
         Me.tpListado.Text = "Listado"
         '
@@ -214,7 +214,7 @@ Partial Class GenerarCompras
         Me.dgvCompras.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ButtonShadow
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -223,7 +223,7 @@ Partial Class GenerarCompras
         Me.dgvCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
@@ -235,7 +235,7 @@ Partial Class GenerarCompras
         Me.dgvCompras.ReadOnly = True
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight
@@ -428,10 +428,10 @@ Partial Class GenerarCompras
         Me.tpNuevaCompra.Controls.Add(Me.pnlComentario)
         Me.tpNuevaCompra.Controls.Add(Me.pnlTotales)
         Me.tpNuevaCompra.Controls.Add(Me.dgvProductos)
-        Me.tpNuevaCompra.Location = New System.Drawing.Point(4, 38)
+        Me.tpNuevaCompra.Location = New System.Drawing.Point(4, 31)
         Me.tpNuevaCompra.Name = "tpNuevaCompra"
         Me.tpNuevaCompra.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpNuevaCompra.Size = New System.Drawing.Size(1112, 700)
+        Me.tpNuevaCompra.Size = New System.Drawing.Size(1112, 707)
         Me.tpNuevaCompra.TabIndex = 1
         Me.tpNuevaCompra.Text = "Nueva Compra"
         '
@@ -448,7 +448,7 @@ Partial Class GenerarCompras
         Me.dgvBusquedaResult.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ButtonShadow
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -457,7 +457,7 @@ Partial Class GenerarCompras
         Me.dgvBusquedaResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
         DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White
@@ -469,7 +469,7 @@ Partial Class GenerarCompras
         Me.dgvBusquedaResult.ReadOnly = True
         DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight
@@ -1039,7 +1039,7 @@ Partial Class GenerarCompras
         Me.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText
         DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -1062,10 +1062,10 @@ Partial Class GenerarCompras
         Me.tpAnularCompra.Controls.Add(Me.txtTituloAnular)
         Me.tpAnularCompra.Controls.Add(Me.pnlAnular)
         Me.tpAnularCompra.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tpAnularCompra.Location = New System.Drawing.Point(4, 38)
+        Me.tpAnularCompra.Location = New System.Drawing.Point(4, 31)
         Me.tpAnularCompra.Name = "tpAnularCompra"
         Me.tpAnularCompra.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpAnularCompra.Size = New System.Drawing.Size(1112, 700)
+        Me.tpAnularCompra.Size = New System.Drawing.Size(1112, 707)
         Me.tpAnularCompra.TabIndex = 2
         Me.tpAnularCompra.Text = "Anular Compra"
         '
@@ -1243,10 +1243,10 @@ Partial Class GenerarCompras
         Me.tpPagos.Controls.Add(Me.dgvComprasP)
         Me.tpPagos.Controls.Add(Me.lblTituloP)
         Me.tpPagos.Controls.Add(Me.pnlPago)
-        Me.tpPagos.Location = New System.Drawing.Point(4, 38)
+        Me.tpPagos.Location = New System.Drawing.Point(4, 31)
         Me.tpPagos.Name = "tpPagos"
         Me.tpPagos.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpPagos.Size = New System.Drawing.Size(1112, 700)
+        Me.tpPagos.Size = New System.Drawing.Size(1112, 707)
         Me.tpPagos.TabIndex = 3
         Me.tpPagos.Text = "Pagos"
         '
@@ -1263,7 +1263,7 @@ Partial Class GenerarCompras
         Me.dgvComprasP.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.ButtonShadow
-        DataGridViewCellStyle13.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle13.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -1272,7 +1272,7 @@ Partial Class GenerarCompras
         Me.dgvComprasP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText
         DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White
@@ -1284,7 +1284,7 @@ Partial Class GenerarCompras
         Me.dgvComprasP.ReadOnly = True
         DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle15.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle15.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight
@@ -1471,7 +1471,7 @@ Partial Class GenerarCompras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.OrangeRed
+        Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(1120, 742)
         Me.Controls.Add(Me.tbcCompra)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)

@@ -124,11 +124,12 @@ Partial Class AgregarCliente
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label2.Location = New System.Drawing.Point(47, 39)
+        Me.Label2.Location = New System.Drawing.Point(45, 28)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(66, 22)
+        Me.Label2.Size = New System.Drawing.Size(99, 44)
         Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Nombre"
+        Me.Label2.Text = "Nombre/" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Razón Social"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel1
         '

@@ -79,13 +79,13 @@ Partial Class Inicio
         Me.miGenerarCompra = New System.Windows.Forms.ToolStripMenuItem()
         Me.miVentas = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdministrarVentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.miImprimirFact = New System.Windows.Forms.ToolStripMenuItem()
         Me.miMovInterno = New System.Windows.Forms.ToolStripMenuItem()
         Me.miGenerarMI = New System.Windows.Forms.ToolStripMenuItem()
         Me.miMIDep = New System.Windows.Forms.ToolStripMenuItem()
         Me.miListadoMI = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.pbInicio = New System.Windows.Forms.PictureBox()
-        Me.miImprimirFact = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.dgvDatos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelTitulo.SuspendLayout()
         Me.pnlControles.SuspendLayout()
@@ -351,6 +351,7 @@ Partial Class Inicio
         Me.miCambiarContra.Name = "miCambiarContra"
         Me.miCambiarContra.Size = New System.Drawing.Size(221, 24)
         Me.miCambiarContra.Text = "Cambiar Contraseña"
+        Me.miCambiarContra.Visible = False
         '
         'CerrarToolStripMenuItem
         '
@@ -573,6 +574,12 @@ Partial Class Inicio
         Me.AdministrarVentasToolStripMenuItem.Size = New System.Drawing.Size(213, 24)
         Me.AdministrarVentasToolStripMenuItem.Text = "Administrar Ventas"
         '
+        'miImprimirFact
+        '
+        Me.miImprimirFact.Name = "miImprimirFact"
+        Me.miImprimirFact.Size = New System.Drawing.Size(213, 24)
+        Me.miImprimirFact.Text = "Imprimir Factura"
+        '
         'miMovInterno
         '
         Me.miMovInterno.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miGenerarMI, Me.miMIDep, Me.miListadoMI})
@@ -618,12 +625,6 @@ Partial Class Inicio
         Me.pbInicio.Size = New System.Drawing.Size(963, 617)
         Me.pbInicio.TabIndex = 36
         Me.pbInicio.TabStop = False
-        '
-        'miImprimirFact
-        '
-        Me.miImprimirFact.Name = "miImprimirFact"
-        Me.miImprimirFact.Size = New System.Drawing.Size(213, 24)
-        Me.miImprimirFact.Text = "Imprimir Factura"
         '
         'Inicio
         '

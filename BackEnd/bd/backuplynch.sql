@@ -45,11 +45,11 @@ CREATE TABLE `stcajas` (
   `cajaMontofijo` double DEFAULT NULL,
   `cajaEstado` char(1) DEFAULT NULL,
   PRIMARY KEY (`cajaCod`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
 
 /*Data for the table `stcajas` */
 
-insert  into `stcajas`(`cajaCod`,`cod_usuario`,`cajaFechApert`,`cajaFechCierre`,`cajaMontofijo`,`cajaEstado`) values (1,NULL,'2017-12-09','2017-12-09',0,'C'),(2,NULL,'2017-12-12','2017-12-12',0,'C'),(3,NULL,'2017-12-14','2017-12-14',0,'C'),(4,NULL,'2017-12-15','2017-12-15',0,'C'),(5,NULL,'2017-12-16',NULL,0,'A');
+insert  into `stcajas`(`cajaCod`,`cod_usuario`,`cajaFechApert`,`cajaFechCierre`,`cajaMontofijo`,`cajaEstado`) values (1,NULL,'2017-12-09','2017-12-09',0,'C'),(2,NULL,'2017-12-12','2017-12-12',0,'C'),(3,NULL,'2017-12-14','2017-12-14',0,'C'),(4,NULL,'2017-12-15','2017-12-15',0,'C'),(5,NULL,'2017-12-16',NULL,0,'A'),(6,NULL,'2017-12-19','2017-12-19',0,'C'),(7,NULL,'2017-12-20','2017-12-20',0,'C'),(8,NULL,'2017-12-21','2017-12-21',0,'C'),(9,NULL,'2017-12-22','2017-12-22',0,'C'),(10,NULL,'2017-12-27','2017-12-27',0,'C'),(11,NULL,'2017-12-28','2017-12-28',0,'C'),(12,NULL,'2017-12-29','2017-12-29',0,'C'),(13,NULL,'2017-12-30','2017-12-30',0,'C'),(14,NULL,'2018-01-09','2018-01-09',0,'C'),(15,NULL,'2018-01-10','2018-01-10',0,'C'),(16,NULL,'2018-01-11','2018-01-11',0,'C'),(17,NULL,'2018-01-12','2018-01-12',0,'C'),(18,NULL,'2018-01-13','2018-01-13',0,'C'),(19,NULL,'2018-01-16','2018-01-16',0,'C'),(20,NULL,'2018-01-17','2018-01-17',0,'C'),(21,NULL,'2018-01-18','2018-01-18',0,'C'),(22,NULL,'2018-01-19','2018-01-19',0,'C'),(23,NULL,'2018-01-20',NULL,0,'A');
 
 /*Table structure for table `stclientes` */
 
@@ -241,7 +241,7 @@ CREATE TABLE `stproveedor` (
 
 /*Data for the table `stproveedor` */
 
-insert  into `stproveedor`(`provCodigo`,`provDescripcion`,`provTelef`,`provContacto`,`provUsuario`,`provFechaIns`,`provRuc`) values (31,'VASA S.A.','','',NULL,NULL,'800'),(32,'JP FERRAGEMS','','',NULL,NULL,''),(34,'Stock Inicial','','',NULL,NULL,'1'),(40,'CHROM S.R.L','','',NULL,NULL,'33'),(42,'ROSA','','',NULL,NULL,'35'),(43,'VIDRIOCAR S.A.','','',NULL,NULL,'36'),(44,'PERFIL AGIL','','',NULL,NULL,'37'),(49,'FCA. CAPIATA','','',NULL,NULL,'2'),(50,'DEP. SHOW ROOM','','',NULL,NULL,'3'),(51,'MONTECRISTO IMPORT S.A','204740','',NULL,NULL,'80060511-0');
+insert  into `stproveedor`(`provCodigo`,`provDescripcion`,`provTelef`,`provContacto`,`provUsuario`,`provFechaIns`,`provRuc`) values (31,'VASA S.A.','','',NULL,NULL,'800'),(32,'JP FERRAGEMS','','',NULL,NULL,''),(34,'Stock Inicial','','',NULL,NULL,'1'),(40,'CHROM S.R.L','021612310','DAVID',NULL,NULL,'80005494-6'),(42,'ROSA','','',NULL,NULL,'35'),(43,'VIDRIOCAR S.A.','0215188000','CARLOS CRISTALDO',NULL,NULL,'80017740-1'),(44,'PERFIL AGIL','','',NULL,NULL,'37'),(49,'FCA. CAPIATA','','',NULL,NULL,'2'),(50,'DEP. SHOW ROOM','','',NULL,NULL,'3'),(51,'MONTECRISTO IMPORT S.A','204740','',NULL,NULL,'80060511-0');
 
 /*Table structure for table `strecibo` */
 
@@ -791,7 +791,9 @@ DROP TABLE IF EXISTS `detalleproductoventaview`;
  `Impuesto 10%` double ,
  `Impuesto 5%` double ,
  `Exc` double ,
- `Precio Unitario` double 
+ `Precio Unitario` double ,
+ `Sub-Total` double ,
+ `Total` double 
 )*/;
 
 /*Table structure for table `movinternolistadoview` */
@@ -873,7 +875,7 @@ DROP TABLE IF EXISTS `productosviewcarga`;
 /*!50001 DROP TABLE IF EXISTS `detalleproductoventaview` */;
 /*!50001 DROP VIEW IF EXISTS `detalleproductoventaview` */;
 
-/*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`samuel`@`%` SQL SECURITY DEFINER VIEW `detalleproductoventaview` AS select `det`.`ventasCod` AS `Venta`,`det`.`prodCodigo` AS `Código`,`p`.`prodDescripcion` AS `Descripción`,`det`.`superficie` AS `Superficie`,`det`.`ventasDetCantidad` AS `Cantidad`,`det`.`ventasImp10` AS `Impuesto 10%`,`det`.`ventasImp5` AS `Impuesto 5%`,`det`.`ventasImpExcenta` AS `Exc`,`det`.`ventasPrecioUnitario` AS `Precio Unitario` from (`stventasdet` `det` join `stproductos` `p` on((`p`.`prodCodigo` = `det`.`prodCodigo`))) */;
+/*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`samuel`@`%` SQL SECURITY DEFINER VIEW `detalleproductoventaview` AS select `det`.`ventasCod` AS `Venta`,`det`.`prodCodigo` AS `Código`,`p`.`prodDescripcion` AS `Descripción`,`det`.`superficie` AS `Superficie`,`det`.`ventasDetCantidad` AS `Cantidad`,`det`.`ventasImp10` AS `Impuesto 10%`,`det`.`ventasImp5` AS `Impuesto 5%`,`det`.`ventasImpExcenta` AS `Exc`,`det`.`ventasPrecioUnitario` AS `Precio Unitario`,((`det`.`ventasPrecioUnitario` * `det`.`ventasDetCantidad`) - ((`det`.`ventasImp10` + `det`.`ventasImp5`) + `det`.`ventasImpExcenta`)) AS `Sub-Total`,(`det`.`ventasPrecioUnitario` * `det`.`ventasDetCantidad`) AS `Total` from (`stventasdet` `det` join `stproductos` `p` on((`p`.`prodCodigo` = `det`.`prodCodigo`))) */;
 
 /*View structure for view movinternolistadoview */
 

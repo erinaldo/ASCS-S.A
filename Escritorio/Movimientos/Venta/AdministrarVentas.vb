@@ -487,18 +487,18 @@ Public Class AdministrarVentas
             Dim iva = calcularIva(total, cbImpuesto.SelectedItem("Impuesto"))
             row("Impuesto") = cbImpuesto.SelectedItem("Impuesto")
             row("Iva") = FormatCurrency(iva)
-            row("Sub-Total") = FormatCurrency(total)
-            row("Total") = FormatCurrency(total + iva)
+            row("Sub-Total") = FormatCurrency(total - iva)
+            row("Total") = FormatCurrency(total)
 
             If txtSub.Text = "" Then
-                txtSub.Text = FormatCurrency(total)
+                txtSub.Text = FormatCurrency(total - iva)
             Else
-                txtSub.Text = FormatCurrency(CDbl(txtSub.Text) + total)
+                txtSub.Text = FormatCurrency(CDbl(txtSub.Text) + total - iva)
             End If
             If txtTotalVenta.Text <> "" Then
-                txtTotalVenta.Text = FormatCurrency(CDbl(txtTotalVenta.Text) + total + iva)
+                txtTotalVenta.Text = FormatCurrency(CDbl(txtTotalVenta.Text) + total)
             Else
-                txtTotalVenta.Text = FormatCurrency(total + iva)
+                txtTotalVenta.Text = FormatCurrency(total)
             End If
 
             If txtIva.Text <> "" Then
@@ -532,7 +532,7 @@ Public Class AdministrarVentas
     Private Function calcularIva(ByVal total As Double, ByVal cod As String) As Double
         Dim resultado As Double
         If cod = "10%" Then
-            resultado = CDbl((total * 10) / 100)
+            resultado = CDbl((total * 9.0909) / 100)
         ElseIf cod = "5%" Then
             resultado = CDbl((total * 5) / 100)
         Else
