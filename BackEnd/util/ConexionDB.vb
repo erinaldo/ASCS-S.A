@@ -3,11 +3,11 @@
 Public Class ConexionDB
 
     Public Shared Function cadenaConexionBD(ByVal user As String, ByVal passwd As String)
-        Dim server As String = "localhost"
-        Dim BD As String = "stocklynch"
-
-        'Dim server As String = "192.168.0.110"
+        'Dim server As String = "localhost"
         'Dim BD As String = "stocklynch"
+
+        Dim server As String = "192.168.1.31"
+        Dim BD As String = "stocklynch"
         'Dim server As String = "192.168.0.110"
         'Dim BD As String = "stocklynch"
 
@@ -30,7 +30,7 @@ Public Class ConexionDB
 
 
 
-        Return String.Format("server={0};DataBase={1};User Id={2};Password={3}", server, BD, user, passwd)
+        Return String.Format("server={0};DataBase={1};User Id={2};Password={3}", server, BD, "samuel", "system")
         'Return ConexionBaseDatos
     End Function
 

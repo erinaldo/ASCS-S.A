@@ -472,9 +472,9 @@ Partial Class AdministrarVentas
         Me.pnlDescuento.Controls.Add(Me.btnDeschacerDesc)
         Me.pnlDescuento.Controls.Add(Me.btnAplicarDesc)
         Me.pnlDescuento.Controls.Add(Me.txtDescuento)
-        Me.pnlDescuento.Location = New System.Drawing.Point(3, 622)
+        Me.pnlDescuento.Location = New System.Drawing.Point(32, 583)
         Me.pnlDescuento.Name = "pnlDescuento"
-        Me.pnlDescuento.Size = New System.Drawing.Size(336, 139)
+        Me.pnlDescuento.Size = New System.Drawing.Size(336, 114)
         Me.pnlDescuento.TabIndex = 39
         '
         'Label28
@@ -491,25 +491,25 @@ Partial Class AdministrarVentas
         'btnDeschacerDesc
         '
         Me.btnDeschacerDesc.Enabled = False
-        Me.btnDeschacerDesc.Location = New System.Drawing.Point(167, 85)
+        Me.btnDeschacerDesc.Location = New System.Drawing.Point(167, 67)
         Me.btnDeschacerDesc.Name = "btnDeschacerDesc"
-        Me.btnDeschacerDesc.Size = New System.Drawing.Size(131, 38)
+        Me.btnDeschacerDesc.Size = New System.Drawing.Size(131, 28)
         Me.btnDeschacerDesc.TabIndex = 2
         Me.btnDeschacerDesc.Text = "Deshacer"
         Me.btnDeschacerDesc.UseVisualStyleBackColor = True
         '
         'btnAplicarDesc
         '
-        Me.btnAplicarDesc.Location = New System.Drawing.Point(30, 85)
+        Me.btnAplicarDesc.Location = New System.Drawing.Point(30, 67)
         Me.btnAplicarDesc.Name = "btnAplicarDesc"
-        Me.btnAplicarDesc.Size = New System.Drawing.Size(131, 38)
+        Me.btnAplicarDesc.Size = New System.Drawing.Size(131, 28)
         Me.btnAplicarDesc.TabIndex = 2
         Me.btnAplicarDesc.Text = "Aplicar"
         Me.btnAplicarDesc.UseVisualStyleBackColor = True
         '
         'txtDescuento
         '
-        Me.txtDescuento.Location = New System.Drawing.Point(61, 38)
+        Me.txtDescuento.Location = New System.Drawing.Point(62, 21)
         Me.txtDescuento.Name = "txtDescuento"
         Me.txtDescuento.Size = New System.Drawing.Size(223, 26)
         Me.txtDescuento.TabIndex = 1
@@ -523,27 +523,28 @@ Partial Class AdministrarVentas
         Me.Panel3.Controls.Add(Me.Label8)
         Me.Panel3.Location = New System.Drawing.Point(350, 117)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(855, 81)
+        Me.Panel3.Size = New System.Drawing.Size(855, 61)
         Me.Panel3.TabIndex = 38
         '
         'txtNombreCli
         '
         Me.txtNombreCli.Enabled = False
-        Me.txtNombreCli.Location = New System.Drawing.Point(564, 35)
+        Me.txtNombreCli.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombreCli.Location = New System.Drawing.Point(549, 32)
         Me.txtNombreCli.Name = "txtNombreCli"
         Me.txtNombreCli.ShortcutsEnabled = False
-        Me.txtNombreCli.Size = New System.Drawing.Size(212, 26)
+        Me.txtNombreCli.Size = New System.Drawing.Size(212, 22)
         Me.txtNombreCli.TabIndex = 7
         '
         'Label22
         '
         Me.Label22.AutoSize = True
         Me.Label22.BackColor = System.Drawing.Color.Transparent
-        Me.Label22.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label22.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label22.Location = New System.Drawing.Point(383, 7)
+        Me.Label22.Location = New System.Drawing.Point(385, 4)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(79, 19)
+        Me.Label22.Size = New System.Drawing.Size(73, 18)
         Me.Label22.TabIndex = 1
         Me.Label22.Text = "CLIENTE"
         '
@@ -553,7 +554,7 @@ Partial Class AdministrarVentas
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label11.Location = New System.Drawing.Point(75, 38)
+        Me.Label11.Location = New System.Drawing.Point(32, 31)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(76, 19)
         Me.Label11.TabIndex = 1
@@ -561,9 +562,10 @@ Partial Class AdministrarVentas
         '
         'txtCI
         '
-        Me.txtCI.Location = New System.Drawing.Point(166, 35)
+        Me.txtCI.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCI.Location = New System.Drawing.Point(114, 31)
         Me.txtCI.Name = "txtCI"
-        Me.txtCI.Size = New System.Drawing.Size(197, 26)
+        Me.txtCI.Size = New System.Drawing.Size(197, 22)
         Me.txtCI.TabIndex = 7
         Me.txtCI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -573,7 +575,7 @@ Partial Class AdministrarVentas
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label8.Location = New System.Drawing.Point(464, 38)
+        Me.Label8.Location = New System.Drawing.Point(464, 31)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(73, 19)
         Me.Label8.TabIndex = 1
@@ -585,28 +587,28 @@ Partial Class AdministrarVentas
         Me.Panel2.Controls.Add(Me.Label4)
         Me.Panel2.Location = New System.Drawing.Point(8, 117)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(308, 81)
+        Me.Panel2.Size = New System.Drawing.Size(308, 61)
         Me.Panel2.TabIndex = 37
         '
         'cbVendedor2
         '
         Me.cbVendedor2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbVendedor2.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbVendedor2.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbVendedor2.FormattingEnabled = True
-        Me.cbVendedor2.Location = New System.Drawing.Point(62, 38)
+        Me.cbVendedor2.Location = New System.Drawing.Point(47, 23)
         Me.cbVendedor2.Name = "cbVendedor2"
-        Me.cbVendedor2.Size = New System.Drawing.Size(215, 27)
+        Me.cbVendedor2.Size = New System.Drawing.Size(215, 22)
         Me.cbVendedor2.TabIndex = 6
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label4.Location = New System.Drawing.Point(115, 4)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(100, 19)
+        Me.Label4.Size = New System.Drawing.Size(75, 16)
         Me.Label4.TabIndex = 1
         Me.Label4.Text = "VENDEDOR"
         '
@@ -639,7 +641,7 @@ Partial Class AdministrarVentas
         DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvBusquedaResult.DefaultCellStyle = DataGridViewCellStyle8
         Me.dgvBusquedaResult.GridColor = System.Drawing.SystemColors.AppWorkspace
-        Me.dgvBusquedaResult.Location = New System.Drawing.Point(93, 385)
+        Me.dgvBusquedaResult.Location = New System.Drawing.Point(102, 362)
         Me.dgvBusquedaResult.Name = "dgvBusquedaResult"
         Me.dgvBusquedaResult.ReadOnly = True
         DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -664,9 +666,10 @@ Partial Class AdministrarVentas
         Me.pnlDatosProducto.Controls.Add(Me.Label19)
         Me.pnlDatosProducto.Controls.Add(Me.btnInsertarProd)
         Me.pnlDatosProducto.Controls.Add(Me.btnEliminarProd)
-        Me.pnlDatosProducto.Location = New System.Drawing.Point(6, 208)
+        Me.pnlDatosProducto.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pnlDatosProducto.Location = New System.Drawing.Point(6, 184)
         Me.pnlDatosProducto.Name = "pnlDatosProducto"
-        Me.pnlDatosProducto.Size = New System.Drawing.Size(1199, 173)
+        Me.pnlDatosProducto.Size = New System.Drawing.Size(1199, 165)
         Me.pnlDatosProducto.TabIndex = 21
         '
         'Panel6
@@ -681,27 +684,28 @@ Partial Class AdministrarVentas
         Me.Panel6.Controls.Add(Me.txtStock)
         Me.Panel6.Controls.Add(Me.txtCantidad)
         Me.Panel6.Controls.Add(Me.txtM2)
+        Me.Panel6.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel6.Location = New System.Drawing.Point(433, 29)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(612, 135)
+        Me.Panel6.Size = New System.Drawing.Size(612, 118)
         Me.Panel6.TabIndex = 20
         '
         'cbImpuesto
         '
         Me.cbImpuesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbImpuesto.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbImpuesto.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbImpuesto.FormattingEnabled = True
-        Me.cbImpuesto.Location = New System.Drawing.Point(10, 32)
+        Me.cbImpuesto.Location = New System.Drawing.Point(11, 27)
         Me.cbImpuesto.Name = "cbImpuesto"
-        Me.cbImpuesto.Size = New System.Drawing.Size(188, 27)
+        Me.cbImpuesto.Size = New System.Drawing.Size(188, 22)
         Me.cbImpuesto.TabIndex = 13
         '
         'txtPrecioProd
         '
-        Me.txtPrecioProd.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPrecioProd.Location = New System.Drawing.Point(232, 33)
+        Me.txtPrecioProd.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPrecioProd.Location = New System.Drawing.Point(232, 28)
         Me.txtPrecioProd.Name = "txtPrecioProd"
-        Me.txtPrecioProd.Size = New System.Drawing.Size(187, 27)
+        Me.txtPrecioProd.Size = New System.Drawing.Size(187, 22)
         Me.txtPrecioProd.TabIndex = 5
         Me.txtPrecioProd.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -709,11 +713,11 @@ Partial Class AdministrarVentas
         '
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label7.Location = New System.Drawing.Point(255, 11)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(135, 19)
+        Me.Label7.Size = New System.Drawing.Size(91, 14)
         Me.Label7.TabIndex = 6
         Me.Label7.Text = "Precio IVA INC."
         '
@@ -721,11 +725,11 @@ Partial Class AdministrarVentas
         '
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label5.Location = New System.Drawing.Point(8, 74)
+        Me.Label5.Location = New System.Drawing.Point(9, 61)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(111, 19)
+        Me.Label5.Size = New System.Drawing.Size(76, 14)
         Me.Label5.TabIndex = 6
         Me.Label5.Text = "Stock Actual"
         '
@@ -733,11 +737,11 @@ Partial Class AdministrarVentas
         '
         Me.Label27.AutoSize = True
         Me.Label27.BackColor = System.Drawing.Color.Transparent
-        Me.Label27.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label27.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label27.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label27.Location = New System.Drawing.Point(456, 11)
         Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(82, 19)
+        Me.Label27.Size = New System.Drawing.Size(54, 14)
         Me.Label27.TabIndex = 6
         Me.Label27.Text = "Cantidad"
         '
@@ -745,11 +749,11 @@ Partial Class AdministrarVentas
         '
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.Transparent
-        Me.Label9.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label9.Location = New System.Drawing.Point(53, 10)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(86, 19)
+        Me.Label9.Size = New System.Drawing.Size(59, 14)
         Me.Label9.TabIndex = 9
         Me.Label9.Text = "Impuesto"
         '
@@ -757,37 +761,37 @@ Partial Class AdministrarVentas
         '
         Me.Label26.AutoSize = True
         Me.Label26.BackColor = System.Drawing.Color.Transparent
-        Me.Label26.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label26.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label26.Location = New System.Drawing.Point(228, 74)
+        Me.Label26.Location = New System.Drawing.Point(229, 61)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(146, 19)
+        Me.Label26.Size = New System.Drawing.Size(99, 14)
         Me.Label26.TabIndex = 6
         Me.Label26.Text = "Superficie (M^2)"
         '
         'txtStock
         '
         Me.txtStock.Enabled = False
-        Me.txtStock.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtStock.Location = New System.Drawing.Point(12, 96)
+        Me.txtStock.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtStock.Location = New System.Drawing.Point(12, 78)
         Me.txtStock.Name = "txtStock"
-        Me.txtStock.Size = New System.Drawing.Size(187, 27)
+        Me.txtStock.Size = New System.Drawing.Size(187, 22)
         Me.txtStock.TabIndex = 5
         '
         'txtCantidad
         '
-        Me.txtCantidad.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCantidad.Location = New System.Drawing.Point(455, 33)
+        Me.txtCantidad.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCantidad.Location = New System.Drawing.Point(459, 28)
         Me.txtCantidad.Name = "txtCantidad"
-        Me.txtCantidad.Size = New System.Drawing.Size(83, 27)
+        Me.txtCantidad.Size = New System.Drawing.Size(83, 22)
         Me.txtCantidad.TabIndex = 5
         '
         'txtM2
         '
-        Me.txtM2.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtM2.Location = New System.Drawing.Point(232, 96)
+        Me.txtM2.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtM2.Location = New System.Drawing.Point(232, 78)
         Me.txtM2.Name = "txtM2"
-        Me.txtM2.Size = New System.Drawing.Size(187, 27)
+        Me.txtM2.Size = New System.Drawing.Size(187, 22)
         Me.txtM2.TabIndex = 5
         '
         'Panel1
@@ -799,72 +803,73 @@ Partial Class AdministrarVentas
         Me.Panel1.Controls.Add(Me.txtDescripcionProd)
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.txtCodProd)
+        Me.Panel1.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel1.Location = New System.Drawing.Point(20, 29)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(397, 135)
+        Me.Panel1.Size = New System.Drawing.Size(397, 118)
         Me.Panel1.TabIndex = 19
         '
         'Label29
         '
         Me.Label29.AutoSize = True
         Me.Label29.BackColor = System.Drawing.Color.Transparent
-        Me.Label29.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label29.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label29.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label29.Location = New System.Drawing.Point(6, 6)
         Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(58, 19)
+        Me.Label29.Size = New System.Drawing.Size(42, 14)
         Me.Label29.TabIndex = 1
         Me.Label29.Text = "Filtro:"
         '
         'btnBuscarProd
         '
-        Me.btnBuscarProd.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBuscarProd.Location = New System.Drawing.Point(253, 28)
+        Me.btnBuscarProd.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscarProd.Location = New System.Drawing.Point(250, 27)
         Me.btnBuscarProd.Name = "btnBuscarProd"
-        Me.btnBuscarProd.Size = New System.Drawing.Size(127, 32)
+        Me.btnBuscarProd.Size = New System.Drawing.Size(127, 27)
         Me.btnBuscarProd.TabIndex = 12
         Me.btnBuscarProd.Text = "Buscar"
         Me.btnBuscarProd.UseVisualStyleBackColor = True
         '
         'txtFiltroBusquedaNC
         '
-        Me.txtFiltroBusquedaNC.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFiltroBusquedaNC.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtFiltroBusquedaNC.Location = New System.Drawing.Point(10, 32)
         Me.txtFiltroBusquedaNC.Name = "txtFiltroBusquedaNC"
-        Me.txtFiltroBusquedaNC.Size = New System.Drawing.Size(202, 27)
+        Me.txtFiltroBusquedaNC.Size = New System.Drawing.Size(202, 22)
         Me.txtFiltroBusquedaNC.TabIndex = 4
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label1.Location = New System.Drawing.Point(6, 74)
+        Me.Label1.Location = New System.Drawing.Point(6, 61)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(65, 19)
+        Me.Label1.Size = New System.Drawing.Size(50, 14)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Código"
         '
         'txtDescripcionProd
         '
         Me.txtDescripcionProd.Enabled = False
-        Me.txtDescripcionProd.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDescripcionProd.Location = New System.Drawing.Point(163, 96)
+        Me.txtDescripcionProd.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDescripcionProd.Location = New System.Drawing.Point(163, 78)
         Me.txtDescripcionProd.Name = "txtDescripcionProd"
         Me.txtDescripcionProd.ReadOnly = True
-        Me.txtDescripcionProd.Size = New System.Drawing.Size(214, 27)
+        Me.txtDescripcionProd.Size = New System.Drawing.Size(214, 22)
         Me.txtDescripcionProd.TabIndex = 5
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label6.Location = New System.Drawing.Point(161, 74)
+        Me.Label6.Location = New System.Drawing.Point(160, 61)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(102, 19)
+        Me.Label6.Size = New System.Drawing.Size(76, 14)
         Me.Label6.TabIndex = 6
         Me.Label6.Text = "Descripción"
         '
@@ -872,11 +877,11 @@ Partial Class AdministrarVentas
         '
         Me.txtCodProd.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtCodProd.Enabled = False
-        Me.txtCodProd.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodProd.Location = New System.Drawing.Point(10, 96)
+        Me.txtCodProd.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodProd.Location = New System.Drawing.Point(10, 78)
         Me.txtCodProd.Name = "txtCodProd"
         Me.txtCodProd.ReadOnly = True
-        Me.txtCodProd.Size = New System.Drawing.Size(137, 27)
+        Me.txtCodProd.Size = New System.Drawing.Size(137, 22)
         Me.txtCodProd.TabIndex = 4
         '
         'Label19
@@ -931,6 +936,7 @@ Partial Class AdministrarVentas
         Me.Panel5.Controls.Add(Me.cbDeposito)
         Me.Panel5.Controls.Add(Me.Label30)
         Me.Panel5.Controls.Add(Me.dateFactura)
+        Me.Panel5.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel5.Location = New System.Drawing.Point(34, 32)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(718, 64)
@@ -940,53 +946,53 @@ Partial Class AdministrarVentas
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label2.Location = New System.Drawing.Point(87, 6)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(89, 19)
+        Me.Label2.Size = New System.Drawing.Size(65, 15)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Factura Nº"
         '
         'txtFacturaNro
         '
-        Me.txtFacturaNro.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtFacturaNro.Location = New System.Drawing.Point(28, 32)
+        Me.txtFacturaNro.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFacturaNro.Location = New System.Drawing.Point(28, 27)
         Me.txtFacturaNro.Name = "txtFacturaNro"
-        Me.txtFacturaNro.Size = New System.Drawing.Size(196, 26)
+        Me.txtFacturaNro.Size = New System.Drawing.Size(196, 21)
         Me.txtFacturaNro.TabIndex = 0
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label3.Location = New System.Drawing.Point(289, 6)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(118, 19)
+        Me.Label3.Size = New System.Drawing.Size(87, 15)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Fecha Factura"
         '
         'cbDeposito
         '
         Me.cbDeposito.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbDeposito.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbDeposito.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbDeposito.FormattingEnabled = True
-        Me.cbDeposito.Location = New System.Drawing.Point(484, 31)
+        Me.cbDeposito.Location = New System.Drawing.Point(474, 23)
         Me.cbDeposito.Name = "cbDeposito"
-        Me.cbDeposito.Size = New System.Drawing.Size(202, 27)
+        Me.cbDeposito.Size = New System.Drawing.Size(202, 23)
         Me.cbDeposito.TabIndex = 10
         '
         'Label30
         '
         Me.Label30.AutoSize = True
         Me.Label30.BackColor = System.Drawing.Color.Transparent
-        Me.Label30.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label30.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label30.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label30.Location = New System.Drawing.Point(535, 5)
         Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(81, 19)
+        Me.Label30.Size = New System.Drawing.Size(57, 15)
         Me.Label30.TabIndex = 15
         Me.Label30.Text = "Depósito"
         '
@@ -994,11 +1000,11 @@ Partial Class AdministrarVentas
         '
         Me.dateFactura.CustomFormat = "dd/mm/aaaa"
         Me.dateFactura.Enabled = False
-        Me.dateFactura.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dateFactura.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dateFactura.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dateFactura.Location = New System.Drawing.Point(248, 31)
+        Me.dateFactura.Location = New System.Drawing.Point(248, 24)
         Me.dateFactura.Name = "dateFactura"
-        Me.dateFactura.Size = New System.Drawing.Size(202, 27)
+        Me.dateFactura.Size = New System.Drawing.Size(202, 22)
         Me.dateFactura.TabIndex = 5
         '
         'Panel4
@@ -1006,19 +1012,19 @@ Partial Class AdministrarVentas
         Me.Panel4.Controls.Add(Me.rbContado)
         Me.Panel4.Controls.Add(Me.rbCredito)
         Me.Panel4.Controls.Add(Me.Label20)
-        Me.Panel4.Location = New System.Drawing.Point(810, 32)
+        Me.Panel4.Location = New System.Drawing.Point(936, 32)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(320, 64)
+        Me.Panel4.Size = New System.Drawing.Size(233, 64)
         Me.Panel4.TabIndex = 16
         '
         'rbContado
         '
         Me.rbContado.AutoSize = True
-        Me.rbContado.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbContado.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rbContado.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.rbContado.Location = New System.Drawing.Point(30, 33)
+        Me.rbContado.Location = New System.Drawing.Point(29, 23)
         Me.rbContado.Name = "rbContado"
-        Me.rbContado.Size = New System.Drawing.Size(93, 23)
+        Me.rbContado.Size = New System.Drawing.Size(72, 19)
         Me.rbContado.TabIndex = 0
         Me.rbContado.TabStop = True
         Me.rbContado.Text = "Contado"
@@ -1027,11 +1033,11 @@ Partial Class AdministrarVentas
         'rbCredito
         '
         Me.rbCredito.AutoSize = True
-        Me.rbCredito.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbCredito.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rbCredito.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.rbCredito.Location = New System.Drawing.Point(185, 32)
+        Me.rbCredito.Location = New System.Drawing.Point(131, 24)
         Me.rbCredito.Name = "rbCredito"
-        Me.rbCredito.Size = New System.Drawing.Size(83, 23)
+        Me.rbCredito.Size = New System.Drawing.Size(66, 19)
         Me.rbCredito.TabIndex = 1
         Me.rbCredito.TabStop = True
         Me.rbCredito.Text = "Crédito"
@@ -1041,11 +1047,11 @@ Partial Class AdministrarVentas
         '
         Me.Label20.AutoSize = True
         Me.Label20.BackColor = System.Drawing.Color.Transparent
-        Me.Label20.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label20.Location = New System.Drawing.Point(101, 0)
+        Me.Label20.Location = New System.Drawing.Point(65, 0)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(116, 19)
+        Me.Label20.Size = New System.Drawing.Size(79, 13)
         Me.Label20.TabIndex = 15
         Me.Label20.Text = "Tipo de Pago"
         '
@@ -1065,27 +1071,28 @@ Partial Class AdministrarVentas
         '
         Me.pnlSeleccionProd.Controls.Add(Me.btnCancelarSeleccion)
         Me.pnlSeleccionProd.Controls.Add(Me.btnSeleccionarPr)
-        Me.pnlSeleccionProd.Location = New System.Drawing.Point(408, 622)
+        Me.pnlSeleccionProd.Location = New System.Drawing.Point(408, 584)
         Me.pnlSeleccionProd.Name = "pnlSeleccionProd"
-        Me.pnlSeleccionProd.Size = New System.Drawing.Size(370, 70)
+        Me.pnlSeleccionProd.Size = New System.Drawing.Size(370, 64)
         Me.pnlSeleccionProd.TabIndex = 19
         Me.pnlSeleccionProd.Visible = False
         '
         'btnCancelarSeleccion
         '
+        Me.btnCancelarSeleccion.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancelarSeleccion.Location = New System.Drawing.Point(208, 16)
         Me.btnCancelarSeleccion.Name = "btnCancelarSeleccion"
-        Me.btnCancelarSeleccion.Size = New System.Drawing.Size(129, 41)
+        Me.btnCancelarSeleccion.Size = New System.Drawing.Size(129, 27)
         Me.btnCancelarSeleccion.TabIndex = 7
         Me.btnCancelarSeleccion.Text = "Cancelar"
         Me.btnCancelarSeleccion.UseVisualStyleBackColor = True
         '
         'btnSeleccionarPr
         '
-        Me.btnSeleccionarPr.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSeleccionarPr.Location = New System.Drawing.Point(45, 16)
+        Me.btnSeleccionarPr.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSeleccionarPr.Location = New System.Drawing.Point(43, 16)
         Me.btnSeleccionarPr.Name = "btnSeleccionarPr"
-        Me.btnSeleccionarPr.Size = New System.Drawing.Size(129, 41)
+        Me.btnSeleccionarPr.Size = New System.Drawing.Size(129, 26)
         Me.btnSeleccionarPr.TabIndex = 6
         Me.btnSeleccionarPr.Text = "Seleccionar"
         Me.btnSeleccionarPr.UseVisualStyleBackColor = True
@@ -1094,17 +1101,17 @@ Partial Class AdministrarVentas
         '
         Me.pnlOperadores.Controls.Add(Me.Button4)
         Me.pnlOperadores.Controls.Add(Me.btnGuardarVenta)
-        Me.pnlOperadores.Location = New System.Drawing.Point(32, 766)
+        Me.pnlOperadores.Location = New System.Drawing.Point(8, 724)
         Me.pnlOperadores.Name = "pnlOperadores"
-        Me.pnlOperadores.Size = New System.Drawing.Size(370, 70)
+        Me.pnlOperadores.Size = New System.Drawing.Size(370, 44)
         Me.pnlOperadores.TabIndex = 19
         '
         'Button4
         '
         Me.Button4.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Location = New System.Drawing.Point(215, 21)
+        Me.Button4.Location = New System.Drawing.Point(216, 4)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(129, 41)
+        Me.Button4.Size = New System.Drawing.Size(129, 31)
         Me.Button4.TabIndex = 7
         Me.Button4.Text = "Cancelar"
         Me.Button4.UseVisualStyleBackColor = True
@@ -1112,9 +1119,9 @@ Partial Class AdministrarVentas
         'btnGuardarVenta
         '
         Me.btnGuardarVenta.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardarVenta.Location = New System.Drawing.Point(38, 21)
+        Me.btnGuardarVenta.Location = New System.Drawing.Point(33, 4)
         Me.btnGuardarVenta.Name = "btnGuardarVenta"
-        Me.btnGuardarVenta.Size = New System.Drawing.Size(129, 41)
+        Me.btnGuardarVenta.Size = New System.Drawing.Size(129, 31)
         Me.btnGuardarVenta.TabIndex = 6
         Me.btnGuardarVenta.Text = "Guardar"
         Me.btnGuardarVenta.UseVisualStyleBackColor = True
@@ -1123,7 +1130,7 @@ Partial Class AdministrarVentas
         '
         Me.pnlComentario.Controls.Add(Me.Label17)
         Me.pnlComentario.Controls.Add(Me.txtComentario)
-        Me.pnlComentario.Location = New System.Drawing.Point(32, 622)
+        Me.pnlComentario.Location = New System.Drawing.Point(32, 584)
         Me.pnlComentario.Name = "pnlComentario"
         Me.pnlComentario.Size = New System.Drawing.Size(370, 138)
         Me.pnlComentario.TabIndex = 18
@@ -1158,9 +1165,9 @@ Partial Class AdministrarVentas
         Me.pnlTotales.Controls.Add(Me.txtIva)
         Me.pnlTotales.Controls.Add(Me.Label12)
         Me.pnlTotales.Controls.Add(Me.txtSub)
-        Me.pnlTotales.Location = New System.Drawing.Point(577, 622)
+        Me.pnlTotales.Location = New System.Drawing.Point(580, 584)
         Me.pnlTotales.Name = "pnlTotales"
-        Me.pnlTotales.Size = New System.Drawing.Size(385, 227)
+        Me.pnlTotales.Size = New System.Drawing.Size(385, 180)
         Me.pnlTotales.TabIndex = 17
         '
         'Label16
@@ -1178,21 +1185,21 @@ Partial Class AdministrarVentas
         '
         Me.lblTotal.AutoSize = True
         Me.lblTotal.BackColor = System.Drawing.Color.Transparent
-        Me.lblTotal.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotal.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotal.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblTotal.Location = New System.Drawing.Point(25, 165)
+        Me.lblTotal.Location = New System.Drawing.Point(36, 140)
         Me.lblTotal.Name = "lblTotal"
-        Me.lblTotal.Size = New System.Drawing.Size(111, 22)
+        Me.lblTotal.Size = New System.Drawing.Size(85, 18)
         Me.lblTotal.TabIndex = 11
         Me.lblTotal.Text = "TOTAL Gs."
         '
         'txtTotalVenta
         '
-        Me.txtTotalVenta.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTotalVenta.Location = New System.Drawing.Point(158, 161)
+        Me.txtTotalVenta.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTotalVenta.Location = New System.Drawing.Point(158, 135)
         Me.txtTotalVenta.Name = "txtTotalVenta"
         Me.txtTotalVenta.ReadOnly = True
-        Me.txtTotalVenta.Size = New System.Drawing.Size(193, 30)
+        Me.txtTotalVenta.Size = New System.Drawing.Size(193, 27)
         Me.txtTotalVenta.TabIndex = 12
         Me.txtTotalVenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -1200,21 +1207,21 @@ Partial Class AdministrarVentas
         '
         Me.Label10.AutoSize = True
         Me.Label10.BackColor = System.Drawing.Color.Transparent
-        Me.Label10.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label10.Location = New System.Drawing.Point(25, 60)
+        Me.Label10.Location = New System.Drawing.Point(26, 46)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(121, 22)
+        Me.Label10.Size = New System.Drawing.Size(94, 18)
         Me.Label10.TabIndex = 13
         Me.Label10.Text = "SUB-TOTAL"
         '
         'txtIva
         '
-        Me.txtIva.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIva.Location = New System.Drawing.Point(158, 108)
+        Me.txtIva.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtIva.Location = New System.Drawing.Point(158, 91)
         Me.txtIva.Name = "txtIva"
         Me.txtIva.ReadOnly = True
-        Me.txtIva.Size = New System.Drawing.Size(193, 30)
+        Me.txtIva.Size = New System.Drawing.Size(193, 27)
         Me.txtIva.TabIndex = 14
         Me.txtIva.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -1222,21 +1229,21 @@ Partial Class AdministrarVentas
         '
         Me.Label12.AutoSize = True
         Me.Label12.BackColor = System.Drawing.Color.Transparent
-        Me.Label12.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label12.Location = New System.Drawing.Point(78, 112)
+        Me.Label12.Location = New System.Drawing.Point(82, 96)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(40, 22)
+        Me.Label12.Size = New System.Drawing.Size(29, 18)
         Me.Label12.TabIndex = 15
         Me.Label12.Text = "IVA"
         '
         'txtSub
         '
-        Me.txtSub.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSub.Location = New System.Drawing.Point(158, 56)
+        Me.txtSub.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSub.Location = New System.Drawing.Point(158, 41)
         Me.txtSub.Name = "txtSub"
         Me.txtSub.ReadOnly = True
-        Me.txtSub.Size = New System.Drawing.Size(193, 30)
+        Me.txtSub.Size = New System.Drawing.Size(193, 27)
         Me.txtSub.TabIndex = 14
         Me.txtSub.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -1253,7 +1260,7 @@ Partial Class AdministrarVentas
         DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvProductos.DefaultCellStyle = DataGridViewCellStyle11
-        Me.dgvProductos.Location = New System.Drawing.Point(6, 385)
+        Me.dgvProductos.Location = New System.Drawing.Point(6, 362)
         Me.dgvProductos.MultiSelect = False
         Me.dgvProductos.Name = "dgvProductos"
         Me.dgvProductos.ReadOnly = True

@@ -80,7 +80,7 @@ Public Class VentaDAO
 
     Public Function BuscarProducts(cod As String) As DataSet
         Dim tmp As New ProductoDAO
-        Return tmp.obtenerProductos(cod, 2)
+        Return tmp.obtenerProductos(cod, 1)
     End Function
 
     Public Function buscarCliente(ByVal ci As String) As Cliente
@@ -132,7 +132,7 @@ Public Class VentaDAO
         Return tmp.obtenerVendedor(vendedor.ToString)
     End Function
 
-    Public Sub guardarVenta(venta As Venta, productos As DataGridViewRowCollection)
+    Public Function guardarVenta(venta As Venta, productos As DataGridViewRowCollection) As Integer
         Try
             Dim con As New MySqlConnection(ConexionDB.cadenaConexionBD(Sesion.Usuario, Sesion.Password))
             con.Open()
@@ -211,10 +211,11 @@ Public Class VentaDAO
 
 
             con.Close()
+            Return ventaCod
         Catch ex As Exception
             Throw New DAOException(ex.ToString)
         End Try
-    End Sub
+    End Function
 
     Public Sub cobrar(cobro As Cobro, venta As Integer)
         Try
@@ -531,6 +532,19 @@ Public Class VentaDAO
         End Try
         Return ds
     End Function
+
+    Public Sub facturaImpresa(ByVal codigo As String)
+        Try
+            Dim con As New MySqlConnection(ConexionDB.cadenaConexionBD(Sesion.Usuario, Sesion.Password))
+            con.Open()
+            Dim sql = "UPDATE stventas SET ventasImpreso = 'S' WHERE ventasCod = " & codigo & ""
+            Dim cmd As New MySqlCommand(sql, con)
+            cmd.ExecuteNonQuery()
+            con.Close()
+        Catch ex As Exception
+            Throw New DAOException(ex.ToString)
+        End Try
+    End Sub
 
     Public Function cargarDetalle(venta As String) As DataSet
         Try

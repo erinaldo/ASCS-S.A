@@ -65,7 +65,7 @@ Public Class AdministrarVentas
         cbDeposito.DisplayMember = "Descripción"
         cbDeposito.ValueMember = "Código"
         cbDeposito.Enabled = False
-        cbDeposito.SelectedIndex = 2
+        cbDeposito.SelectedIndex = 1
         Dim impuestos = daoVenta.cargaImpuesto()
         Dim listImpuesto = impuestos.Tables("tabla")
         Dim rowI = listImpuesto.NewRow
@@ -398,8 +398,21 @@ Public Class AdministrarVentas
                 venta.fechaInsFactura = Date.Today
                 venta.nroFactura = txtFacturaNro.Text
                 venta.total = CDbl(txtTotalVenta.Text)
-                daoVenta.guardarVenta(venta, dgvProductos.Rows)
+                Dim ventaActual = daoVenta.guardarVenta(venta, dgvProductos.Rows)
+
+
                 MsgBox("¡Venta Realizada!", MsgBoxStyle.Information, "Notificación Venta")
+                Dim result As Integer = MessageBox.Show("¡Venta realizada! ¿Imprimir factura?", "Atención", MessageBoxButtons.YesNo)
+
+                If result = DialogResult.Yes Then
+
+                    If result = DialogResult.OK Then
+                        imprimirfact(ventaActual)
+                    End If
+                Else
+                    Me.DialogResult = DialogResult.None
+
+                End If
                 limpiarCamposProducto()
                 limpiarVenta()
             Catch ex As Exception
@@ -408,6 +421,35 @@ Public Class AdministrarVentas
         End If
     End Sub
 
+    Public Sub imprimirfact(ByVal codigo As Integer)
+        Dim facturaImprimir As New factura
+        Dim daoCliente As New ClienteDAO
+
+        Dim currentVenta = daoVenta.obtenerVentaDatos(codigo)
+        Dim currentCliente = daoCliente.obtenerCliente(currentVenta.cliente)
+        facturaImprimir.SetParameterValue("codigo", codigo)
+        facturaImprimir.SetParameterValue("nroFactura", currentVenta.nroFactura)
+        facturaImprimir.SetParameterValue("cliente", currentCliente.nombre)
+        facturaImprimir.SetParameterValue("ruc", currentCliente.ruc)
+        Dim convert As New NumLetra
+
+        If currentVenta.tipo = "Contado" Then
+            facturaImprimir.SetParameterValue("contado", "X")
+            facturaImprimir.SetParameterValue("credito", "")
+        Else
+            facturaImprimir.SetParameterValue("contado", "")
+            facturaImprimir.SetParameterValue("credito", "X")
+        End If
+        facturaImprimir.SetParameterValue("totalGuaranies", convert.EnLetras(currentVenta.total))
+        ''facturaImprimir.SetParameterValue("totalVenta", currentVenta.total)
+        ''facturaImprimir.SetParameterValue("liquidacionIva10", currentVenta.total * 0.090909)
+        facturaImprimir.PrintOptions.PrinterName = "EPSONLX-350" ''PONER NOMBRE DE IMPRESORA
+
+        facturaImprimir.PrintToPrinter(1, False, 0, 0)
+        MsgBox("¡Factura impresa!", MsgBoxStyle.Information, "Notificación")
+        daoVenta.facturaImpresa(codigo)
+
+    End Sub
     Public Sub limpiarVenta()
         Me.SuspendLayout()
         txtFacturaNro.Text = ""
@@ -580,7 +622,12 @@ Public Class AdministrarVentas
     End Sub
 
     Private Sub txtPrecioProd_LostFocus(sender As Object, e As EventArgs) Handles txtPrecioProd.LostFocus
-        txtPrecioProd.Text = FormatCurrency(txtPrecioProd.Text)
+        Try
+            txtPrecioProd.Text = FormatCurrency(txtPrecioProd.Text)
+        Catch ex As Exception
+            txtPrecioProd.Text = ""
+        End Try
+
     End Sub
 
     '------------------------------------- ANULAR -------------------------------------
@@ -925,5 +972,13 @@ Public Class AdministrarVentas
         Else
             MsgBox("¡Ninguna venta seleccionada!", MsgBoxStyle.Critical, "Notificación")
         End If
+    End Sub
+
+    Private Sub Panel6_Paint(sender As Object, e As PaintEventArgs) Handles Panel6.Paint
+
+    End Sub
+
+    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
+
     End Sub
 End Class

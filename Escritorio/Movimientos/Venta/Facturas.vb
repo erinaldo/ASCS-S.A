@@ -112,7 +112,7 @@ Public Class Facturas
             facturaImprimir.SetParameterValue("cliente", currentCliente.nombre)
             facturaImprimir.SetParameterValue("ruc", currentCliente.ruc)
             Dim convert As New NumLetra
-            MsgBox(convert.EnLetras(currentVenta.total))
+
             If currentVenta.tipo = "Contado" Then
                 facturaImprimir.SetParameterValue("contado", "X")
                 facturaImprimir.SetParameterValue("credito", "")
@@ -120,12 +120,17 @@ Public Class Facturas
                 facturaImprimir.SetParameterValue("contado", "")
                 facturaImprimir.SetParameterValue("credito", "X")
             End If
-            ''facturaImprimir.SetParameterValue("totalGuaranies", convert.EnLetras(currentVenta.total))
+            facturaImprimir.SetParameterValue("totalGuaranies", convert.EnLetras(currentVenta.total))
             ''facturaImprimir.SetParameterValue("totalVenta", currentVenta.total)
             ''facturaImprimir.SetParameterValue("liquidacionIva10", currentVenta.total * 0.090909)
-            facturaImprimir.PrintOptions.PrinterName = "PDFCreator" ''PONER NOMBRE DE IMPRESORA
+            facturaImprimir.PrintOptions.PrinterName = "EPSONLX-350" ''PONER NOMBRE DE IMPRESORA
+
             facturaImprimir.PrintToPrinter(1, False, 0, 0)
             MsgBox("¡Factura impresa!", MsgBoxStyle.Information, "Notificación")
+            daoVent.facturaImpresa(codigo)
+            Dim ventas = daoVent.ventasImprimir()
+            dgvVentas.DataSource = ventas.Tables("tabla")
+            dgvVentas.ClearSelection()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
